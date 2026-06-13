@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  /* Dynamic custom ambient glow variables and background positioning */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #09090B;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(24, 24, 27, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(39, 39, 42, 0.1) 0%, transparent 40%);
+  }
+
+  /* Smooth Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272A;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+}
+
+/* Custom Utilities for Glassmorphism & High-End Visuals */
+.glass-panel {
+  background: rgba(15, 15, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 39, 42, 0.4);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 24, 27, 0.85);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.glow-card {
+  position: relative;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(35deg, rgba(39, 39, 42, 0.2), rgba(255, 255, 255, 0.1));
+  z-index: -1;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Grid Dots Background pattern */
+.grid-mesh {
+  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1.2px, transparent 1px);
+}
+
+/* Text Shimmer Effect */
+.text-shimmer {
+  background: linear-gradient(to right, #ffffff 20%, #e4e4e7 40%, #ffffff 60%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: txt-shimmer 8s linear infinite;
+}
+
+@keyframes txt-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Sub-card active indicator */
+.indicator-gradient {
+  background: linear-gradient(135deg, #27272a 0%, #09090b 100%);
+}

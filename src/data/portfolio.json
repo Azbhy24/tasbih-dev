@@ -1,0 +1,284 @@
+{
+  "bio": {
+    "fullName": "TASBIH",
+    "aliases": ["Aby Bhy", "Azbhy"],
+    "headlineTitle": "Tasbih",
+    "subheadline": ["Leader", "Entrepreneur", "Digital Builder"],
+    "tagline": "Bridging Education, Business, and Technology for High-Impact Solutions.",
+    "professionalBio": "Mahasiswa S1 Manajemen Pendidikan Islam yang berpengalaman dalam kepemimpinan organisasi, pengelolaan bisnis ritel, serta pengembangan solusi digital berbasis cloud, otomatisasi, dan AI. Penggagas gerakan peningkatan kompetensi teknologi untuk UMKM dan dunia akademik.",
+    "extendedBio": "Tasbih (juga dikenal sebagai Aby Bhy) aktif membangun reputasi profesionalnya sebagai Founder & Digital Builder di bawah bendera Azbhy. Memadukan keahlian analitis dalam manajemen kelembagaan dengan keterampilan membangun produk teknologi, ia mendedikasikan dirinya untuk memajukan komunitas lokal melalui transformasi digital yang realistis dan berkelanjutan."
+  },
+  "stats": [
+    {
+      "id": "stat-org",
+      "value": 1,
+      "suffix": "",
+      "prefix": "#",
+      "label": "IKA Regional",
+      "description": "Memimpin ikatan alumni regional sejak 2026, memperkuat wadah kolaborasi multisektor.",
+      "icon": "Users"
+    },
+    {
+      "id": "stat-proj",
+      "value": 3,
+      "suffix": "+",
+      "prefix": "",
+      "label": "Core Solutions",
+      "description": "Membangun dan mengembangkan platform digital nyata: DompetKu, Sistem POS UMKM, dan Otomatisasi n8n.",
+      "icon": "Code"
+    },
+    {
+      "id": "stat-umkm",
+      "value": 15,
+      "suffix": "+",
+      "prefix": "",
+      "label": "UMKM Digitalized",
+      "description": "Membantu menransformasi toko keluarga & UMKM lokal ke operasional modern berbasis digital.",
+      "icon": "TrendingUp"
+    },
+    {
+      "id": "stat-docs",
+      "value": 50,
+      "suffix": "+",
+      "prefix": "",
+      "label": "Academic Papers Assisted",
+      "description": "Menyediakan pengecekan plagiasi, peningkatan kualitas naskah publikasi, dan analisis data kualitatif.",
+      "icon": "FileText"
+    }
+  ],
+  "education": {
+    "institution": "Institut Agama Islam Negeri (IAIN) Parepare",
+    "location": "Parepare, Indonesia",
+    "degree": "S1 Manajemen Pendidikan Islam (MPI)",
+    "period": "Sedang Ditempuh",
+    "focus": "Manajemen Kemitraan Strategis, Peningkatan Mutu Pengelolaan Lembaga Pendidikan",
+    "details": [
+      "Fokus riset mendalam pada kemitraan strategis lembaga pendidikan guna mendongkrak mutu operasional sekolah.",
+      "Penerapan fungsi manajemen POAC (Planning, Organizing, Actuating, Controlling) melalui pendekatan penelitian kualitatif.",
+      "Aktif menyelaraskan teori manajemen pendidikan teoritis dengan praktik manajemen bisnis dan kepemimpinan nirlaba."
+    ]
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Ketua Ikatan Alumni (IKA) Regional",
+      "organization": "Ikatan Alumni (IKA) Regional",
+      "location": "Sulawesi, ID",
+      "period": "2026 – Sekarang",
+      "type": "organization",
+      "responsibilities": [
+        "Memimpin, mengoordinasikan, dan menyusun program kerja tahunan pengurus alumni tingkat regional.",
+        "Membangun jembatan komunikasi dan program kemitraan simbiosis-mutualisme dengan institusi pendidikan serta pemangku kepentingan daerah.",
+        "Merancang strategi keterlibatan alumni yang inovatif guna meningkatkan partisipasi aktif anggota hingga 40%.",
+        "Mengelola perencanaan anggaran kegiatan, penguatan tata kelola organisasi, dan memperluas relasi eksternal."
+      ],
+      "metrics": [
+        { "value": "100%", "label": "Kepemimpinan Kohesif" },
+        { "value": "2026+", "label": "Aktif Memimpin" }
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "Pengelola Operasional Usaha Ritel",
+      "organization": "Toko Ritel Keluarga",
+      "location": "Parepare, ID",
+      "period": "Aktif Mengelola",
+      "type": "business",
+      "responsibilities": [
+        "Memegang kendali atas operasional harian toko ritel, termasuk manajemen inventaris barang, pelaporan kas harian, dan layanan pelanggan.",
+        "Menganalisis data transaksi mingguan untuk menentukan item dengan pergantian stok tertinggi demi memaksimalkan keuntungan bersih.",
+        "Mengimplementasikan sistem Point of Sale (POS) digital guna menekan kesalahan pencatatan transaksi manual hingga di bawah 1%.",
+        "Melakukan negosiasi berkala dengan agen distributor guna memastikan kelancaran rantai pasok dan stabilitas harga jual."
+      ],
+      "metrics": [
+        { "value": "99.8%", "label": "Akurasi Pencatatan" },
+        { "value": "15%", "label": "Efisiensi Inventaris" }
+      ]
+    },
+    {
+      "id": "exp-3",
+      "role": "Pendiri & Pengembang Inisiatif Digital",
+      "organization": "Azbhy Digital Solutions",
+      "location": "Parepare, ID",
+      "period": "2024 – Sekarang",
+      "type": "technology",
+      "responsibilities": [
+        "Mendirikan dan mengembangkan brand independen 'Azbhy' sebagai identitas penyedia solusi teknologi terjangkau serta ramah guna.",
+        "Mengintegrasikan API kecerdasan buatan (OpenAI, Claude, Google Gemini) dalam alur kerja produktivitas akademik dan bisnis UMKM.",
+        "Membantu mahasiswa dan akademisi meningkatkan kualitas naskah ilmiah lewat pengecekan kemiripan dokumen, standarisasi sitasi, dan koreksi kebahasaan.",
+        "Membangun aplikasi web kustom untuk kebutuhan pencatatan keuangan mandiri dan otomatisasi workflow cloud."
+      ],
+      "metrics": [
+        { "value": "50+", "label": "Klien Akademik" },
+        { "value": "AI-First", "label": "Metodologi" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "DompetKu",
+      "subtitle": "Personal Finance SaaS Web Application",
+      "category": "Web Dev & FinTech",
+      "problem": "Pencatatan pengeluaran harian dan target tabungan seringkali diabaikan karena interface aplikasi keuangan yang terlalu berbelit-belit dan lambat, atau kurangnya keamanan komparatif jika data disimpan di cloud pihak ketiga secara mentah.",
+      "solution": "Membangun platform web ultra-modern minimalis untuk mencatat pemasukan, pengeluaran, utang piutang, dan progres tabungan secara visual, dilengkapi fitur backup data lokal, serta dukungan responsif mode gelap penuh yang ramah mata.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "LocalStorage API", "Chart.js"],
+      "results": [
+        "Membantu puluhan pengguna melacak arus kas bulanan secara konsisten.",
+        "Zero-latency backup/restore data berbasis file JSON lokal tanpa pendaftaran server.",
+        "Tingginya kemudahan aksesibilitas berkat tata letak bento-grid responsif."
+      ],
+      "githubUrl": "https://github.com",
+      "demoUrl": "#",
+      "featuredSymbol": "💳"
+    },
+    {
+      "id": "proj-2",
+      "title": "Sistem POS & Katalog UMKM",
+      "subtitle": "Micro-Business Digital Transformation",
+      "category": "Business Digitalization",
+      "problem": "Usaha ritel dan warung kecil kesulitan mencatat penjualan real-time, mengontrol stok barang secara sistematis, serta mendistribusikan katalog produk bermutu tinggi secara online tanpa biaya pendaftaran e-commerce yang tinggi.",
+      "solution": "Merancang aplikasi web Point of Sale (POS) sederhana yang terintegrasi dengan katalog produk digital interaktif berbasis web, yang memungkinkan pembeli melakukan klaim pemesanan langsung terhubung ke WhatsApp pengelola toko.",
+      "techStack": ["React", "Tailwind CSS", "Firebase Router", "WhatsApp Cloud Linking"],
+      "results": [
+        "Mengurangi waktu tunggu proses pemesanan oleh pelanggan ritel.",
+        "Pencatatan transaksi 100% terekam dalam cloud database ringan untuk analisis laba berkala.",
+        "Tersedianya etalase katalog menarik yang dapat dibagikan melalui shortlink media sosial."
+      ],
+      "githubUrl": "https://github.com",
+      "demoUrl": "#",
+      "featuredSymbol": "🛒"
+    },
+    {
+      "id": "proj-3",
+      "title": "Automated Workflows Azbhy",
+      "subtitle": "No-Code Systems Integration",
+      "category": "Cloud & AI Automation",
+      "problem": "UMKM dan sivitas akademika sering terjebak dalam entri data manual yang repetitif untuk penyusunan teks, distribusi informasi WhatsApp, transfer data antar cloud storage, serta sinkronisasi jadwal yang memakan waktu berharga.",
+      "solution": "Mengembangkan alur integrasi nir-kode menggunakan platform n8n, dipadukan dengan API AI (Google AI Studio & Claude) guna melakukan pemrosesan dokumen otomatis, ringkasan riset instan, serta distribusi notifikasi transaksional secara instan.",
+      "techStack": ["n8n Engine", "Google Gemini API", "Cloud Triggers", "JSON Utilities"],
+      "results": [
+        "Mengotomatiskan 90% proses pengarsipan naskah perbaikan akademik.",
+        "Sistem dapat merespons trigger dokumen masuk dan melakukan analisis plagiasi/struktur teks dalam waktu kurang dari 10 detik.",
+        "Efisiensi waktu kerja meningkat dramatis sehingga menyisakan lebih banyak ruang untuk penelitian manual."
+      ],
+      "githubUrl": "https://github.com",
+      "demoUrl": "#",
+      "featuredSymbol": "⚡"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Manajemen",
+      "description": "Mengoperasikan roda organisasi, mengoordinasikan tim lintas bidang, serta mendesain kemitraan strategis dengan institusi eksternal.",
+      "skills": [
+        "Manajemen Organisasi",
+        "Manajemen Pendidikan",
+        "Manajemen Kemitraan",
+        "Perencanaan Strategis",
+        "Pengelolaan Program & Event",
+        "Kepemimpinan Tim (POAC)"
+      ]
+    },
+    {
+      "category": "Bisnis",
+      "description": "Mengontrol proses logistik ritel asli, melakukan analisis perputaran produk, dan mendigitalisasi sektor ritel tradisional agar bersaing di era digital.",
+      "skills": [
+        "Operasional Usaha Ritel",
+        "Manajemen Stok & Pricing",
+        "Analisis Keuangan Penjualan",
+        "Pelayanan Pelanggan (CRM)",
+        "Digitalisasi UMKM"
+      ]
+    },
+    {
+      "category": "Teknologi",
+      "description": "Merancang, mengode, dan menjalankan platform visual berbasis web dengan framework modern, mengelola code repository, serta merancang arsitektur cloud server.",
+      "skills": [
+        "Pengembangan Website",
+        "GitHub & Version Control",
+        "Firebase Web Integration",
+        "Cloud-Based Apps Setup",
+        "UI/UX Visual Design",
+        "Sistem Informasi Web kustom"
+      ]
+    },
+    {
+      "category": "Artificial Intelligence",
+      "description": "Memanfaatkan model bahasa generatif tercanggih untuk mempercepat workflow riset akademis, bisnis ritel, dan otomatisasi n8n secara handal.",
+      "skills": [
+        "Generative AI Prompt Engineering",
+        "Google AI Studio Implementation",
+        "Claude AI Integration",
+        "Workflow Automation (n8n)",
+        "AI-Driven Academic Productivity",
+        "Integrasi AI Proses Bisnis"
+      ]
+    },
+    {
+      "category": "Penelitian",
+      "description": "Melakukan investigasi ilmiah mendalam, melakukan analisis komparasi kualitatif naskah akademik, serta menyusun struktur karya ilmiah berbobot.",
+      "skills": [
+        "Metodologi Penelitian Kualitatif",
+        "Penganalisisan Data Kualitatif",
+        "Penyusunan Karya Ilmiah & Jurnal",
+        "Auditing & Redaksi Plagiarisme",
+        "Kajian POAC Manajemen Instruktur"
+      ]
+    }
+  ],
+  "vision": {
+    "statement": "Menjadi pionir akselerasi transformasi digital yang mengolaborasikan aspek tata kelola manajemen pendidikan, praktikalitas dunia bisnis riil, dan otomatisasi teknologi modern guna melahirkan solusi berdaya guna tinggi bagi kemakmuran masyarakat lokal.",
+    "milestones": [
+      {
+        "year": "2026",
+        "target": "Sinergi Regional & Alumni",
+        "description": "Membangun sistem informasi database terpadu untuk IKA Regional, menghubungkan alumni dengan dunia karir pasca-kampus."
+      },
+      {
+        "year": "2027",
+        "target": "UMKM Go-Cloud Nasional",
+        "description": "Mendigitalisasi 100+ gerai ritel keluarga dan usaha kecil di Parepare melalui POS kustom dan pelatihan AI minimalis."
+      },
+      {
+        "year": "2028",
+        "target": "Sistem Informasi Manajemen Azbhy",
+        "description": "Meluncurkan platform otomasi bimbingan akademik dan perbaikan publikasi bereputasi berbasis AI untuk mahasiswa di seluruh Indonesia."
+      }
+    ],
+    "quote": "Teknologi paling berharga bukan yang paling mahal atau canggih, melainkan yang paling sederhana, mudah diterapkan, dan memberikan dampak perubahan nyata pada kehidupan harian sesama manusia.",
+    "quoteAuthor": "Tasbih (Aby Bhy)"
+  },
+  "socials": [
+    {
+      "platform": "WhatsApp",
+      "url": "https://wa.me/6282343940173",
+      "username": "+62 823-4394-0173",
+      "icon": "MessageSquare"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:advanicplus173@gmail.com",
+      "username": "advanicplus173@gmail.com",
+      "icon": "Mail"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/tasbih-dev",
+      "username": "tasbih-dev",
+      "icon": "Github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/tasbih",
+      "username": "Tasbih (Aby Bhy)",
+      "icon": "Linkedin"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/abybhy",
+      "username": "@abybhy",
+      "icon": "Instagram"
+    }
+  ]
+}

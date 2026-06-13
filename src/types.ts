@@ -60,7 +60,7 @@ export interface SkillGroup {
 
 export interface StatItem {
   id: string;
-  value: number;
+  value: number | string;
   suffix?: string;
   prefix?: string;
   label: string;

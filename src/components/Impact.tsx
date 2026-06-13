@@ -3,16 +3,19 @@ import { Users, Code, Award, FileText, TrendingUp } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { portfolioData } from "../data/portfolio";
 
-function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
-  const [count, setCount] = useState(0);
+function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | string; suffix?: string; prefix?: string }) {
+  const isNumeric = typeof value === "number" || (!isNaN(Number(value)) && value !== "");
+  const numericValue = isNumeric ? Number(value) : 0;
+
+  const [count, setCount] = useState<number | string>(isNumeric ? 0 : value);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !isNumeric) return;
 
     let start = 0;
-    const end = value;
+    const end = numericValue;
     if (end === 0) return;
 
     const duration = 2000; // 2 seconds
@@ -37,7 +40,7 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number; suf
     };
 
     requestAnimationFrame(animate);
-  }, [isInView, value]);
+  }, [isInView, numericValue, isNumeric]);
 
   return (
     <span ref={ref} className="font-sans font-extrabold text-white text-5xl sm:text-6xl tracking-tight block">

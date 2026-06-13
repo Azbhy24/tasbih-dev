@@ -1,12 +1,16 @@
 {
   "bio": {
-    "fullName": "TASBIH",
-    "aliases": ["Aby Bhy", "Azbhy"],
+    "fullName": "Tasbih",
+    "aliases": ["Az"],
     "headlineTitle": "Tasbih",
-    "subheadline": ["Leader", "Entrepreneur", "Digital Builder"],
-    "tagline": "Bridging Education, Business, and Technology for High-Impact Solutions.",
-    "professionalBio": "Mahasiswa S1 Manajemen Pendidikan Islam yang berpengalaman dalam kepemimpinan organisasi, pengelolaan bisnis ritel, serta pengembangan solusi digital berbasis cloud, otomatisasi, dan AI. Penggagas gerakan peningkatan kompetensi teknologi untuk UMKM dan dunia akademik.",
-    "extendedBio": "Tasbih (juga dikenal sebagai Aby Bhy) aktif membangun reputasi profesionalnya sebagai Founder & Digital Builder di bawah bendera Azbhy. Memadukan keahlian analitis dalam manajemen kelembagaan dengan keterampilan membangun produk teknologi, ia mendedikasikan dirinya untuk memajukan komunitas lokal melalui transformasi digital yang realistis dan berkelanjutan."
+    "subheadline": [
+      "Visionary Leader",
+      "Future Builder",
+      "Digital Innovator"
+    ],
+    "tagline": "Transforming Possibilities Into Extraordinary Impact.",
+    "professionalBio": "Tasbih adalah sosok penggerak perubahan yang memadukan kepemimpinan, kewirausahaan, dan teknologi menjadi kekuatan nyata. Berbekal pengalaman di dunia organisasi, bisnis ritel, dan pengembangan solusi digital, ia berfokus menciptakan inovasi yang tidak hanya canggih, tetapi juga mampu mengubah cara orang belajar, bekerja, dan berkembang di era digital.",
+    "extendedBio": "Di tengah dunia yang bergerak semakin cepat, Tasbih memilih untuk tidak sekadar mengikuti perubahan—ia membangun perubahan itu sendiri.\n\nBerawal dari lingkungan pendidikan dan bisnis keluarga, ia menyaksikan langsung bagaimana tantangan sehari-hari sering kali menghambat potensi besar yang dimiliki banyak orang. Dari pengalaman tersebut lahir sebuah keyakinan: masa depan tidak ditentukan oleh siapa yang memiliki sumber daya terbesar, tetapi oleh siapa yang mampu menciptakan solusi paling relevan.\n\nPerjalanannya menjelajahi tiga medan strategis: kepemimpinan, bisnis, dan teknologi. Sebagai Ketua IKA Regional, ia mengorkestrasi kolaborasi lintas generasi dan memperkuat jaringan yang berdampak. Sebagai pengelola usaha ritel keluarga, ia memahami denyut nyata dunia usaha dari garis terdepan. Melalui Azbhy, ia merancang berbagai sistem digital, platform berbasis web, otomatisasi cerdas, dan implementasi kecerdasan buatan yang dirancang untuk meningkatkan produktivitas secara signifikan.\n\nBagi Tasbih, teknologi bukan sekadar alat modern. Teknologi adalah akselerator peradaban—jembatan yang menghubungkan ide besar dengan dampak nyata, serta membuka peluang yang sebelumnya tampak mustahil dijangkau."
   },
   "stats": [
     {
@@ -14,8 +18,8 @@
       "value": 1,
       "suffix": "",
       "prefix": "#",
-      "label": "IKA Regional",
-      "description": "Memimpin ikatan alumni regional sejak 2026, memperkuat wadah kolaborasi multisektor.",
+      "label": "Regional Leadership",
+      "description": "Memimpin transformasi organisasi alumni tingkat regional melalui kolaborasi strategis dan visi jangka panjang.",
       "icon": "Users"
     },
     {
@@ -23,94 +27,91 @@
       "value": 3,
       "suffix": "+",
       "prefix": "",
-      "label": "Core Solutions",
-      "description": "Membangun dan mengembangkan platform digital nyata: DompetKu, Sistem POS UMKM, dan Otomatisasi n8n.",
+      "label": "Innovation Projects",
+      "description": "Membangun berbagai solusi digital berbasis AI, web, dan otomatisasi untuk menjawab tantangan dunia nyata.",
       "icon": "Code"
     },
     {
       "id": "stat-umkm",
-      "value": 15,
-      "suffix": "+",
+      "value": "Active",
+      "suffix": "",
       "prefix": "",
-      "label": "UMKM Digitalized",
-      "description": "Membantu menransformasi toko keluarga & UMKM lokal ke operasional modern berbasis digital.",
+      "label": "Business Operator",
+      "description": "Mengelola dan mengembangkan bisnis ritel keluarga dengan pendekatan modern dan berorientasi pertumbuhan.",
       "icon": "TrendingUp"
     },
     {
       "id": "stat-docs",
-      "value": 50,
-      "suffix": "+",
+      "value": "Ongoing",
+      "suffix": "",
       "prefix": "",
-      "label": "Academic Papers Assisted",
-      "description": "Menyediakan pengecekan plagiasi, peningkatan kualitas naskah publikasi, dan analisis data kualitatif.",
+      "label": "Academic Impact",
+      "description": "Mendukung mahasiswa dalam meningkatkan kualitas akademik, riset, dan produktivitas intelektual.",
       "icon": "FileText"
     }
   ],
   "education": {
-    "institution": "Institut Agama Islam Negeri (IAIN) Parepare",
+    "institution": "IAIN Parepare",
     "location": "Parepare, Indonesia",
-    "degree": "S1 Manajemen Pendidikan Islam (MPI)",
-    "period": "Sedang Ditempuh",
-    "focus": "Manajemen Kemitraan Strategis, Peningkatan Mutu Pengelolaan Lembaga Pendidikan",
+    "degree": "S1 Manajemen Pendidikan Islam",
+    "period": "Final Year Student",
+    "focus": "Educational Leadership, Strategic Partnership Management",
     "details": [
-      "Fokus riset mendalam pada kemitraan strategis lembaga pendidikan guna mendongkrak mutu operasional sekolah.",
-      "Penerapan fungsi manajemen POAC (Planning, Organizing, Actuating, Controlling) melalui pendekatan penelitian kualitatif.",
-      "Aktif menyelaraskan teori manajemen pendidikan teoritis dengan praktik manajemen bisnis dan kepemimpinan nirlaba."
+      "Meneliti bagaimana kemitraan strategis mampu menjadi katalis peningkatan mutu lembaga pendidikan.",
+      "Menganalisis implementasi fungsi manajemen modern dalam dinamika organisasi.",
+      "Mengintegrasikan teori manajemen dengan praktik nyata di sektor pendidikan, bisnis, dan komunitas."
     ]
   },
   "experience": [
     {
       "id": "exp-1",
-      "role": "Ketua Ikatan Alumni (IKA) Regional",
+      "role": "Ketua IKA Regional",
       "organization": "Ikatan Alumni (IKA) Regional",
-      "location": "Sulawesi, ID",
+      "location": "Regional Level",
       "period": "2026 – Sekarang",
       "type": "organization",
       "responsibilities": [
-        "Memimpin, mengoordinasikan, dan menyusun program kerja tahunan pengurus alumni tingkat regional.",
-        "Membangun jembatan komunikasi dan program kemitraan simbiosis-mutualisme dengan institusi pendidikan serta pemangku kepentingan daerah.",
-        "Merancang strategi keterlibatan alumni yang inovatif guna meningkatkan partisipasi aktif anggota hingga 40%.",
-        "Mengelola perencanaan anggaran kegiatan, penguatan tata kelola organisasi, dan memperluas relasi eksternal."
+        "Merancang arah strategis organisasi.",
+        "Membangun ekosistem kolaborasi lintas sektor.",
+        "Menginisiasi program berorientasi dampak sosial.",
+        "Menguatkan komunikasi dan keterlibatan anggota secara berkelanjutan."
       ],
       "metrics": [
-        { "value": "100%", "label": "Kepemimpinan Kohesif" },
-        { "value": "2026+", "label": "Aktif Memimpin" }
+        { "value": "100%", "label": "Strategic Alignment" }
       ]
     },
     {
       "id": "exp-2",
-      "role": "Pengelola Operasional Usaha Ritel",
+      "role": "Pengelola Operasional Usaha Ritel Keluarga",
       "organization": "Toko Ritel Keluarga",
-      "location": "Parepare, ID",
-      "period": "Aktif Mengelola",
+      "location": "Family Business",
+      "period": "Aktif",
       "type": "business",
       "responsibilities": [
-        "Memegang kendali atas operasional harian toko ritel, termasuk manajemen inventaris barang, pelaporan kas harian, dan layanan pelanggan.",
-        "Menganalisis data transaksi mingguan untuk menentukan item dengan pergantian stok tertinggi demi memaksimalkan keuntungan bersih.",
-        "Mengimplementasikan sistem Point of Sale (POS) digital guna menekan kesalahan pencatatan transaksi manual hingga di bawah 1%.",
-        "Melakukan negosiasi berkala dengan agen distributor guna memastikan kelancaran rantai pasok dan stabilitas harga jual."
+        "Mengendalikan operasional harian bisnis.",
+        "Mengoptimalkan manajemen stok dan distribusi.",
+        "Meningkatkan kualitas layanan pelanggan.",
+        "Mengidentifikasi peluang ekspansi dan efisiensi usaha."
       ],
       "metrics": [
-        { "value": "99.8%", "label": "Akurasi Pencatatan" },
-        { "value": "15%", "label": "Efisiensi Inventaris" }
+        { "value": "Active", "label": "Growth Strategy" }
       ]
     },
     {
       "id": "exp-3",
-      "role": "Pendiri & Pengembang Inisiatif Digital",
-      "organization": "Azbhy Digital Solutions",
-      "location": "Parepare, ID",
+      "role": "Founder & Digital Builder — Azbhy",
+      "organization": "Azbhy",
+      "location": "Digital Lab",
       "period": "2024 – Sekarang",
       "type": "technology",
       "responsibilities": [
-        "Mendirikan dan mengembangkan brand independen 'Azbhy' sebagai identitas penyedia solusi teknologi terjangkau serta ramah guna.",
-        "Mengintegrasikan API kecerdasan buatan (OpenAI, Claude, Google Gemini) dalam alur kerja produktivitas akademik dan bisnis UMKM.",
-        "Membantu mahasiswa dan akademisi meningkatkan kualitas naskah ilmiah lewat pengecekan kemiripan dokumen, standarisasi sitasi, dan koreksi kebahasaan.",
-        "Membangun aplikasi web kustom untuk kebutuhan pencatatan keuangan mandiri dan otomatisasi workflow cloud."
+        "Mengembangkan platform dan aplikasi berbasis web.",
+        "Mengimplementasikan AI untuk kebutuhan praktis.",
+        "Mendesain sistem yang scalable dan efisien.",
+        "Menciptakan solusi digital bagi mahasiswa, UMKM, dan komunitas."
       ],
       "metrics": [
-        { "value": "50+", "label": "Klien Akademik" },
-        { "value": "AI-First", "label": "Metodologi" }
+        { "value": "3+", "label": "Live Platforms" }
       ]
     }
   ],
@@ -118,117 +119,117 @@
     {
       "id": "proj-1",
       "title": "DompetKu",
-      "subtitle": "Personal Finance SaaS Web Application",
+      "subtitle": "Next-Generation Personal Finance Platform",
       "category": "Web Dev & FinTech",
-      "problem": "Pencatatan pengeluaran harian dan target tabungan seringkali diabaikan karena interface aplikasi keuangan yang terlalu berbelit-belit dan lambat, atau kurangnya keamanan komparatif jika data disimpan di cloud pihak ketiga secara mentah.",
-      "solution": "Membangun platform web ultra-modern minimalis untuk mencatat pemasukan, pengeluaran, utang piutang, dan progres tabungan secara visual, dilengkapi fitur backup data lokal, serta dukungan responsif mode gelap penuh yang ramah mata.",
+      "problem": "Pencatatan keuangan pribadi sering kali terasa berbelit-belit, lambat, atau kurang intuitif bagi pengguna rentang umum untuk melacak tabungan harian mereka.",
+      "solution": "Platform keuangan pribadi yang membantu pengguna menguasai kondisi finansial mereka melalui pengalaman yang sederhana, intuitif, dan powerful.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "LocalStorage API", "Chart.js"],
       "results": [
-        "Membantu puluhan pengguna melacak arus kas bulanan secara konsisten.",
-        "Zero-latency backup/restore data berbasis file JSON lokal tanpa pendaftaran server.",
-        "Tingginya kemudahan aksesibilitas berkat tata letak bento-grid responsif."
+        "Smart Financial Tracking",
+        "Savings Monitoring",
+        "Financial Insights Visualization",
+        "Seamless User Experience"
       ],
-      "githubUrl": "https://github.com",
-      "demoUrl": "#",
+      "githubUrl": "https://github.com/azbhy24",
+      "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "💳"
     },
     {
       "id": "proj-2",
-      "title": "Sistem POS & Katalog UMKM",
-      "subtitle": "Micro-Business Digital Transformation",
+      "title": "Sistem POS UMKM",
+      "subtitle": "Business Growth Engine",
       "category": "Business Digitalization",
-      "problem": "Usaha ritel dan warung kecil kesulitan mencatat penjualan real-time, mengontrol stok barang secara sistematis, serta mendistribusikan katalog produk bermutu tinggi secara online tanpa biaya pendaftaran e-commerce yang tinggi.",
-      "solution": "Merancang aplikasi web Point of Sale (POS) sederhana yang terintegrasi dengan katalog produk digital interaktif berbasis web, yang memungkinkan pembeli melakukan klaim pemesanan langsung terhubung ke WhatsApp pengelola toko.",
-      "techStack": ["React", "Tailwind CSS", "Firebase Router", "WhatsApp Cloud Linking"],
+      "problem": "Banyak pelaku usaha mikro kecil (UMKM) masih bergantung pada sistem transaksi manual yang rawan kesalahan, menyulitkan optimalisasi stok, serta menghambat pertumbuhan bisnis modern.",
+      "solution": "Solusi digital yang mempercepat transformasi UMKM dari sistem manual menuju operasional yang modern, terukur, dan kompetitif.",
+      "techStack": ["React", "Tailwind CSS", "Firebase Ecosystem", "WhatsApp Integration"],
       "results": [
-        "Mengurangi waktu tunggu proses pemesanan oleh pelanggan ritel.",
-        "Pencatatan transaksi 100% terekam dalam cloud database ringan untuk analisis laba berkala.",
-        "Tersedianya etalase katalog menarik yang dapat dibagikan melalui shortlink media sosial."
+        "Transaction Intelligence",
+        "Inventory Optimization",
+        "Digital Product Catalog",
+        "Business Efficiency Enhancement"
       ],
-      "githubUrl": "https://github.com",
-      "demoUrl": "#",
+      "githubUrl": "https://github.com/azbhy24",
+      "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "🛒"
     },
     {
       "id": "proj-3",
-      "title": "Automated Workflows Azbhy",
-      "subtitle": "No-Code Systems Integration",
+      "title": "Azbhy Workflows",
+      "subtitle": "AI-Powered Automation Ecosystem",
       "category": "Cloud & AI Automation",
-      "problem": "UMKM dan sivitas akademika sering terjebak dalam entri data manual yang repetitif untuk penyusunan teks, distribusi informasi WhatsApp, transfer data antar cloud storage, serta sinkronisasi jadwal yang memakan waktu berharga.",
-      "solution": "Mengembangkan alur integrasi nir-kode menggunakan platform n8n, dipadukan dengan API AI (Google AI Studio & Claude) guna melakukan pemrosesan dokumen otomatis, ringkasan riset instan, serta distribusi notifikasi transaksional secara instan.",
+      "problem": "Pekerjaan repetitif seperti input naskah akademik, pengolahan laporan terstruktur, atau integrasi data sistem informasi membuang waktu produktif mahasiswa, pendidik, maupun pemilik UMKM.",
+      "solution": "Sistem otomatisasi cerdas yang memanfaatkan AI dan cloud integration untuk menghilangkan pekerjaan repetitif dan meningkatkan produktivitas secara eksponensial.",
       "techStack": ["n8n Engine", "Google Gemini API", "Cloud Triggers", "JSON Utilities"],
       "results": [
-        "Mengotomatiskan 90% proses pengarsipan naskah perbaikan akademik.",
-        "Sistem dapat merespons trigger dokumen masuk dan melakukan analisis plagiasi/struktur teks dalam waktu kurang dari 10 detik.",
-        "Efisiensi waktu kerja meningkat dramatis sehingga menyisakan lebih banyak ruang untuk penelitian manual."
+        "Intelligent Workflow Automation",
+        "AI Integration",
+        "Smart Document Processing",
+        "Digital Productivity Acceleration"
       ],
-      "githubUrl": "https://github.com",
-      "demoUrl": "#",
+      "githubUrl": "https://github.com/azbhy24",
+      "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "⚡"
     }
   ],
   "skills": [
     {
       "category": "Manajemen",
-      "description": "Mengoperasikan roda organisasi, mengoordinasikan tim lintas bidang, serta mendesain kemitraan strategis dengan institusi eksternal.",
+      "description": "Mengoperasikan arah strategis kepemimpinan visioner, pengembangan kemitraan, dan transformasi program pengurus regional.",
       "skills": [
-        "Manajemen Organisasi",
-        "Manajemen Pendidikan",
-        "Manajemen Kemitraan",
-        "Perencanaan Strategis",
-        "Pengelolaan Program & Event",
-        "Kepemimpinan Tim (POAC)"
+        "Visionary Leadership",
+        "Strategic Planning",
+        "Partnership Development",
+        "Organizational Transformation",
+        "Program Innovation"
       ]
     },
     {
       "category": "Bisnis",
-      "description": "Mengontrol proses logistik ritel asli, melakukan analisis perputaran produk, dan mendigitalisasi sektor ritel tradisional agar bersaing di era digital.",
+      "description": "Mengendalikan ritel, mengoptimalkan proses operasional, serta mendesain strategi pertumbuhan efisiensi usaha mikro.",
       "skills": [
-        "Operasional Usaha Ritel",
-        "Manajemen Stok & Pricing",
-        "Analisis Keuangan Penjualan",
-        "Pelayanan Pelanggan (CRM)",
-        "Digitalisasi UMKM"
+        "Retail Business Operations",
+        "Business Growth Strategy",
+        "Customer Experience Management",
+        "UMKM Digital Transformation",
+        "Operational Excellence"
       ]
     },
     {
       "category": "Teknologi",
-      "description": "Merancang, mengode, dan menjalankan platform visual berbasis web dengan framework modern, mengelola code repository, serta merancang arsitektur cloud server.",
+      "description": "Membangun platform website modern, merancang arsitektur sistem informasi bertenaga, cloud backend, dan tata letak UI/UX.",
       "skills": [
-        "Pengembangan Website",
-        "GitHub & Version Control",
-        "Firebase Web Integration",
-        "Cloud-Based Apps Setup",
-        "UI/UX Visual Design",
-        "Sistem Informasi Web kustom"
+        "Web Development",
+        "Information Systems Design",
+        "Firebase Ecosystem",
+        "Git & GitHub",
+        "UI/UX Strategy"
       ]
     },
     {
       "category": "Artificial Intelligence",
-      "description": "Memanfaatkan model bahasa generatif tercanggih untuk mempercepat workflow riset akademis, bisnis ritel, dan otomatisasi n8n secara handal.",
+      "description": "Rekayasa prompt taktis, penyusunan otomatisasi workflow cerdas, sistem produktivitas, serta pemrosesan dokumen efisien.",
       "skills": [
-        "Generative AI Prompt Engineering",
-        "Google AI Studio Implementation",
-        "Claude AI Integration",
-        "Workflow Automation (n8n)",
-        "AI-Driven Academic Productivity",
-        "Integrasi AI Proses Bisnis"
+        "Prompt Engineering",
+        "AI Productivity Systems",
+        "Workflow Automation",
+        "AI Integration Strategy",
+        "Process Optimization"
       ]
     },
     {
       "category": "Penelitian",
-      "description": "Melakukan investigasi ilmiah mendalam, melakukan analisis komparasi kualitatif naskah akademik, serta menyusun struktur karya ilmiah berbobot.",
+      "description": "Investigasi kualitatif komprehensif, penyuntingan naskah ilmiah bermutu tinggi, interpretasi data kualitatif cerdas, dan analisis plagiasi.",
       "skills": [
-        "Metodologi Penelitian Kualitatif",
-        "Penganalisisan Data Kualitatif",
-        "Penyusunan Karya Ilmiah & Jurnal",
-        "Auditing & Redaksi Plagiarisme",
-        "Kajian POAC Manajemen Instruktur"
+        "Qualitative Research",
+        "Academic Writing",
+        "Data Interpretation",
+        "Similarity Analysis",
+        "Educational Research"
       ]
     }
   ],
   "vision": {
-    "statement": "Menjadi pionir akselerasi transformasi digital yang mengolaborasikan aspek tata kelola manajemen pendidikan, praktikalitas dunia bisnis riil, dan otomatisasi teknologi modern guna melahirkan solusi berdaya guna tinggi bagi kemakmuran masyarakat lokal.",
+    "statement": "Menjadi arsitek perubahan yang menghubungkan pendidikan, bisnis, dan teknologi untuk menciptakan masa depan yang lebih cerdas, inclusif, dan berdampak.",
     "milestones": [
       {
         "year": "2026",
@@ -246,38 +247,38 @@
         "description": "Meluncurkan platform otomasi bimbingan akademik dan perbaikan publikasi bereputasi berbasis AI untuk mahasiswa di seluruh Indonesia."
       }
     ],
-    "quote": "Teknologi paling berharga bukan yang paling mahal atau canggih, melainkan yang paling sederhana, mudah diterapkan, dan memberikan dampak perubahan nyata pada kehidupan harian sesama manusia.",
-    "quoteAuthor": "Tasbih (Aby Bhy)"
+    "quote": "Masa depan tidak dibangun oleh mereka yang hanya mengikuti perubahan. Masa depan dibangun oleh mereka yang berani menciptakannya.",
+    "quoteAuthor": "Tasbih"
   },
   "socials": [
     {
       "platform": "WhatsApp",
-      "url": "https://wa.me/6282343940173",
-      "username": "+62 823-4394-0173",
+      "url": "https://wa.me/6281915115390",
+      "username": "+62 819-1511-5390",
       "icon": "MessageSquare"
     },
     {
       "platform": "Email",
-      "url": "mailto:advanicplus173@gmail.com",
-      "username": "advanicplus173@gmail.com",
+      "url": "mailto:azbhy24@gmail.com",
+      "username": "azbhy24@gmail.com",
       "icon": "Mail"
     },
     {
       "platform": "GitHub",
-      "url": "https://github.com/tasbih-dev",
-      "username": "tasbih-dev",
+      "url": "https://github.com/azbhy24",
+      "username": "azbhy24",
       "icon": "Github"
     },
     {
       "platform": "LinkedIn",
       "url": "https://linkedin.com/in/tasbih",
-      "username": "Tasbih (Aby Bhy)",
+      "username": "Tasbih",
       "icon": "Linkedin"
     },
     {
       "platform": "Instagram",
-      "url": "https://instagram.com/abybhy",
-      "username": "@abybhy",
+      "url": "https://instagram.com/tasbii_az",
+      "username": "@tasbii_az",
       "icon": "Instagram"
     }
   ]

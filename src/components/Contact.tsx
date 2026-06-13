@@ -11,7 +11,7 @@ export default function Contact() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("advanicplus173@gmail.com");
+    navigator.clipboard.writeText("azbhy24@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -77,7 +77,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-[9px] font-mono text-zinc-550 uppercase leading-none tracking-wider">EMAIL UTAMA</span>
-                  <span className="block text-white font-bold text-sm sm:text-base mt-2">advanicplus173@gmail.com</span>
+                  <span className="block text-white font-bold text-sm sm:text-base mt-2">azbhy24@gmail.com</span>
                 </div>
               </div>
               

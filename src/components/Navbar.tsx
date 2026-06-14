@@ -35,7 +35,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
       id="navbar-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-[#09090B]/90 backdrop-blur-md border-b border-zinc-900 py-4" 
+          ? "bg-[#030306]/90 backdrop-blur-md border-b border-indigo-950/40 py-4 shadow-lg shadow-black/20" 
           : "bg-transparent py-6"
       }`}
     >
@@ -46,16 +46,16 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           onClick={() => onNavigate("hero")}
           className="group flex items-center gap-2 text-white hover:opacity-90"
         >
-          <div className="w-8 h-8 bg-white rounded flex items-center justify-center transition-colors">
-            <span className="text-[#09090B] font-black text-xs">AZ</span>
+          <div className="w-8 h-8 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded flex items-center justify-center transition-all shadow-md group-hover:scale-105 duration-200">
+            <span className="text-white font-black text-xs">AZ</span>
           </div>
-          <span className="font-bold tracking-widest text-sm uppercase">
+          <span className="font-bold tracking-widest text-sm uppercase bg-gradient-to-r from-white via-indigo-100 to-indigo-200 bg-clip-text text-transparent">
             AZBHY
           </span>
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav id="desktop-nav" className="hidden md:flex items-center gap-1 bg-zinc-900/30 p-1 rounded-md border border-zinc-800 backdrop-blur-sm">
+        <nav id="desktop-nav" className="hidden md:flex items-center gap-1 bg-zinc-950/40 p-1 rounded-md border border-indigo-500/20 backdrop-blur-sm">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -66,14 +66,14 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 className={`relative px-4 py-1.5 rounded text-[10px] font-bold tracking-widest uppercase transition-all ${
                   isActive 
                     ? "text-white" 
-                    : "text-zinc-500 hover:text-zinc-200"
+                    : "text-zinc-400 hover:text-zinc-100"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeTabGlow"
                     id="active-tab-glow"
-                    className="absolute inset-0 bg-zinc-800 rounded border border-zinc-700"
+                    className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-indigo-550/10 rounded border border-indigo-500/35 shadow-[0_0_12px_rgba(99,102,241,0.1)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -85,17 +85,17 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-emerald-500 bg-emerald-500/5 px-3 py-1.5 rounded border border-emerald-500/10 mr-2">
-            <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
-            <span>Ready for Partnerhsip</span>
+          <div className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-indigo-300 bg-[#030306] px-3 py-1.5 rounded border border-indigo-500/20 mr-2">
+            <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-ping"></div>
+            <span>Ready for Partnership</span>
           </div>
           <button
             id="nav-partner-btn"
             onClick={() => onNavigate("contact")}
-            className="group px-4 py-2 bg-white hover:bg-zinc-200 active:scale-[0.98] text-[#09090B] font-bold text-[10px] tracking-widest uppercase rounded flex items-center gap-1.5 transition-all shadow-md"
+            className="group px-4 py-2 bg-indigo-650 hover:bg-indigo-550 active:scale-[0.98] text-white font-bold text-[10px] tracking-widest uppercase rounded flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/10 cursor-pointer border-none"
           >
             <span className="relative z-10">Partnership</span>
-            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-white" />
           </button>
         </div>
 

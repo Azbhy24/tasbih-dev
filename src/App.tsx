@@ -76,7 +76,7 @@ export default function App() {
           {/* Brand Signature */}
           <div className="flex flex-col items-center md:items-start gap-1">
             <span className="font-sans text-base font-bold text-white tracking-widest uppercase">
-              AZ<span className="text-[#10b981]">BHY</span> PORTFOLIO
+              AZ<span className="text-indigo-400">BHY</span> PORTFOLIO
             </span>
             <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
               Connecting Education, Business & Tech

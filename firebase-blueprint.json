@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "Message": {
+      "title": "Contact Message",
+      "description": "Form submissions from visitors on the contact page",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Sender's full name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Sender's email address"
+        },
+        "message": {
+          "type": "string",
+          "description": "Sender's detailed message"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of submission"
+        }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    },
+    "Testimonial": {
+      "title": "Guestbook Testimonial",
+      "description": "Public feedback and testimonials left by visitors",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Author's ID"
+        },
+        "userName": {
+          "type": "string",
+          "description": "Author's display name"
+        },
+        "userPhoto": {
+          "type": "string",
+          "description": "Author's profile picture URL"
+        },
+        "text": {
+          "type": "string",
+          "description": "Detailed testimonial content"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["userId", "userName", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Inbound contact messages"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "Testimonial",
+      "description": "Public guestbook testimonials"
+    }
+  }
+}

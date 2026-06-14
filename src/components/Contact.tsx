@@ -2,6 +2,9 @@ import { useState, FormEvent } from "react";
 import { Mail, MessageSquare, Github, Linkedin, Instagram, ArrowUpRight, Copy, Check, Send } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { portfolioData } from "../data/portfolio";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { db, handleFirestoreError, OperationType } from "../lib/firebase";
+import Guestbook from "./Guestbook";
 
 export default function Contact() {
   const { socials } = portfolioData;
@@ -16,17 +19,27 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate sending email / contact form dispatch
-    setTimeout(() => {
+    const messageId = "msg-" + Date.now() + "-" + Math.random().toString(36).substring(2, 9);
+    const docPath = `messages/${messageId}`;
+    try {
+      await setDoc(doc(db, "messages", messageId), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        createdAt: serverTimestamp(),
+      });
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitSuccess(false), 5 * 1000);
-    }, 1500);
+    } catch (err) {
+      setIsSubmitting(false);
+      handleFirestoreError(err, OperationType.CREATE, docPath);
+    }
   };
 
   const getIcon = (platform: string) => {
@@ -212,6 +225,9 @@ export default function Contact() {
           </div>
 
         </div>
+
+        {/* Live Firebase Real-Time Guestbook Wall */}
+        <Guestbook />
       </div>
     </section>
   );

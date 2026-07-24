@@ -1,6 +1,9 @@
 import { ArrowDown, Mail, ArrowUpRight, Award, Flame, Terminal } from "lucide-react";
 import { motion } from "motion/react";
+import { useState } from "react";
 import { portfolioData } from "../data/portfolio";
+import almetImage from "../assets/images/almet_mahasiswa_1781399345497.jpg";
+import jasImage from "../assets/images/jas_formal_1781399324196.jpg";
 
 interface HeroProps {
   onNavigate: (sectionId: string) => void;
@@ -8,6 +11,7 @@ interface HeroProps {
 
 export default function Hero({ onNavigate }: HeroProps) {
   const { bio } = portfolioData;
+  const [activePhoto, setActivePhoto] = useState<"almet" | "jas">("almet");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -150,42 +154,73 @@ export default function Hero({ onNavigate }: HeroProps) {
               <span className="font-mono text-[10px] text-zinc-500">v1.2.6</span>
             </div>
 
-            {/* Profile Avatar Graphic Circle Placeholder Built beautifully on pure CSS/SVG */}
-            <div className="my-auto flex flex-col items-center">
-              <div className="relative w-28 h-28 flex items-center justify-center rounded-xl bg-zinc-950 border border-indigo-500/15 group overflow-hidden">
-                {/* SVG avatar representing a modern tech profile */}
-                <svg viewBox="0 0 100 100" className="w-full h-full text-zinc-400 p-2">
-                  <defs>
-                    <linearGradient id="gradient-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#1e1b4b" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#27273a" stopOpacity="0.5" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="50" cy="50" r="48" fill="url(#gradient-avatar)" stroke="rgba(99, 102, 241, 0.2)" strokeWidth="1" />
-                  {/* Digital Builder Abstract shape code grid */}
-                  <g stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1" fill="none">
-                    <line x1="20" y1="50" x2="80" y2="50" />
-                    <line x1="50" y1="20" x2="50" y2="80" />
-                    <circle cx="50" cy="50" r="15" />
-                    <circle cx="50" cy="50" r="28" />
-                    <path d="M 28 28 L 72 72 M 28 72 L 72 28" />
-                  </g>
-                  {/* Clean schematic letter 'A' */}
-                  <text x="50" y="58" textAnchor="middle" fill="#FFFFFF" fontSize="24" fontWeight="900" fontFamily="sans-serif">
-                    A
-                  </text>
-                </svg>
-                {/* Outer spin rings */}
-                <div className="absolute inset-0 border border-indigo-500/15 border-dashed rounded-xl animate-[spin_60s_linear_infinite]" />
+            {/* Premium Interactive Photo Display with Dual Persona Toggle */}
+            <div className="my-auto flex flex-col items-center w-full">
+              <div className="relative w-44 h-56 rounded-xl bg-zinc-950 border border-indigo-500/20 overflow-hidden group shadow-lg">
+                {/* Active Photo with hover zoom */}
+                <img
+                  src={activePhoto === "almet" ? almetImage : jasImage}
+                  alt={activePhoto === "almet" ? "Tasbih Almet Mahasiswa" : "Tasbih Jas Formal"}
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Visual Glow overlay depending on mode */}
+                <div className={`absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90 transition-all duration-500`} />
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none mix-blend-overlay ${
+                  activePhoto === "almet" ? "bg-emerald-500" : "bg-red-500"
+                }`} />
+
+                {/* Cyber/Tech Crosshairs showing dynamic active states */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none font-mono text-[8px] text-indigo-400">
+                  <div className="absolute top-2 left-2">+</div>
+                  <div className="absolute top-2 right-2">+</div>
+                  <div className="absolute bottom-2 left-2">+</div>
+                  <div className="absolute bottom-2 right-2">+</div>
+                </div>
+
+                {/* Absolute status label on the photo card */}
+                <span className={`absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/80 border text-[8px] font-mono font-bold uppercase tracking-wider text-white ${
+                  activePhoto === "almet" ? "border-emerald-500/30" : "border-red-500/30"
+                }`}>
+                  <span className={`w-1 h-1 rounded-full ${activePhoto === "almet" ? "bg-emerald-400 animate-pulse" : "bg-red-500 animate-pulse"}`} />
+                  {activePhoto === "almet" ? "Mahasiswa" : "Professional"}
+                </span>
               </div>
 
-              {/* Identifier names */}
+              {/* Identity labels updated dynamically based on photo chosen */}
               <h3 className="mt-4 text-white font-sans text-xl font-bold tracking-wide">
-                Azbhy
+                Tasbih <span className="text-zinc-500 text-xs font-mono font-light">({activePhoto === "almet" ? "Azbhy" : "Az"})</span>
               </h3>
-              <p className="text-[10px] font-mono font-bold text-indigo-400 mt-1 uppercase tracking-widest">
-                Digital Solution Architect
+              <p className="text-[10px] font-mono font-bold text-indigo-400 mt-1 uppercase tracking-widest min-h-[15px] text-center">
+                {activePhoto === "almet" ? "STUDENT LEADER & DIGITAL BUILDER" : "EXECUTIVE PARTNER & RETAIL OPERATOR"}
               </p>
+
+              {/* Selector Tabs to toggle visual elements */}
+              <div className="flex gap-1.5 mt-4 p-1 rounded-lg bg-zinc-900/80 border border-indigo-500/10 w-full max-w-[220px] shadow-inner">
+                <button
+                  id="tab-almet"
+                  onClick={() => setActivePhoto("almet")}
+                  className={`flex-1 py-1.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer ${
+                    activePhoto === "almet"
+                      ? "bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 font-extrabold"
+                      : "text-zinc-500 hover:text-zinc-350 border border-transparent"
+                  }`}
+                >
+                  🎓 ALMET
+                </button>
+                <button
+                  id="tab-jas"
+                  onClick={() => setActivePhoto("jas")}
+                  className={`flex-1 py-1.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer ${
+                    activePhoto === "jas"
+                      ? "bg-red-950/40 text-rose-400 border border-red-500/30 font-extrabold"
+                      : "text-zinc-500 hover:text-zinc-355 border border-transparent"
+                  }`}
+                >
+                  💼 FORMAL
+                </button>
+              </div>
             </div>
 
             {/* Bottom summary and status badges */}

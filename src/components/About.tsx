@@ -1,6 +1,8 @@
 import { BookOpen, CheckCircle, GraduationCap, LayoutGrid, Award, Settings } from "lucide-react";
 import { motion } from "motion/react";
 import { portfolioData } from "../data/portfolio";
+import almetImage from "../assets/images/almet_mahasiswa_1781399345497.jpg";
+import jasImage from "../assets/images/jas_formal_1781399324196.jpg";
 
 export default function About() {
   const { bio, education } = portfolioData;
@@ -70,6 +72,58 @@ export default function About() {
               <p className="mt-6 text-zinc-400 text-sm leading-relaxed">
                 {bio.extendedBio}
               </p>
+            </div>
+
+            {/* Dual Cinematic Collage: Dua Sisi Perjalanan Tasbih */}
+            <div className="p-6 rounded-xl glass-panel border-indigo-500/10 relative overflow-hidden group/collage transition-all duration-300 hover:border-indigo-500/20 bg-zinc-950/20">
+              <h3 className="text-[10px] font-mono font-bold text-indigo-400 tracking-widest uppercase">02 // DUA PERAN UTAMA</h3>
+              <p className="text-xs text-zinc-400 mt-2 mb-6">Membelah diri secara dinamis antara tanggung jawab akademis dan inisiatif penggerak bisnis.</p>
+              
+              <div className="grid grid-cols-2 gap-4 items-stretch">
+                {/* Photo 1: Almet Mahasiswa */}
+                <div className="relative rounded-lg overflow-hidden border border-emerald-500/20 bg-zinc-900 flex flex-col justify-end h-64 sm:h-72 shadow-lg hover:border-emerald-500/40 transition-all duration-300 group/item">
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80" />
+                  <img
+                    src={almetImage}
+                    alt="Tasbih Almet Mahasiswa"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover/item:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="relative z-20 p-3 mt-auto">
+                    <span className="inline-flex px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 font-mono text-[8px] font-bold uppercase tracking-wider border border-emerald-500/30">
+                      Sisi Mahasiswa
+                    </span>
+                    <p className="text-xs text-white font-bold mt-1 leading-tight drop-shadow-md">
+                      Pilar Akademik & Aktivisme
+                    </p>
+                    <p className="text-[10px] text-zinc-350 mt-1.5 font-mono leading-relaxed">
+                      Menempuh MPI IAIN Parepare & memimpin pengurus alumni regional.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Photo 2: Jas Formal */}
+                <div className="relative rounded-lg overflow-hidden border border-red-500/20 bg-zinc-900 flex flex-col justify-end h-64 sm:h-72 shadow-lg hover:border-red-500/40 transition-all duration-300 group/item2">
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80" />
+                  <img
+                    src={jasImage}
+                    alt="Tasbih Jas Formal"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover/item2:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="relative z-20 p-3 mt-auto">
+                    <span className="inline-flex px-1.5 py-0.5 rounded bg-red-950/80 text-rose-300 font-mono text-[8px] font-bold uppercase tracking-wider border border-red-500/30">
+                      Sisi Profesional
+                    </span>
+                    <p className="text-xs text-white font-bold mt-1 leading-tight drop-shadow-md">
+                      Pakar Ritel & Digital Builder
+                    </p>
+                    <p className="text-[10px] text-zinc-350 mt-1.5 font-mono leading-relaxed">
+                      Mengoperasikan bisnis ritel keluarga & merintis otomatisasi Azbhy.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Micro Stats or Mission Points */}

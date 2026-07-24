@@ -36,7 +36,12 @@ service cloud.firestore {
         && data.createdAt == request.time;
     }
 
-    // 4. Inbound visitor contact inquiries matching rules
+    // 4. Test connection verification document rule
+    match /test/{docId} {
+      allow read: if true;
+    }
+
+    // 5. Inbound visitor contact inquiries matching rules
     match /messages/{messageId} {
       allow create: if isValidId(messageId) && isValidMessage(request.resource.data);
       allow get, list, update, delete: if false; // Visitors cannot read or manipulate queries once posted

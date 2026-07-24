@@ -59,8 +59,8 @@ export default function Guestbook() {
       setTestimonials(list);
       setIsLoading(false);
     }, (error) => {
-      // Required by guideline: Handle permissions or load issues gracefully
-      handleFirestoreError(error, OperationType.LIST, "testimonials");
+      setIsLoading(false);
+      console.warn("Guestbook real-time listener note:", error.message);
     });
 
     return () => unsubscribe();

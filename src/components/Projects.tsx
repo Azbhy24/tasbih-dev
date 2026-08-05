@@ -326,7 +326,7 @@ function POSUMKMSimulator() {
                           </button>
                           <span className="text-[10px] font-mono text-slate-900 font-bold w-4 text-center">{item.qty}</span>
                           <button
-                            onClick={() => addToCart(item)}
+                            onClick={() => updateQty(item.id, 1)}
                             className="p-0.5 hover:text-emerald-600 transition-colors cursor-pointer text-slate-600"
                           >
                             <Plus className="w-3 h-3" />
@@ -629,7 +629,7 @@ export default function Projects() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 16 },
+      transition: { type: "spring" as const, stiffness: 100, damping: 16 },
     },
   };
 

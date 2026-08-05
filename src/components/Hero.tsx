@@ -29,7 +29,7 @@ export default function Hero({ onNavigate }: HeroProps) {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 15 },
+      transition: { type: "spring" as const, stiffness: 100, damping: 15 },
     },
   };
 
@@ -39,7 +39,7 @@ export default function Hero({ onNavigate }: HeroProps) {
       transition: {
         duration,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   });

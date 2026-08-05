@@ -47,8 +47,8 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
           onClick={() => onNavigate("hero")}
           className="group flex items-center gap-2.5 text-slate-900 hover:opacity-90 cursor-pointer"
         >
-          <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center transition-all shadow-md group-hover:scale-105 duration-200">
-            <span className="text-white font-black text-xs">AZ</span>
+          <div className="w-9 h-9 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-all duration-200 border border-indigo-200 bg-slate-900">
+            <img src="/favicon.svg" alt="Azbhy Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-extrabold tracking-widest text-sm uppercase text-slate-900">
             AZBHY<span className="text-indigo-600">.</span>

@@ -4,49 +4,49 @@
     "aliases": ["Az"],
     "headlineTitle": "Tasbih",
     "subheadline": [
-      "Visionary Leader",
-      "Future Builder",
-      "Digital Innovator"
+      "Full-Stack Web Developer",
+      "AI & Workflow Automation Specialist",
+      "Digital Operations Lead"
     ],
-    "tagline": "Transforming Possibilities Into Extraordinary Impact.",
-    "professionalBio": "Tasbih adalah sosok penggerak perubahan yang memadukan kepemimpinan, kewirausahaan, dan teknologi menjadi kekuatan nyata. Berbekal pengalaman di dunia organisasi, bisnis ritel, dan pengembangan solusi digital, ia berfokus menciptakan inovasi yang tidak hanya canggih, tetapi juga mampu mengubah cara orang belajar, bekerja, dan berkembang di era digital.",
-    "extendedBio": "Berawal dari dunia akademis Manajemen Pendidikan Islam & tata kelola operasional bisnis ritel keluarga, Tasbih meyakini bahwa perubahan berkelanjutan dimulai dari solusi praktis yang relevan. Perjalanannya mengintegrasikan tiga ranah strategis secara dinamis: kepemimpinan visioner selaku Ketua IKA Regional, operasional bisnis taktis, dan perancangan platform teknologi digital.\n\nMelalui platform inovatif Azbhy, ia merancang sistem otomatisasi cerdas, implementasi AI, serta aplikasi web modern untuk melipatgandakan produktivitas individu maupun organisasi. Baginya, teknologi adalah akselerator utama untuk menghubungkan ide besar pelaku industri, akademisi, dan UMKM dengan dampak nyata."
+    "tagline": "Membangun Aplikasi Web Scalable, Otomatisasi AI, & Digitalisasi Operasional Bisnis.",
+    "professionalBio": "Pengembang Perangkat Lunak & Spesialis Otomatisasi Digital berbasis di Indonesia. Berfokus pada perancangan aplikasi web modern (React, TypeScript, Firebase), integrasi pipeline AI (Google Gemini API, n8n), serta digitalisasi operasional bisnis dengan dampak efisiensi yang terukur.",
+    "extendedBio": "Dengan latar belakang ganda di bidang Manajemen Sistem & Operasional Bisnis, Tasbih (Azbhy) merancang solusi teknologi pragmatis yang memecahkan hambatan operasional nyata.\n\nMelalui platform Azbhy, ia merancang sistem otomatisasi cerdas, integrasi webhook cloud, dan aplikasi web performa tinggi untuk mengeliminasi pekerjaan repetitif, mempercepat alur transaksi UMKM, serta meningkatkan produktivitas riset dan organisasi."
   },
   "stats": [
     {
       "id": "stat-org",
-      "value": 1,
+      "value": "150+",
       "suffix": "",
-      "prefix": "#",
-      "label": "Regional Leadership",
-      "description": "Memimpin transformasi organisasi alumni tingkat regional melalui kolaborasi strategis dan visi jangka panjang.",
+      "prefix": "",
+      "label": "Alumni & Tim Terkoordinasi",
+      "description": "Memimpin transformasi digital & efisiensi komunikasi alumni regional.",
       "icon": "Users"
     },
     {
       "id": "stat-proj",
-      "value": 3,
-      "suffix": "+",
+      "value": "3+",
+      "suffix": "",
       "prefix": "",
-      "label": "Innovation Projects",
-      "description": "Membangun berbagai solusi digital berbasis AI, web, dan otomatisasi untuk menjawab tantangan dunia nyata.",
+      "label": "Web & Automation Apps",
+      "description": "Mendeploy aplikasi web produksi, POS kasir, dan workflow AI.",
       "icon": "Code"
     },
     {
       "id": "stat-umkm",
-      "value": "Active",
+      "value": "500+",
       "suffix": "",
       "prefix": "",
-      "label": "Business Operator",
-      "description": "Mengelola dan mengembangkan bisnis ritel keluarga dengan pendekatan modern dan berorientasi pertumbuhan.",
+      "label": "SKU Ritel Dikelola",
+      "description": "Digitalisasi pencatatan stok & operasional kasir toko ritel.",
       "icon": "TrendingUp"
     },
     {
       "id": "stat-docs",
-      "value": "Ongoing",
+      "value": "< 2 Mnt",
       "suffix": "",
       "prefix": "",
-      "label": "Academic Impact",
-      "description": "Mendukung mahasiswa dalam meningkatkan kualitas akademik, riset, dan produktivitas intelektual.",
+      "label": "Pemrosesan Dokumen AI",
+      "description": "Efisiensi ekstraksi naskah akademik dengan Google Gemini Pro.",
       "icon": "FileText"
     }
   ],
@@ -54,12 +54,12 @@
     "institution": "IAIN Parepare",
     "location": "Parepare, Indonesia",
     "degree": "S1 Manajemen Pendidikan Islam",
-    "period": "Final Year Student",
-    "focus": "Educational Leadership, Strategic Partnership Management",
+    "period": "Lulusan S1 (Final Stage)",
+    "focus": "Educational Management Systems, Strategic Digitalization",
     "details": [
-      "Meneliti bagaimana kemitraan strategis mampu menjadi katalis peningkatan mutu lembaga pendidikan.",
-      "Menganalisis implementasi fungsi manajemen modern dalam dinamika organisasi.",
-      "Mengintegrasikan teori manajemen dengan praktik nyata di sektor pendidikan, bisnis, dan komunitas."
+      "Meneliti efektivitas kemitraan strategis dan penjaminan mutu lembaga berbasis data.",
+      "Menerapkan fungsi manajemen modern dalam otomatisasi alur kerja organisasi.",
+      "Mengintegrasikan prinsip tata kelola sistem informasi dengan operasional bisnis dan komunitas."
     ]
   },
   "experience": [
@@ -71,13 +71,13 @@
       "period": "2026 – Sekarang",
       "type": "organization",
       "responsibilities": [
-        "Merancang arah strategis organisasi.",
-        "Membangun ekosistem kolaborasi lintas sektor.",
-        "Menginisiasi program berorientasi dampak sosial.",
-        "Menguatkan komunikasi dan keterlibatan anggota secara berkelanjutan."
+        "Memimpin kepengurusan regional dengan mengelola 12+ program kerja dan mengoordinasikan 150+ anggota alumni.",
+        "Merancang strategi digitalisasi komunikasi alumni untuk meningkatkan partisipasi program sebesar 40%.",
+        "Membangun kemitraan strategis dengan 5+ lembaga lokal untuk inisiatif pemberdayaan alumni."
       ],
       "metrics": [
-        { "value": "100%", "label": "Strategic Alignment" }
+        { "value": "150+", "label": "Anggota Alumni" },
+        { "value": "+40%", "label": "Tingkat Partisipasi" }
       ]
     },
     {
@@ -85,33 +85,33 @@
       "role": "Pengelola Operasional Usaha Ritel Keluarga",
       "organization": "Toko Ritel Keluarga",
       "location": "Family Business",
-      "period": "Aktif",
+      "period": "2023 – Sekarang",
       "type": "business",
       "responsibilities": [
-        "Mengendalikan operasional harian bisnis.",
-        "Mengoptimalkan manajemen stok dan distribusi.",
-        "Meningkatkan kualitas layanan pelanggan.",
-        "Mengidentifikasi peluang ekspansi dan efisiensi usaha."
+        "Mengelola rantai pasok dan inventarisasi 500+ SKU produk ritel harian secara sistematis.",
+        "Mengimplementasikan sistem pencatatan transaksi digital berbasis POS untuk mempercepat operasional toko.",
+        "Mengontrol arus kas harian dan menekan tingkat kerugian stok (shrinkage) di bawah 0.5%."
       ],
       "metrics": [
-        { "value": "Active", "label": "Growth Strategy" }
+        { "value": "500+", "label": "SKU Ritel" },
+        { "value": "<0.5%", "label": "Shrinkage Rate" }
       ]
     },
     {
       "id": "exp-3",
       "role": "Founder & Digital Builder — Azbhy",
-      "organization": "Azbhy",
-      "location": "Digital Lab",
+      "organization": "Azbhy Digital Lab",
+      "location": "Parepare / Remote",
       "period": "2024 – Sekarang",
       "type": "technology",
       "responsibilities": [
-        "Mengembangkan platform dan aplikasi berbasis web.",
-        "Mengimplementasikan AI untuk kebutuhan praktis.",
-        "Mendesain sistem yang scalable dan efisien.",
-        "Menciptakan solusi digital bagi mahasiswa, UMKM, dan komunitas."
+        "Merancang dan mendeploy 3+ aplikasi web produksi menggunakan React, TypeScript, Tailwind CSS, dan Firebase.",
+        "Membangun arsitektur pipeline otomatisasi n8n terintegrasi dengan Google Gemini AI API.",
+        "Menyediakan solusi digitalisasi untuk efisiensi transaksi UMKM dan pemrosesan riset akademik."
       ],
       "metrics": [
-        { "value": "3+", "label": "Live Platforms" }
+        { "value": "3+", "label": "Web Apps Live" },
+        { "value": "99.9%", "label": "Automation Uptime" }
       ]
     }
   ],
@@ -119,16 +119,15 @@
     {
       "id": "proj-1",
       "title": "DompetKu",
-      "subtitle": "Next-Generation Personal Finance Platform",
+      "subtitle": "Interactive Personal Finance Web App",
       "category": "Web Dev & FinTech",
-      "problem": "Pencatatan keuangan pribadi sering kali terasa berbelit-belit, lambat, atau kurang intuitif bagi pengguna rentang umum untuk melacak tabungan harian mereka.",
-      "solution": "Platform keuangan pribadi yang membantu pengguna menguasai kondisi finansial mereka melalui pengalaman yang sederhana, intuitif, dan powerful.",
-      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "LocalStorage API", "Chart.js"],
+      "problem": "Pencatatan keuangan pribadi manual memakan waktu hingga 3-4 jam/bulan dengan risiko kesalahan kalkulasi saldo hingga 15%.",
+      "solution": "Aplikasi web manajemen finansial intuitif dengan rekap saldo otomatis real-time, visualisasi grafik pengeluaran, dan penyimpanan cepat berbasis client-side.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "LocalStorage API", "Motion"],
       "results": [
-        "Smart Financial Tracking",
-        "Savings Monitoring",
-        "Financial Insights Visualization",
-        "Seamless User Experience"
+        "Efisiensi Waktu: Mengurangi waktu rekap transaksi sebesar 85% (dari 3 jam menjadi 15 menit/bulan)",
+        "Akurasi Finansial: Meminimalisir risiko kesalahan perhitungan saldo manual hingga 0%",
+        "Performa Tinggi: Loading time < 1 detik dengan arsitektur React client-side yang responsif"
       ],
       "githubUrl": "https://github.com/azbhy24",
       "demoUrl": "https://wa.me/6281915115390",
@@ -137,16 +136,15 @@
     {
       "id": "proj-2",
       "title": "Sistem POS UMKM",
-      "subtitle": "Business Growth Engine",
+      "subtitle": "Digital Cashier & Inventory Engine",
       "category": "Business Digitalization",
-      "problem": "Banyak pelaku usaha mikro kecil (UMKM) masih bergantung pada sistem transaksi manual yang rawan kesalahan, menyulitkan optimalisasi stok, serta menghambat pertumbuhan bisnis modern.",
-      "solution": "Solusi digital yang mempercepat transformasi UMKM dari sistem manual menuju operasional yang modern, terukur, dan kompetitif.",
-      "techStack": ["React", "Tailwind CSS", "Firebase Ecosystem", "WhatsApp Integration"],
+      "problem": "Transaksi toko ritel manual memicu antrean panjang (5-8 menit/pelanggan) dan selisih stok bulanan hingga 10%.",
+      "solution": "Sistem Point of Sale (POS) web interaktif yang mempercepat cetak struk digital, manajemen keranjang kasir, dan integrasi pesanan WhatsApp.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Firebase", "WhatsApp API"],
       "results": [
-        "Transaction Intelligence",
-        "Inventory Optimization",
-        "Digital Product Catalog",
-        "Business Efficiency Enhancement"
+        "Kecepatan Kasir: Memotong waktu cetak & bayar dari 5 menit menjadi < 30 detik per pelanggan",
+        "Akurasi Stok: Menekan selisih inventaris barang ritel hingga di bawah 1%",
+        "Efisiensi Operasional: Mengeliminasi biaya kertas kasir melalui opsi struk digital otomatis"
       ],
       "githubUrl": "https://github.com/azbhy24",
       "demoUrl": "https://wa.me/6281915115390",
@@ -155,16 +153,15 @@
     {
       "id": "proj-3",
       "title": "Azbhy Workflows",
-      "subtitle": "AI-Powered Automation Ecosystem",
+      "subtitle": "AI & Cloud Automation Ecosystem",
       "category": "Cloud & AI Automation",
-      "problem": "Pekerjaan repetitif seperti input naskah akademik, pengolahan laporan terstruktur, atau integrasi data sistem informasi membuang waktu produktif mahasiswa, pendidik, maupun pemilik UMKM.",
-      "solution": "Sistem otomatisasi cerdas yang memanfaatkan AI dan cloud integration untuk menghilangkan pekerjaan repetitif dan meningkatkan produktivitas secara eksponensial.",
-      "techStack": ["n8n Engine", "Google Gemini API", "Cloud Triggers", "JSON Utilities"],
+      "problem": "Pengolahan naskah akademik & laporan eksekutif secara manual membutuhkan 10+ jam kerja repetitif per minggu.",
+      "solution": "Sistem pemrosesan dokumen otomatis bertenaga n8n, Google Gemini Pro API, dan cloud webhook untuk ekstraksi poin penting secara instan.",
+      "techStack": ["n8n Engine", "Google Gemini API", "Cloud Webhooks", "TypeScript", "JSON Pipelines"],
       "results": [
-        "Intelligent Workflow Automation",
-        "AI Integration",
-        "Smart Document Processing",
-        "Digital Productivity Acceleration"
+        "Otomatisasi Laporan: Memotong waktu ringkasan naskah akademik dari 10 jam menjadi < 2 menit",
+        "Akurasi AI: Mengklasifikasi & merangkum naskah dengan presisi kognitif tinggi (>95%)",
+        "Skalabilitas Webhook: Mengolah hingga 50+ naskah dokumen secara simultan tanpa overhead manual"
       ],
       "githubUrl": "https://github.com/azbhy24",
       "demoUrl": "https://wa.me/6281915115390",
@@ -173,81 +170,71 @@
   ],
   "skills": [
     {
-      "category": "Manajemen",
-      "description": "Mengoperasikan arah strategis kepemimpinan visioner, pengembangan kemitraan, dan transformasi program pengurus regional.",
+      "category": "Frontend & Web Engineering",
+      "description": "Pengembangan antarmuka web modern yang cepat, terstruktur, dan responsif.",
       "skills": [
-        "Visionary Leadership",
-        "Strategic Planning",
-        "Partnership Development",
-        "Organizational Transformation",
-        "Program Innovation"
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML5 / Modern CSS",
+        "Responsive Web Design",
+        "State & Data Flow"
       ]
     },
     {
-      "category": "Bisnis",
-      "description": "Mengendalikan ritel, mengoptimalkan proses operasional, serta mendesain strategi pertumbuhan efisiensi usaha mikro.",
+      "category": "Backend & Cloud Infrastructure",
+      "description": "Pengelolaan data, integrasi API, dan autentikasi terpusat.",
       "skills": [
-        "Retail Business Operations",
-        "Business Growth Strategy",
-        "Customer Experience Management",
-        "UMKM Digital Transformation",
-        "Operational Excellence"
+        "Firebase (Firestore & Auth)",
+        "RESTful API Integration",
+        "Cloud Webhooks",
+        "Git & GitHub Workflow",
+        "System Architecture Design"
       ]
     },
     {
-      "category": "Teknologi",
-      "description": "Membangun platform website modern, merancang arsitektur sistem informasi bertenaga, cloud backend, dan tata letak UI/UX.",
+      "category": "AI & Automation Engineering",
+      "description": "Otomatisasi alur kerja dan integrasi model kecerdasan buatan.",
       "skills": [
-        "Web Development",
-        "Information Systems Design",
-        "Firebase Ecosystem",
-        "Git & GitHub",
-        "UI/UX Strategy"
-      ]
-    },
-    {
-      "category": "Artificial Intelligence",
-      "description": "Rekayasa prompt taktis, penyusunan otomatisasi workflow cerdas, sistem produktivitas, serta pemrosesan dokumen efisien.",
-      "skills": [
+        "Google Gemini Pro API",
+        "n8n Workflow Engine",
         "Prompt Engineering",
-        "AI Productivity Systems",
-        "Workflow Automation",
-        "AI Integration Strategy",
-        "Process Optimization"
+        "Automated Document Processing",
+        "JSON Data Pipelines"
       ]
     },
     {
-      "category": "Penelitian",
-      "description": "Investigasi kualitatif komprehensif, penyuntingan naskah ilmiah bermutu tinggi, interpretasi data kualitatif cerdas, dan analisis plagiasi.",
+      "category": "Operations & Business Strategy",
+      "description": "Digitalisasi operasional bisnis, manajemen stok, dan kepemimpinan tim.",
       "skills": [
-        "Qualitative Research",
-        "Academic Writing",
-        "Data Interpretation",
-        "Similarity Analysis",
-        "Educational Research"
+        "Retail Business Digitalization",
+        "Inventory & POS Management",
+        "Process Optimization",
+        "KPI & Metrics Tracking",
+        "Strategic Leadership"
       ]
     }
   ],
   "vision": {
-    "statement": "Menjadi arsitek perubahan yang menghubungkan pendidikan, bisnis, dan teknologi untuk menciptakan masa depan yang lebih cerdas, inclusif, dan berdampak.",
+    "statement": "Menjadi perekayasa sistem digital yang menghubungkan efisiensi operasional bisnis, otomatisasi kecerdasan buatan, dan tata kelola teknologi yang berdampak tinggi.",
     "milestones": [
       {
-        "year": "Akademik (S2)",
-        "target": "Master of Educational Management",
-        "description": "Melanjutkan studi S2 Manajemen Pendidikan Islam di UIN Alauddin Makassar (Target Beasiswa LPDP) atau opsi S2 Pendidikan Agama Islam di IAIN Parepare guna menguasai perspektif pendidikan multidimensi secara holistik."
+        "year": "Target Karir",
+        "target": "Full-Stack & Automation Engineer / IT Specialist",
+        "description": "Menjadi bagian dari tim teknologi profesional untuk merancang aplikasi web scalable, otomatisasi alur kerja, dan arsitektur sistem informasi terintegrasi."
       },
       {
-        "year": "Sektoral & Birokrasi",
-        "target": "Sistem Informasi & Penjaminan Mutu",
-        "description": "Mengabdi sebagai Operator Sekolah serta menjejaki karir strategis di Kementerian Agama (Kemenag) dalam ranah Pengawas atau tim Peningkatan Mutu Pendidikan berbasis penataan data digital."
+        "year": "Studi Lanjut",
+        "target": "Master Degree in Information Systems / Management",
+        "description": "Melanjutkan studi pascasarjana untuk memperdalam tata kelola teknologi informasi, penjaminan mutu data, dan kepemimpinan strategis."
       },
       {
-        "year": "Sosial & Lokalnya",
-        "target": "Pengabdian Publik & Kepemimpinan Lokal",
-        "description": "Mendedikasikan ilmu sebagai Tokoh Muda Agama, kepengurusan masjid modern, serta keterlibatan aktif dalam Pemerintahan Desa (seperti Kepala Dusun) demi tata kelola kemasyarakatan yang inklusif."
+        "year": "Inovasi Produk",
+        "target": "Pengembangan Ecosystem Azbhy",
+        "description": "Memperluas jangkauan platform digital Azbhy untuk memfasilitasi otomatisasi UMKM dan efisiensi riset akademik skala luas."
       }
     ],
-    "quote": "Masa depan tidak dibangun oleh mereka yang hanya mengikuti perubahan. Masa depan dibangun oleh mereka yang berani menciptakannya.",
+    "quote": "Kualitas sebuah solusi teknologi ditentukan oleh seberapa besar efisiensi dan nilai nyata yang dihadirkannya bagi pengguna.",
     "quoteAuthor": "Tasbih"
   },
   "socials": [

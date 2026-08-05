@@ -83,14 +83,18 @@ export default function Hero({ onNavigate }: HeroProps) {
             {bio.fullName}<span className="text-indigo-400">.</span>
           </motion.h1>
 
-          {/* Leader • Entrepreneur • Digital Builder Roles with custom separator */}
+          {/* Full-Stack Developer • AI & Automation Specialist • Digital Operations Lead Roles */}
           <motion.div
             variants={itemVariants}
             id="hero-subheadlines"
-            className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 text-zinc-400 font-sans text-lg sm:text-2xl font-light tracking-wide"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 mt-6 text-zinc-300 font-sans text-base sm:text-xl font-medium tracking-wide"
           >
-            <p className="leading-tight">
-              Leader • Entrepreneur • <span className="text-indigo-400 font-semibold">Digital Builder</span>
+            <p className="leading-snug">
+              <span className="text-white font-semibold">Full-Stack Web Developer</span>
+              <span className="text-indigo-400 font-bold mx-2">•</span>
+              <span className="text-indigo-300 font-semibold">AI & Automation Specialist</span>
+              <span className="text-indigo-400 font-bold mx-2">•</span>
+              <span className="text-zinc-400 font-normal">Digital Operations Lead</span>
             </p>
           </motion.div>
 

@@ -16,14 +16,14 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-24 border-t border-slate-200 bg-white">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
             STRUKTUR KOMPETENSI
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Kombinasi Keahlian & Spesialisasi Kerja
           </h2>
-          <p className="mt-4 text-base text-slate-700 font-normal">
+          <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
             Tanpa persentase penguasaan semu. Matriks kompetensi berikut dirinci berdasarkan kepasihan operasional lapangan dan pembuktian karya nyata.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />

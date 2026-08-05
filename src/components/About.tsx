@@ -48,37 +48,37 @@ export default function About() {
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-indigo-50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
             PROFIL PROFESIONAL & AKADEMIK
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Menyatukan Manajemen Pendidikan, Operasional Bisnis, dan Teknologi
           </h2>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
           {/* Left Side: Editorial Bio Statement & Personal Cards */}
           <div className="lg:col-span-6 flex flex-col gap-6 text-left">
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
+            <div className="p-5 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
               <h3 className="text-[11px] font-mono font-bold text-indigo-700 tracking-wider uppercase">01 // VISI MENDASAR</h3>
-              <blockquote className="mt-4 text-xl sm:text-2xl text-slate-900 font-serif leading-relaxed italic border-l-4 border-indigo-600 pl-4 font-semibold">
+              <blockquote className="mt-3 text-lg sm:text-xl md:text-2xl text-slate-900 font-serif leading-relaxed italic border-l-4 border-indigo-600 pl-3.5 font-semibold">
                 "{bio.tagline}"
               </blockquote>
-              <p className="mt-5 text-slate-700 text-base leading-relaxed font-normal">
+              <p className="mt-4 text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
                 {bio.extendedBio}
               </p>
             </div>
 
             {/* Dual Collage */}
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
               <h3 className="text-[11px] font-mono font-bold text-indigo-700 tracking-wider uppercase">02 // REKAM JEJAK BERGANDA</h3>
-              <p className="text-sm text-slate-600 mt-1 mb-6">Inisiatif akademis di kampus dan kepemimpinan operasional nyata di lapangan.</p>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1 mb-4 sm:mb-6">Inisiatif akademis di kampus dan kepemimpinan operasional nyata di lapangan.</p>
               
-              <div className="grid grid-cols-2 gap-4 items-stretch">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
                 {/* Photo 1: Almet Mahasiswa */}
-                <div className="relative rounded-xl overflow-hidden border border-emerald-300 bg-slate-900 flex flex-col justify-end h-64 sm:h-72 shadow-md group">
+                <div className="relative rounded-xl overflow-hidden border border-emerald-300 bg-slate-900 flex flex-col justify-end h-60 sm:h-72 shadow-md group">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent z-10 opacity-90" />
                   <img
                     src={almetImage}
@@ -90,7 +90,7 @@ export default function About() {
                     <span className="inline-flex px-2 py-0.5 rounded bg-emerald-800 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
                       Sisi Akademis
                     </span>
-                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
+                    <p className="text-xs sm:text-sm text-white font-extrabold mt-1 leading-tight">
                       Pilar Akademik & Leadership
                     </p>
                     <p className="text-[11px] text-slate-200 mt-1 font-sans leading-snug">
@@ -100,7 +100,7 @@ export default function About() {
                 </div>
 
                 {/* Photo 2: Jas Formal */}
-                <div className="relative rounded-xl overflow-hidden border border-indigo-300 bg-slate-900 flex flex-col justify-end h-64 sm:h-72 shadow-md group">
+                <div className="relative rounded-xl overflow-hidden border border-indigo-300 bg-slate-900 flex flex-col justify-end h-60 sm:h-72 shadow-md group">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent z-10 opacity-90" />
                   <img
                     src={jasImage}
@@ -112,7 +112,7 @@ export default function About() {
                     <span className="inline-flex px-2 py-0.5 rounded bg-indigo-800 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
                       Sisi Professional
                     </span>
-                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
+                    <p className="text-xs sm:text-sm text-white font-extrabold mt-1 leading-tight">
                       Digital Builder & Ritel
                     </p>
                     <p className="text-[11px] text-slate-200 mt-1 font-sans leading-snug">
@@ -124,13 +124,13 @@ export default function About() {
             </div>
 
             {/* Micro Stats or Mission Points */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
                 <Award className="w-5 h-5 text-indigo-600 mb-2" />
                 <h4 className="text-slate-900 text-xs font-bold font-mono tracking-wider uppercase">Lead Locally</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">Kepemimpinan efektif pengurus organisasi alumni sekolah.</p>
               </div>
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
                 <Settings className="w-5 h-5 text-indigo-600 mb-2" />
                 <h4 className="text-slate-900 text-xs font-bold font-mono tracking-wider uppercase">Build Modern</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">Pengembangan sistem web dan otomatisasi alur kerja digital.</p>

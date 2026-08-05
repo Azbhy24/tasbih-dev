@@ -43,7 +43,7 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
   }, [isInView, numericValue, isNumeric]);
 
   return (
-    <span ref={ref} className="font-sans font-extrabold text-inherit text-5xl sm:text-6xl tracking-tight block">
+    <span ref={ref} className="font-sans font-extrabold text-inherit text-4xl sm:text-5xl lg:text-6xl tracking-tight block">
       {prefix}{count}{suffix}
     </span>
   );
@@ -62,14 +62,14 @@ export default function Impact() {
   return (
     <section id="impact" className="relative py-24 border-t border-slate-200 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
             METRIK DAMPAK & HASIL
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Pencapaian Riil dalam Data dan Angka
           </h2>
-          <p className="mt-4 text-base text-slate-700 font-normal">
+          <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
             Aktivitas organisasi, implementasi produk digital, digitalisasi ritel, serta bimbingan naskah akademis dihitung berdasarkan data kerja nyata.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />

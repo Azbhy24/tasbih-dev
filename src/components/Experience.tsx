@@ -34,21 +34,21 @@ export default function Experience() {
   return (
     <section id="experience" className="relative py-24 border-t border-slate-200 bg-white">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
             RIWAYAT KARIR & PENGALAMAN
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Timeline Pengalaman & Kepemimpinan
           </h2>
-          <p className="mt-4 text-base text-slate-700 font-normal">
+          <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
             Jejak keteladanan dalam memanajeri alumni regional, mengasistensi operasional ritel, serta membangun solusi mandiri berbasis web.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Tab Controls */}
-        <div className="flex flex-wrap justify-center gap-2 mb-16">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-12 sm:mb-16">
           {types.map((type) => {
             const Icon = type.icon;
             const isSelected = selectedType === type.id;
@@ -57,7 +57,7 @@ export default function Experience() {
                 key={type.id}
                 id={`exp-tab-${type.id}`}
                 onClick={() => setSelectedType(type.id as any)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-200 border cursor-pointer active:scale-95 ${
+                className={`flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase transition-all duration-200 border cursor-pointer active:scale-95 ${
                   isSelected 
                     ? "bg-indigo-600 text-white border-transparent shadow-sm" 
                     : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"

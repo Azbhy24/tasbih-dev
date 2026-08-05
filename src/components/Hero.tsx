@@ -64,9 +64,9 @@ export default function Hero({ onNavigate }: HeroProps) {
           className="lg:col-span-8 flex flex-col justify-center text-left"
         >
           {/* Tagline Badge with vibrant multi-gradient border */}
-          <motion.div variants={itemVariants} className="inline-flex">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/90 backdrop-blur-md border border-indigo-200/80 rounded-full text-xs font-black tracking-wider uppercase text-indigo-900 shadow-sm">
-              <span className="relative flex h-2.5 w-2.5">
+          <motion.div variants={itemVariants} className="inline-flex max-w-full">
+            <span className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 bg-white/90 backdrop-blur-md border border-indigo-200/80 rounded-2xl sm:rounded-full text-[11px] sm:text-xs font-black tracking-wider uppercase text-indigo-900 shadow-sm">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
@@ -81,7 +81,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.h1
             variants={itemVariants}
             id="hero-main-title"
-            className="mt-6 text-6xl sm:text-7xl md:text-8xl font-black tracking-tight text-slate-900 leading-[0.95] uppercase"
+            className="mt-4 sm:mt-6 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-[1.02] sm:leading-[0.95] uppercase break-words"
           >
             {bio.fullName}<span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">.</span>
           </motion.h1>
@@ -90,22 +90,22 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.div
             variants={itemVariants}
             id="hero-subheadlines"
-            className="flex flex-wrap items-center gap-2.5 mt-6 text-slate-800 font-sans text-xs sm:text-sm font-bold tracking-wide"
+            className="flex flex-wrap items-center gap-2 mt-4 sm:mt-6 text-slate-800 font-sans text-[11px] sm:text-xs md:text-sm font-bold tracking-wide"
           >
-            <span className="px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-200/90 text-indigo-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-indigo-600" />
+            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-200/90 text-indigo-800 shadow-2xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />
               Full-Stack Web Developer
             </span>
-            <span className="px-3 py-1.5 rounded-xl bg-purple-50 border border-purple-200/90 text-purple-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-purple-600" />
+            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-purple-50 border border-purple-200/90 text-purple-800 shadow-2xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0" />
               AI & Automation Specialist
             </span>
-            <span className="px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200/90 text-emerald-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-600" />
+            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200/90 text-emerald-800 shadow-2xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
               Digital Operations Lead
             </span>
-            <span className="px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200/90 text-amber-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-amber-600" />
+            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200/90 text-amber-800 shadow-2xs flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
               Manajemen Pendidikan Islam
             </span>
           </motion.div>
@@ -114,7 +114,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.p
             variants={itemVariants}
             id="hero-bio-para"
-            className="mt-6 text-base sm:text-lg text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
+            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
           >
             {bio.professionalBio}
           </motion.p>
@@ -123,12 +123,12 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.div
             variants={itemVariants}
             id="hero-actions"
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
           >
             <button
               id="hero-action-portfolio"
               onClick={() => onNavigate("projects")}
-              className="px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg hover:shadow-indigo-500/30 active:scale-95 transition-all duration-300 cursor-pointer rounded-full border-none flex items-center gap-2 group"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg hover:shadow-indigo-500/30 active:scale-95 transition-all duration-300 cursor-pointer rounded-full border-none flex items-center justify-center gap-2 group"
             >
               <span>LIHAT PORTOFOLIO</span>
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
@@ -137,7 +137,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             <button
               id="hero-action-contact"
               onClick={() => onNavigate("contact")}
-              className="px-8 py-4 border-2 border-indigo-200 bg-white hover:bg-indigo-50/50 text-slate-800 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 cursor-pointer rounded-full flex items-center gap-2"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-indigo-200 bg-white hover:bg-indigo-50/50 text-slate-800 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 cursor-pointer rounded-full flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4 text-indigo-600" />
               <span>HUBUNGI SAYA</span>

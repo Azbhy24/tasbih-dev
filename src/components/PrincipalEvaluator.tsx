@@ -314,7 +314,7 @@ export default function PrincipalEvaluation() {
             <School className="w-4 h-4 text-indigo-600" />
             <span>AUDIT & EVALUASI DARI 10 KEPALA SEKOLAH</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Penilaian Institusional & Kritik Membangun
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-700 font-normal">

@@ -43,11 +43,26 @@ export default function App() {
   }, []);
 
   const handleNavigate = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId);
-    }
+    setActiveSection(sectionId);
+    
+    // Smooth scroll calculation with offset for header height
+    const scrollTarget = () => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const header = document.getElementById("navbar-header");
+        const headerHeight = header ? header.offsetHeight : 70;
+        const targetPosition = el.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+
+        window.scrollTo({
+          top: Math.max(0, targetPosition),
+          behavior: "smooth"
+        });
+      }
+    };
+
+    // Execute immediately and once after a micro-delay for smooth layout adjustment
+    scrollTarget();
+    setTimeout(scrollTarget, 100);
   };
 
   return (

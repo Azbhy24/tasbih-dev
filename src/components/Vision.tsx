@@ -12,7 +12,7 @@ export default function Vision() {
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
             VISI & MISI JANGKA PANJANG
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
             Menatap Masa Depan Transformasi Digital
           </h2>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />

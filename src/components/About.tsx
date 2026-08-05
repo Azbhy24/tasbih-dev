@@ -43,83 +43,80 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 border-t border-indigo-950/40 bg-[#030306]">
-      {/* Background Ambient Vector Lines/Circles */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-500/2 rounded-full blur-3xl pointer-events-none" />
+    <section id="about" className="relative py-24 border-t border-slate-200 bg-white">
+      {/* Background Ambient graphics */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-indigo-50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[10px] font-bold tracking-widest text-indigo-300 uppercase bg-zinc-950 px-3.5 py-1.5 rounded-full border border-indigo-500/20">
-            PROFIL PROFESIONAL
+          <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
+            PROFIL PROFESIONAL & AKADEMIK
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Menyatukan Manajemen, Bisnis dan Kreativitas Digital
+          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Menyatukan Manajemen Pendidikan, Operasional Bisnis, dan Teknologi
           </h2>
-          <div className="w-12 h-[1px] bg-indigo-500/20 mx-auto mt-6" />
+          <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Side: Editorial Bio Statement & Personal Cards */}
           <div className="lg:col-span-6 flex flex-col gap-6 text-left">
-            <div className="p-8 rounded-xl glass-panel border-indigo-500/10 relative overflow-hidden group transition-colors hover:border-indigo-500/20 duration-300">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/5 to-transparent blur-md pointer-events-none" />
-              
-              <h3 className="text-[10px] font-mono font-bold text-indigo-400 tracking-widest uppercase">01 // ESSENCE</h3>
-              <blockquote className="mt-6 text-xl sm:text-2xl text-zinc-300 font-serif leading-relaxed italic border-l border-indigo-500/20 pl-4">
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
+              <h3 className="text-[11px] font-mono font-bold text-indigo-700 tracking-wider uppercase">01 // VISI MENDASAR</h3>
+              <blockquote className="mt-4 text-xl sm:text-2xl text-slate-900 font-serif leading-relaxed italic border-l-4 border-indigo-600 pl-4 font-semibold">
                 "{bio.tagline}"
               </blockquote>
-              <p className="mt-6 text-zinc-400 text-sm leading-relaxed">
+              <p className="mt-5 text-slate-700 text-base leading-relaxed font-normal">
                 {bio.extendedBio}
               </p>
             </div>
 
-            {/* Dual Cinematic Collage: Dua Sisi Perjalanan Tasbih */}
-            <div className="p-6 rounded-xl glass-panel border-indigo-500/10 relative overflow-hidden group/collage transition-all duration-300 hover:border-indigo-500/20 bg-zinc-950/20">
-              <h3 className="text-[10px] font-mono font-bold text-indigo-400 tracking-widest uppercase">02 // DUA PERAN UTAMA</h3>
-              <p className="text-xs text-zinc-400 mt-2 mb-6">Membelah diri secara dinamis antara tanggung jawab akademis dan inisiatif penggerak bisnis.</p>
+            {/* Dual Collage */}
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
+              <h3 className="text-[11px] font-mono font-bold text-indigo-700 tracking-wider uppercase">02 // REKAM JEJAK BERGANDA</h3>
+              <p className="text-sm text-slate-600 mt-1 mb-6">Inisiatif akademis di kampus dan kepemimpinan operasional nyata di lapangan.</p>
               
               <div className="grid grid-cols-2 gap-4 items-stretch">
                 {/* Photo 1: Almet Mahasiswa */}
-                <div className="relative rounded-lg overflow-hidden border border-emerald-500/20 bg-zinc-900 flex flex-col justify-end h-64 sm:h-72 shadow-lg hover:border-emerald-500/40 transition-all duration-300 group/item">
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80" />
+                <div className="relative rounded-xl overflow-hidden border border-emerald-300 bg-slate-900 flex flex-col justify-end h-64 sm:h-72 shadow-md group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent z-10 opacity-90" />
                   <img
                     src={almetImage}
                     alt="Tasbih Almet Mahasiswa"
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover/item:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="relative z-20 p-3 mt-auto">
-                    <span className="inline-flex px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 font-mono text-[8px] font-bold uppercase tracking-wider border border-emerald-500/30">
-                      Sisi Mahasiswa
+                  <div className="relative z-20 p-3.5 mt-auto">
+                    <span className="inline-flex px-2 py-0.5 rounded bg-emerald-800 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+                      Sisi Akademis
                     </span>
-                    <p className="text-xs text-white font-bold mt-1 leading-tight drop-shadow-md">
-                      Pilar Akademik & Aktivisme
+                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
+                      Pilar Akademik & Leadership
                     </p>
-                    <p className="text-[10px] text-zinc-350 mt-1.5 font-mono leading-relaxed">
-                      Menempuh MPI IAIN Parepare & memimpin pengurus alumni regional.
+                    <p className="text-[11px] text-slate-200 mt-1 font-sans leading-snug">
+                      S1 MPI IAIN Parepare & Ketua Alumni Regional.
                     </p>
                   </div>
                 </div>
 
                 {/* Photo 2: Jas Formal */}
-                <div className="relative rounded-lg overflow-hidden border border-red-500/20 bg-zinc-900 flex flex-col justify-end h-64 sm:h-72 shadow-lg hover:border-red-500/40 transition-all duration-300 group/item2">
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80" />
+                <div className="relative rounded-xl overflow-hidden border border-indigo-300 bg-slate-900 flex flex-col justify-end h-64 sm:h-72 shadow-md group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent z-10 opacity-90" />
                   <img
                     src={jasImage}
                     alt="Tasbih Jas Formal"
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover/item2:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="relative z-20 p-3 mt-auto">
-                    <span className="inline-flex px-1.5 py-0.5 rounded bg-red-950/80 text-rose-300 font-mono text-[8px] font-bold uppercase tracking-wider border border-red-500/30">
-                      Sisi Profesional
+                  <div className="relative z-20 p-3.5 mt-auto">
+                    <span className="inline-flex px-2 py-0.5 rounded bg-indigo-800 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+                      Sisi Professional
                     </span>
-                    <p className="text-xs text-white font-bold mt-1 leading-tight drop-shadow-md">
-                      Pakar Ritel & Digital Builder
+                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
+                      Digital Builder & Ritel
                     </p>
-                    <p className="text-[10px] text-zinc-350 mt-1.5 font-mono leading-relaxed">
-                      Mengoperasikan bisnis ritel keluarga & merintis otomatisasi Azbhy.
+                    <p className="text-[11px] text-slate-200 mt-1 font-sans leading-snug">
+                      Admin Warung Amma' Ika & Pengembang Web.
                     </p>
                   </div>
                 </div>
@@ -128,15 +125,15 @@ export default function About() {
 
             {/* Micro Stats or Mission Points */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 rounded-xl bg-zinc-950/40 border border-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 text-left group">
-                < Award className="w-5 h-5 text-indigo-400 mb-3 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white text-xs font-bold font-mono tracking-widest uppercase">Lead locally</h4>
-                <p className="text-[11px] text-zinc-400 mt-1 leading-snug">Menghubungkan alumni regional dengan instansi terintegrasi.</p>
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
+                <Award className="w-5 h-5 text-indigo-600 mb-2" />
+                <h4 className="text-slate-900 text-xs font-bold font-mono tracking-wider uppercase">Lead Locally</h4>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Kepemimpinan efektif pengurus organisasi alumni sekolah.</p>
               </div>
-              <div className="p-6 rounded-xl bg-zinc-950/40 border border-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 text-left group">
-                < Settings className="w-5 h-5 text-indigo-400 mb-3 group-hover:rotate-45 transition-transform" />
-                <h4 className="text-white text-xs font-bold font-mono tracking-widest uppercase">Build globally</h4>
-                <p className="text-[11px] text-zinc-400 mt-1 leading-snug">Menguji integrasi API canggih untuk produktivitas tak terbatas.</p>
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
+                <Settings className="w-5 h-5 text-indigo-600 mb-2" />
+                <h4 className="text-slate-900 text-xs font-bold font-mono tracking-wider uppercase">Build Modern</h4>
+                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Pengembangan sistem web dan otomatisasi alur kerja digital.</p>
               </div>
             </div>
           </div>
@@ -144,41 +141,39 @@ export default function About() {
           {/* Right Side: Education Block & The POAC Framework Diagram */}
           <div className="lg:col-span-6 flex flex-col gap-8 text-left">
             {/* Academic Institution Card */}
-            <div className="p-8 rounded-xl glass-panel border-indigo-500/10 relative overflow-hidden transition-all duration-300 hover:border-indigo-500/20">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-indigo-500/5 to-transparent blur-lg pointer-events-none" />
-              
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 relative overflow-hidden shadow-sm">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded bg-[#030306] border border-indigo-500/30 flex items-center justify-center text-indigo-405">
-                  <GraduationCap className="w-5 h-5 text-indigo-400" />
+                <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-sm">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] font-mono font-bold text-indigo-400 uppercase tracking-widest">EDUCATIONAL BACKGROUND</span>
-                  <h4 className="text-white font-bold text-base leading-tight mt-0.5">{education.institution}</h4>
+                  <span className="block text-[10px] font-mono font-bold text-indigo-700 uppercase tracking-wider">LATAR BELAKANG PENDIDIKAN</span>
+                  <h4 className="text-slate-900 font-extrabold text-base leading-tight mt-0.5">{education.institution}</h4>
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-zinc-300 border-t border-indigo-950/40 pt-4">
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-slate-800 border-t border-slate-200 pt-4">
                 <div>
-                  <span className="text-indigo-400 font-bold uppercase tracking-wider">DEGREE:</span> {education.degree}
+                  <span className="text-indigo-700 font-bold uppercase tracking-wider">PROGRAM STUDI:</span> {education.degree}
                 </div>
                 <div>
-                  <span className="text-indigo-400 font-bold uppercase tracking-wider">PERIOD:</span> {education.period}
+                  <span className="text-indigo-700 font-bold uppercase tracking-wider">PERIODE:</span> {education.period}
                 </div>
               </div>
 
               {/* Focus of studies */}
-              <div className="mt-4 p-4 rounded bg-indigo-950/10 border border-indigo-500/25">
-                <span className="block text-[9px] font-mono text-indigo-300 uppercase tracking-widest leading-none">PRIMARY RESEARCH FOCUS</span>
-                <p className="text-xs text-zinc-350 font-medium mt-1.5 leading-relaxed">
+              <div className="mt-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <span className="block text-[10px] font-mono text-indigo-800 font-bold uppercase tracking-wider">FOKUS UTAMA STUDI</span>
+                <p className="text-xs text-slate-700 font-medium mt-1.5 leading-relaxed">
                   {education.focus}
                 </p>
               </div>
 
-              <ul className="mt-6 space-y-2.5 text-xs text-zinc-400 font-sans">
+              <ul className="mt-5 space-y-2.5 text-xs text-slate-700 font-sans">
                 {education.details.map((detail, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5 animate-pulse" />
-                    <span>{detail}</span>
+                  <li key={index} className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+                    <span className="font-medium">{detail}</span>
                   </li>
                 ))}
               </ul>
@@ -187,25 +182,25 @@ export default function About() {
             {/* POAC Management Framework Visual Element */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <LayoutGrid className="w-4 h-4 text-indigo-400" />
-                <h4 className="text-indigo-400 text-[10px] font-bold font-mono tracking-widest uppercase">
-                  Metodologi Integrasi Organisasi & Sistem (POAC)
+                <LayoutGrid className="w-4 h-4 text-indigo-600" />
+                <h4 className="text-indigo-800 text-xs font-bold font-mono tracking-wider uppercase">
+                  Prinsip Manajemen Pendidikan & Sistem (POAC)
                 </h4>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {poacModel.map((step) => (
                   <div
                     key={step.phase}
-                    className={`p-4 rounded-xl border ${step.cardColor} flex gap-3.5 transition-all hover:scale-[1.02] duration-300`}
+                    className="p-4 rounded-xl bg-white border border-slate-200 flex gap-3.5 shadow-sm hover:border-indigo-300 transition-all"
                   >
-                    <div className={`w-9 h-9 rounded border flex items-center justify-center font-bold text-lg font-mono shrink-0 ${step.badgeColor}`}>
+                    <div className="w-9 h-9 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center font-bold text-lg font-mono text-indigo-700 shrink-0">
                       {step.phase}
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-white text-[13px] font-bold leading-tight">{step.title}</span>
-                      <span className="text-[9px] text-zinc-400 uppercase font-mono mt-0.5">{step.subtitle}</span>
-                      <p className="text-[11px] text-zinc-350 mt-2 leading-normal">{step.desc}</p>
+                      <span className="text-slate-900 text-sm font-extrabold leading-tight">{step.title}</span>
+                      <span className="text-[10px] text-slate-500 font-bold font-mono mt-0.5 uppercase">{step.subtitle}</span>
+                      <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}

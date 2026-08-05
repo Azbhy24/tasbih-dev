@@ -6,11 +6,11 @@
     "subheadline": [
       "Full-Stack Web Developer",
       "AI & Workflow Automation Specialist",
-      "Digital Operations Lead"
+      "Digital Operations & Administration Lead"
     ],
-    "tagline": "Membangun Aplikasi Web Scalable, Otomatisasi AI, & Digitalisasi Operasional Bisnis.",
-    "professionalBio": "Pengembang Perangkat Lunak & Spesialis Otomatisasi Digital berbasis di Indonesia. Berfokus pada perancangan aplikasi web modern (React, TypeScript, Firebase), integrasi pipeline AI (Google Gemini API, n8n), serta digitalisasi operasional bisnis dengan dampak efisiensi yang terukur.",
-    "extendedBio": "Dengan latar belakang ganda di bidang Manajemen Sistem & Operasional Bisnis, Tasbih (Azbhy) merancang solusi teknologi pragmatis yang memecahkan hambatan operasional nyata.\n\nMelalui platform Azbhy, ia merancang sistem otomatisasi cerdas, integrasi webhook cloud, dan aplikasi web performa tinggi untuk mengeliminasi pekerjaan repetitif, mempercepat alur transaksi UMKM, serta meningkatkan produktivitas riset dan organisasi."
+    "tagline": "Membangun Aplikasi Web Scalable, Otomatisasi AI, & Digitalisasi Administrasi Bisnis.",
+    "professionalBio": "Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Digital Operations Builder. Memiliki rekam jejak teruji dalam administrasi organisasi, pencatatan keuangan bisnis ritel, enumerasi data survei lapangan (PT ESC Indonesia), serta pengembangan aplikasi web & otomatisasi alur kerja digital.",
+    "extendedBio": "Berbekal latar belakang S1 Manajemen Pendidikan Islam dari IAIN Parepare, Tasbih menggabungkan disiplin tata kelola administrasi, pengolahan data terstruktur, dan teknologi web modern.\n\nMelalui platform Azbhy Digital Lab, ia merancang sistem POS kasir, aplikasi keuangan DompetKu, serta pipeline otomatisasi n8n & Google Gemini AI untuk mengeliminasi pekerjaan repetitif dan mempercepat efisiensi operasional organisasi maupun UMKM."
   },
   "stats": [
     {
@@ -52,66 +52,83 @@
   ],
   "education": {
     "institution": "IAIN Parepare",
-    "location": "Parepare, Indonesia",
+    "location": "Parepare, Sulawesi Selatan",
     "degree": "S1 Manajemen Pendidikan Islam",
-    "period": "Lulusan S1 (Final Stage)",
-    "focus": "Educational Management Systems, Strategic Digitalization",
+    "period": "2022 – 2026",
+    "focus": "Educational Management Systems, Digital Administration, Data Governance",
     "details": [
-      "Meneliti efektivitas kemitraan strategis dan penjaminan mutu lembaga berbasis data.",
-      "Menerapkan fungsi manajemen modern dalam otomatisasi alur kerja organisasi.",
-      "Mengintegrasikan prinsip tata kelola sistem informasi dengan operasional bisnis dan komunitas."
+      "Lulusan S1 Manajemen Pendidikan Islam dengan keahlian administrasi organisasi, tata kelola data, dan pelaporan keuangan.",
+      "Sekretariat Jurnal EDIUM (Education Management), Program Studi MPI (2024).",
+      "Presenter International Conference — ACIEM (Annual Conference on Islamic Education Management) (2026)."
     ]
   },
   "experience": [
     {
       "id": "exp-1",
-      "role": "Ketua IKA Regional",
-      "organization": "Ikatan Alumni (IKA) Regional",
-      "location": "Regional Level",
+      "role": "Pengelola Administrasi & Keuangan Usaha",
+      "organization": "Warung Sembako Amma' Ika (Usaha Keluarga)",
+      "location": "Lero, Suppa, Kab. Pinrang",
       "period": "2026 – Sekarang",
-      "type": "organization",
+      "type": "business",
       "responsibilities": [
-        "Memimpin kepengurusan regional dengan mengelola 12+ program kerja dan mengoordinasikan 150+ anggota alumni.",
-        "Merancang strategi digitalisasi komunikasi alumni untuk meningkatkan partisipasi program sebesar 40%.",
-        "Membangun kemitraan strategis dengan 5+ lembaga lokal untuk inisiatif pemberdayaan alumni."
+        "Mengelola pencatatan stok barang, transaksi kasir, serta pembukuan hutang-piutang pelanggan secara tertib dan terstruktur.",
+        "Menyusun sistem pencatatan digital sederhana untuk mempermudah rekap data harian dan pelaporan keuangan usaha keluarga.",
+        "Mengontrol arus kas harian dan menjaga akurasi laporan keuangan operasional toko ritel."
       ],
       "metrics": [
-        { "value": "150+", "label": "Anggota Alumni" },
-        { "value": "+40%", "label": "Tingkat Partisipasi" }
+        { "value": "500+", "label": "SKU Ritel Dikelola" },
+        { "value": "100%", "label": "Akurasi Pembukuan" }
       ]
     },
     {
       "id": "exp-2",
-      "role": "Pengelola Operasional Usaha Ritel Keluarga",
-      "organization": "Toko Ritel Keluarga",
-      "location": "Family Business",
-      "period": "2023 – Sekarang",
+      "role": "Enumerator Lapangan",
+      "organization": "PT ESC Indonesia",
+      "location": "Sidenreng Rappang (Sidrap)",
+      "period": "2025 – 2025",
       "type": "business",
       "responsibilities": [
-        "Mengelola rantai pasok dan inventarisasi 500+ SKU produk ritel harian secara sistematis.",
-        "Mengimplementasikan sistem pencatatan transaksi digital berbasis POS untuk mempercepat operasional toko.",
-        "Mengontrol arus kas harian dan menekan tingkat kerugian stok (shrinkage) di bawah 0.5%."
+        "Mengumpulkan dan memverifikasi data sosial-ekonomi masyarakat melalui wawancara terstruktur menggunakan kuesioner.",
+        "Menyusun dan menyerahkan laporan hasil survei secara harian dengan tingkat akurasi dan ketepatan waktu yang terjaga.",
+        "Melakukan validasi entri data kuesioner untuk memastikan standar integritas riset lapangan."
       ],
       "metrics": [
-        { "value": "500+", "label": "SKU Ritel" },
-        { "value": "<0.5%", "label": "Shrinkage Rate" }
+        { "value": "100%", "label": "Ketepatan Waktu Laporan" },
+        { "value": "High", "label": "Akurasi Verifikasi Data" }
       ]
     },
     {
       "id": "exp-3",
-      "role": "Founder & Digital Builder — Azbhy",
-      "organization": "Azbhy Digital Lab",
+      "role": "Ketua Ikatan Alumni (IKA)",
+      "organization": "IKA MA Biharul Ulum Ma'arif",
+      "location": "Sulawesi Selatan",
+      "period": "2026 – Sekarang",
+      "type": "organization",
+      "responsibilities": [
+        "Memimpin tata kelola organisasi alumni, memfasilitasi komunikasi terstruktur, dan mengoordinasikan program alumni.",
+        "Mengelola pendokumentasian arsip alumni dan menyusun laporan pertanggungjawaban kegiatan.",
+        "Membangun jaringan kemitraan dan koordinasi antar pengurus regional."
+      ],
+      "metrics": [
+        { "value": "150+", "label": "Alumni Terkoordinasi" },
+        { "value": "2026", "label": "Mulai Menjabat" }
+      ]
+    },
+    {
+      "id": "exp-4",
+      "role": "Sekretariat Jurnal EDIUM & Builder",
+      "organization": "Jurnal EDIUM (MPI) & Azbhy Lab",
       "location": "Parepare / Remote",
       "period": "2024 – Sekarang",
       "type": "technology",
       "responsibilities": [
-        "Merancang dan mendeploy 3+ aplikasi web produksi menggunakan React, TypeScript, Tailwind CSS, dan Firebase.",
-        "Membangun arsitektur pipeline otomatisasi n8n terintegrasi dengan Google Gemini AI API.",
-        "Menyediakan solusi digitalisasi untuk efisiensi transaksi UMKM dan pemrosesan riset akademik."
+        "Mengelola administrasi penerbitan naskah ilmiah, verifikasi berkas, dan komunikasi editorial Jurnal EDIUM (2024).",
+        "Merancang dan mendeploy 3+ aplikasi web produksi (DompetKu, POS Kasir, Azbhy Workflows) menggunakan React, TypeScript, dan Firebase.",
+        "Membangun arsitektur pipeline otomatisasi n8n terintegrasi dengan Google Gemini AI API untuk pemrosesan dokumen."
       ],
       "metrics": [
-        { "value": "3+", "label": "Web Apps Live" },
-        { "value": "99.9%", "label": "Automation Uptime" }
+        { "value": "3+", "label": "Aplikasi Web Live" },
+        { "value": "2026", "label": "Presenter ACIEM" }
       ]
     }
   ],
@@ -170,6 +187,18 @@
   ],
   "skills": [
     {
+      "category": "Digital Administrasi & Productivity",
+      "description": "Pengelolaan sistem administrasi, verifikasi data, dan pelaporan terstruktur.",
+      "skills": [
+        "Digitalisasi Sistem Administrasi",
+        "Google Workspace (Docs, Sheets, Drive)",
+        "Microsoft Office (Word, Excel)",
+        "Penyusunan Laporan & Dokumentasi",
+        "Enumerasi & Verifikasi Data Lapangan",
+        "Pencatatan Keuangan & Pembukuan"
+      ]
+    },
+    {
       "category": "Frontend & Web Engineering",
       "description": "Pengembangan antarmuka web modern yang cepat, terstruktur, dan responsif.",
       "skills": [
@@ -201,17 +230,6 @@
         "Prompt Engineering",
         "Automated Document Processing",
         "JSON Data Pipelines"
-      ]
-    },
-    {
-      "category": "Operations & Business Strategy",
-      "description": "Digitalisasi operasional bisnis, manajemen stok, dan kepemimpinan tim.",
-      "skills": [
-        "Retail Business Digitalization",
-        "Inventory & POS Management",
-        "Process Optimization",
-        "KPI & Metrics Tracking",
-        "Strategic Leadership"
       ]
     }
   ],
@@ -246,8 +264,8 @@
     },
     {
       "platform": "Email",
-      "url": "mailto:azbhy24@gmail.com",
-      "username": "azbhy24@gmail.com",
+      "url": "mailto:advanicplus173@gmail.com",
+      "username": "advanicplus173@gmail.com",
       "icon": "Mail"
     },
     {

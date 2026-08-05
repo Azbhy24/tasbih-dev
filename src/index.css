@@ -6,26 +6,17 @@
 }
 
 @layer base {
-  /* Dynamic custom ambient glow variables and background positioning */
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    background-color: #030306;
+    background-color: #f8fafc;
+    color: #0f172a;
     background-image: 
-      radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-      radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.04) 0%, transparent 40%);
+      radial-gradient(circle at 15% 15%, rgba(79, 70, 229, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(79, 70, 229, 0.03) 0%, transparent 40%);
     position: relative;
-  }
-
-  body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 100;
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
   }
 
   /* Smooth Custom Scrollbar */
@@ -34,38 +25,41 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #030306;
+    background: #f1f5f9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #27273a;
+    background: #cbd5e1;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #6366f1;
+    background: #4f46e5;
   }
 }
 
-/* Custom Utilities for Glassmorphism & High-End Visuals */
+/* Custom Utilities for High-Contrast Institutional Light Theme */
 .glass-panel {
-  background: rgba(10, 10, 16, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
 }
 
 .glass-panel-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel-hover:hover {
-  background: rgba(16, 16, 28, 0.85);
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 12px 40px -15px rgba(99, 102, 241, 0.2), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+  background: #ffffff;
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
   transform: translateY(-2px);
 }
 
 .glow-card {
   position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 .glow-card::before {
@@ -73,25 +67,25 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(35deg, rgba(99, 102, 241, 0.3), rgba(129, 140, 248, 0.3));
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(99, 102, 241, 0.2));
   z-index: -1;
-  opacity: 0.1;
-  transition: opacity 0.4s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .glow-card:hover::before {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
-/* Grid Dots Background pattern */
+/* Grid Dots Background pattern for Light Mode */
 .grid-mesh {
   background-size: 32px 32px;
-  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.07) 1px, transparent 1px);
 }
 
-/* Text Shimmer Effect */
+/* Text Shimmer Effect for Light Mode */
 .text-shimmer {
-  background: linear-gradient(to right, #ffffff 20%, #a5b4fc 40%, #e0e7ff 60%, #ffffff 80%);
+  background: linear-gradient(to right, #0f172a 20%, #4338ca 40%, #1e1b4b 60%, #0f172a 80%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -104,7 +98,8 @@
   }
 }
 
-/* Sub-card active indicator with modern cyber glow */
+/* Sub-card active indicator for light mode */
 .indicator-gradient {
-  background: linear-gradient(135deg, #1e1b4b 0%, #030306 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
 }
+

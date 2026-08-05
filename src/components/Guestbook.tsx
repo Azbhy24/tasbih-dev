@@ -132,49 +132,49 @@ export default function Guestbook() {
   };
 
   return (
-    <div id="guestbook" className="mt-20 border-t border-indigo-950/30 pt-20">
+    <div id="guestbook" className="mt-20 border-t border-slate-200 pt-20">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div className="text-left max-w-2xl">
-            <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider mb-2">
-              <Sparkles className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-indigo-800 font-mono text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles className="w-4 h-4 text-indigo-600" />
               <span>GUESTBOOK & TESTIMONI REAL-TIME</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Cerita & Kesan Kemitraan Anda
             </h3>
-            <p className="mt-2 text-xs sm:text-sm text-zinc-400">
+            <p className="mt-2 text-xs sm:text-sm text-slate-700 font-normal">
               Bagikan kesan Anda setelah berkolaborasi, berinteraksi, atau berkonsultasi seputar solusi Web, Automasi AI, dan Manajemen Bisnis bersama Aby Bhy.
             </p>
           </div>
 
           <div className="flex items-center gap-2 mt-2 md:mt-0">
             {user ? (
-              <div className="flex items-center gap-3 px-3 py-1.5 bg-zinc-950/40 border border-indigo-500/10 rounded-full">
+              <div className="flex items-center gap-3 px-3.5 py-1.5 bg-white border border-slate-200 rounded-full shadow-xs">
                 {user.photoURL ? (
                   <img src={user.photoURL} alt={user.displayName || "User"} referrerPolicy="no-referrer" className="w-6 h-6 rounded-full" />
                 ) : (
-                  <div className="w-6 h-6 rounded-full bg-indigo-650 flex items-center justify-center text-[10px] text-white font-bold">
+                  <div className="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-[10px] text-white font-bold">
                     {user.displayName?.charAt(0) || "U"}
                   </div>
                 )}
-                <span className="text-xs text-zinc-300 font-medium max-w-[120px] truncate">{user.displayName}</span>
+                <span className="text-xs text-slate-900 font-bold max-w-[120px] truncate">{user.displayName}</span>
                 <button
                   onClick={handleAuthClick}
-                  className="p-1 px-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white rounded text-[10px] font-bold tracking-widest uppercase transition-all flex items-center gap-1 cursor-pointer"
+                  className="p-1 px-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold tracking-wider uppercase transition-all flex items-center gap-1 cursor-pointer border border-slate-300"
                 >
-                  <LogOut className="w-3 h-3 text-red-400" />
+                  <LogOut className="w-3 h-3 text-rose-600" />
                   <span>Out</span>
                 </button>
               </div>
             ) : (
               <button
                 onClick={handleAuthClick}
-                className="px-4 py-2 bg-indigo-900/40 hover:bg-indigo-600/60 border border-indigo-500/20 hover:border-indigo-500/40 text-indigo-300 hover:text-white rounded-full text-[10px] font-black tracking-widest uppercase transition-all flex items-center gap-1.5 cursor-pointer shadow-lg active:scale-95 duration-200"
+                className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full text-xs font-bold tracking-wider uppercase transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
               >
-                <LogIn className="w-3.5 h-3.5" />
+                <LogIn className="w-4 h-4" />
                 <span>Masuk dengan Google</span>
               </button>
             )}
@@ -188,9 +188,9 @@ export default function Guestbook() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="mb-6 p-3 bg-zinc-950 border border-indigo-500/20 rounded-xl text-center text-xs text-indigo-300 font-bold flex items-center justify-center gap-2 max-w-sm mx-auto"
+              className="mb-6 p-3 bg-indigo-50 border border-indigo-200 rounded-xl text-center text-xs text-indigo-900 font-bold flex items-center justify-center gap-2 max-w-sm mx-auto shadow-sm"
             >
-              <AlertCircle className="w-4 h-4 text-indigo-400" />
+              <AlertCircle className="w-4 h-4 text-indigo-600" />
               <span>{showNotification}</span>
             </motion.div>
           )}
@@ -200,10 +200,8 @@ export default function Guestbook() {
           
           {/* Post Feedback Area */}
           <div className="lg:col-span-4">
-            <div className="p-6 rounded-xl border border-indigo-500/15 bg-zinc-950/45 text-left relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-500/5 to-transparent blur-xl pointer-events-none" />
-              
-              <h4 className="text-white text-sm font-bold font-sans tracking-wide mb-4">
+            <div className="p-6 rounded-2xl border border-slate-200 bg-white text-left shadow-sm">
+              <h4 className="text-slate-900 text-sm font-extrabold tracking-wide mb-4">
                 Tinggalkan Ulasan / Feedback
               </h4>
 
@@ -216,21 +214,21 @@ export default function Guestbook() {
                   placeholder={user ? "Tulis kesaksian, saran, atau komentar Anda di sini..." : "Silakan login di atas untuk mulai mengisi testimoni..."}
                   disabled={!user}
                   maxLength={1000}
-                  className="w-full px-4 py-3 bg-[#030306] border border-indigo-500/20 focus:border-indigo-400/80 rounded-xl text-xs text-white placeholder-zinc-700 outline-none transition-all disabled:opacity-40 disabled:cursor-not-allowed resize-none shadow-inner"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 focus:border-indigo-600 focus:bg-white rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed resize-none font-medium"
                 />
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-zinc-500">
+                  <span className="text-[10px] font-mono font-semibold text-slate-500">
                     {text.length}/1000 karakter
                   </span>
 
                   <button
                     type="submit"
                     disabled={!user || isPosting || !text.trim()}
-                    className="p-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-[10px] tracking-widest uppercase rounded-lg flex items-center gap-1.5 transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer border-none"
+                    className="p-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-[10px] tracking-wider uppercase rounded-lg flex items-center gap-1.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-sm"
                   >
                     <span>{isPosting ? "Mengirim..." : "Kirim"}</span>
-                    <Heart className={`w-3 h-3 ${text.trim() ? "fill-white text-white" : ""}`} />
+                    <Heart className={`w-3.5 h-3.5 ${text.trim() ? "fill-white text-white" : ""}`} />
                   </button>
                 </div>
               </form>
@@ -239,18 +237,18 @@ export default function Guestbook() {
 
           {/* Testimonials List Area */}
           <div className="lg:col-span-8">
-            <div className="p-6 sm:p-8 rounded-xl border border-indigo-500/15 bg-zinc-950/20 min-h-[300px] flex flex-col relative overflow-hidden shadow-xl">
+            <div className="p-6 sm:p-8 rounded-2xl border border-slate-200 bg-slate-50 min-h-[300px] flex flex-col shadow-sm">
               
               {isLoading ? (
                 <div className="m-auto flex flex-col items-center gap-3">
-                  <div className="w-6 h-6 border-2 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin" />
-                  <span className="text-xs font-mono text-zinc-500">Memuat testimoni...</span>
+                  <div className="w-6 h-6 border-2 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+                  <span className="text-xs font-mono text-slate-600 font-semibold">Memuat testimoni...</span>
                 </div>
               ) : testimonials.length === 0 ? (
                 <div className="m-auto flex flex-col items-center text-center max-w-sm">
-                  <MessageSquare className="w-8 h-8 text-indigo-500/20 mb-3" />
-                  <span className="text-sm font-semibold text-zinc-400">Belum ada testimoni</span>
-                  <p className="text-xs text-zinc-500 mt-1">
+                  <MessageSquare className="w-8 h-8 text-indigo-400 mb-3" />
+                  <span className="text-sm font-bold text-slate-800">Belum ada testimoni</span>
+                  <p className="text-xs text-slate-600 mt-1">
                     Jadilah yang pertama untuk meninggalkan jejak di Guestbook dengan cara masuk/log-in menggunakan akun Google Anda!
                   </p>
                 </div>
@@ -263,31 +261,31 @@ export default function Guestbook() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        className="p-5 rounded-xl border border-indigo-500/10 bg-zinc-950/40 backdrop-blur-md flex flex-col justify-between text-left relative group transition-all hover:border-indigo-500/20"
+                        className="p-5 rounded-xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between text-left relative group transition-all"
                       >
-                        <p className="text-xs text-zinc-300 leading-relaxed font-sans italic flex-grow whitespace-pre-wrap">
+                        <p className="text-xs text-slate-800 leading-relaxed font-sans italic flex-grow whitespace-pre-wrap font-medium">
                           "{test.text}"
                         </p>
 
-                        <div className="flex items-center justify-between border-t border-indigo-950/40 pt-4 mt-4">
+                        <div className="flex items-center justify-between border-t border-slate-200 pt-4 mt-4">
                           <div className="flex items-center gap-2">
                             {test.userPhoto ? (
-                              <img src={test.userPhoto} alt={test.userName} referrerPolicy="no-referrer" className="w-5 h-5 rounded-full ring-1 ring-indigo-500/20" />
+                              <img src={test.userPhoto} alt={test.userName} referrerPolicy="no-referrer" className="w-5 h-5 rounded-full ring-1 ring-slate-300" />
                             ) : (
-                              <div className="w-5 h-5 rounded-full bg-indigo-950 flex items-center justify-center text-[8px] text-indigo-300 font-bold border border-indigo-500/20">
+                              <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center text-[8px] text-indigo-800 font-bold border border-indigo-200">
                                 {test.userName.charAt(0)}
                               </div>
                             )}
                             <div className="flex flex-col">
-                              <span className="text-[10px] text-white font-bold leading-none truncate max-w-[150px]">{test.userName}</span>
-                              <span className="text-[8px] text-zinc-500 font-mono mt-0.5">Visitor</span>
+                              <span className="text-[10px] text-slate-900 font-extrabold leading-none truncate max-w-[150px]">{test.userName}</span>
+                              <span className="text-[9px] text-slate-500 font-mono mt-0.5 font-semibold">Visitor</span>
                             </div>
                           </div>
 
                           {user && user.uid === test.userId && (
                             <button
                               onClick={() => handleDelete(test.id)}
-                              className="text-zinc-650 hover:text-red-400 p-1 rounded hover:bg-red-500/10 transition-colors cursor-pointer"
+                              className="text-slate-400 hover:text-rose-600 p-1 rounded hover:bg-rose-50 transition-colors cursor-pointer"
                               title="Hapus testimonial Anda"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -299,9 +297,6 @@ export default function Guestbook() {
                   </AnimatePresence>
                 </div>
               )}
-
-              {/* Little styling overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-zinc-950/30 to-transparent pointer-events-none" />
             </div>
           </div>
 

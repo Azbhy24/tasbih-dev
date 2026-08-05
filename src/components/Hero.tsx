@@ -47,12 +47,11 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden grid-mesh"
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden grid-mesh bg-slate-50"
     >
-      {/* Background visual graphics - glow balls */}
-      <div className="absolute inset-0 bg-radial-[at_50%_40%] from-indigo-950/10 via-[#030306]/0 to-transparent pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Background visual graphics */}
+      <div className="absolute inset-0 bg-radial-[at_50%_40%] from-indigo-100/40 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left column: main content */}
@@ -65,12 +64,12 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           {/* Tagline Badge */}
           <motion.div variants={itemVariants} className="inline-flex">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-950 border border-indigo-500/20 rounded-full text-[10px] font-bold tracking-widest uppercase text-zinc-350">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-50 border border-indigo-200 rounded-full text-xs font-bold tracking-wider uppercase text-indigo-800 shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
               </span>
-              TASBIH • PORTFOLIO PRAGMATIS
+              TASBIH • REKAM JEJAK & PORTOFOLIO RESMI
             </span>
           </motion.div>
 
@@ -78,23 +77,23 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.h1
             variants={itemVariants}
             id="hero-main-title"
-            className="mt-6 text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-white via-zinc-100 to-indigo-300 bg-clip-text text-transparent leading-[0.9] uppercase selection:bg-zinc-800"
+            className="mt-6 text-6xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-slate-900 leading-[0.95] uppercase"
           >
-            {bio.fullName}<span className="text-indigo-400">.</span>
+            {bio.fullName}<span className="text-indigo-600">.</span>
           </motion.h1>
 
-          {/* Full-Stack Developer • AI & Automation Specialist • Digital Operations Lead Roles */}
+          {/* Roles Subheadlines */}
           <motion.div
             variants={itemVariants}
             id="hero-subheadlines"
-            className="flex flex-wrap items-center gap-2 sm:gap-3 mt-6 text-zinc-300 font-sans text-base sm:text-xl font-medium tracking-wide"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 mt-6 text-slate-800 font-sans text-base sm:text-xl font-semibold tracking-wide"
           >
             <p className="leading-snug">
-              <span className="text-white font-semibold">Full-Stack Web Developer</span>
-              <span className="text-indigo-400 font-bold mx-2">•</span>
-              <span className="text-indigo-300 font-semibold">AI & Automation Specialist</span>
-              <span className="text-indigo-400 font-bold mx-2">•</span>
-              <span className="text-zinc-400 font-normal">Digital Operations Lead</span>
+              <span className="text-indigo-700 font-bold">Full-Stack Web Developer</span>
+              <span className="text-slate-400 font-bold mx-2.5">•</span>
+              <span className="text-indigo-600 font-bold">AI & Automation Specialist</span>
+              <span className="text-slate-400 font-bold mx-2.5">•</span>
+              <span className="text-slate-700 font-semibold">Digital Operations Lead</span>
             </p>
           </motion.div>
 
@@ -102,7 +101,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.p
             variants={itemVariants}
             id="hero-bio-para"
-            className="mt-6 text-sm sm:text-base text-zinc-400 max-w-xl leading-relaxed font-sans"
+            className="mt-6 text-base sm:text-lg text-slate-700 max-w-2xl leading-relaxed font-sans font-normal"
           >
             {bio.professionalBio}
           </motion.p>
@@ -111,115 +110,92 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.div
             variants={itemVariants}
             id="hero-actions"
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
             <button
               id="hero-action-portfolio"
               onClick={() => onNavigate("projects")}
-              className="px-6 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest hover:shadow-lg hover:shadow-indigo-500/20 active:scale-95 transition-all cursor-pointer rounded-lg border-none"
+              className="px-7 py-3.5 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-indigo-500/25 active:scale-95 transition-all duration-200 cursor-pointer rounded-full border-none flex items-center gap-2 group"
             >
-              LIHAT PORTOFOLIO
+              <span>LIHAT PORTOFOLIO</span>
+              <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </button>
 
             <button
               id="hero-action-contact"
               onClick={() => onNavigate("contact")}
-              className="px-6 py-4 border border-indigo-500/20 bg-[#030306] hover:border-indigo-500/40 text-white text-xs font-bold uppercase tracking-widest hover:bg-zinc-950/40 active:scale-95 transition-all cursor-pointer rounded-lg"
+              className="px-7 py-3.5 border border-slate-300 bg-white hover:bg-slate-100/80 text-slate-800 text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-sm active:scale-95 transition-all duration-200 cursor-pointer rounded-full flex items-center gap-2"
             >
-              HUBUNGI SAYA
+              <Mail className="w-4 h-4 text-indigo-600" />
+              <span>HUBUNGI SAYA</span>
             </button>
           </motion.div>
         </motion.div>
 
-        {/* Right column: Interactive Premium Visual Mock / Graphic Card (Startup Frame) */}
+        {/* Right column: Interactive Photo Card */}
         <motion.div
           id="hero-graphic"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
+          transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
           className="lg:col-span-4 relative flex items-center justify-center"
         >
-          {/* Glowing Backlight */}
-          <div className="absolute inset-0 bg-transparent flex items-center justify-center">
-            <div className="w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
-          </div>
-
-          {/* Custom Bento Startup Card Representation for his personal identity Azbhy */}
-          <div className="relative w-full max-w-[340px] aspect-[4/5] rounded-xl p-6 glass-panel border-indigo-500/20 flex flex-col justify-between overflow-hidden shadow-2xl">
-            {/* Background absolute graphic lines */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-500/10 to-transparent blur-md pointer-events-none" />
-
+          {/* Custom Bento Card */}
+          <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-3xl p-6 bg-white/90 backdrop-blur-md border border-slate-200/80 flex flex-col justify-between overflow-hidden shadow-xl hover:shadow-2xl hover:border-indigo-300 transition-all duration-300">
             <div className="flex items-start justify-between">
               {/* Card Badge */}
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-[#030306] border border-indigo-500/25 text-[10px] font-mono font-bold tracking-widest text-indigo-300">
-                <Terminal className="w-3 h-3 text-indigo-400 animate-pulse" />
-                <span>BUILDING AZBHY</span>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-[11px] font-mono font-bold tracking-wider text-indigo-700 shadow-2xs">
+                <Terminal className="w-3.5 h-3.5 text-indigo-600" />
+                <span>AZBHY PROFILE</span>
               </div>
-              <span className="font-mono text-[10px] text-zinc-500">v1.2.6</span>
+              <span className="font-mono text-[10px] text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">VERIFIED 2026</span>
             </div>
 
-            {/* Premium Interactive Photo Display with Dual Persona Toggle */}
+            {/* Photo Display with Dual Persona Toggle */}
             <div className="my-auto flex flex-col items-center w-full">
-              <div className="relative w-44 h-56 rounded-xl bg-zinc-950 border border-indigo-500/20 overflow-hidden group shadow-lg">
-                {/* Active Photo with hover zoom */}
+              <div className="relative w-48 h-60 rounded-2xl bg-slate-100 border border-slate-200/80 overflow-hidden group shadow-md">
                 <img
                   src={activePhoto === "almet" ? almetImage : jasImage}
                   alt={activePhoto === "almet" ? "Tasbih Almet Mahasiswa" : "Tasbih Jas Formal"}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 
-                {/* Visual Glow overlay depending on mode */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90 transition-all duration-500`} />
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none mix-blend-overlay ${
-                  activePhoto === "almet" ? "bg-emerald-500" : "bg-red-500"
-                }`} />
-
-                {/* Cyber/Tech Crosshairs showing dynamic active states */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none font-mono text-[8px] text-indigo-400">
-                  <div className="absolute top-2 left-2">+</div>
-                  <div className="absolute top-2 right-2">+</div>
-                  <div className="absolute bottom-2 left-2">+</div>
-                  <div className="absolute bottom-2 right-2">+</div>
-                </div>
-
-                {/* Absolute status label on the photo card */}
-                <span className={`absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/80 border text-[8px] font-mono font-bold uppercase tracking-wider text-white ${
-                  activePhoto === "almet" ? "border-emerald-500/30" : "border-red-500/30"
-                }`}>
-                  <span className={`w-1 h-1 rounded-full ${activePhoto === "almet" ? "bg-emerald-400 animate-pulse" : "bg-red-500 animate-pulse"}`} />
-                  {activePhoto === "almet" ? "Mahasiswa" : "Professional"}
+                {/* Status badge */}
+                <span className={`absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-sm border text-[9px] font-mono font-bold uppercase tracking-wider text-white shadow-md`}>
+                  <span className={`w-2 h-2 rounded-full ${activePhoto === "almet" ? "bg-emerald-400 animate-pulse" : "bg-indigo-400 animate-pulse"}`} />
+                  {activePhoto === "almet" ? "Akademik (S1 MPI)" : "Formal / Professional"}
                 </span>
               </div>
 
-              {/* Identity labels updated dynamically based on photo chosen */}
-              <h3 className="mt-4 text-white font-sans text-xl font-bold tracking-wide">
-                Tasbih <span className="text-zinc-500 text-xs font-mono font-light">({activePhoto === "almet" ? "Azbhy" : "Az"})</span>
+              {/* Identity labels */}
+              <h3 className="mt-4 text-slate-900 font-sans text-xl font-extrabold tracking-tight">
+                Tasbih <span className="text-slate-500 text-xs font-mono font-medium">({activePhoto === "almet" ? "S1 MPI" : "Azbhy"})</span>
               </h3>
-              <p className="text-[10px] font-mono font-bold text-indigo-400 mt-1 uppercase tracking-widest min-h-[15px] text-center">
-                {activePhoto === "almet" ? "STUDENT LEADER & DIGITAL BUILDER" : "EXECUTIVE PARTNER & RETAIL OPERATOR"}
+              <p className="text-[11px] font-mono font-bold text-indigo-600 mt-0.5 uppercase tracking-wider text-center">
+                {activePhoto === "almet" ? "MAHASISWA & DIGITAL BUILDER" : "OPERATIONS & AUTOMATION SPECIALIST"}
               </p>
 
-              {/* Selector Tabs to toggle visual elements */}
-              <div className="flex gap-1.5 mt-4 p-1 rounded-lg bg-zinc-900/80 border border-indigo-500/10 w-full max-w-[220px] shadow-inner">
+              {/* Selector Tabs */}
+              <div className="flex gap-1.5 mt-3.5 p-1 rounded-full bg-slate-100 border border-slate-200/80 w-full max-w-[230px]">
                 <button
                   id="tab-almet"
                   onClick={() => setActivePhoto("almet")}
-                  className={`flex-1 py-1.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer ${
+                  className={`flex-1 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-1 cursor-pointer ${
                     activePhoto === "almet"
-                      ? "bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 font-extrabold"
-                      : "text-zinc-500 hover:text-zinc-350 border border-transparent"
+                      ? "bg-white text-emerald-800 border border-slate-200 shadow-xs font-extrabold"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  🎓 ALMET
+                  🎓 AKADEMIK
                 </button>
                 <button
                   id="tab-jas"
                   onClick={() => setActivePhoto("jas")}
-                  className={`flex-1 py-1.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer ${
+                  className={`flex-1 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-1 cursor-pointer ${
                     activePhoto === "jas"
-                      ? "bg-red-950/40 text-rose-400 border border-red-500/30 font-extrabold"
-                      : "text-zinc-500 hover:text-zinc-355 border border-transparent"
+                      ? "bg-white text-indigo-800 border border-slate-200 shadow-xs font-extrabold"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   💼 FORMAL
@@ -227,46 +203,43 @@ export default function Hero({ onNavigate }: HeroProps) {
               </div>
             </div>
 
-            {/* Bottom summary and status badges */}
-            <div className="flex flex-col gap-2">
-              <div className="h-[1px] bg-indigo-500/15 w-full" />
-              <div className="flex justify-between items-center text-[10px] text-zinc-400 font-mono font-bold tracking-widest">
-                <span>FOCUS</span>
-                <span className="text-white">PENDIDIKAN • RITEL • AI</span>
+            {/* Bottom summary */}
+            <div className="flex flex-col gap-1.5 pt-3 border-t border-slate-200/80">
+              <div className="flex justify-between items-center text-[10px] text-slate-600 font-mono font-bold tracking-wider">
+                <span>LOKASI</span>
+                <span className="text-slate-900 bg-slate-100 px-2 py-0.5 rounded-full">PAREPARE, SULAWESI SELATAN</span>
               </div>
             </div>
           </div>
 
           {/* FLOATING IN-AIR BADGES */}
-          {/* Badge 1: Leader */}
           <motion.div
-            variants={badgeFloatingVariants(6, -8)}
+            variants={badgeFloatingVariants(6, -6)}
             animate="animate"
             id="hero-floating-leader"
-            className="absolute -top-6 -left-6 hidden sm:flex items-center gap-2 p-3 bg-[#030306]/90 border border-indigo-500/15 rounded-xl shadow-xl pointer-events-none"
+            className="absolute -top-5 -left-6 hidden sm:flex items-center gap-2.5 p-3.5 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-xl pointer-events-none"
           >
-            <div className="w-8 h-8 rounded bg-indigo-950 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+            <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shadow-2xs">
               <Award className="w-4 h-4" />
             </div>
-            <div className="text-left leading-none">
-              <span className="block text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-wider">TITLE ROLE</span>
-              <span className="text-xs font-bold text-white">Ketua IKA Regional</span>
+            <div className="text-left leading-tight">
+              <span className="block text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider">ORGANISASI</span>
+              <span className="text-xs font-extrabold text-slate-900">Ketua IKA Alumni</span>
             </div>
           </motion.div>
 
-          {/* Badge 2: Business Builder */}
           <motion.div
-            variants={badgeFloatingVariants(7, 8)}
+            variants={badgeFloatingVariants(7, 6)}
             animate="animate"
             id="hero-floating-retail"
-            className="absolute bottom-10 -right-6 hidden sm:flex items-center gap-2 p-3 bg-[#030306]/90 border border-indigo-500/15 rounded-xl shadow-xl pointer-events-none"
+            className="absolute bottom-8 -right-6 hidden sm:flex items-center gap-2.5 p-3.5 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-xl pointer-events-none"
           >
-            <div className="w-8 h-8 rounded bg-indigo-950/40 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-              <Flame className="w-4 h-4 animate-bounce" />
+            <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shadow-2xs">
+              <Flame className="w-4 h-4 text-indigo-600" />
             </div>
-            <div className="text-left leading-none">
-              <span className="block text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-wider">EXPERTISE</span>
-              <span className="text-xs font-bold text-white">Ritel & Otomatisasi</span>
+            <div className="text-left leading-tight">
+              <span className="block text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider">PENGALAMAN</span>
+              <span className="text-xs font-extrabold text-slate-900">Enumerator & Admin Usaha</span>
             </div>
           </motion.div>
         </motion.div>

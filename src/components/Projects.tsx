@@ -69,53 +69,54 @@ function DompetKuSimulator() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-white border border-slate-200 p-5 font-sans overflow-hidden shadow-sm relative text-left">
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-indigo-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-sky-500 to-teal-500" />
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
             SIMULASI INTERAKTIF: DOMPETKU
           </span>
         </div>
-        <span className="text-[10px] font-mono text-slate-600 px-2.5 py-0.5 bg-slate-100 rounded border border-slate-200 font-semibold">
+        <span className="text-[10px] font-mono text-indigo-900 px-3 py-1 bg-indigo-50 rounded-full border border-indigo-200 font-bold">
           Live Prototype
         </span>
       </div>
 
       {/* Mini Card Display */}
       <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-          <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase tracking-wider block">
+        <div className="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
+          <span className="text-[10px] font-mono text-emerald-800 font-bold uppercase tracking-wider block">
             Pemasukan Tambahan
           </span>
-          <span className="text-sm font-extrabold text-slate-900 mt-1 block">
+          <span className="text-sm font-black text-emerald-950 mt-1 block">
             Rp {(450000 + totalIncome).toLocaleString("id-ID")}
           </span>
         </div>
-        <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-          <span className="text-[10px] font-mono text-rose-700 font-bold uppercase tracking-wider block">
+        <div className="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200/80">
+          <span className="text-[10px] font-mono text-rose-800 font-bold uppercase tracking-wider block">
             Total Pengeluaran
           </span>
-          <span className="text-sm font-extrabold text-slate-900 mt-1 block">
+          <span className="text-sm font-black text-rose-950 mt-1 block">
             Rp {totalExpense.toLocaleString("id-ID")}
           </span>
         </div>
       </div>
 
       {/* Main Balance Display */}
-      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-4 text-center">
-        <span className="text-[10px] font-mono font-bold text-indigo-800 uppercase tracking-wider block">
+      <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 text-white rounded-2xl p-4 mb-4 text-center shadow-md">
+        <span className="text-[10px] font-mono font-bold text-indigo-200 uppercase tracking-wider block">
           Saldo Aktif DompetKu
         </span>
-        <h4 className="text-2xl font-black text-indigo-900 mt-1 font-sans">
+        <h4 className="text-2xl font-black text-white mt-1 font-sans">
           Rp {calculatedBalance.toLocaleString("id-ID")}
         </h4>
       </div>
 
       {/* Mini quick form adder */}
-      <form onSubmit={handleAdd} className="space-y-2 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200">
-        <p className="text-[10px] font-bold font-mono text-slate-700 uppercase tracking-wider">
+      <form onSubmit={handleAdd} className="space-y-2 mb-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+        <p className="text-[10px] font-bold font-mono text-indigo-900 uppercase tracking-wider">
           + Catat Transaksi Baru
         </p>
         <div className="grid grid-cols-12 gap-1.5">
@@ -124,29 +125,29 @@ function DompetKuSimulator() {
             placeholder="Kopi, Desain"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="col-span-6 bg-white border border-slate-300 rounded px-2.5 py-1 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-sans font-medium"
+            className="col-span-6 bg-white border border-slate-300 rounded-xl px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-sans font-medium"
           />
           <input
             type="number"
             placeholder="Rp"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="col-span-4 bg-white border border-slate-300 rounded px-2.5 py-1 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-sans font-medium"
+            className="col-span-4 bg-white border border-slate-300 rounded-xl px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-sans font-medium"
           />
           <button
             type="submit"
-            className="col-span-2 bg-indigo-600 hover:bg-indigo-700 rounded p-1 flex items-center justify-center transition-all cursor-pointer text-white shadow-sm"
+            className="col-span-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-xl p-1 flex items-center justify-center transition-all cursor-pointer text-white shadow-sm"
           >
             <Plus className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="flex gap-2 p-0.5 bg-white rounded border border-slate-200">
+        <div className="flex gap-2 p-1 bg-white rounded-xl border border-slate-200">
           <button
             type="button"
             onClick={() => setType("expense")}
-            className={`flex-1 py-1 rounded text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-              type === "expense" ? "bg-rose-100 text-rose-800 border border-rose-300" : "text-slate-500"
+            className={`flex-1 py-1 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
+              type === "expense" ? "bg-rose-100 text-rose-800 border border-rose-300 font-extrabold" : "text-slate-500"
             }`}
           >
             (-) Pengeluaran
@@ -154,8 +155,8 @@ function DompetKuSimulator() {
           <button
             type="button"
             onClick={() => setType("income")}
-            className={`flex-1 py-1 rounded text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-              type === "income" ? "bg-emerald-100 text-emerald-800 border border-emerald-300" : "text-slate-500"
+            className={`flex-1 py-1 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
+              type === "income" ? "bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold" : "text-slate-500"
             }`}
           >
             (+) Pemasukan
@@ -172,16 +173,16 @@ function DompetKuSimulator() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
-              className="flex items-center justify-between p-2.5 rounded bg-slate-50 border border-slate-200"
+              className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200"
             >
               <div className="text-left">
                 <p className="text-xs text-slate-900 font-bold">{trans.title}</p>
-                <span className="text-[9px] font-mono text-slate-500 uppercase font-semibold">
+                <span className="text-[9px] font-mono text-indigo-700 uppercase font-semibold">
                   {trans.category}
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className={`text-xs font-extrabold font-mono ${
+                <span className={`text-xs font-black font-mono ${
                   trans.type === "income" ? "text-emerald-700" : "text-rose-700"
                 }`}>
                   {trans.type === "income" ? "+" : "-"} Rp {trans.amount.toLocaleString("id-ID")}
@@ -254,16 +255,17 @@ function POSUMKMSimulator() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-white border border-slate-200 p-5 font-sans overflow-hidden shadow-sm relative text-left">
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
             SIMULASI INTERAKTIF: POS KASIR UMKM
           </span>
         </div>
-        <span className="text-[10px] font-mono text-slate-600 px-2.5 py-0.5 bg-slate-100 rounded border border-slate-200 font-semibold">
+        <span className="text-[10px] font-mono text-emerald-900 px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200 font-bold">
           Kasir Ritel Modern
         </span>
       </div>
@@ -272,7 +274,7 @@ function POSUMKMSimulator() {
         <div className="space-y-4">
           {/* Catalog grid */}
           <div>
-            <p className="text-[10px] font-bold font-mono text-slate-700 uppercase tracking-wider mb-2">
+            <p className="text-[10px] font-bold font-mono text-emerald-900 uppercase tracking-wider mb-2">
               Katalog Produk Toko Ritel
             </p>
             <div className="grid grid-cols-2 gap-2">
@@ -281,15 +283,15 @@ function POSUMKMSimulator() {
                   id={`pos-prod-${prod.id}`}
                   key={prod.id}
                   onClick={() => addToCart(prod)}
-                  className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-500 text-left transition-all group cursor-pointer flex flex-col justify-between"
+                  className="p-3 rounded-2xl bg-emerald-50/40 border border-emerald-200/80 hover:border-emerald-500 text-left transition-all group cursor-pointer flex flex-col justify-between hover:shadow-md"
                 >
                   <div>
                     <p className="text-xs font-bold text-slate-900 leading-tight group-hover:text-emerald-700 transition-colors">
                       {prod.name}
                     </p>
-                    <p className="text-[11px] font-mono text-slate-600 mt-1 font-semibold">Rp {prod.price.toLocaleString("id-ID")}</p>
+                    <p className="text-[11px] font-mono text-emerald-800 mt-1 font-bold">Rp {prod.price.toLocaleString("id-ID")}</p>
                   </div>
-                  <span className="text-[9px] font-mono text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded mt-2 inline-block max-w-max border border-emerald-200 font-bold">
+                  <span className="text-[9px] font-mono text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-full mt-2 inline-block max-w-max border border-emerald-300 font-extrabold">
                     + Tambah
                   </span>
                 </button>
@@ -298,9 +300,9 @@ function POSUMKMSimulator() {
           </div>
 
           {/* Cart Section */}
-          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-            <p className="text-[10px] font-bold font-mono text-slate-700 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-              <ShoppingCart className="w-3.5 h-3.5 text-indigo-600" />
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+            <p className="text-[10px] font-bold font-mono text-emerald-900 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <ShoppingCart className="w-3.5 h-3.5 text-emerald-600" />
               Keranjang Kasir: {cart.length} item
             </p>
 
@@ -312,10 +314,10 @@ function POSUMKMSimulator() {
               <div className="space-y-2">
                 <div className="max-h-[100px] overflow-y-auto space-y-1.5 pr-1">
                   {cart.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between text-xs rounded bg-white p-2 border border-slate-200">
+                    <div key={item.id} className="flex items-center justify-between text-xs rounded-xl bg-white p-2 border border-slate-200">
                       <span className="text-slate-900 font-bold max-w-[120px] truncate">{item.name}</span>
                       <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-1.5 bg-slate-100 p-0.5 rounded border border-slate-300">
+                        <div className="flex items-center gap-1.5 bg-slate-100 p-0.5 rounded-lg border border-slate-300">
                           <button
                             onClick={() => updateQty(item.id, -1)}
                             className="p-0.5 hover:text-rose-600 transition-colors cursor-pointer text-slate-600"
@@ -340,12 +342,12 @@ function POSUMKMSimulator() {
 
                 <div className="flex items-center justify-between pt-2 border-t border-slate-200 text-sm font-extrabold">
                   <span className="text-slate-600 font-mono text-xs uppercase">Total</span>
-                  <span className="text-emerald-700 font-sans">Rp {total.toLocaleString("id-ID")}</span>
+                  <span className="text-emerald-700 font-sans text-base">Rp {total.toLocaleString("id-ID")}</span>
                 </div>
 
                 <button
                   onClick={handleCheckout}
-                  className="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-[10px] tracking-wider uppercase rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  className="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md"
                 >
                   <CreditCard className="w-3.5 h-3.5" />
                   <span>Bayar & Cetak Struk</span>
@@ -359,12 +361,12 @@ function POSUMKMSimulator() {
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-white text-slate-900 p-4 rounded-xl font-mono text-xs shadow-md border border-slate-300 relative max-w-sm mx-auto"
+          className="bg-white text-slate-900 p-5 rounded-2xl font-mono text-xs shadow-xl border-2 border-emerald-200 relative max-w-sm mx-auto"
         >
           <div className="text-center py-2 border-b border-dashed border-slate-300">
-            <h5 className="font-bold tracking-wide text-sm text-slate-900">WARUNG AMMA' IKA POS</h5>
-            <p className="text-[10px] text-slate-600 font-medium">Toko Ritel Berkah Keluarga</p>
-            <p className="text-[9px] text-slate-500 mt-0.5">{receiptNumber}</p>
+            <h5 className="font-extrabold tracking-wide text-sm text-emerald-950">WARUNG AMMA' IKA POS</h5>
+            <p className="text-[10px] text-emerald-700 font-bold">Toko Ritel Berkah Keluarga</p>
+            <p className="text-[9px] text-slate-500 mt-0.5 font-bold">{receiptNumber}</p>
           </div>
 
           <div className="py-3 space-y-1.5 border-b border-dashed border-slate-300">
@@ -388,7 +390,7 @@ function POSUMKMSimulator() {
               <span className="text-slate-600 font-normal">Subtotal</span>
               <span>Rp {total.toLocaleString("id-ID")}</span>
             </div>
-            <div className="flex justify-between border-t border-slate-200 pt-1.5 text-xs text-slate-900">
+            <div className="flex justify-between border-t border-slate-200 pt-1.5 text-xs text-emerald-900 font-black">
               <span>TOTAL</span>
               <span>Rp {total.toLocaleString("id-ID")}</span>
             </div>
@@ -396,7 +398,7 @@ function POSUMKMSimulator() {
 
           <button
             onClick={handleReset}
-            className="w-full mt-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded font-mono font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer"
+            className="w-full mt-4 py-2.5 bg-gradient-to-r from-emerald-700 to-teal-800 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-mono font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
           >
             Selesai / Transaksi Baru
           </button>
@@ -463,30 +465,31 @@ function WorkflowsSimulator() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-white border border-slate-200 p-5 font-sans overflow-hidden shadow-sm relative text-left">
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-purple-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500" />
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-violet-600 animate-pulse" />
+          <span className="w-2.5 h-2.5 rounded-full bg-purple-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
             SIMULASI INTERAKTIF: AZBHY WORKFLOWS
           </span>
         </div>
-        <span className="text-[10px] font-mono text-slate-600 px-2.5 py-0.5 bg-slate-100 rounded border border-slate-200 font-semibold">
+        <span className="text-[10px] font-mono text-purple-900 px-3 py-1 bg-purple-50 rounded-full border border-purple-200 font-bold">
           AI & n8n Engine
         </span>
       </div>
 
       {/* Visual Workflow Canvas */}
-      <div className="flex justify-between items-center bg-slate-50 p-4 rounded-xl border border-slate-200 relative mb-4">
+      <div className="flex justify-between items-center bg-purple-50/40 p-4 rounded-2xl border border-purple-200/80 relative mb-4">
         {/* Connection pipeline line */}
-        <div className="absolute inset-x-8 top-[33px] h-[2px] bg-slate-200 z-0">
+        <div className="absolute inset-x-8 top-[33px] h-[2px] bg-purple-200 z-0">
           {workflowState !== "idle" && workflowState !== "done" && (
             <motion.div
               initial={{ left: 0 }}
               animate={{ left: "100%" }}
               transition={{ repeat: Infinity, duration: 1.8, ease: "linear" }}
-              className="absolute h-0.5 w-[50px] bg-indigo-600 z-10"
+              className="absolute h-0.5 w-[50px] bg-purple-600 z-10"
             />
           )}
         </div>
@@ -495,8 +498,8 @@ function WorkflowsSimulator() {
         <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
           workflowState === "trigger" ? "scale-105" : "opacity-70"
         } transition-all`}>
-          <div className={`w-9 h-9 rounded-lg flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "trigger" ? "bg-indigo-100 border-indigo-500 text-indigo-700" : "bg-white border-slate-300 text-slate-700"
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
+            workflowState === "trigger" ? "bg-indigo-100 border-indigo-500 text-indigo-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
           }`}>
             ☁️
           </div>
@@ -505,14 +508,14 @@ function WorkflowsSimulator() {
           </span>
         </div>
 
-        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-indigo-600 animate-pulse"}`} />
+        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-purple-600 animate-pulse"}`} />
 
         {/* Node 2 */}
         <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
           workflowState === "gemini" ? "scale-105" : "opacity-70"
         } transition-all`}>
-          <div className={`w-9 h-9 rounded-lg flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "gemini" ? "bg-violet-100 border-violet-500 text-violet-700" : "bg-white border-slate-300 text-slate-700"
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
+            workflowState === "gemini" ? "bg-purple-100 border-purple-500 text-purple-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
           }`}>
             🪄
           </div>
@@ -521,14 +524,14 @@ function WorkflowsSimulator() {
           </span>
         </div>
 
-        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-violet-600 animate-pulse"}`} />
+        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-purple-600 animate-pulse"}`} />
 
         {/* Node 3 */}
         <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
           workflowState === "webhook" ? "scale-105" : "opacity-70"
         } transition-all`}>
-          <div className={`w-9 h-9 rounded-lg flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "webhook" ? "bg-emerald-100 border-emerald-500 text-emerald-700" : "bg-white border-slate-300 text-slate-700"
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
+            workflowState === "webhook" ? "bg-emerald-100 border-emerald-500 text-emerald-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
           }`}>
             🪁
           </div>
@@ -540,7 +543,7 @@ function WorkflowsSimulator() {
 
       {/* Input Form */}
       <form onSubmit={runWorkflow} className="space-y-2 mb-4 text-left">
-        <label className="text-[10px] font-bold font-mono text-slate-700 uppercase tracking-wider block">
+        <label className="text-[10px] font-bold font-mono text-purple-900 uppercase tracking-wider block">
           Topik Rangkuman Akademik / Jurnal
         </label>
         <div className="flex gap-1.5">
@@ -552,12 +555,12 @@ function WorkflowsSimulator() {
             placeholder="Mutu Kemitraan Strategis Kemenag"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="flex-1 bg-white border border-slate-300 rounded px-3 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-medium"
+            className="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-purple-600 font-medium"
           />
           <button
             type="submit"
             disabled={workflowState !== "idle" && workflowState !== "done"}
-            className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 rounded text-[10px] font-mono font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-1 cursor-pointer text-white shadow-sm"
+            className="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:bg-slate-300 rounded-xl text-[10px] font-mono font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-1 cursor-pointer text-white shadow-sm"
           >
             {workflowState !== "idle" && workflowState !== "done" ? (
               <RefreshCw className="w-3.5 h-3.5 animate-spin" />
@@ -570,8 +573,8 @@ function WorkflowsSimulator() {
       </form>
 
       {/* Terminal log display */}
-      <div className="bg-slate-900 rounded-lg p-3 font-mono text-[10px] text-slate-200 text-left min-h-[90px] relative">
-        <div className="flex items-center gap-1.5 text-[9px] text-slate-400 border-b border-slate-800 pb-1.5 mb-2 font-bold uppercase">
+      <div className="bg-slate-900 rounded-2xl p-3.5 font-mono text-[10px] text-slate-200 text-left min-h-[90px] relative shadow-inner border border-slate-800">
+        <div className="flex items-center gap-1.5 text-[9px] text-purple-400 border-b border-slate-800 pb-1.5 mb-2 font-bold uppercase">
           <span>Engine Log Monitor</span>
         </div>
 
@@ -580,7 +583,7 @@ function WorkflowsSimulator() {
             <p className="text-slate-500">[ Engine standby. Menunggu input ]</p>
           )}
           {logs.map((log, lIdx) => (
-            <p key={lIdx} className={log.startsWith("✓") ? "text-emerald-400 font-bold" : log.startsWith("⚡") ? "text-indigo-300" : "text-slate-300"}>
+            <p key={lIdx} className={log.startsWith("✓") ? "text-emerald-400 font-bold" : log.startsWith("⚡") ? "text-purple-300" : "text-slate-300"}>
               {log}
             </p>
           ))}
@@ -593,10 +596,10 @@ function WorkflowsSimulator() {
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
-            className="mt-3 p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl text-left font-mono text-[11px] text-indigo-950 leading-relaxed overflow-hidden"
+            className="mt-3 p-4 bg-purple-50 border border-purple-200 rounded-2xl text-left font-mono text-[11px] text-purple-950 leading-relaxed overflow-hidden shadow-sm"
           >
-            <div className="flex items-center gap-1 text-[10px] font-bold text-indigo-900 uppercase tracking-wider mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-700" />
+            <div className="flex items-center gap-1 text-[10px] font-bold text-purple-900 uppercase tracking-wider mb-1">
+              <Sparkles className="w-3.5 h-3.5 text-purple-700" />
               <span>Output Google Gemini Pro:</span>
             </div>
             <p className="whitespace-pre-line text-slate-900 font-medium">{summaryOutput}</p>
@@ -656,6 +659,27 @@ export default function Projects() {
           className="space-y-24"
         >
           {projects.map((project) => {
+            const isPos = project.id === "proj-2";
+            const isWorkflow = project.id === "proj-3";
+
+            const categoryBg = isPos
+              ? "bg-emerald-50 text-emerald-900 border-emerald-200"
+              : isWorkflow
+              ? "bg-purple-50 text-purple-900 border-purple-200"
+              : "bg-indigo-50 text-indigo-900 border-indigo-200";
+
+            const btnBg = isPos
+              ? "bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600"
+              : isWorkflow
+              ? "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500"
+              : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500";
+
+            const solutionBg = isPos
+              ? "border-emerald-200 bg-emerald-50/60 text-emerald-900"
+              : isWorkflow
+              ? "border-purple-200 bg-purple-50/60 text-purple-900"
+              : "border-indigo-200 bg-indigo-50/60 text-indigo-900";
+
             return (
               <motion.div
                 key={project.id}
@@ -670,14 +694,14 @@ export default function Projects() {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-2xl">{project.featuredSymbol || "💻"}</span>
-                      <span className="text-[10px] font-mono font-bold tracking-wider text-indigo-800 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full uppercase">
+                      <span className={`text-[10px] font-mono font-extrabold tracking-wider border px-3 py-1 rounded-full uppercase shadow-2xs ${categoryBg}`}>
                         {project.category}
                       </span>
                     </div>
-                    <h3 className="text-3xl font-extrabold text-slate-900 tracking-tight leading-none">
+                    <h3 className="text-3xl font-black text-slate-900 tracking-tight leading-none">
                       {project.title}
                     </h3>
-                    <p className="text-xs font-mono text-slate-600 mt-2 uppercase font-semibold">
+                    <p className="text-xs font-mono text-slate-600 mt-2 uppercase font-bold">
                       // {project.subtitle}
                     </p>
                   </div>
@@ -685,8 +709,8 @@ export default function Projects() {
                   {/* Problems and Solutions Grid side-by-side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
                     {/* Problem Column */}
-                    <div className="p-4 rounded-xl border border-rose-200 bg-rose-50/50 flex flex-col justify-start">
-                      <div className="flex items-center gap-1.5 text-rose-800 font-mono text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                    <div className="p-4 rounded-2xl border border-rose-200 bg-rose-50/60 flex flex-col justify-start">
+                      <div className="flex items-center gap-1.5 text-rose-800 font-mono text-[11px] font-black uppercase tracking-wider mb-2">
                         <AlertCircle className="w-4 h-4 text-rose-600" />
                         <span>Masalah (Problem)</span>
                       </div>
@@ -696,9 +720,9 @@ export default function Projects() {
                     </div>
 
                     {/* Solution Column */}
-                    <div className="p-4 rounded-xl border border-indigo-200 bg-indigo-50/50 flex flex-col justify-start">
-                      <div className="flex items-center gap-1.5 text-indigo-800 font-mono text-[11px] font-extrabold uppercase tracking-wider mb-2">
-                        <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+                    <div className={`p-4 rounded-2xl border flex flex-col justify-start ${solutionBg}`}>
+                      <div className="flex items-center gap-1.5 font-mono text-[11px] font-black uppercase tracking-wider mb-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                         <span>Solusi Digital</span>
                       </div>
                       <p className="text-slate-800 text-xs leading-relaxed font-medium">
@@ -708,15 +732,15 @@ export default function Projects() {
                   </div>
 
                   {/* Impact Columns */}
-                  <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm">
-                    <div className="flex items-center gap-1.5 text-indigo-800 font-mono text-[11px] font-extrabold uppercase tracking-wider mb-2">
+                  <div className="p-4 rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-sm shadow-md">
+                    <div className="flex items-center gap-1.5 text-indigo-900 font-mono text-[11px] font-black uppercase tracking-wider mb-2">
                       <TrendingUp className="w-4 h-4 text-indigo-600" />
                       <span>Hasil & Manfaat (Impact)</span>
                     </div>
-                    <ul className="space-y-1.5 text-xs text-slate-700 leading-relaxed font-medium">
+                    <ul className="space-y-1.5 text-xs text-slate-800 leading-relaxed font-medium">
                       {project.results.map((result, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-2">
-                          <span className="text-indigo-600 font-bold shrink-0 mt-0.5">•</span>
+                          <span className="text-emerald-600 font-bold shrink-0 mt-0.5">•</span>
                           <span>{result}</span>
                         </li>
                       ))}
@@ -733,7 +757,7 @@ export default function Projects() {
                           target="_blank"
                           rel="noreferrer"
                           id={`proj-github-${project.id}`}
-                          className="p-2.5 bg-white hover:bg-slate-100 text-slate-700 rounded-lg border border-slate-300 transition-colors flex items-center justify-center cursor-pointer shadow-sm"
+                          className="p-3 bg-white hover:bg-slate-100 text-slate-800 rounded-xl border border-slate-300 transition-colors flex items-center justify-center cursor-pointer shadow-sm hover:border-slate-400"
                           title="View Source on GitHub"
                         >
                           <Github className="w-4 h-4" />
@@ -744,7 +768,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noreferrer"
                         id={`proj-demo-${project.id}`}
-                        className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-[10px] tracking-wider uppercase rounded-lg transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
+                        className={`px-6 py-3 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md ${btnBg}`}
                       >
                         <span>Live Demo</span>
                         <ExternalLink className="w-3.5 h-3.5 text-white" />
@@ -752,15 +776,15 @@ export default function Projects() {
                     </div>
 
                     {/* Tech stack badges */}
-                    <div className="flex flex-wrap items-center gap-1.5 p-2 bg-white border border-slate-200 rounded-xl shadow-sm">
-                      <span className="flex items-center gap-1 text-[9px] font-mono font-bold text-indigo-700 uppercase tracking-wider mr-1.5">
+                    <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-white border border-slate-200/90 rounded-2xl shadow-sm">
+                      <span className="flex items-center gap-1 text-[9px] font-mono font-extrabold text-indigo-800 uppercase tracking-wider mr-1.5">
                         <Layers className="w-3.5 h-3.5" />
                         Tech:
                       </span>
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-[10px] font-mono font-bold text-slate-800"
+                          className="px-2.5 py-0.5 bg-slate-100/80 border border-slate-200 rounded-lg text-[10px] font-mono font-bold text-slate-800"
                         >
                           {tech}
                         </span>

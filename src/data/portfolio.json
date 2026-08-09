@@ -146,7 +146,7 @@
         "Performa Responsif: Berjalan cepat pada browser HP maupun desktop tanpa perlu server berat"
       ],
       "githubUrl": "https://github.com/Azbhy24/dompetku",
-      "demoUrl": "https://wa.me/6281915115390",
+      "demoUrl": null,
       "featuredSymbol": "💳"
     },
     {
@@ -163,7 +163,7 @@
         "Manajemen Katalog: Memudahkan penyusunan daftar item dan harga produk toko ritel"
       ],
       "githubUrl": "https://github.com/Azbhy24/Kasir-Amma-Ika",
-      "demoUrl": "https://wa.me/6281915115390",
+      "demoUrl": null,
       "featuredSymbol": "🛒"
     },
     {
@@ -180,7 +180,7 @@
         "Antarmuka Ramah Pengguna: Navigasi surah dan ayat yang bersih dengan mode tampilan yang nyaman"
       ],
       "githubUrl": "https://github.com/Azbhy24/ngajiku",
-      "demoUrl": "https://wa.me/6281915115390",
+      "demoUrl": null,
       "featuredSymbol": "📖"
     },
     {
@@ -193,11 +193,11 @@
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Motion", "Firebase"],
       "results": [
         "Penyajian Rapi: Menggabungkan rekam jejak S1 MPI, pengalaman ritel, dan karya web secara terstruktur",
-        "Interaktif: Dilengkapi simulator live produk (DompetKu, POS Kasir) dan sistem kontak",
+        "Interaktif: Dilengkapi simulasi produk interaktif dan sistem kontak",
         "Standar Visual Tinggi: Mengusung tema terang institusional yang nyaman dibaca di seluruh perangkat"
       ],
       "githubUrl": "https://github.com/Azbhy24/tasbih-dev",
-      "demoUrl": "https://wa.me/6281915115390",
+      "demoUrl": null,
       "featuredSymbol": "⚡"
     }
   ],

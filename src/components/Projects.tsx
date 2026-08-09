@@ -770,22 +770,29 @@ export default function Projects() {
                           target="_blank"
                           rel="noreferrer"
                           id={`proj-github-${project.id}`}
-                          className="p-3 bg-white hover:bg-slate-100 text-slate-800 rounded-xl border border-slate-300 transition-colors flex items-center justify-center cursor-pointer shadow-sm hover:border-slate-400"
+                          className={
+                            project.demoUrl
+                              ? "p-3 bg-white hover:bg-slate-100 text-slate-800 rounded-xl border border-slate-300 transition-colors flex items-center justify-center cursor-pointer shadow-sm hover:border-slate-400"
+                              : "px-5 py-3 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md"
+                          }
                           title="View Source on GitHub"
                         >
                           <Github className="w-4 h-4" />
+                          {!project.demoUrl && <span>Repository GitHub</span>}
                         </a>
                       )}
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        id={`proj-demo-${project.id}`}
-                        className={`px-6 py-3 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md ${btnBg}`}
-                      >
-                        <span>Live Demo</span>
-                        <ExternalLink className="w-3.5 h-3.5 text-white" />
-                      </a>
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          id={`proj-demo-${project.id}`}
+                          className={`px-6 py-3 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md ${btnBg}`}
+                        >
+                          <span>Live Demo</span>
+                          <ExternalLink className="w-3.5 h-3.5 text-white" />
+                        </a>
+                      )}
                     </div>
 
                     {/* Tech stack badges */}

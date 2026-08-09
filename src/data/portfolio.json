@@ -126,7 +126,7 @@
         "Integrasi Google Gemini API untuk eksperimen pengolahan teks dan fitur cerdas."
       ],
       "metrics": [
-        { "value": "4+", "label": "Project Live" },
+        { "value": "4+", "label": "Project Digital" },
         { "value": "2026", "label": "Presenter ACIEM" }
       ]
     }
@@ -145,7 +145,7 @@
         "Tampilan Visual: Menyajikan grafik dan kategori transaksi yang jernih dan mudah dipahami",
         "Performa Responsif: Berjalan cepat pada browser HP maupun desktop tanpa perlu server berat"
       ],
-      "githubUrl": "https://github.com/azbhy24/dompetku",
+      "githubUrl": "https://github.com/Azbhy24/dompetku",
       "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "💳"
     },
@@ -162,7 +162,7 @@
         "Struk Digital: Menyediakan opsi konfirmasi nota transaksi digital langsung melalui antarmuka web",
         "Manajemen Katalog: Memudahkan penyusunan daftar item dan harga produk toko ritel"
       ],
-      "githubUrl": "https://github.com/azbhy24",
+      "githubUrl": "https://github.com/Azbhy24/Kasir-Amma-Ika",
       "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "🛒"
     },
@@ -179,7 +179,7 @@
         "Aplikasi Mobile Ready: Memiliki konfigurasi Capacitor untuk dikemas menjadi file APK Android",
         "Antarmuka Ramah Pengguna: Navigasi surah dan ayat yang bersih dengan mode tampilan yang nyaman"
       ],
-      "githubUrl": "https://github.com/azbhy24",
+      "githubUrl": "https://github.com/Azbhy24/ngajiku",
       "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "📖"
     },
@@ -189,14 +189,14 @@
       "subtitle": "Personal Branding & Interactive Showcase",
       "category": "Web Engineering & Showcase",
       "problem": "Portofolio profesional memerlukan penyajian rekam jejak akademis, bisnis, dan teknis secara jujur, bersih, dan interaktif.",
-      "solution": "Aplikasi web portofolio interaktif berbasis React, TypeScript, dan Tailwind CSS yang dilengkapi simulasi produk, rekap data nyata, dan desain institusional WCAG-compliant.",
+      "solution": "Aplikasi web portofolio interaktif berbasis React, TypeScript, dan Tailwind CSS yang dilengkapi simulasi produk, rekap data nyata, dan desain institusional.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Motion", "Firebase"],
       "results": [
         "Penyajian Rapi: Menggabungkan rekam jejak S1 MPI, pengalaman ritel, dan karya web secara terstruktur",
         "Interaktif: Dilengkapi simulator live produk (DompetKu, POS Kasir) dan sistem kontak",
         "Standar Visual Tinggi: Mengusung tema terang institusional yang nyaman dibaca di seluruh perangkat"
       ],
-      "githubUrl": "https://github.com/azbhy24",
+      "githubUrl": "https://github.com/Azbhy24/tasbih-dev",
       "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "⚡"
     }

@@ -608,7 +608,7 @@ function PortfolioShowcaseSimulator() {
           <p className="text-indigo-300 font-bold">✓ Tailwind CSS v4 + Motion</p>
           <p className="text-purple-300 font-bold">✓ Firebase Integration Ready</p>
           <p className="text-slate-400 text-[10px] pt-1 border-t border-slate-800">
-            100% WCAG High-Contrast Light Theme Approved
+            100% High-Contrast Light Theme Approved
           </p>
         </div>
       )}

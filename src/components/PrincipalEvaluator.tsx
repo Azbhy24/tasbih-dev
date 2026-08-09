@@ -225,7 +225,7 @@ export const principalReviews: PrincipalReview[] = [
       potensiKepemimpinan: 86,
     },
     strengths: [
-      "Kontras warna Slate-50 dan Indigo-600 pada versi baru ini memenuhi standar aksesibilitas mata (WCAG AA).",
+      "Kontras warna Slate-50 dan Indigo-600 pada versi baru ini memenuhi standar aksesibilitas mata.",
       "Tata letak bento grid tidak terkesan bertumpuk atau rumit.",
       "Formulir Kontak dan Guestbook dapat diakses dengan mudah di semua perangkat."
     ],

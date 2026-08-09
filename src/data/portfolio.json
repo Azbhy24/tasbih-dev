@@ -32,10 +32,10 @@
     },
     {
       "id": "stat-proj",
-      "value": "4+",
+      "value": "4",
       "suffix": "",
       "prefix": "",
-      "label": "Project Digital Terverifikasi",
+      "label": "Project Digital Live",
       "description": "Aplikasi web interaktif & sistem operasional yang berfungsi nyata.",
       "icon": "Award"
     },
@@ -122,11 +122,11 @@
       "type": "technology",
       "responsibilities": [
         "Mengelola administrasi penerbitan naskah ilmiah, verifikasi berkas, dan komunikasi editorial Jurnal EDIUM (2024).",
-        "Membangun aplikasi web produksi (DompetKu, POS Kasir, NgajiKu, Portofolio AzBhy) menggunakan React, TypeScript, Tailwind CSS, dan Firebase.",
+        "Membangun aplikasi web produksi (DompetKu, Warung Amma Ika, Kasir Amma Ika, NgajiKu, Portofolio AzBhy) menggunakan React, TypeScript, Tailwind CSS, dan Firebase.",
         "Integrasi Google Gemini API untuk eksperimen pengolahan teks dan fitur cerdas."
       ],
       "metrics": [
-        { "value": "4+", "label": "Project Digital" },
+        { "value": "4", "label": "Project Digital Live" },
         { "value": "2026", "label": "Presenter ACIEM" }
       ]
     }
@@ -146,28 +146,45 @@
         "Performa Responsif: Berjalan cepat pada browser HP maupun desktop tanpa perlu server berat"
       ],
       "githubUrl": "https://github.com/Azbhy24/dompetku",
-      "demoUrl": null,
+      "demoUrl": "https://dompetku-xi-ochre.vercel.app/",
       "featuredSymbol": "💳"
     },
     {
       "id": "proj-2",
-      "title": "Warung Amma Ika POS",
-      "subtitle": "Digital Cashier & Inventory System for Retail",
+      "title": "Warung Amma Ika",
+      "subtitle": "Digital Storefront & Online Product Catalog",
       "category": "Business Digitalization",
-      "problem": "Pencatatan transaksi kasir toko ritel keluarga dan penghitungan total belanjaan memerlukan ketelitian tinggi agar tidak terjadi kekeliruan hitung.",
-      "solution": "Sistem Point of Sale (POS) web interaktif untuk mempermudah perhitungan keranjang belanja, cetak struk digital, dan manajemen daftar produk toko.",
-      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Firebase", "WhatsApp API"],
+      "problem": "Warung membutuhkan media digital yang dapat menampilkan produk dan informasi jualan kepada pelanggan secara lebih mudah.",
+      "solution": "Website etalase digital Warung Amma Ika untuk menampilkan katalog barang, harga, dan informasi produk kepada pelanggan.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
       "results": [
-        "Proses Kasir Praktis: Mempercepat input barang belanjaan dan kalkulasi total transaksi secara otomatis",
-        "Struk Digital: Menyediakan opsi konfirmasi nota transaksi digital langsung melalui antarmuka web",
-        "Manajemen Katalog: Memudahkan penyusunan daftar item dan harga produk toko ritel"
+        "Katalog Digital: Menampilkan daftar produk, harga, dan ketersediaan barang secara rapi",
+        "Akses Praktis: Memudahkan pelanggan melihat etalase jualan warung langsung dari perangkat mobile",
+        "Informasi Terpusat: Menyediakan informasi operasional warung dalam satu halaman web yang bersih"
       ],
-      "githubUrl": "https://github.com/Azbhy24/Kasir-Amma-Ika",
-      "demoUrl": null,
-      "featuredSymbol": "🛒"
+      "githubUrl": "https://github.com/Azbhy24/Warung_Amma_Ika",
+      "demoUrl": "https://warung-amma-ika.vercel.app/",
+      "featuredSymbol": "🏪"
     },
     {
       "id": "proj-3",
+      "title": "Kasir Amma Ika",
+      "subtitle": "Personal Retail POS & Sales Management",
+      "category": "Business Digitalization",
+      "problem": "Pencatatan transaksi penjualan secara manual membutuhkan ketelitian dan menyulitkan pengelolaan transaksi harian.",
+      "solution": "Sistem kasir digital internal untuk membantu pencatatan dan pengelolaan transaksi penjualan Warung Amma Ika.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Firebase", "LocalStorage API"],
+      "results": [
+        "Proses Kasir Praktis: Mempercepat input barang belanjaan dan kalkulasi total transaksi secara otomatis",
+        "Struk Digital: Menyediakan opsi konfirmasi nota transaksi digital langsung melalui antarmuka web",
+        "Manajemen Transaksi: Memudahkan penyusunan dan rekapitulasi data penjualan toko ritel"
+      ],
+      "githubUrl": "https://github.com/Azbhy24/Kasir-Amma-Ika",
+      "demoUrl": "https://kasir-amma-ika.vercel.app/",
+      "featuredSymbol": "🛒"
+    },
+    {
+      "id": "proj-4",
       "title": "NgajiKu",
       "subtitle": "Interactive Al-Qur'an & Islamic Learning Web App",
       "category": "Web App & Mobile Packaging",
@@ -180,11 +197,11 @@
         "Antarmuka Ramah Pengguna: Navigasi surah dan ayat yang bersih dengan mode tampilan yang nyaman"
       ],
       "githubUrl": "https://github.com/Azbhy24/ngajiku",
-      "demoUrl": null,
+      "demoUrl": "https://ngajiku-iota.vercel.app/",
       "featuredSymbol": "📖"
     },
     {
-      "id": "proj-4",
+      "id": "proj-5",
       "title": "AzBhy / Tasbih Portfolio",
       "subtitle": "Personal Branding & Interactive Showcase",
       "category": "Web Engineering & Showcase",
@@ -197,7 +214,7 @@
         "Standar Visual Tinggi: Mengusung tema terang institusional yang nyaman dibaca di seluruh perangkat"
       ],
       "githubUrl": "https://github.com/Azbhy24/tasbih-dev",
-      "demoUrl": null,
+      "demoUrl": "https://tasbih-portofolio.vercel.app/",
       "featuredSymbol": "⚡"
     }
   ],

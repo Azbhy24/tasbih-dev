@@ -204,7 +204,109 @@ function DompetKuSimulator() {
 }
 
 // ==========================================
-// 2. SISTEM POS UMKM SIMULATOR
+// 2. WARUNG STOREFRONT SIMULATOR
+// ==========================================
+function WarungStorefrontSimulator() {
+  const [activeCategory, setActiveCategory] = useState("Semua");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const categories = ["Semua", "Sembako", "Minuman", "Snack"];
+
+  const catalog = [
+    { id: 1, name: "Beras Sembako 5kg", category: "Sembako", price: 75000, stock: "Tersedia" },
+    { id: 2, name: "Minyak Goreng 2L", category: "Sembako", price: 34000, stock: "Tersedia" },
+    { id: 3, name: "Gula Pasir 1kg", category: "Sembako", price: 16500, stock: "Tersedia" },
+    { id: 4, name: "Air Mineral 600ml", category: "Minuman", price: 3500, stock: "Tersedia" },
+    { id: 5, name: "Teh Kemasan Botol", category: "Minuman", price: 5000, stock: "Tersedia" },
+    { id: 6, name: "Biskuit Kaleng 350g", category: "Snack", price: 22000, stock: "Tersedia" },
+  ];
+
+  const filtered = catalog.filter((item) => {
+    const matchCat = activeCategory === "Semua" || item.category === activeCategory;
+    const matchSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  return (
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
+      {/* Header */}
+      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+          <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
+            ETALASE DIGITAL: WARUNG AMMA IKA
+          </span>
+        </div>
+        <span className="text-[10px] font-mono text-emerald-900 px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200 font-bold">
+          Katalog Online
+        </span>
+      </div>
+
+      <div className="space-y-3">
+        {/* Search & Categories */}
+        <div className="flex flex-col gap-2">
+          <input
+            type="text"
+            placeholder="Cari produk di etalase..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
+          />
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-3 py-1 text-[10px] font-mono font-bold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
+                  activeCategory === cat
+                    ? "bg-emerald-600 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Catalog List */}
+        <div className="grid grid-cols-2 gap-2 max-h-[180px] overflow-y-auto pr-1">
+          {filtered.map((item) => (
+            <div
+              key={item.id}
+              className="p-3 rounded-2xl bg-emerald-50/40 border border-emerald-200/80 flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[9px] font-mono font-bold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-md uppercase">
+                  {item.category}
+                </span>
+                <p className="text-xs font-bold text-slate-900 leading-snug mt-1">{item.name}</p>
+              </div>
+              <div className="mt-2 flex items-center justify-between">
+                <span className="text-[11px] font-mono text-slate-900 font-extrabold">
+                  Rp {item.price.toLocaleString("id-ID")}
+                </span>
+                <span className="text-[9px] font-mono font-bold text-emerald-800 bg-emerald-100/80 px-1.5 py-0.5 rounded">
+                  {item.stock}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Footer info */}
+        <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[10px] font-mono text-slate-600 font-semibold">
+          <span>📍 Suppa, Pinrang</span>
+          <span className="text-emerald-700 font-bold">● Buka Setiap Hari</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 3. SISTEM POS UMKM SIMULATOR
 // ==========================================
 function POSUMKMSimulator() {
   const [cart, setCart] = useState<{ id: number; name: string; price: number; qty: number }[]>([]);
@@ -588,8 +690,8 @@ function PortfolioShowcaseSimulator() {
             <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Source Code Live</span>
           </div>
           <div className="p-3.5 bg-emerald-50/60 rounded-2xl border border-emerald-200">
-            <span className="block text-[9px] font-mono text-emerald-700 font-bold uppercase">PROJECT DIGITAL</span>
-            <span className="text-xl font-black text-slate-900 mt-1 block">4+</span>
+            <span className="block text-[9px] font-mono text-emerald-700 font-bold uppercase">PROJECT DIGITAL LIVE</span>
+            <span className="text-xl font-black text-slate-900 mt-1 block">4</span>
             <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Aplikasi Web</span>
           </div>
           <div className="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200">
@@ -665,11 +767,12 @@ export default function Projects() {
           className="space-y-16 sm:space-y-24"
         >
           {projects.map((project) => {
-            const isPos = project.id === "proj-2";
-            const isNgaji = project.id === "proj-3";
-            const isPorto = project.id === "proj-4";
+            const isWarung = project.id === "proj-2";
+            const isKasir = project.id === "proj-3";
+            const isNgaji = project.id === "proj-4";
+            const isPorto = project.id === "proj-5";
 
-            const categoryBg = isPos
+            const categoryBg = isWarung || isKasir
               ? "bg-emerald-50 text-emerald-900 border-emerald-200"
               : isNgaji
               ? "bg-teal-50 text-teal-900 border-teal-200"
@@ -677,7 +780,7 @@ export default function Projects() {
               ? "bg-purple-50 text-purple-900 border-purple-200"
               : "bg-indigo-50 text-indigo-900 border-indigo-200";
 
-            const btnBg = isPos
+            const btnBg = isWarung || isKasir
               ? "bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600"
               : isNgaji
               ? "bg-gradient-to-r from-teal-600 to-emerald-700 hover:from-teal-500 hover:to-emerald-600"
@@ -685,7 +788,7 @@ export default function Projects() {
               ? "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500"
               : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500";
 
-            const solutionBg = isPos
+            const solutionBg = isWarung || isKasir
               ? "border-emerald-200 bg-emerald-50/60 text-emerald-900"
               : isNgaji
               ? "border-teal-200 bg-teal-50/60 text-teal-900"
@@ -818,9 +921,10 @@ export default function Projects() {
                 <div className="lg:col-span-6 flex items-center justify-center">
                   <div className="w-full flex justify-center">
                     {project.id === "proj-1" && <DompetKuSimulator />}
-                    {project.id === "proj-2" && <POSUMKMSimulator />}
-                    {project.id === "proj-3" && <NgajiKuSimulator />}
-                    {project.id === "proj-4" && <PortfolioShowcaseSimulator />}
+                    {project.id === "proj-2" && <WarungStorefrontSimulator />}
+                    {project.id === "proj-3" && <POSUMKMSimulator />}
+                    {project.id === "proj-4" && <NgajiKuSimulator />}
+                    {project.id === "proj-5" && <PortfolioShowcaseSimulator />}
                   </div>
                 </div>
 

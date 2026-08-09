@@ -73,7 +73,6 @@ export default function Hero({ onNavigate }: HeroProps) {
               <span>TASBIH</span>
               <span className="text-slate-300">•</span>
               <span className="text-indigo-800 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">BRAND: AZBHY</span>
-              <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">S1 MPI</span>
             </span>
           </motion.div>
 
@@ -183,7 +182,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 Tasbih
               </h3>
               <p className="text-[11px] font-mono font-bold text-indigo-700 mt-0.5 uppercase tracking-wider text-center">
-                BRAND: AZBHY • {activePhoto === "almet" ? "S1 MPI AKADEMIK" : "DIGITAL OPERATIONS"}
+                BRAND: AZBHY • DIGITAL OPERATIONS
               </p>
 
               {/* Selector Tabs */}

@@ -72,8 +72,8 @@ export default function Hero({ onNavigate }: HeroProps) {
               </span>
               <span>TASBIH</span>
               <span className="text-slate-300">•</span>
+              <span className="text-indigo-800 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-200">BRAND: AZBHY</span>
               <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">S1 MPI</span>
-              <span className="text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-200">FULL-STACK & AI</span>
             </span>
           </motion.div>
 
@@ -81,42 +81,36 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.h1
             variants={itemVariants}
             id="hero-main-title"
-            className="mt-4 sm:mt-6 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-[1.02] sm:leading-[0.95] uppercase break-words"
+            className="mt-4 sm:mt-5 text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight text-slate-900 leading-[0.95] uppercase break-words"
           >
-            {bio.fullName}<span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">.</span>
+            Tasbih<span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">.</span>
           </motion.h1>
 
-          {/* Roles Subheadlines with colorful pills */}
-          <motion.div
+          {/* Headline / Positioning */}
+          <motion.h2
             variants={itemVariants}
-            id="hero-subheadlines"
-            className="flex flex-wrap items-center gap-2 mt-4 sm:mt-6 text-slate-800 font-sans text-[11px] sm:text-xs md:text-sm font-bold tracking-wide"
+            id="hero-positioning-title"
+            className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl font-extrabold text-indigo-700 tracking-tight"
           >
-            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-200/90 text-indigo-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />
-              Full-Stack Web Developer
-            </span>
-            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-purple-50 border border-purple-200/90 text-purple-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0" />
-              AI & Automation Specialist
-            </span>
-            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200/90 text-emerald-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-              Digital Operations Lead
-            </span>
-            <span className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200/90 text-amber-800 shadow-2xs flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
-              Manajemen Pendidikan Islam
-            </span>
-          </motion.div>
+            Digital Operations & Automation Builder
+          </motion.h2>
 
-          {/* Short Bio description */}
+          {/* Main Message */}
+          <motion.p
+            variants={itemVariants}
+            id="hero-main-message"
+            className="mt-3 text-base sm:text-lg md:text-xl font-bold text-slate-900 max-w-2xl leading-snug"
+          >
+            Membantu bisnis dan organisasi merapikan operasional melalui teknologi web, otomasi, dan AI.
+          </motion.p>
+
+          {/* Description */}
           <motion.p
             variants={itemVariants}
             id="hero-bio-para"
-            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
+            className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
           >
-            {bio.professionalBio}
+            Latar belakang Manajemen Pendidikan Islam dengan pengalaman di administrasi, bisnis ritel, pengelolaan data, pengembangan aplikasi web, dan otomatisasi workflow.
           </motion.p>
 
           {/* Actions: Button section */}
@@ -130,7 +124,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               onClick={() => onNavigate("projects")}
               className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg hover:shadow-indigo-500/30 active:scale-95 transition-all duration-300 cursor-pointer rounded-full border-none flex items-center justify-center gap-2 group"
             >
-              <span>LIHAT PORTOFOLIO</span>
+              <span>LIHAT PROYEK</span>
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </button>
 
@@ -140,7 +134,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               className="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-indigo-200 bg-white hover:bg-indigo-50/50 text-slate-800 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 cursor-pointer rounded-full flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4 text-indigo-600" />
-              <span>HUBUNGI SAYA</span>
+              <span>MARI BERKOLABORASI</span>
             </button>
           </motion.div>
         </motion.div>
@@ -186,10 +180,10 @@ export default function Hero({ onNavigate }: HeroProps) {
 
               {/* Identity labels */}
               <h3 className="mt-4 text-slate-900 font-sans text-xl font-black tracking-tight">
-                Tasbih <span className="text-indigo-600 text-xs font-mono font-bold">({activePhoto === "almet" ? "S1 MPI" : "Azbhy"})</span>
+                Tasbih
               </h3>
-              <p className="text-[11px] font-mono font-bold text-purple-700 mt-0.5 uppercase tracking-wider text-center">
-                {activePhoto === "almet" ? "MAHASISWA & DIGITAL BUILDER" : "OPERATIONS & AUTOMATION SPECIALIST"}
+              <p className="text-[11px] font-mono font-bold text-indigo-700 mt-0.5 uppercase tracking-wider text-center">
+                BRAND: AZBHY • {activePhoto === "almet" ? "S1 MPI AKADEMIK" : "DIGITAL OPERATIONS"}
               </p>
 
               {/* Selector Tabs */}

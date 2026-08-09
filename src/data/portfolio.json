@@ -1,53 +1,52 @@
 {
   "bio": {
     "fullName": "Tasbih",
-    "aliases": ["Az"],
+    "aliases": ["AzBhy"],
     "headlineTitle": "Tasbih",
     "subheadline": [
-      "Full-Stack Web Developer",
-      "AI & Workflow Automation Specialist",
+      "Digital Builder & Education Management Graduate",
       "Digital Operations & Administration Lead"
     ],
-    "tagline": "Membangun Aplikasi Web Scalable, Otomatisasi AI, & Digitalisasi Administrasi Bisnis.",
-    "professionalBio": "Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Digital Operations Builder. Memiliki rekam jejak teruji dalam administrasi organisasi, pencatatan keuangan bisnis ritel, enumerasi data survei lapangan (PT ESC Indonesia), serta pengembangan aplikasi web & otomatisasi alur kerja digital.",
-    "extendedBio": "Berbekal latar belakang S1 Manajemen Pendidikan Islam dari IAIN Parepare, Tasbih menggabungkan disiplin tata kelola administrasi, pengolahan data terstruktur, dan teknologi web modern.\n\nMelalui platform Azbhy Digital Lab, ia merancang sistem POS kasir, aplikasi keuangan DompetKu, serta pipeline otomatisasi n8n & Google Gemini AI untuk mengeliminasi pekerjaan repetitif dan mempercepat efisiensi operasional organisasi maupun UMKM."
+    "tagline": "Membangun Aplikasi Web, Digitalisasi Operasional, & Administrasi Sistem.",
+    "professionalBio": "Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Digital Operations Builder. Memiliki pengalaman dalam administrasi organisasi, pencatatan keuangan bisnis ritel, enumerasi data survei lapangan (PT ESC Indonesia), serta pengembangan aplikasi web dan sistem digital.",
+    "extendedBio": "Berbekal latar belakang S1 Manajemen Pendidikan Islam dari IAIN Parepare, Tasbih menggabungkan disiplin tata kelola administrasi, pengolahan data terstruktur, dan teknologi web modern.\n\nMelalui berbagai proyek digital, ia merancang sistem POS kasir, aplikasi keuangan DompetKu, platform NgajiKu, serta integrasi Google Gemini API untuk membantu pekerjaan operasional menjadi lebih rapi dan efisien."
   },
   "stats": [
+    {
+      "id": "stat-trans",
+      "value": "100+",
+      "suffix": "",
+      "prefix": "",
+      "label": "Transaksi Layanan Digital",
+      "description": "Penjualan & transaksi operasional layanan digital terverifikasi.",
+      "icon": "TrendingUp"
+    },
+    {
+      "id": "stat-repo",
+      "value": "5+",
+      "suffix": "",
+      "prefix": "",
+      "label": "Repositori GitHub",
+      "description": "Source code & proyek aplikasi berbasis React, TypeScript, dan Firebase.",
+      "icon": "Code"
+    },
+    {
+      "id": "stat-proj",
+      "value": "4+",
+      "suffix": "",
+      "prefix": "",
+      "label": "Project Digital Terverifikasi",
+      "description": "Aplikasi web interaktif & sistem operasional yang berfungsi nyata.",
+      "icon": "Award"
+    },
     {
       "id": "stat-org",
       "value": "150+",
       "suffix": "",
       "prefix": "",
       "label": "Alumni & Tim Terkoordinasi",
-      "description": "Memimpin transformasi digital & efisiensi komunikasi alumni regional.",
+      "description": "Memimpin tata kelola komunikasi & organisasi alumni regional.",
       "icon": "Users"
-    },
-    {
-      "id": "stat-proj",
-      "value": "3+",
-      "suffix": "",
-      "prefix": "",
-      "label": "Web & Automation Apps",
-      "description": "Mendeploy aplikasi web produksi, POS kasir, dan workflow AI.",
-      "icon": "Code"
-    },
-    {
-      "id": "stat-umkm",
-      "value": "500+",
-      "suffix": "",
-      "prefix": "",
-      "label": "SKU Ritel Dikelola",
-      "description": "Digitalisasi pencatatan stok & operasional kasir toko ritel.",
-      "icon": "TrendingUp"
-    },
-    {
-      "id": "stat-docs",
-      "value": "< 2 Mnt",
-      "suffix": "",
-      "prefix": "",
-      "label": "Pemrosesan Dokumen AI",
-      "description": "Efisiensi ekstraksi naskah akademik dengan Google Gemini Pro.",
-      "icon": "FileText"
     }
   ],
   "education": {
@@ -57,7 +56,7 @@
     "period": "2022 – 2026",
     "focus": "Educational Management Systems, Digital Administration, Data Governance",
     "details": [
-      "Lulusan S1 Manajemen Pendidikan Islam dengan keahlian administrasi organisasi, tata kelola data, dan pelaporan keuangan.",
+      "Lulusan S1 Manajemen Pendidikan Islam dengan keahlian administrasi organisasi, tata kelola data, dan pelaporan.",
       "Sekretariat Jurnal EDIUM (Education Management), Program Studi MPI (2024).",
       "Presenter International Conference — ACIEM (Annual Conference on Islamic Education Management) (2026)."
     ]
@@ -71,13 +70,13 @@
       "period": "2026 – Sekarang",
       "type": "business",
       "responsibilities": [
-        "Mengelola pencatatan stok barang, transaksi kasir, serta pembukuan hutang-piutang pelanggan secara tertib dan terstruktur.",
-        "Menyusun sistem pencatatan digital sederhana untuk mempermudah rekap data harian dan pelaporan keuangan usaha keluarga.",
-        "Mengontrol arus kas harian dan menjaga akurasi laporan keuangan operasional toko ritel."
+        "Mengelola pencatatan stok barang, transaksi kasir, serta pembukuan hutang-piutang pelanggan secara tertib.",
+        "Menyusun sistem pencatatan digital sederhana untuk mempermudah rekap data harian usaha keluarga.",
+        "Mengontrol arus kas harian dan menjaga ketertiban laporan keuangan operasional toko ritel."
       ],
       "metrics": [
         { "value": "500+", "label": "SKU Ritel Dikelola" },
-        { "value": "100%", "label": "Akurasi Pembukuan" }
+        { "value": "100+", "label": "Transaksi Terlayani" }
       ]
     },
     {
@@ -89,12 +88,12 @@
       "type": "business",
       "responsibilities": [
         "Mengumpulkan dan memverifikasi data sosial-ekonomi masyarakat melalui wawancara terstruktur menggunakan kuesioner.",
-        "Menyusun dan menyerahkan laporan hasil survei secara harian dengan tingkat akurasi dan ketepatan waktu yang terjaga.",
-        "Melakukan validasi entri data kuesioner untuk memastikan standar integritas riset lapangan."
+        "Menyusun dan menyerahkan laporan hasil survei secara harian dengan ketepatan waktu yang terjaga.",
+        "Melakukan validasi entri data kuesioner untuk memastikan integritas riset lapangan."
       ],
       "metrics": [
-        { "value": "100%", "label": "Ketepatan Waktu Laporan" },
-        { "value": "High", "label": "Akurasi Verifikasi Data" }
+        { "value": "Riset", "label": "Survei Lapangan" },
+        { "value": "Valid", "label": "Verifikasi Data" }
       ]
     },
     {
@@ -116,18 +115,18 @@
     },
     {
       "id": "exp-4",
-      "role": "Sekretariat Jurnal EDIUM & Builder",
+      "role": "Sekretariat Jurnal EDIUM & Digital Builder",
       "organization": "Jurnal EDIUM (MPI) & Azbhy Lab",
       "location": "Parepare / Remote",
       "period": "2024 – Sekarang",
       "type": "technology",
       "responsibilities": [
         "Mengelola administrasi penerbitan naskah ilmiah, verifikasi berkas, dan komunikasi editorial Jurnal EDIUM (2024).",
-        "Merancang dan mendeploy 3+ aplikasi web produksi (DompetKu, POS Kasir, Azbhy Workflows) menggunakan React, TypeScript, dan Firebase.",
-        "Membangun arsitektur pipeline otomatisasi n8n terintegrasi dengan Google Gemini AI API untuk pemrosesan dokumen."
+        "Membangun aplikasi web produksi (DompetKu, POS Kasir, NgajiKu, Portofolio AzBhy) menggunakan React, TypeScript, Tailwind CSS, dan Firebase.",
+        "Integrasi Google Gemini API untuk eksperimen pengolahan teks dan fitur cerdas."
       ],
       "metrics": [
-        { "value": "3+", "label": "Aplikasi Web Live" },
+        { "value": "4+", "label": "Project Live" },
         { "value": "2026", "label": "Presenter ACIEM" }
       ]
     }
@@ -138,30 +137,30 @@
       "title": "DompetKu",
       "subtitle": "Interactive Personal Finance Web App",
       "category": "Web Dev & FinTech",
-      "problem": "Pencatatan keuangan pribadi manual memakan waktu hingga 3-4 jam/bulan dengan risiko kesalahan kalkulasi saldo hingga 15%.",
+      "problem": "Pencatatan keuangan pribadi secara manual sering membingungkan jika tidak memiliki sistem rekap yang terstruktur.",
       "solution": "Aplikasi web manajemen finansial intuitif dengan rekap saldo otomatis real-time, visualisasi grafik pengeluaran, dan penyimpanan cepat berbasis client-side.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "LocalStorage API", "Motion"],
       "results": [
-        "Efisiensi Waktu: Mengurangi waktu rekap transaksi sebesar 85% (dari 3 jam menjadi 15 menit/bulan)",
-        "Akurasi Finansial: Meminimalisir risiko kesalahan perhitungan saldo manual hingga 0%",
-        "Performa Tinggi: Loading time < 1 detik dengan arsitektur React client-side yang responsif"
+        "Kemudahan Rekap: Memudahkan pencatatan pemasukan dan pengeluaran harian secara cepat",
+        "Tampilan Visual: Menyajikan grafik dan kategori transaksi yang jernih dan mudah dipahami",
+        "Performa Responsif: Berjalan cepat pada browser HP maupun desktop tanpa perlu server berat"
       ],
-      "githubUrl": "https://github.com/azbhy24",
+      "githubUrl": "https://github.com/azbhy24/dompetku",
       "demoUrl": "https://wa.me/6281915115390",
       "featuredSymbol": "💳"
     },
     {
       "id": "proj-2",
-      "title": "Sistem POS UMKM",
-      "subtitle": "Digital Cashier & Inventory Engine",
+      "title": "Warung Amma Ika POS",
+      "subtitle": "Digital Cashier & Inventory System for Retail",
       "category": "Business Digitalization",
-      "problem": "Transaksi toko ritel manual memicu antrean panjang (5-8 menit/pelanggan) dan selisih stok bulanan hingga 10%.",
-      "solution": "Sistem Point of Sale (POS) web interaktif yang mempercepat cetak struk digital, manajemen keranjang kasir, dan integrasi pesanan WhatsApp.",
+      "problem": "Pencatatan transaksi kasir toko ritel keluarga dan penghitungan total belanjaan memerlukan ketelitian tinggi agar tidak terjadi kekeliruan hitung.",
+      "solution": "Sistem Point of Sale (POS) web interaktif untuk mempermudah perhitungan keranjang belanja, cetak struk digital, dan manajemen daftar produk toko.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Firebase", "WhatsApp API"],
       "results": [
-        "Kecepatan Kasir: Memotong waktu cetak & bayar dari 5 menit menjadi < 30 detik per pelanggan",
-        "Akurasi Stok: Menekan selisih inventaris barang ritel hingga di bawah 1%",
-        "Efisiensi Operasional: Mengeliminasi biaya kertas kasir melalui opsi struk digital otomatis"
+        "Proses Kasir Praktis: Mempercepat input barang belanjaan dan kalkulasi total transaksi secara otomatis",
+        "Struk Digital: Menyediakan opsi konfirmasi nota transaksi digital langsung melalui antarmuka web",
+        "Manajemen Katalog: Memudahkan penyusunan daftar item dan harga produk toko ritel"
       ],
       "githubUrl": "https://github.com/azbhy24",
       "demoUrl": "https://wa.me/6281915115390",
@@ -169,16 +168,33 @@
     },
     {
       "id": "proj-3",
-      "title": "Azbhy Workflows",
-      "subtitle": "AI & Cloud Automation Ecosystem",
-      "category": "Cloud & AI Automation",
-      "problem": "Pengolahan naskah akademik & laporan eksekutif secara manual membutuhkan 10+ jam kerja repetitif per minggu.",
-      "solution": "Sistem pemrosesan dokumen otomatis bertenaga n8n, Google Gemini Pro API, dan cloud webhook untuk ekstraksi poin penting secara instan.",
-      "techStack": ["n8n Engine", "Google Gemini API", "Cloud Webhooks", "TypeScript", "JSON Pipelines"],
+      "title": "NgajiKu",
+      "subtitle": "Interactive Al-Qur'an & Islamic Learning Web App",
+      "category": "Web App & Mobile Packaging",
+      "problem": "Masyarakat dan pelajar membutuhkan platform baca Al-Qur'an digital yang ringan, mudah diakses di web, serta dapat dikemas sebagai aplikasi Android.",
+      "solution": "Aplikasi web pembaca Al-Qur'an dan media belajar Islam interaktif yang dibuat responsif di browser dan memiliki konfigurasi Android packaging berbasis Capacitor.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Capacitor Android"],
       "results": [
-        "Otomatisasi Laporan: Memotong waktu ringkasan naskah akademik dari 10 jam menjadi < 2 menit",
-        "Akurasi AI: Mengklasifikasi & merangkum naskah dengan presisi kognitif tinggi (>95%)",
-        "Skalabilitas Webhook: Mengolah hingga 50+ naskah dokumen secara simultan tanpa overhead manual"
+        "Aksesibilitas Tinggi: Dapat diakses langsung melalui browser web di laptop dan perangkat mobile",
+        "Aplikasi Mobile Ready: Memiliki konfigurasi Capacitor untuk dikemas menjadi file APK Android",
+        "Antarmuka Ramah Pengguna: Navigasi surah dan ayat yang bersih dengan mode tampilan yang nyaman"
+      ],
+      "githubUrl": "https://github.com/azbhy24",
+      "demoUrl": "https://wa.me/6281915115390",
+      "featuredSymbol": "📖"
+    },
+    {
+      "id": "proj-4",
+      "title": "AzBhy / Tasbih Portfolio",
+      "subtitle": "Personal Branding & Interactive Showcase",
+      "category": "Web Engineering & Showcase",
+      "problem": "Portofolio profesional memerlukan penyajian rekam jejak akademis, bisnis, dan teknis secara jujur, bersih, dan interaktif.",
+      "solution": "Aplikasi web portofolio interaktif berbasis React, TypeScript, dan Tailwind CSS yang dilengkapi simulasi produk, rekap data nyata, dan desain institusional WCAG-compliant.",
+      "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Motion", "Firebase"],
+      "results": [
+        "Penyajian Rapi: Menggabungkan rekam jejak S1 MPI, pengalaman ritel, dan karya web secara terstruktur",
+        "Interaktif: Dilengkapi simulator live produk (DompetKu, POS Kasir) dan sistem kontak",
+        "Standar Visual Tinggi: Mengusung tema terang institusional yang nyaman dibaca di seluruh perangkat"
       ],
       "githubUrl": "https://github.com/azbhy24",
       "demoUrl": "https://wa.me/6281915115390",
@@ -187,59 +203,56 @@
   ],
   "skills": [
     {
+      "category": "Frontend & Web Engineering",
+      "description": "Pengembangan antarmuka web modern yang cepat, terstruktur, dan responsif.",
+      "skills": [
+        "HTML5 / Modern CSS",
+        "JavaScript (ES6+)",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive Web Development"
+      ]
+    },
+    {
+      "category": "Backend, Cloud & Mobile Packaging",
+      "description": "Pengelolaan data, integrasi API, dan pembuatan kemasan aplikasi.",
+      "skills": [
+        "Firebase (Firestore & Auth)",
+        "Web App & Android Packaging with Capacitor",
+        "Git & GitHub Workflow",
+        "RESTful API Integration"
+      ]
+    },
+    {
       "category": "Digital Administrasi & Productivity",
       "description": "Pengelolaan sistem administrasi, verifikasi data, dan pelaporan terstruktur.",
       "skills": [
-        "Digitalisasi Sistem Administrasi",
         "Google Workspace (Docs, Sheets, Drive)",
         "Microsoft Office (Word, Excel)",
         "Penyusunan Laporan & Dokumentasi",
         "Enumerasi & Verifikasi Data Lapangan",
-        "Pencatatan Keuangan & Pembukuan"
+        "Pencatatan Keuangan & Pembukuan Ritel"
       ]
     },
     {
-      "category": "Frontend & Web Engineering",
-      "description": "Pengembangan antarmuka web modern yang cepat, terstruktur, dan responsif.",
+      "category": "AI & Modern Development",
+      "description": "Pemanfaatan kecerdasan buatan untuk mendukung efisiensi pengembangan.",
       "skills": [
-        "React.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "HTML5 / Modern CSS",
-        "Responsive Web Design",
-        "State & Data Flow"
-      ]
-    },
-    {
-      "category": "Backend & Cloud Infrastructure",
-      "description": "Pengelolaan data, integrasi API, dan autentikasi terpusat.",
-      "skills": [
-        "Firebase (Firestore & Auth)",
-        "RESTful API Integration",
-        "Cloud Webhooks",
-        "Git & GitHub Workflow",
-        "System Architecture Design"
-      ]
-    },
-    {
-      "category": "AI & Automation Engineering",
-      "description": "Otomatisasi alur kerja dan integrasi model kecerdasan buatan.",
-      "skills": [
-        "Google Gemini Pro API",
-        "n8n Workflow Engine",
+        "Gemini API / Google AI Integration",
+        "AI-Assisted Development / Vibe Coding",
         "Prompt Engineering",
-        "Automated Document Processing",
-        "JSON Data Pipelines"
+        "Alur Kerja Digital Sederhana"
       ]
     }
   ],
   "vision": {
-    "statement": "Menjadi perekayasa sistem digital yang menghubungkan efisiensi operasional bisnis, otomatisasi kecerdasan buatan, dan tata kelola teknologi yang berdampak tinggi.",
+    "statement": "Menjadi praktisi digital dan manajemen yang menghubungkan efisiensi operasional organisasi, teknologi web modern, dan tata kelola sistem yang bermanfaat.",
     "milestones": [
       {
         "year": "Target Karir",
-        "target": "Full-Stack & Automation Engineer / IT Specialist",
-        "description": "Menjadi bagian dari tim teknologi profesional untuk merancang aplikasi web scalable, otomatisasi alur kerja, dan arsitektur sistem informasi terintegrasi."
+        "target": "Digital Operations & Systems Specialist",
+        "description": "Menjadi bagian dari tim profesional untuk merancang aplikasi web, otomatisasi alur kerja, dan arsitektur sistem informasi terintegrasi."
       },
       {
         "year": "Studi Lanjut",
@@ -248,8 +261,8 @@
       },
       {
         "year": "Inovasi Produk",
-        "target": "Pengembangan Ecosystem Azbhy",
-        "description": "Memperluas jangkauan platform digital Azbhy untuk memfasilitasi otomatisasi UMKM dan efisiensi riset akademik skala luas."
+        "target": "Pengembangan Ekosistem Digital AzBhy",
+        "description": "Memperluas jangkauan platform digital AzBhy untuk memfasilitasi kebutuhan operasional UMKM dan efisiensi administrasi organisasi."
       }
     ],
     "quote": "Kualitas sebuah solusi teknologi ditentukan oleh seberapa besar efisiensi dan nilai nyata yang dihadirkannya bagi pengguna.",

@@ -10,14 +10,15 @@ import {
   Plus, 
   Minus, 
   ShoppingCart, 
-  Play, 
+  BookOpen, 
+  Smartphone, 
+  Monitor, 
   Check, 
-  RefreshCw, 
   CreditCard,
   Trash2,
-  ArrowRight
+  Award
 } from "lucide-react";
-import React, { useState, useEffect, FormEvent } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { portfolioData } from "../data/portfolio";
 
@@ -25,10 +26,9 @@ import { portfolioData } from "../data/portfolio";
 // 1. DOMPETKU SIMULATOR
 // ==========================================
 function DompetKuSimulator() {
-  const [balance, setBalance] = useState(1250000);
   const [transactions, setTransactions] = useState([
     { id: 1, title: "Usaha Ritel Harian", type: "income", amount: 450000, category: "Bisnis" },
-    { id: 2, title: "Server Cloud n8n", type: "expense", amount: 75000, category: "Server" },
+    { id: 2, title: "Domain & Cloud Hosting", type: "expense", amount: 75000, category: "Server" },
   ]);
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -56,7 +56,7 @@ function DompetKuSimulator() {
         title,
         type,
         amount: value,
-        category: type === "income" ? "Ekstra" : "Desain/AI",
+        category: type === "income" ? "Pemasukan" : "Pengeluaran",
       },
       ...transactions,
     ]);
@@ -88,10 +88,10 @@ function DompetKuSimulator() {
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
           <span className="text-[10px] font-mono text-emerald-800 font-bold uppercase tracking-wider block">
-            Pemasukan Tambahan
+            Total Pemasukan
           </span>
           <span className="text-sm font-black text-emerald-950 mt-1 block">
-            Rp {(450000 + totalIncome).toLocaleString("id-ID")}
+            Rp {totalIncome.toLocaleString("id-ID")}
           </span>
         </div>
         <div className="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200/80">
@@ -122,7 +122,7 @@ function DompetKuSimulator() {
         <div className="grid grid-cols-12 gap-1.5">
           <input
             type="text"
-            placeholder="Kopi, Desain"
+            placeholder="Kopi, Peralatan"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="col-span-6 bg-white border border-slate-300 rounded-xl px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 font-sans font-medium"
@@ -212,10 +212,10 @@ function POSUMKMSimulator() {
   const [receiptNumber, setReceiptNumber] = useState("");
 
   const products = [
-    { id: 1, name: "Beras Sentra Ramos", price: 75000, stock: 12 },
-    { id: 2, name: "Minyak Goreng 2L", price: 34000, stock: 24 },
-    { id: 3, name: "Gula Pasir 1kg", price: 16500, stock: 8 },
-    { id: 4, name: "Kopi Arabika Buatan", price: 28000, stock: 15 },
+    { id: 1, name: "Beras Sentra Ramos", price: 75000 },
+    { id: 2, name: "Minyak Goreng 2L", price: 34000 },
+    { id: 3, name: "Gula Pasir 1kg", price: 16500 },
+    { id: 4, name: "Kopi Arabika", price: 28000 },
   ];
 
   const addToCart = (prod: typeof products[0]) => {
@@ -262,11 +262,11 @@ function POSUMKMSimulator() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
-            SIMULASI INTERAKTIF: POS KASIR UMKM
+            SIMULASI INTERAKTIF: POS KASIR
           </span>
         </div>
         <span className="text-[10px] font-mono text-emerald-900 px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200 font-bold">
-          Kasir Ritel Modern
+          Ritel Modern
         </span>
       </div>
 
@@ -409,203 +409,209 @@ function POSUMKMSimulator() {
 }
 
 // ==========================================
-// 3. AZBHY WORKFLOWS SIMULATOR
+// 3. NGAJIKU SIMULATOR
 // ==========================================
-function WorkflowsSimulator() {
-  const [topic, setTopic] = useState("");
-  const [workflowState, setWorkflowState] = useState<"idle" | "trigger" | "gemini" | "webhook" | "done">("idle");
-  const [logs, setLogs] = useState<string[]>([]);
-  const [summaryOutput, setSummaryOutput] = useState("");
+function NgajiKuSimulator() {
+  const [selectedSurah, setSelectedSurah] = useState(0);
+  const [viewMode, setViewMode] = useState<"web" | "apk">("web");
 
-  const clearState = () => {
-    setWorkflowState("idle");
-    setLogs([]);
-    setSummaryOutput("");
-  };
+  const surahs = [
+    {
+      no: 1,
+      name: "Al-Fatihah",
+      arabic: "الفاتحة",
+      versesCount: 7,
+      sampleVerse: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      translation: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
+    },
+    {
+      no: 112,
+      name: "Al-Ikhlas",
+      arabic: "الإخلاص",
+      versesCount: 4,
+      sampleVerse: "قُلْ هُوَ اللَّهُ أَحَدٌ",
+      translation: "Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa.'"
+    },
+    {
+      no: 113,
+      name: "Al-Falaq",
+      arabic: "الفلق",
+      versesCount: 5,
+      sampleVerse: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+      translation: "Katakanlah, 'Aku berlindung kepada Tuhan yang menguasai subuh (fajar).'"
+    },
+    {
+      no: 114,
+      name: "An-Nas",
+      arabic: "الناس",
+      versesCount: 6,
+      sampleVerse: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+      translation: "Katakanlah, 'Aku berlindung kepada Tuhannya manusia.'"
+    }
+  ];
 
-  const runWorkflow = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!topic) return;
-
-    clearState();
-    setWorkflowState("trigger");
-    setLogs(["⚡ Webhook Cloud Triggered", "📥 Menerima input naskah: " + topic]);
-
-    setTimeout(() => {
-      setWorkflowState("gemini");
-      setLogs((prev) => [
-        ...prev,
-        "🔗 Menghubungkan Google Gemini Pro API",
-        "⚙️ Mengolah prompt rekayasa kognitif...",
-        "📝 Membuat peta rangkuman akademik..."
-      ]);
-    }, 1500);
-
-    setTimeout(() => {
-      setWorkflowState("webhook");
-      setLogs((prev) => [
-        ...prev,
-        "📤 Mengirim ringkasan otomatis ke WhatsApp & Drive",
-        "📡 Integrasi n8n webhook berhasil disalurkan"
-      ]);
-    }, 3200);
-
-    setTimeout(() => {
-      setWorkflowState("done");
-      setLogs((prev) => [...prev, "✓ Rangkuman AI Selesai Disusun!"]);
-      
-      const briefTopic = topic.length > 25 ? topic.substring(0, 25) + "..." : topic;
-      setSummaryOutput(
-        `📚 [DOKUMEN RANGKUMAN AZBHY]\n` +
-        `• Tema: "${briefTopic}"\n` +
-        `• Status: Terstruktur & Klasifikasi Mutu\n` +
-        `• Strategi Mutu: Meningkatkan keterlibatan pengawas akademik, mendongkrak sinergi operator penjaminan data, dan mengoperasikan sistem n8n webhook secara periodik.`
-      );
-    }, 5000);
-  };
+  const current = surahs[selectedSurah];
 
   return (
-    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-purple-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500" />
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-teal-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 via-emerald-500 to-sky-500" />
+      
       {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-purple-600 animate-pulse" />
+          <BookOpen className="w-4 h-4 text-teal-600" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
-            SIMULASI INTERAKTIF: AZBHY WORKFLOWS
+            SIMULASI INTERAKTIF: NGAJIKU
           </span>
         </div>
-        <span className="text-[10px] font-mono text-purple-900 px-3 py-1 bg-purple-50 rounded-full border border-purple-200 font-bold">
-          AI & n8n Engine
+        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-full border border-slate-200">
+          <button
+            onClick={() => setViewMode("web")}
+            className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase transition-all ${
+              viewMode === "web" ? "bg-teal-600 text-white" : "text-slate-600"
+            }`}
+          >
+            Web
+          </button>
+          <button
+            onClick={() => setViewMode("apk")}
+            className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase transition-all ${
+              viewMode === "apk" ? "bg-emerald-600 text-white" : "text-slate-600"
+            }`}
+          >
+            Capacitor APK
+          </button>
+        </div>
+      </div>
+
+      {/* Surah selector tabs */}
+      <div className="flex gap-1.5 overflow-x-auto pb-2 mb-3">
+        {surahs.map((s, idx) => (
+          <button
+            key={s.no}
+            onClick={() => setSelectedSurah(idx)}
+            className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all border ${
+              selectedSurah === idx
+                ? "bg-teal-50 text-teal-900 border-teal-300 shadow-2xs font-extrabold"
+                : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100"
+            }`}
+          >
+            {s.no}. {s.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Viewport Frame */}
+      <div className={`p-4 rounded-2xl border transition-all ${
+        viewMode === "apk"
+          ? "bg-slate-900 border-slate-800 text-white max-w-[280px] mx-auto shadow-2xl"
+          : "bg-teal-50/40 border-teal-200 text-slate-900"
+      }`}>
+        <div className="flex items-center justify-between border-b border-teal-200/50 pb-2 mb-3">
+          <span className="text-xs font-bold font-mono text-teal-800 flex items-center gap-1">
+            {viewMode === "apk" ? <Smartphone className="w-3.5 h-3.5 text-emerald-400" /> : <Monitor className="w-3.5 h-3.5 text-teal-600" />}
+            {current.no}. {current.name} ({current.versesCount} Ayat)
+          </span>
+          <span className="text-lg font-serif text-teal-700 font-bold">{current.arabic}</span>
+        </div>
+
+        <div className="py-4 text-center space-y-3">
+          <p className="text-2xl font-serif leading-loose tracking-wide text-slate-900 font-bold">
+            {current.sampleVerse}
+          </p>
+          <p className="text-xs text-slate-700 italic font-medium leading-relaxed bg-white/80 p-2.5 rounded-xl border border-teal-100">
+            "{current.translation}"
+          </p>
+        </div>
+
+        <div className="pt-2 border-t border-teal-200/50 flex justify-between items-center text-[10px] font-mono font-bold text-teal-800">
+          <span>STATUS: READY</span>
+          <span>{viewMode === "apk" ? "Capacitor Android Configured" : "React/Vite Responsive"}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
+// 4. PORTFOLIO SHOWCASE SIMULATOR
+// ==========================================
+function PortfolioShowcaseSimulator() {
+  const [activeTab, setActiveTab] = useState<"stack" | "metrics">("metrics");
+
+  return (
+    <div className="w-full rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-indigo-100 p-6 font-sans overflow-hidden shadow-xl relative text-left">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+      
+      {/* Header */}
+      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-4 pt-1">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-indigo-600" />
+          <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
+            AZBHY PORTFOLIO SHOWCASE
+          </span>
+        </div>
+        <span className="text-[10px] font-mono text-indigo-900 px-3 py-1 bg-indigo-50 rounded-full border border-indigo-200 font-bold">
+          Verified 2026
         </span>
       </div>
 
-      {/* Visual Workflow Canvas */}
-      <div className="flex justify-between items-center bg-purple-50/40 p-4 rounded-2xl border border-purple-200/80 relative mb-4">
-        {/* Connection pipeline line */}
-        <div className="absolute inset-x-8 top-[33px] h-[2px] bg-purple-200 z-0">
-          {workflowState !== "idle" && workflowState !== "done" && (
-            <motion.div
-              initial={{ left: 0 }}
-              animate={{ left: "100%" }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "linear" }}
-              className="absolute h-0.5 w-[50px] bg-purple-600 z-10"
-            />
-          )}
-        </div>
-
-        {/* Node 1 */}
-        <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
-          workflowState === "trigger" ? "scale-105" : "opacity-70"
-        } transition-all`}>
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "trigger" ? "bg-indigo-100 border-indigo-500 text-indigo-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
-          }`}>
-            ☁️
-          </div>
-          <span className="text-[9px] font-mono font-bold mt-1.5 uppercase text-slate-800">
-            Trigger
-          </span>
-        </div>
-
-        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-purple-600 animate-pulse"}`} />
-
-        {/* Node 2 */}
-        <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
-          workflowState === "gemini" ? "scale-105" : "opacity-70"
-        } transition-all`}>
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "gemini" ? "bg-purple-100 border-purple-500 text-purple-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
-          }`}>
-            🪄
-          </div>
-          <span className="text-[9px] font-mono font-bold mt-1.5 uppercase text-slate-800">
-            Gemini
-          </span>
-        </div>
-
-        <ArrowRight className={`w-3.5 h-3.5 text-slate-400 ${workflowState !== "idle" && "text-purple-600 animate-pulse"}`} />
-
-        {/* Node 3 */}
-        <div className={`relative z-10 flex flex-col items-center max-w-[80px] text-center ${
-          workflowState === "webhook" ? "scale-105" : "opacity-70"
-        } transition-all`}>
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center border text-xs font-bold font-mono ${
-            workflowState === "webhook" ? "bg-emerald-100 border-emerald-500 text-emerald-700 shadow-sm" : "bg-white border-slate-300 text-slate-700"
-          }`}>
-            🪁
-          </div>
-          <span className="text-[9px] font-mono font-bold mt-1.5 uppercase text-slate-800">
-            Webhook
-          </span>
-        </div>
+      <div className="flex gap-2 mb-4 p-1 bg-slate-100 rounded-xl border border-slate-200">
+        <button
+          onClick={() => setActiveTab("metrics")}
+          className={`flex-1 py-1.5 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
+            activeTab === "metrics" ? "bg-indigo-600 text-white shadow-xs font-extrabold" : "text-slate-600"
+          }`}
+        >
+          Metrik Terverifikasi
+        </button>
+        <button
+          onClick={() => setActiveTab("stack")}
+          className={`flex-1 py-1.5 rounded-lg text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
+            activeTab === "stack" ? "bg-indigo-600 text-white shadow-xs font-extrabold" : "text-slate-600"
+          }`}
+        >
+          Arsitektur Kode
+        </button>
       </div>
 
-      {/* Input Form */}
-      <form onSubmit={runWorkflow} className="space-y-2 mb-4 text-left">
-        <label className="text-[10px] font-bold font-mono text-purple-900 uppercase tracking-wider block">
-          Topik Rangkuman Akademik / Jurnal
-        </label>
-        <div className="flex gap-1.5">
-          <input
-            id="automation-topic-input"
-            type="text"
-            required
-            disabled={workflowState !== "idle" && workflowState !== "done"}
-            placeholder="Mutu Kemitraan Strategis Kemenag"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
-            className="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-1.5 text-xs text-slate-900 focus:outline-none focus:border-purple-600 font-medium"
-          />
-          <button
-            type="submit"
-            disabled={workflowState !== "idle" && workflowState !== "done"}
-            className="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:bg-slate-300 rounded-xl text-[10px] font-mono font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-1 cursor-pointer text-white shadow-sm"
-          >
-            {workflowState !== "idle" && workflowState !== "done" ? (
-              <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-            ) : (
-              <Play className="w-3.5 h-3.5" />
-            )}
-            <span>RUN</span>
-          </button>
+      {activeTab === "metrics" ? (
+        <div className="grid grid-cols-2 gap-3">
+          <div className="p-3.5 bg-indigo-50/60 rounded-2xl border border-indigo-200">
+            <span className="block text-[9px] font-mono text-indigo-700 font-bold uppercase">TRANSAKSI DIGITAL</span>
+            <span className="text-xl font-black text-slate-900 mt-1 block">100+</span>
+            <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Layanan & Ritel</span>
+          </div>
+          <div className="p-3.5 bg-purple-50/60 rounded-2xl border border-purple-200">
+            <span className="block text-[9px] font-mono text-purple-700 font-bold uppercase">REPOSITORI GITHUB</span>
+            <span className="text-xl font-black text-slate-900 mt-1 block">5+</span>
+            <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Source Code Live</span>
+          </div>
+          <div className="p-3.5 bg-emerald-50/60 rounded-2xl border border-emerald-200">
+            <span className="block text-[9px] font-mono text-emerald-700 font-bold uppercase">PROJECT DIGITAL</span>
+            <span className="text-xl font-black text-slate-900 mt-1 block">4+</span>
+            <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Aplikasi Web</span>
+          </div>
+          <div className="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200">
+            <span className="block text-[9px] font-mono text-amber-700 font-bold uppercase">ALUMNI TERKOORDINASI</span>
+            <span className="text-xl font-black text-slate-900 mt-1 block">150+</span>
+            <span className="text-[10px] text-slate-600 block mt-0.5 font-medium">Organisasi Alumni</span>
+          </div>
         </div>
-      </form>
-
-      {/* Terminal log display */}
-      <div className="bg-slate-900 rounded-2xl p-3.5 font-mono text-[10px] text-slate-200 text-left min-h-[90px] relative shadow-inner border border-slate-800">
-        <div className="flex items-center gap-1.5 text-[9px] text-purple-400 border-b border-slate-800 pb-1.5 mb-2 font-bold uppercase">
-          <span>Engine Log Monitor</span>
+      ) : (
+        <div className="p-4 bg-slate-900 text-slate-100 rounded-2xl font-mono text-xs space-y-2">
+          <div className="flex items-center justify-between text-[10px] text-indigo-400 border-b border-slate-800 pb-2">
+            <span>AZBHY PORTFOLIO ARCHITECTURE</span>
+            <Check className="w-3.5 h-3.5 text-emerald-400" />
+          </div>
+          <p className="text-emerald-400 font-bold">✓ React 18 + Vite + TypeScript</p>
+          <p className="text-indigo-300 font-bold">✓ Tailwind CSS v4 + Motion</p>
+          <p className="text-purple-300 font-bold">✓ Firebase Integration Ready</p>
+          <p className="text-slate-400 text-[10px] pt-1 border-t border-slate-800">
+            100% WCAG High-Contrast Light Theme Approved
+          </p>
         </div>
-
-        <div className="space-y-1 max-h-[85px] overflow-y-auto">
-          {logs.length === 0 && (
-            <p className="text-slate-500">[ Engine standby. Menunggu input ]</p>
-          )}
-          {logs.map((log, lIdx) => (
-            <p key={lIdx} className={log.startsWith("✓") ? "text-emerald-400 font-bold" : log.startsWith("⚡") ? "text-purple-300" : "text-slate-300"}>
-              {log}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      {/* Output summary */}
-      <AnimatePresence>
-        {workflowState === "done" && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            className="mt-3 p-4 bg-purple-50 border border-purple-200 rounded-2xl text-left font-mono text-[11px] text-purple-950 leading-relaxed overflow-hidden shadow-sm"
-          >
-            <div className="flex items-center gap-1 text-[10px] font-bold text-purple-900 uppercase tracking-wider mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-purple-700" />
-              <span>Output Google Gemini Pro:</span>
-            </div>
-            <p className="whitespace-pre-line text-slate-900 font-medium">{summaryOutput}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      )}
     </div>
   );
 }
@@ -641,10 +647,10 @@ export default function Projects() {
             STUDI KASUS PROYEK & PORTOFOLIO
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
-            Produk Digital & Sistem Otomatisasi
+            Produk Digital & Sistem Operasional
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
-            Penyelesaian masalah nyata melalui kode bersih, rekayasa prompt AI cerdas, integrasi webhook cloud, dan otomatisasi workflow.
+            Penyelesaian masalah nyata melalui kode bersih, antarmuka web interaktif, dan sistem digital yang bermanfaat.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>
@@ -660,23 +666,30 @@ export default function Projects() {
         >
           {projects.map((project) => {
             const isPos = project.id === "proj-2";
-            const isWorkflow = project.id === "proj-3";
+            const isNgaji = project.id === "proj-3";
+            const isPorto = project.id === "proj-4";
 
             const categoryBg = isPos
               ? "bg-emerald-50 text-emerald-900 border-emerald-200"
-              : isWorkflow
+              : isNgaji
+              ? "bg-teal-50 text-teal-900 border-teal-200"
+              : isPorto
               ? "bg-purple-50 text-purple-900 border-purple-200"
               : "bg-indigo-50 text-indigo-900 border-indigo-200";
 
             const btnBg = isPos
               ? "bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600"
-              : isWorkflow
+              : isNgaji
+              ? "bg-gradient-to-r from-teal-600 to-emerald-700 hover:from-teal-500 hover:to-emerald-600"
+              : isPorto
               ? "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500"
               : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500";
 
             const solutionBg = isPos
               ? "border-emerald-200 bg-emerald-50/60 text-emerald-900"
-              : isWorkflow
+              : isNgaji
+              ? "border-teal-200 bg-teal-50/60 text-teal-900"
+              : isPorto
               ? "border-purple-200 bg-purple-50/60 text-purple-900"
               : "border-indigo-200 bg-indigo-50/60 text-indigo-900";
 
@@ -799,7 +812,8 @@ export default function Projects() {
                   <div className="w-full flex justify-center">
                     {project.id === "proj-1" && <DompetKuSimulator />}
                     {project.id === "proj-2" && <POSUMKMSimulator />}
-                    {project.id === "proj-3" && <WorkflowsSimulator />}
+                    {project.id === "proj-3" && <NgajiKuSimulator />}
+                    {project.id === "proj-4" && <PortfolioShowcaseSimulator />}
                   </div>
                 </div>
 

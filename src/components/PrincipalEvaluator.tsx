@@ -50,8 +50,8 @@ export const principalReviews: PrincipalReview[] = [
       potensiKepemimpinan: 82,
     },
     strengths: [
-      "Kombinasi langka antara Latar Belakang Manajemen Pendidikan Islam (MPI) dan Keahlian Full-stack Dev.",
-      "Aplikasi simulator POS & Automasi n8n langsung dapat didemokan tanpa 'omong kosong'.",
+      "Kombinasi langka antara Latar Belakang Manajemen Pendidikan Islam (MPI) dan Keahlian Web Dev.",
+      "Aplikasi simulator POS & DompetKu langsung dapat didemokan secara interaktif.",
       "Format visual terang (Light Theme) sangat bersih, rapi, dan mudah dibaca oleh dewan pengawas/komite."
     ],
     weaknesses: [
@@ -76,7 +76,7 @@ export const principalReviews: PrincipalReview[] = [
     },
     strengths: [
       "Simulasi 'POS UMKM Warung Amma' Ika' dan 'DompetKu' membuktikan keahlian nyata dalam arsitektur software.",
-      "Integrasi AI Gemini API & n8n sangat dibutuhkan untuk efisiensi automasi administrasi sekolah modern.",
+      "Integrasi AI Gemini API & sistem web sangat dibutuhkan untuk efisiensi administrasi sekolah modern.",
       "Navigasi bento grid dan penataan komponen sangat profesional."
     ],
     weaknesses: [
@@ -101,8 +101,8 @@ export const principalReviews: PrincipalReview[] = [
     },
     strengths: [
       "Keputusan mengganti tampilan dari Hitam/Gelap ke Putih/Slate Institusional adalah langkah SANGAT TEPAT. Sekarang sangat nyaman dibaca!",
-      "Data kuantitatif dampak (seperti efisiensi waktu 85% dan peningkatan pendapatan UMKM) memberikan impresi kepemimpinan yang nyata.",
-      "Penguasaan automasi dokumen akademik sangat relevan bagi beban kerja tata usaha madrasah."
+      "Data kuantitatif dampak (seperti 100+ transaksi layanan digital terverifikasi) memberikan impresi kepemimpinan yang nyata.",
+      "Penguasaan administrasi sistem akademik sangat relevan bagi beban kerja tata usaha madrasah."
     ],
     weaknesses: [
       "Sertifikat kompetensi formal (seperti BNSP, TOEFL/IELTS, atau Sertifikasi ISO) belum ditampilkan secara visual.",
@@ -125,7 +125,7 @@ export const principalReviews: PrincipalReview[] = [
       potensiKepemimpinan: 85,
     },
     strengths: [
-      "Karakter technopreneur sangat kuat, mampu memangkas operasional lewat automasi AI & Cloud Firestore.",
+      "Karakter technopreneur sangat kuat, mampu memangkas operasional lewat solusi AI & Cloud Firestore.",
       "Responsif di berbagai ukuran layar HP dan Laptop, bagus untuk impresi awal komite sekolah.",
       "Fitur Guestbook real-time membuktikan integrasi database backend bekerja 100% tanpa cela."
     ],
@@ -175,7 +175,7 @@ export const principalReviews: PrincipalReview[] = [
       potensiKepemimpinan: 83,
     },
     strengths: [
-      "Proyek automasi n8n mendukung implementasi Kurikulum Merdeka yang fleksibel dan efisien.",
+      "Pengembangan aplikasi web mendukung implementasi Kurikulum Merdeka yang fleksibel dan efisien.",
       "Ringkasan metodologi riset dan pengalaman proyek terstruktur rapi.",
       "Kualitas UI/UX sangat ramah pengguna (User-Friendly)."
     ],

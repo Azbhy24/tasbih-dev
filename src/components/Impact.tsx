@@ -70,7 +70,7 @@ export default function Impact() {
             Pencapaian Riil dalam Data dan Angka
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
-            Aktivitas organisasi, implementasi produk digital, digitalisasi ritel, serta bimbingan naskah akademis dihitung berdasarkan data kerja nyata.
+            Aktivitas organisasi, implementasi produk digital, digitalisasi ritel, serta pengelolaan administrasi dihitung berdasarkan data kerja nyata.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>

@@ -10,7 +10,6 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Vision from "./components/Vision";
-import PrincipalEvaluator from "./components/PrincipalEvaluator";
 import Contact from "./components/Contact";
 
 export default function App() {
@@ -22,7 +21,7 @@ export default function App() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
 
-      const sections = ["hero", "about", "impact", "experience", "projects", "skills", "principal-evaluations", "vision", "contact"];
+      const sections = ["hero", "about", "impact", "experience", "projects", "skills", "vision", "contact"];
       const scrollPos = window.scrollY + window.innerHeight / 3;
 
       for (const sectionId of sections) {
@@ -81,7 +80,6 @@ export default function App() {
         <Experience />
         <Projects />
         <Skills />
-        <PrincipalEvaluator />
         <Vision />
         <Contact />
       </main>

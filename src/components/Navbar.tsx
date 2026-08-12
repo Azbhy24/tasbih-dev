@@ -26,7 +26,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "principal-evaluations", label: "Audit Kepsek" },
     { id: "vision", label: "Vision" },
     { id: "contact", label: "Hubungi Kemitraan" },
   ];

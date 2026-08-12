@@ -4,11 +4,11 @@
     "aliases": ["AzBhy"],
     "headlineTitle": "Tasbih",
     "subheadline": [
-      "Digital Builder & Education Management Graduate",
-      "Digital Operations & Administration Lead"
+      "Praktisi Manajemen & Solusi Digital",
+      "S1 Manajemen Pendidikan Islam"
     ],
-    "tagline": "Membangun Aplikasi Web, Digitalisasi Operasional, & Administrasi Sistem.",
-    "professionalBio": "Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Digital Operations Builder. Memiliki pengalaman dalam administrasi organisasi, pencatatan keuangan bisnis ritel, enumerasi data survei lapangan (PT ESC Indonesia), serta pengembangan aplikasi web dan sistem digital.",
+    "tagline": "Praktisi Manajemen & Solusi Digital.",
+    "professionalBio": "Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Praktisi Manajemen. Memiliki pengalaman dalam administrasi organisasi, pencatatan keuangan bisnis ritel, enumerasi data survei lapangan (PT ESC Indonesia), serta pengembangan aplikasi web dan solusi digital.",
     "extendedBio": "Berbekal latar belakang S1 Manajemen Pendidikan Islam dari IAIN Parepare, Tasbih menggabungkan disiplin tata kelola administrasi, pengolahan data terstruktur, dan teknologi web modern.\n\nMelalui berbagai proyek digital, ia merancang sistem POS kasir, aplikasi keuangan DompetKu, platform NgajiKu, serta integrasi Google Gemini API untuk membantu pekerjaan operasional menjadi lebih rapi dan efisien."
   },
   "stats": [
@@ -41,11 +41,11 @@
     },
     {
       "id": "stat-org",
-      "value": "150+",
+      "value": "178",
       "suffix": "",
       "prefix": "",
       "label": "Alumni & Tim Terkoordinasi",
-      "description": "Memimpin tata kelola komunikasi & organisasi alumni regional.",
+      "description": "Berdasarkan jumlah anggota grup komunikasi alumni MABUM.",
       "icon": "Users"
     }
   ],
@@ -109,7 +109,7 @@
         "Membangun jaringan kemitraan dan koordinasi antar pengurus regional."
       ],
       "metrics": [
-        { "value": "150+", "label": "Alumni Terkoordinasi" },
+        { "value": "178", "label": "Anggota Grup Alumni" },
         { "value": "2026", "label": "Mulai Menjabat" }
       ]
     },
@@ -152,15 +152,15 @@
     {
       "id": "proj-2",
       "title": "Warung Amma Ika",
-      "subtitle": "Digital Storefront & Online Product Catalog",
-      "category": "Business Digitalization",
-      "problem": "Warung membutuhkan media digital yang dapat menampilkan produk dan informasi jualan kepada pelanggan secara lebih mudah.",
-      "solution": "Website etalase digital Warung Amma Ika untuk menampilkan katalog barang, harga, dan informasi produk kepada pelanggan.",
+      "subtitle": "Digital Storefront & Customer Product Catalog",
+      "category": "Etalase Pelanggan",
+      "problem": "Pelanggan membutuhkan media digital interaktif untuk melihat daftar produk, mengecek harga terbaru, dan melakukan pemesanan barang secara praktis dari smartphone.",
+      "solution": "Website etalase digital Warung Amma Ika yang ditujukan khusus bagi PELANGGAN untuk melihat katalog produk, mengecek harga, dan melakukan pemesanan jualan secara online.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
       "results": [
-        "Katalog Digital: Menampilkan daftar produk, harga, dan ketersediaan barang secara rapi",
-        "Akses Praktis: Memudahkan pelanggan melihat etalase jualan warung langsung dari perangkat mobile",
-        "Informasi Terpusat: Menyediakan informasi operasional warung dalam satu halaman web yang bersih"
+        "Khusus Pelanggan: Memudahkan PELANGGAN menjelajahi katalog produk, daftar harga, dan estimasi belanja secara mandiri",
+        "Aksesibilitas Praktis: Memudahkan pelanggan melihat etalase jualan warung langsung dari smartphone",
+        "Pemesanan Online: Menyediakan sarana katalog digital yang ramah bagi pelanggan warung"
       ],
       "githubUrl": "https://github.com/Azbhy24/Warung_Amma_Ika",
       "demoUrl": "https://warung-amma-ika.vercel.app/",
@@ -169,15 +169,15 @@
     {
       "id": "proj-3",
       "title": "Kasir Amma Ika",
-      "subtitle": "Personal Retail POS & Sales Management",
-      "category": "Business Digitalization",
-      "problem": "Pencatatan transaksi penjualan secara manual membutuhkan ketelitian dan menyulitkan pengelolaan transaksi harian.",
-      "solution": "Sistem kasir digital internal untuk membantu pencatatan dan pengelolaan transaksi penjualan Warung Amma Ika.",
+      "subtitle": "Personal Retail POS & Internal Sales System",
+      "category": "Aplikasi Kasir Internal",
+      "problem": "Pengelola toko membutuhkan sistem kasir internal yang akurat untuk menghitung total penjualan, kalkulasi kembalian otomatis, dan rekapitulasi transaksi harian.",
+      "solution": "Aplikasi POS kasir digital yang dirancang khusus bagi PENGGUNA INTERNAL (kasir/pengelola toko) untuk memproses transaksi penjualan, menghitung kembalian secara otomatis, dan mencetak nota belanja.",
       "techStack": ["React.js", "TypeScript", "Tailwind CSS", "Firebase", "LocalStorage API"],
       "results": [
-        "Proses Kasir Praktis: Mempercepat input barang belanjaan dan kalkulasi total transaksi secara otomatis",
-        "Struk Digital: Menyediakan opsi konfirmasi nota transaksi digital langsung melalui antarmuka web",
-        "Manajemen Transaksi: Memudahkan penyusunan dan rekapitulasi data penjualan toko ritel"
+        "Khusus Pengguna Internal: Membantu kasir/pengelola toko menghitung total transaksi dan kembalian secara presisi & otomatis",
+        "Cetak Struk Digital: Menyediakan konfirmasi nota belanja serta rekapitulasi harian untuk pembukuan internal",
+        "Efisiensi Operasional: Mengurangi risiko kesalahan kalkulasi manual dalam pengelolaan toko ritel"
       ],
       "githubUrl": "https://github.com/Azbhy24/Kasir-Amma-Ika",
       "demoUrl": "https://kasir-amma-ika.vercel.app/",
@@ -273,8 +273,8 @@
       },
       {
         "year": "Studi Lanjut",
-        "target": "Master Degree in Information Systems / Management",
-        "description": "Melanjutkan studi pascasarjana untuk memperdalam tata kelola teknologi informasi, penjaminan mutu data, dan kepemimpinan strategis."
+        "target": "Melanjutkan Studi S2 (LPDP)",
+        "description": "Berencana melanjutkan studi magister Manajemen Pendidikan melalui jalur LPDP, dengan fokus pada pengembangan sistem dan teknologi pendidikan."
       },
       {
         "year": "Inovasi Produk",

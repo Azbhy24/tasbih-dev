@@ -27,7 +27,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "vision", label: "Vision" },
-    { id: "contact", label: "Hubungi Kemitraan" },
+    { id: "contact", label: "Kontak" },
   ];
 
   const handleNavClick = (sectionId: string) => {
@@ -95,7 +95,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
         <div className="hidden lg:flex items-center gap-3">
           <div className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
             <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
-            <span>Siap Kerja & Kemitraan</span>
+            <span>Terbuka untuk Peluang Kerja</span>
           </div>
           <button
             id="nav-partner-btn"
@@ -174,7 +174,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 onClick={() => handleNavClick("contact")}
                 className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-extrabold text-center text-xs tracking-wider uppercase rounded-xl mt-3 flex items-center justify-center gap-2 shadow-md"
               >
-                <span>Hubungi / Kemitraan</span>
+                <span>Kontak & Hubungi</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>

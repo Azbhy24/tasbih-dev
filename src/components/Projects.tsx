@@ -236,11 +236,11 @@ function WarungStorefrontSimulator() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
-            ETALASE DIGITAL: WARUNG AMMA IKA
+            ETALASE PELANGGAN: WARUNG AMMA IKA
           </span>
         </div>
         <span className="text-[10px] font-mono text-emerald-900 px-3 py-0.5 bg-emerald-50 rounded-full border border-emerald-200 font-bold">
-          Katalog Online
+          Katalog Pelanggan
         </span>
       </div>
 
@@ -365,11 +365,11 @@ function POSUMKMSimulator() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
           <span className="text-[11px] font-mono font-bold tracking-wider text-slate-900 uppercase">
-            SIMULASI INTERAKTIF: POS KASIR
+            POS KASIR (PENGGUNA INTERNAL): KASIR AMMA IKA
           </span>
         </div>
         <span className="text-[10px] font-mono text-emerald-900 px-3 py-0.5 bg-emerald-50 rounded-full border border-emerald-200 font-bold">
-          Ritel Internal
+          Sistem Internal
         </span>
       </div>
 

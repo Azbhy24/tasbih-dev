@@ -131,6 +131,11 @@ export default function Guestbook() {
     }
   };
 
+  // Hide section from public view if there are no testimonials yet
+  if (!isLoading && testimonials.length === 0) {
+    return null;
+  }
+
   return (
     <div id="guestbook" className="mt-20 border-t border-slate-200 pt-20">
       <div className="max-w-7xl mx-auto">

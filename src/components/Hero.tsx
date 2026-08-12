@@ -91,7 +91,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             id="hero-positioning-title"
             className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl font-extrabold text-indigo-700 tracking-tight"
           >
-            Digital Operations & Automation Builder
+            Praktisi Manajemen & Solusi Digital
           </motion.h2>
 
           {/* Main Message */}
@@ -100,7 +100,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             id="hero-main-message"
             className="mt-3 text-base sm:text-lg md:text-xl font-bold text-slate-900 max-w-2xl leading-snug"
           >
-            Membantu bisnis dan organisasi merapikan operasional melalui teknologi web, otomasi, dan AI.
+            Menggabungkan tata kelola organisasi, manajemen administrasi, dan pengembangan solusi digital terstruktur.
           </motion.p>
 
           {/* Description */}
@@ -109,7 +109,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             id="hero-bio-para"
             className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
           >
-            Latar belakang Manajemen Pendidikan Islam dengan pengalaman di administrasi, bisnis ritel, pengelolaan data, pengembangan aplikasi web, dan otomatisasi workflow.
+            Latar belakang S1 Manajemen Pendidikan Islam dengan pengalaman di bidang administrasi, pengelolaan data, bisnis ritel, serta pengembangan aplikasi web.
           </motion.p>
 
           {/* Actions: Button section */}
@@ -123,7 +123,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               onClick={() => onNavigate("projects")}
               className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg hover:shadow-indigo-500/30 active:scale-95 transition-all duration-300 cursor-pointer rounded-full border-none flex items-center justify-center gap-2 group"
             >
-              <span>LIHAT PROYEK</span>
+              <span>LIHAT PORTOFOLIO</span>
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </button>
 
@@ -133,7 +133,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               className="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-indigo-200 bg-white hover:bg-indigo-50/50 text-slate-800 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 cursor-pointer rounded-full flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4 text-indigo-600" />
-              <span>MARI BERKOLABORASI</span>
+              <span>KONTAK & HUBUGI</span>
             </button>
           </motion.div>
         </motion.div>
@@ -182,7 +182,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 Tasbih
               </h3>
               <p className="text-[11px] font-mono font-bold text-indigo-700 mt-0.5 uppercase tracking-wider text-center">
-                BRAND: AZBHY • DIGITAL OPERATIONS
+                BRAND: AZBHY • MANAJEMEN & DIGITAL
               </p>
 
               {/* Selector Tabs */}

@@ -58,13 +58,13 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
-            KONTAK & KEMITRAAN
+            KONTAK & KOLABORASI
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
-            Mari Memulai Sesuatu yang Berdampak
+            Kontak & Peluang Kerja Sama
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
-            Terbuka untuk kolaborasi proyek, kemandirian transformasi digital UMKM, analisis riset pendidikan, atau konsultasi automasi cerdas.
+            Terbuka untuk peluang kerja, magang, dan kolaborasi di bidang manajemen, administrasi, maupun pengembangan digital.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>
@@ -158,14 +158,14 @@ export default function Contact() {
                 </div>
 
                 <div className="text-left">
-                  <label htmlFor="contact-form-msg" className="block text-[10px] font-mono font-bold text-slate-700 uppercase tracking-wider mb-1.5 pl-0.5">Pertanyaan / Pesan Kemitraan</label>
+                  <label htmlFor="contact-form-msg" className="block text-[10px] font-mono font-bold text-slate-700 uppercase tracking-wider mb-1.5 pl-0.5">Pesan / Topik Diskusi</label>
                   <textarea
                     id="contact-form-msg"
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Detail kolaborasi yang ingin dibahas..."
+                    placeholder="Tuliskan pesan atau hal yang ingin didiskusikan..."
                     className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-indigo-600 rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none transition-all resize-none font-medium"
                   />
                 </div>
@@ -180,7 +180,7 @@ export default function Contact() {
                     <span>Mengirim...</span>
                   ) : (
                     <>
-                      <span>Kirim Pesan Kemitraan</span>
+                      <span>Kirim Pesan</span>
                       <Send className="w-4 h-4 text-white" />
                     </>
                   )}

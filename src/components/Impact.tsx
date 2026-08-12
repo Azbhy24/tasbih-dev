@@ -94,7 +94,6 @@ export default function Impact() {
                   <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
                     <IconComponent className="w-6 h-6" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-slate-500">VERIFIED</span>
                 </div>
 
                 <div className="text-left mt-auto">

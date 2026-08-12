@@ -29,7 +29,7 @@ export default function About() {
             Manajemen, Pengalaman Nyata, & Teknologi Berdaya Guna
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal max-w-2xl mx-auto">
-            Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) & Digital Operations Builder. Fokus pada simplifikasi pekerjaan lewat sistem digital yang rapi dan efisien.
+            Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare), fokus pada simplifikasi pekerjaan lewat sistem digital yang rapi dan efisien.
           </p>
           <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
         </div>

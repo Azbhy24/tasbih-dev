@@ -42,8 +42,16 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
     requestAnimationFrame(animate);
   }, [isInView, numericValue, isNumeric]);
 
+  const strValue = String(value);
+  const isLongText = strValue.length > 6;
+
   return (
-    <span ref={ref} className="font-sans font-extrabold text-inherit text-4xl sm:text-5xl lg:text-6xl tracking-tight block">
+    <span
+      ref={ref}
+      className={`font-sans font-extrabold text-inherit tracking-tight block ${
+        isLongText ? "text-2xl sm:text-3xl lg:text-4xl" : "text-4xl sm:text-5xl lg:text-6xl"
+      }`}
+    >
       {prefix}{count}{suffix}
     </span>
   );

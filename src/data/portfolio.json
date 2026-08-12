@@ -14,16 +14,16 @@
   "stats": [
     {
       "id": "stat-trans",
-      "value": "100+",
+      "value": "Submitin.id",
       "suffix": "",
       "prefix": "",
-      "label": "Transaksi Layanan Digital",
-      "description": "Penjualan & transaksi operasional layanan digital terverifikasi.",
-      "icon": "TrendingUp"
+      "label": "Aktif Melayani Jasa Cek Plagiasi & Parafrase",
+      "description": "Menyediakan layanan cek plagiasi, cek AI, dan parafrase untuk mahasiswa melalui platform Submitin.id.",
+      "icon": "FileText"
     },
     {
       "id": "stat-repo",
-      "value": "5+",
+      "value": "5",
       "suffix": "",
       "prefix": "",
       "label": "Repositori GitHub",
@@ -32,7 +32,7 @@
     },
     {
       "id": "stat-proj",
-      "value": "4",
+      "value": "5",
       "suffix": "",
       "prefix": "",
       "label": "Project Digital Live",

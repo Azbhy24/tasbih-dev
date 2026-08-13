@@ -17,12 +17,12 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-20 sm:py-24 border-t border-slate-800/80 bg-slate-950">
+    <section id="about" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header Pembuka */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
             TENTANG TASBIH
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
@@ -34,13 +34,13 @@ export default function About() {
           <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Side: Ringkasan Profil & Dua Sisi Profil */}
-          <div className="lg:col-span-6 flex flex-col gap-6 text-left">
+          <div className="lg:col-span-6 flex flex-col gap-8 text-left">
             
             {/* Cerita Ringkas */}
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
               <div className="flex items-center gap-2 mb-3">
                 <User className="w-4 h-4 text-indigo-400" />
                 <h3 className="text-xs font-mono font-bold text-indigo-300 tracking-wider uppercase">SEKILAS PROFIL</h3>
@@ -51,7 +51,7 @@ export default function About() {
             </div>
 
             {/* Dua Sisi Profil Photos */}
-            <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
               <h3 className="text-xs font-mono font-bold text-indigo-300 tracking-wider uppercase mb-4">DUA SISI PROFIL</h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
@@ -104,10 +104,10 @@ export default function About() {
           </div>
 
           {/* Right Side: Pendidikan & Compact POAC Framework */}
-          <div className="lg:col-span-6 flex flex-col gap-6 text-left">
+          <div className="lg:col-span-6 flex flex-col gap-8 text-left">
             
             {/* Pendidikan Card */}
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(99,102,241,0.3)] shrink-0">
                   <GraduationCap className="w-5 h-5" />
@@ -138,7 +138,7 @@ export default function About() {
             </div>
 
             {/* Cara Saya Bekerja (Compact POAC Framework) */}
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all duration-300">
+            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
                 <div className="flex items-center gap-2">
                   <LayoutGrid className="w-4 h-4 text-indigo-400" />

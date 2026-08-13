@@ -54,10 +54,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 border-t border-slate-800/80 bg-slate-900/80">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
+    <section id="contact" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/90 to-slate-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
             KONTAK & KOLABORASI
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Social Channels */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -78,7 +78,7 @@ export default function Contact() {
             <button
               id="contact-bento-copy-email"
               onClick={handleCopyEmail}
-              className="sm:col-span-2 p-6 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl flex items-center justify-between transition-all duration-300 hover:border-indigo-500/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] text-left cursor-pointer group"
+              className="sm:col-span-2 p-6 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl flex items-center justify-between transition-all duration-300 hover:border-indigo-500/50 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] hover:-translate-y-1 text-left cursor-pointer group"
             >
               <div className="flex items-center gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]">

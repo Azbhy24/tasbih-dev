@@ -15,10 +15,10 @@ export default function Vision() {
   };
 
   return (
-    <section id="vision" className="relative py-24 border-t border-slate-800/80 bg-slate-900/50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
+    <section id="vision" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
             VISI & MISI JANGKA PANJANG
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
@@ -28,11 +28,11 @@ export default function Vision() {
         </div>
 
         {/* Vision statement & Milestones roadmap */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
           {/* Left Column: Statement & Quote */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-8">
-            <div className="p-8 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-xl text-left h-full flex flex-col justify-between">
+            <div className="p-7 sm:p-8 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300 text-left h-full flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-6">
                   <Target className="w-5 h-5 text-indigo-400" />

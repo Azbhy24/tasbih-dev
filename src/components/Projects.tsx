@@ -717,12 +717,12 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="relative py-24 border-t border-slate-800/80 bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section id="projects" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
             PORTOFOLIO KARYA & SOLUSI
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
@@ -735,7 +735,7 @@ export default function Projects() {
         </div>
 
         {/* Project Overview Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project) => {
             const isWarung = project.id === "proj-2";
             const isKasir = project.id === "proj-3";
@@ -758,7 +758,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3 }}
-                className="group p-6 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-xl hover:border-indigo-500/60 hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-[0_0_25px_rgba(99,102,241,0.2)] flex flex-col justify-between text-left"
+                className="group p-6 sm:p-7 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between text-left"
               >
                 <div>
                   {/* Top Bar: Icon + Category Badge */}

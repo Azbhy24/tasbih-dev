@@ -61,11 +61,11 @@ export default function Hero({ onNavigate }: HeroProps) {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-8 flex flex-col justify-center text-left"
+          className="lg:col-span-8 flex flex-col justify-center items-center text-center"
         >
           {/* Tagline Badge with vibrant multi-gradient border */}
-          <motion.div variants={itemVariants} className="inline-flex max-w-full">
-            <span className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 bg-white/90 backdrop-blur-md border border-indigo-200/80 rounded-2xl sm:rounded-full text-[11px] sm:text-xs font-black tracking-wider uppercase text-indigo-900 shadow-sm">
+          <motion.div variants={itemVariants} className="inline-flex max-w-full justify-center">
+            <span className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 bg-white/90 backdrop-blur-md border border-indigo-200/80 rounded-2xl sm:rounded-full text-[11px] sm:text-xs font-black tracking-wider uppercase text-indigo-900 shadow-sm">
               <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -80,7 +80,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.h1
             variants={itemVariants}
             id="hero-main-title"
-            className="mt-4 sm:mt-5 text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight text-slate-900 leading-[0.95] uppercase break-words"
+            className="mt-4 sm:mt-5 text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight text-slate-900 leading-[0.95] uppercase break-words text-center"
           >
             Tasbih<span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">.</span>
           </motion.h1>
@@ -89,7 +89,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.h2
             variants={itemVariants}
             id="hero-positioning-title"
-            className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl font-extrabold text-indigo-700 tracking-tight"
+            className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl font-extrabold text-indigo-700 tracking-tight text-center"
           >
             Praktisi Manajemen & Solusi Digital
           </motion.h2>
@@ -98,7 +98,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.p
             variants={itemVariants}
             id="hero-main-message"
-            className="mt-3 text-base sm:text-lg md:text-xl font-bold text-slate-900 max-w-2xl leading-snug"
+            className="mt-3 text-base sm:text-lg md:text-xl font-bold text-slate-900 max-w-2xl leading-snug mx-auto text-center"
           >
             Menggabungkan tata kelola organisasi, manajemen administrasi, dan pengembangan solusi digital terstruktur.
           </motion.p>
@@ -107,7 +107,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.p
             variants={itemVariants}
             id="hero-bio-para"
-            className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed font-sans font-medium"
+            className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed font-sans font-medium mx-auto text-center"
           >
             Latar belakang S1 Manajemen Pendidikan Islam dengan pengalaman di bidang administrasi, pengelolaan data, bisnis ritel, serta pengembangan aplikasi web.
           </motion.p>
@@ -116,7 +116,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           <motion.div
             variants={itemVariants}
             id="hero-actions"
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full"
           >
             <button
               id="hero-action-portfolio"

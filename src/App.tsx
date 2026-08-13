@@ -65,9 +65,9 @@ export default function App() {
   };
 
   return (
-    <div id="app-root-layout" className="min-h-screen text-slate-900 bg-slate-50 relative font-sans">
+    <div id="app-root-layout" className="min-h-screen text-slate-100 bg-slate-950 relative font-sans selection:bg-indigo-500 selection:text-white">
       {/* Background Grid Accent Mesh */}
-      <div className="absolute inset-0 grid-mesh opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 grid-mesh opacity-10 pointer-events-none" />
 
       {/* Main Header */}
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
@@ -85,32 +85,32 @@ export default function App() {
       </main>
 
       {/* Consolidated Footer Panel */}
-      <footer id="footer-panel" className="relative py-12 border-t border-slate-200 bg-white/90 backdrop-blur-md">
+      <footer id="footer-panel" className="relative py-12 border-t border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Brand Signature */}
           <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="font-sans text-base font-bold text-slate-900 tracking-widest uppercase">
-              AZ<span className="text-indigo-600">BHY</span> PORTFOLIO
+            <span className="font-sans text-base font-bold text-white tracking-widest uppercase">
+              AZ<span className="text-indigo-400">BHY</span> PORTFOLIO
             </span>
-            <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
               S1 Manajemen Pendidikan Islam • Web & Automation Specialist
             </span>
           </div>
 
           {/* Quick legal/copyright statements */}
-          <div className="text-center md:text-left text-xs text-slate-600 font-mono">
+          <div className="text-center md:text-left text-xs text-slate-400 font-mono">
             &copy; {new Date().getFullYear()} Tasbih (Azbhy). All rights reserved. 
-            <span className="mx-2 text-slate-300">|</span> 
+            <span className="mx-2 text-slate-700">|</span> 
             Portofolio Resmi & Rekam Jejak Professional
           </div>
 
           {/* Quick links list */}
-          <div className="flex items-center gap-6 text-xs font-mono text-slate-600">
+          <div className="flex items-center gap-6 text-xs font-mono text-slate-400">
             <button 
               id="footer-nav-to-top"
               onClick={() => handleNavigate("hero")} 
-              className="flex items-center gap-1.5 hover:text-indigo-600 transition-colors cursor-pointer font-medium"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-indigo-400 transition-colors cursor-pointer font-medium"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />
@@ -129,7 +129,7 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => handleNavigate("hero")}
-            className="fixed bottom-6 right-6 z-40 p-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg shadow-indigo-600/30 active:scale-95 transition-all cursor-pointer"
+            className="fixed bottom-6 right-6 z-40 p-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full shadow-[0_0_20px_rgba(99,102,241,0.4)] active:scale-95 transition-all cursor-pointer border border-indigo-400/40"
             title="Scroll back to Top"
           >
             <ArrowUp className="w-5 h-5 font-bold" />

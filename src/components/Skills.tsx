@@ -24,21 +24,21 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative py-24 border-t border-slate-200 bg-white">
+    <section id="skills" className="relative py-24 border-t border-slate-800/80 bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-xs">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
             STRUKTUR KOMPETENSI
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
             Kombinasi Keahlian & Spesialisasi Kerja
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
+          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal">
             Pilih pilar kategori di bawah ini untuk melihat rincian keahlian dan kepasihan operasional.
           </p>
-          <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Compact Grid Accordion Layout */}
@@ -51,14 +51,14 @@ export default function Skills() {
               <motion.div
                 key={group.category}
                 id={`skill-card-${index}`}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={`rounded-2xl border transition-all overflow-hidden ${
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden text-left ${
                   isExpanded
-                    ? "border-indigo-300 bg-slate-50 shadow-sm"
-                    : "border-slate-200 bg-white hover:border-slate-300"
+                    ? "border-indigo-500/60 bg-slate-900 shadow-[0_0_20px_rgba(99,102,241,0.15)]"
+                    : "border-slate-800 bg-slate-900/60 backdrop-blur-xl hover:border-slate-700 hover:bg-slate-900/90"
                 }`}
               >
                 {/* Header Button */}
@@ -70,23 +70,23 @@ export default function Skills() {
                   <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
                       isExpanded
-                        ? "bg-indigo-600 text-white shadow-xs"
-                        : "bg-indigo-50 text-indigo-700 border border-indigo-200"
+                        ? "bg-indigo-600 text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]"
+                        : "bg-slate-800 text-indigo-400 border border-slate-700"
                     }`}>
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-mono font-bold text-indigo-800 uppercase tracking-wider">
+                      <span className="block text-[10px] font-mono font-bold text-indigo-400 uppercase tracking-wider">
                         {group.skills.length} MATERI SKILL
                       </span>
-                      <h3 className="text-slate-900 text-base font-extrabold tracking-tight mt-0.5 group-hover:text-indigo-600 transition-colors">
+                      <h3 className="text-white text-base font-extrabold tracking-tight mt-0.5 group-hover:text-indigo-300 transition-colors">
                         {group.category}
                       </h3>
                     </div>
                   </div>
 
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors shrink-0 ${
-                    isExpanded ? "bg-indigo-100 text-indigo-800" : "bg-slate-100 text-slate-500"
+                    isExpanded ? "bg-indigo-950 text-indigo-300 border border-indigo-500/40" : "bg-slate-800 text-slate-400"
                   }`}>
                     {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
@@ -100,10 +100,10 @@ export default function Skills() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden border-t border-slate-200/80 bg-white/80"
+                      className="overflow-hidden border-t border-slate-800 bg-slate-950/80"
                     >
                       <div className="p-5 text-left">
-                        <p className="text-xs text-slate-600 leading-relaxed font-medium mb-4 border-l-2 border-indigo-400 pl-3">
+                        <p className="text-xs text-slate-300 leading-relaxed font-medium mb-4 border-l-2 border-indigo-500 pl-3">
                           {group.description}
                         </p>
 
@@ -111,7 +111,7 @@ export default function Skills() {
                           {group.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase border border-slate-200 bg-slate-50 text-slate-800 shadow-2xs"
+                              className="px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase border border-slate-800 bg-slate-900 text-slate-200 shadow-sm hover:border-indigo-500/50 hover:text-indigo-300 transition-colors"
                             >
                               {skill}
                             </span>

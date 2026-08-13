@@ -44,29 +44,29 @@ export default function Contact() {
 
   const getIcon = (platform: string) => {
     switch (platform.toLowerCase()) {
-      case "whatsapp": return <MessageSquare className="w-5 h-5 text-indigo-600" />;
-      case "email": return <Mail className="w-5 h-5 text-indigo-600" />;
-      case "github": return <Github className="w-5 h-5 text-indigo-600" />;
-      case "linkedin": return <Linkedin className="w-5 h-5 text-indigo-600" />;
-      case "instagram": return <Instagram className="w-5 h-5 text-indigo-600" />;
-      default: return <Mail className="w-5 h-5 text-indigo-600" />;
+      case "whatsapp": return <MessageSquare className="w-5 h-5 text-indigo-400" />;
+      case "email": return <Mail className="w-5 h-5 text-indigo-400" />;
+      case "github": return <Github className="w-5 h-5 text-indigo-400" />;
+      case "linkedin": return <Linkedin className="w-5 h-5 text-indigo-400" />;
+      case "instagram": return <Instagram className="w-5 h-5 text-indigo-400" />;
+      default: return <Mail className="w-5 h-5 text-indigo-400" />;
     }
   };
 
   return (
-    <section id="contact" className="relative py-24 border-t border-slate-200 bg-white">
+    <section id="contact" className="relative py-24 border-t border-slate-800/80 bg-slate-900/80">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-wider text-indigo-800 uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200 shadow-sm">
+          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]">
             KONTAK & KOLABORASI
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
             Kontak & Peluang Kerja Sama
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-700 font-normal">
+          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal">
             Terbuka untuk peluang kerja, magang, dan kolaborasi di bidang manajemen, administrasi, maupun pengembangan digital.
           </p>
-          <div className="w-12 h-1 bg-indigo-600 mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -78,20 +78,20 @@ export default function Contact() {
             <button
               id="contact-bento-copy-email"
               onClick={handleCopyEmail}
-              className="sm:col-span-2 p-6 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-between transition-all hover:border-indigo-300 text-left cursor-pointer group shadow-sm"
+              className="sm:col-span-2 p-6 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl flex items-center justify-between transition-all duration-300 hover:border-indigo-500/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)] text-left cursor-pointer group"
             >
               <div className="flex items-center gap-4 relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-mono text-indigo-800 font-bold uppercase tracking-wider">EMAIL UTAMA</span>
-                  <span className="block text-slate-900 font-extrabold text-base sm:text-lg mt-0.5">azbhy24@gmail.com</span>
+                  <span className="block text-[10px] font-mono text-indigo-400 font-bold uppercase tracking-wider">EMAIL UTAMA</span>
+                  <span className="block text-white font-extrabold text-base sm:text-lg mt-0.5">azbhy24@gmail.com</span>
                 </div>
               </div>
               
-              <div className="w-10 h-10 rounded-lg bg-white border border-slate-300 flex items-center justify-center text-slate-700 group-hover:text-indigo-600 transition-all shadow-xs">
-                {copied ? <Check className="w-4 h-4 text-emerald-600 font-bold" /> : <Copy className="w-4 h-4" />}
+              <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:text-indigo-400 group-hover:border-indigo-500/40 transition-all shadow-xs">
+                {copied ? <Check className="w-4 h-4 text-emerald-400 font-bold" /> : <Copy className="w-4 h-4" />}
               </div>
             </button>
 
@@ -104,18 +104,18 @@ export default function Contact() {
                   target="_blank"
                   rel="noreferrer"
                   id={`contact-bento-${social.platform.toLowerCase()}`}
-                  className="p-6 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col justify-between h-40 transition-all hover:border-indigo-300 cursor-pointer group shadow-sm"
+                  className="p-6 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl flex flex-col justify-between h-40 transition-all duration-300 hover:border-indigo-500/50 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] cursor-pointer group text-left"
                 >
                   <div className="flex items-start justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center shadow-xs">
+                    <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center">
                       {getIcon(social.platform)}
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
 
                   <div className="text-left mt-4">
-                    <span className="block text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">{social.platform} Channel</span>
-                    <span className="block text-slate-900 font-extrabold text-sm mt-1 font-mono truncate">{social.username}</span>
+                    <span className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">{social.platform} Channel</span>
+                    <span className="block text-white font-extrabold text-sm mt-1 font-mono truncate">{social.username}</span>
                   </div>
                 </a>
               );
@@ -125,14 +125,14 @@ export default function Contact() {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-5">
-            <div className="p-8 rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
-              <h3 className="text-slate-900 text-lg font-extrabold font-sans tracking-wide text-left mb-6">
+            <div className="p-8 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-xl">
+              <h3 className="text-white text-lg font-extrabold font-sans tracking-wide text-left mb-6">
                 Kirim Pesan Instan
               </h3>
               
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="text-left">
-                  <label htmlFor="contact-form-name" className="block text-[10px] font-mono font-bold text-slate-700 uppercase tracking-wider mb-1.5 pl-0.5">Nama Lengkap</label>
+                  <label htmlFor="contact-form-name" className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1.5 pl-0.5">Nama Lengkap</label>
                   <input
                     id="contact-form-name"
                     type="text"
@@ -140,12 +140,12 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Masukkan nama Anda..."
-                    className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-indigo-600 rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 rounded-xl text-xs text-white placeholder-slate-500 outline-none transition-all font-medium"
                   />
                 </div>
 
                 <div className="text-left">
-                  <label htmlFor="contact-form-email" className="block text-[10px] font-mono font-bold text-slate-700 uppercase tracking-wider mb-1.5 pl-0.5">Alamat Email</label>
+                  <label htmlFor="contact-form-email" className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1.5 pl-0.5">Alamat Email</label>
                   <input
                     id="contact-form-email"
                     type="email"
@@ -153,12 +153,12 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="nama@perusahaan.com"
-                    className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-indigo-600 rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 rounded-xl text-xs text-white placeholder-slate-500 outline-none transition-all font-medium"
                   />
                 </div>
 
                 <div className="text-left">
-                  <label htmlFor="contact-form-msg" className="block text-[10px] font-mono font-bold text-slate-700 uppercase tracking-wider mb-1.5 pl-0.5">Pesan / Topik Diskusi</label>
+                  <label htmlFor="contact-form-msg" className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1.5 pl-0.5">Pesan / Topik Diskusi</label>
                   <textarea
                     id="contact-form-msg"
                     rows={4}
@@ -166,7 +166,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tuliskan pesan atau hal yang ingin didiskusikan..."
-                    className="w-full px-4 py-3 bg-white border border-slate-300 focus:border-indigo-600 rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none transition-all resize-none font-medium"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 rounded-xl text-xs text-white placeholder-slate-500 outline-none transition-all resize-none font-medium"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ export default function Contact() {
                   id="contact-form-submit-btn"
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 disabled:opacity-50 transition-all cursor-pointer shadow-sm"
+                  className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 disabled:opacity-50 transition-all cursor-pointer shadow-md shadow-indigo-600/20"
                 >
                   {isSubmitting ? (
                     <span>Mengirim...</span>
@@ -195,12 +195,12 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     id="contact-form-success-alert"
-                    className="mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-950 rounded-xl text-xs font-medium text-left flex items-start gap-2"
+                    className="mt-4 p-4 bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 rounded-xl text-xs font-medium text-left flex items-start gap-2"
                   >
                     <span className="text-sm shrink-0">✨</span>
                     <div>
-                      <span className="font-extrabold text-emerald-900">Form Terkirim!</span>
-                      <p className="mt-1 text-emerald-800">Terima kasih atas pesan Anda. Tasbih (Aby Bhy) akan membalas via email atau WhatsApp secepatnya.</p>
+                      <span className="font-extrabold text-emerald-300">Form Terkirim!</span>
+                      <p className="mt-1 text-emerald-200">Terima kasih atas pesan Anda. Tasbih (Aby Bhy) akan membalas via email atau WhatsApp secepatnya.</p>
                     </div>
                   </motion.div>
                 )}

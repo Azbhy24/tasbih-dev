@@ -4,21 +4,19 @@ import {
   ExternalLink, 
   Github, 
   AlertCircle, 
-  Sparkles, 
   CheckCircle2, 
-  TrendingUp, 
-  Layers, 
   Plus, 
   Minus, 
   ShoppingCart, 
   BookOpen, 
   Smartphone, 
-  Monitor, 
-  Check, 
   CreditCard,
   Trash2,
   X,
-  Eye
+  Play,
+  ArrowUpRight,
+  Eye,
+  Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { portfolioData } from "../data/portfolio";
@@ -28,8 +26,8 @@ import { portfolioData } from "../data/portfolio";
 // ==========================================
 function DompetKuSimulator() {
   const [transactions, setTransactions] = useState([
-    { id: 1, title: "Usaha Ritel Harian", type: "income", amount: 450000, category: "Bisnis" },
-    { id: 2, title: "Domain & Cloud Hosting", type: "expense", amount: 75000, category: "Server" },
+    { id: 1, title: "Penjualan Ritel Harian", type: "income", amount: 450000, category: "Bisnis" },
+    { id: 2, title: "Cloud Hosting & Domain", type: "expense", amount: 75000, category: "Server" },
   ]);
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -70,917 +68,695 @@ function DompetKuSimulator() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-indigo-500/40 p-5 font-sans overflow-hidden shadow-2xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-sky-500 to-teal-500" />
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 pt-1">
+    <div className="w-full rounded-xl bg-neutral-950 border border-neutral-800 p-5 font-sans text-left">
+      <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse" />
-          <span className="text-[11px] font-mono font-bold tracking-wider text-white uppercase">
-            SIMULASI INTERAKTIF: DOMPETKU
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
+            SIMULASI: DOMPETKU FINANCE ENGINE
           </span>
         </div>
-        <span className="text-[10px] font-mono text-indigo-300 px-3 py-0.5 bg-indigo-950/80 rounded-full border border-indigo-500/30 font-bold">
-          Live Prototype
+        <span className="text-[10px] font-mono text-neutral-400 px-2 py-0.5 bg-neutral-900 rounded border border-neutral-800">
+          Interactive Prototype
         </span>
       </div>
 
-      {/* Mini Card Display */}
       <div className="grid grid-cols-2 gap-3 mb-3">
-        <div className="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30">
-          <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block">
+        <div className="p-3 rounded bg-neutral-900 border border-neutral-800">
+          <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">
             Total Pemasukan
           </span>
-          <span className="text-xs sm:text-sm font-black text-emerald-300 mt-0.5 block">
+          <span className="text-xs sm:text-sm font-mono font-bold text-emerald-400 mt-0.5 block">
             Rp {totalIncome.toLocaleString("id-ID")}
           </span>
         </div>
-        <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-500/30">
-          <span className="text-[10px] font-mono text-rose-400 font-bold uppercase tracking-wider block">
+        <div className="p-3 rounded bg-neutral-900 border border-neutral-800">
+          <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider block">
             Total Pengeluaran
           </span>
-          <span className="text-xs sm:text-sm font-black text-rose-300 mt-0.5 block">
+          <span className="text-xs sm:text-sm font-mono font-bold text-rose-400 mt-0.5 block">
             Rp {totalExpense.toLocaleString("id-ID")}
           </span>
         </div>
       </div>
 
-      {/* Main Balance Display */}
-      <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 text-white rounded-xl p-3.5 mb-3 text-center shadow-lg border border-indigo-400/40">
-        <span className="text-[10px] font-mono font-bold text-indigo-200 uppercase tracking-wider block">
+      <div className="bg-neutral-900 border border-neutral-800 rounded p-3 mb-3 text-center">
+        <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">
           Saldo Aktif DompetKu
         </span>
-        <h4 className="text-xl sm:text-2xl font-black text-white mt-0.5 font-sans">
+        <h4 className="text-xl font-mono font-bold text-white mt-0.5">
           Rp {calculatedBalance.toLocaleString("id-ID")}
         </h4>
       </div>
 
-      {/* Mini quick form adder */}
-      <form onSubmit={handleAdd} className="space-y-2 mb-3 bg-slate-950/80 p-3 rounded-xl border border-slate-800">
-        <p className="text-[10px] font-bold font-mono text-indigo-300 uppercase tracking-wider">
+      <form onSubmit={handleAdd} className="space-y-2 mb-3 bg-neutral-900/50 p-3 rounded border border-neutral-800">
+        <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">
           + Catat Transaksi Baru
         </p>
-        <div className="grid grid-cols-12 gap-1.5">
+        <div className="grid grid-cols-12 gap-2">
           <input
             type="text"
-            placeholder="Kopi, Peralatan"
+            placeholder="Keterangan transaksi"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="col-span-6 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 font-sans font-medium"
+            className="col-span-6 bg-neutral-950 border border-neutral-700 rounded px-2.5 py-1.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 font-sans"
           />
           <input
             type="number"
-            placeholder="Rp"
+            placeholder="Nominal (Rp)"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="col-span-4 bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 font-sans font-medium"
+            className="col-span-4 bg-neutral-950 border border-neutral-700 rounded px-2.5 py-1.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 font-sans"
           />
           <button
             type="submit"
-            className="col-span-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg p-1 flex items-center justify-center transition-all cursor-pointer text-white shadow-md"
+            className="col-span-2 bg-white hover:bg-neutral-200 text-neutral-950 rounded py-1.5 text-xs font-mono font-bold uppercase transition-colors cursor-pointer"
           >
-            <Plus className="w-4 h-4" />
-          </button>
-        </div>
-
-        <div className="flex gap-2 p-1 bg-slate-900 rounded-lg border border-slate-800">
-          <button
-            type="button"
-            onClick={() => setType("expense")}
-            className={`flex-1 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-              type === "expense" ? "bg-rose-950 text-rose-300 border border-rose-500/40 font-extrabold" : "text-slate-400"
-            }`}
-          >
-            (-) Pengeluaran
-          </button>
-          <button
-            type="button"
-            onClick={() => setType("income")}
-            className={`flex-1 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-              type === "income" ? "bg-emerald-950 text-emerald-300 border border-emerald-500/40 font-extrabold" : "text-slate-400"
-            }`}
-          >
-            (+) Pemasukan
+            +
           </button>
         </div>
       </form>
 
-      {/* Real-time active ledger list */}
-      <div className="space-y-1.5 max-h-[130px] overflow-y-auto pr-1">
-        <AnimatePresence initial={false}>
-          {transactions.map((trans) => (
-            <motion.div
-              key={trans.id}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              className="flex items-center justify-between p-2 rounded-lg bg-slate-950 border border-slate-800 text-xs"
-            >
-              <div className="text-left">
-                <p className="text-xs text-slate-200 font-bold">{trans.title}</p>
-                <span className="text-[9px] font-mono text-indigo-400 uppercase font-semibold">
-                  {trans.category}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className={`text-xs font-black font-mono ${
-                  trans.type === "income" ? "text-emerald-400" : "text-rose-400"
-                }`}>
-                  {trans.type === "income" ? "+" : "-"} Rp {trans.amount.toLocaleString("id-ID")}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => deleteTransaction(trans.id)}
-                  className="text-slate-500 hover:text-rose-400 p-0.5 rounded transition-colors cursor-pointer"
-                >
-                  <Trash2 className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+      <div className="space-y-1.5 max-h-40 overflow-y-auto custom-scrollbar">
+        {transactions.map((tx) => (
+          <div key={tx.id} className="flex items-center justify-between p-2 rounded bg-neutral-900/80 border border-neutral-800 text-xs">
+            <span className="text-neutral-200 font-medium">{tx.title}</span>
+            <div className="flex items-center gap-2">
+              <span className={`font-mono font-bold ${tx.type === "income" ? "text-emerald-400" : "text-rose-400"}`}>
+                {tx.type === "income" ? "+" : "-"} Rp {tx.amount.toLocaleString("id-ID")}
+              </span>
+              <button onClick={() => deleteTransaction(tx.id)} className="text-neutral-600 hover:text-rose-400 cursor-pointer">
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 // ==========================================
-// 2. WARUNG STOREFRONT SIMULATOR
+// 2. WARUNG AMMA IKA SIMULATOR (CUSTOMER CATALOG)
 // ==========================================
-function WarungStorefrontSimulator() {
-  const [activeCategory, setActiveCategory] = useState("Semua");
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const categories = ["Semua", "Sembako", "Minuman", "Snack"];
-
-  const catalog = [
-    { id: 1, name: "Beras Sembako 5kg", category: "Sembako", price: 75000, stock: "Tersedia" },
-    { id: 2, name: "Minyak Goreng 2L", category: "Sembako", price: 34000, stock: "Tersedia" },
-    { id: 3, name: "Gula Pasir 1kg", category: "Sembako", price: 16500, stock: "Tersedia" },
-    { id: 4, name: "Air Mineral 600ml", category: "Minuman", price: 3500, stock: "Tersedia" },
-    { id: 5, name: "Teh Kemasan Botol", category: "Minuman", price: 5000, stock: "Tersedia" },
-    { id: 6, name: "Biskuit Kaleng 350g", category: "Snack", price: 22000, stock: "Tersedia" },
+function WarungAmmaIkaSimulator() {
+  const products = [
+    { id: 1, name: "Beras Premium 5kg", price: 68000, category: "Sembako", stock: 24 },
+    { id: 2, name: "Minyak Goreng 2L", price: 34000, category: "Minyak", stock: 18 },
+    { id: 3, name: "Gula Pasir 1kg", price: 17500, category: "Sembako", stock: 40 },
+    { id: 4, name: "Telur Ayam (1 Rak)", price: 52000, category: "Protein", stock: 15 },
   ];
 
-  const filtered = catalog.filter((item) => {
-    const matchCat = activeCategory === "Semua" || item.category === activeCategory;
-    const matchSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchCat && matchSearch;
-  });
+  const [cart, setCart] = useState<{ [key: number]: number }>({});
+  const [orderSent, setOrderSent] = useState(false);
+
+  const addToCart = (id: number) => {
+    setCart((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+    setOrderSent(false);
+  };
+
+  const removeFromCart = (id: number) => {
+    setCart((prev) => {
+      const next = { ...prev };
+      if (next[id] > 1) next[id]--;
+      else delete next[id];
+      return next;
+    });
+  };
+
+  const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
+  const totalPrice = Object.entries(cart).reduce((sum, [id, qty]) => {
+    const p = products.find((x) => x.id === parseInt(id));
+    return sum + (p ? p.price * qty : 0);
+  }, 0);
 
   return (
-    <div className="w-full rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-emerald-500/40 p-5 font-sans overflow-hidden shadow-2xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 pt-1">
+    <div className="w-full rounded-xl bg-neutral-950 border border-neutral-800 p-5 font-sans text-left">
+      <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-[11px] font-mono font-bold tracking-wider text-white uppercase">
+          <ShoppingCart className="w-4 h-4 text-emerald-400" />
+          <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
             ETALASE PELANGGAN: WARUNG AMMA IKA
           </span>
         </div>
-        <span className="text-[10px] font-mono text-emerald-300 px-3 py-0.5 bg-emerald-950/80 rounded-full border border-emerald-500/30 font-bold">
+        <span className="text-[10px] font-mono text-emerald-400 px-2 py-0.5 bg-emerald-950/40 rounded border border-emerald-500/30">
           Katalog Pelanggan
         </span>
       </div>
 
-      <div className="space-y-3">
-        {/* Search & Categories */}
-        <div className="flex flex-col gap-2">
-          <input
-            type="text"
-            placeholder="Cari produk di etalase..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-3 py-1.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
-          />
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1 text-[10px] font-mono font-bold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
-                  activeCategory === cat
-                    ? "bg-emerald-600 text-white shadow-md"
-                    : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Catalog List */}
-        <div className="grid grid-cols-2 gap-2 max-h-[170px] overflow-y-auto pr-1">
-          {filtered.map((item) => (
-            <div
-              key={item.id}
-              className="p-2.5 rounded-xl bg-slate-950/80 border border-emerald-500/30 flex flex-col justify-between"
-            >
+      <div className="space-y-2 mb-4 max-h-48 overflow-y-auto custom-scrollbar">
+        {products.map((p) => {
+          const qty = cart[p.id] || 0;
+          return (
+            <div key={p.id} className="flex items-center justify-between p-2.5 rounded bg-neutral-900 border border-neutral-800">
               <div>
-                <span className="text-[9px] font-mono font-bold text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded-md uppercase border border-emerald-500/30">
-                  {item.category}
-                </span>
-                <p className="text-xs font-bold text-white leading-snug mt-1">{item.name}</p>
+                <span className="text-xs font-bold text-neutral-200 block">{p.name}</span>
+                <span className="font-mono text-[11px] text-emerald-400">Rp {p.price.toLocaleString("id-ID")}</span>
               </div>
-              <div className="mt-2 flex items-center justify-between">
-                <span className="text-[11px] font-mono text-emerald-300 font-extrabold">
-                  Rp {item.price.toLocaleString("id-ID")}
-                </span>
-                <span className="text-[9px] font-mono font-bold text-emerald-400 bg-emerald-950/80 px-1.5 py-0.5 rounded">
-                  {item.stock}
-                </span>
+              <div className="flex items-center gap-1.5">
+                {qty > 0 ? (
+                  <>
+                    <button onClick={() => removeFromCart(p.id)} className="w-6 h-6 rounded bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs flex items-center justify-center cursor-pointer">
+                      -
+                    </button>
+                    <span className="font-mono text-xs text-white px-1.5">{qty}</span>
+                    <button onClick={() => addToCart(p.id)} className="w-6 h-6 rounded bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs flex items-center justify-center cursor-pointer">
+                      +
+                    </button>
+                  </>
+                ) : (
+                  <button onClick={() => addToCart(p.id)} className="px-2.5 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-[11px] uppercase cursor-pointer">
+                    + Beli
+                  </button>
+                )}
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
-        {/* Footer info */}
-        <div className="p-2 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-[10px] font-mono text-slate-400 font-semibold">
-          <span>📍 Suppa, Pinrang</span>
-          <span className="text-emerald-400 font-bold">● Buka Setiap Hari</span>
+      <div className="p-3 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-between">
+        <div>
+          <span className="text-[10px] font-mono text-neutral-500 uppercase block">Total ({totalItems} item)</span>
+          <span className="font-mono text-sm font-bold text-white">Rp {totalPrice.toLocaleString("id-ID")}</span>
         </div>
+        <button
+          disabled={totalItems === 0}
+          onClick={() => setOrderSent(true)}
+          className={`px-3 py-1.5 rounded text-xs font-mono uppercase tracking-wider font-bold transition-colors cursor-pointer ${
+            totalItems > 0 ? "bg-emerald-500 hover:bg-emerald-400 text-neutral-950" : "bg-neutral-800 text-neutral-600 cursor-not-allowed"
+          }`}
+        >
+          {orderSent ? "Pesanan Terkirim!" : "Pesan via WA"}
+        </button>
       </div>
     </div>
   );
 }
 
 // ==========================================
-// 3. SISTEM POS UMKM SIMULATOR
+// 3. KASIR AMMA IKA SIMULATOR (INTERNAL POS)
 // ==========================================
-function POSUMKMSimulator() {
-  const [cart, setCart] = useState<{ id: number; name: string; price: number; qty: number }[]>([]);
-  const [showReceipt, setShowReceipt] = useState(false);
-  const [receiptNumber, setReceiptNumber] = useState("");
+function KasirAmmaIkaSimulator() {
+  const [cart, setCart] = useState<{ [key: string]: { name: string; price: number; qty: number } }>({
+    "Beras 5kg": { name: "Beras 5kg", price: 68000, qty: 1 },
+    "Minyak 2L": { name: "Minyak 2L", price: 34000, qty: 2 },
+  });
+  const [cashGiven, setCashGiven] = useState("150000");
+  const [receiptPrinted, setReceiptPrinted] = useState(false);
 
-  const products = [
-    { id: 1, name: "Beras Sentra Ramos", price: 75000 },
-    { id: 2, name: "Minyak Goreng 2L", price: 34000 },
-    { id: 3, name: "Gula Pasir 1kg", price: 16500 },
-    { id: 4, name: "Kopi Arabika", price: 28000 },
-  ];
-
-  const addToCart = (prod: typeof products[0]) => {
-    const existing = cart.find((item) => item.id === prod.id);
-    if (existing) {
-      setCart(cart.map((item) => (item.id === prod.id ? { ...item, qty: item.qty + 1 } : item)));
-    } else {
-      setCart([...cart, { id: prod.id, name: prod.name, price: prod.price, qty: 1 }]);
-    }
-  };
-
-  const updateQty = (id: number, delta: number) => {
-    setCart(
-      cart
-        .map((item) => {
-          if (item.id === id) {
-            const nextQty = item.qty + delta;
-            return { ...item, qty: nextQty };
-          }
-          return item;
-        })
-        .filter((item) => item.qty > 0)
-    );
-  };
-
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-
-  const handleCheckout = () => {
-    if (cart.length === 0) return;
-    setReceiptNumber(`TRX-${Math.floor(100000 + Math.random() * 900000)}`);
-    setShowReceipt(true);
-  };
-
-  const handleReset = () => {
-    setCart([]);
-    setShowReceipt(false);
-  };
+  const total = Object.values(cart).reduce((sum, item) => sum + item.price * item.qty, 0);
+  const cashNum = parseInt(cashGiven) || 0;
+  const change = Math.max(0, cashNum - total);
 
   return (
-    <div className="w-full rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-emerald-500/40 p-5 font-sans overflow-hidden shadow-2xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500" />
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 pt-1">
+    <div className="w-full rounded-xl bg-neutral-950 border border-neutral-800 p-5 font-sans text-left">
+      <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-[11px] font-mono font-bold tracking-wider text-white uppercase">
-            POS KASIR (PENGGUNA INTERNAL): KASIR AMMA IKA
+          <CreditCard className="w-4 h-4 text-emerald-400" />
+          <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
+            INTERNAL POS: KASIR AMMA IKA
           </span>
         </div>
-        <span className="text-[10px] font-mono text-emerald-300 px-3 py-0.5 bg-emerald-950/80 rounded-full border border-emerald-500/30 font-bold">
-          Sistem Internal
+        <span className="text-[10px] font-mono text-neutral-400 px-2 py-0.5 bg-neutral-900 rounded border border-neutral-800">
+          Kasir & Cetak Struk
         </span>
       </div>
 
-      {!showReceipt ? (
-        <div className="space-y-3">
-          {/* Catalog grid */}
-          <div>
-            <p className="text-[10px] font-bold font-mono text-emerald-300 uppercase tracking-wider mb-2">
-              Katalog Produk Kasir
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              {products.map((prod) => (
-                <button
-                  id={`pos-prod-${prod.id}`}
-                  key={prod.id}
-                  onClick={() => addToCart(prod)}
-                  className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-500 text-left transition-all group cursor-pointer flex flex-col justify-between hover:shadow-md"
-                >
-                  <div>
-                    <p className="text-xs font-bold text-white leading-tight group-hover:text-emerald-300 transition-colors">
-                      {prod.name}
-                    </p>
-                    <p className="text-[11px] font-mono text-emerald-400 mt-1 font-bold">Rp {prod.price.toLocaleString("id-ID")}</p>
-                  </div>
-                  <span className="text-[9px] font-mono text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded-full mt-2 inline-block max-w-max border border-emerald-500/30 font-extrabold">
-                    + Tambah
-                  </span>
-                </button>
-              ))}
-            </div>
+      <div className="bg-neutral-900 border border-neutral-800 rounded p-3 mb-3">
+        <div className="flex justify-between items-center text-xs font-mono text-neutral-400 border-b border-neutral-800 pb-1.5 mb-2">
+          <span>ITEM TRANSAKSI</span>
+          <span>SUBTOTAL</span>
+        </div>
+        {Object.values(cart).map((item, i) => (
+          <div key={i} className="flex justify-between text-xs py-1">
+            <span className="text-neutral-200">{item.name} x{item.qty}</span>
+            <span className="font-mono text-neutral-300">Rp {(item.price * item.qty).toLocaleString("id-ID")}</span>
           </div>
+        ))}
+        <div className="border-t border-neutral-800 pt-2 mt-2 flex justify-between font-mono text-sm font-bold text-white">
+          <span>TOTAL:</span>
+          <span className="text-emerald-400">Rp {total.toLocaleString("id-ID")}</span>
+        </div>
+      </div>
 
-          {/* Cart Section */}
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800">
-            <p className="text-[10px] font-bold font-mono text-emerald-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <ShoppingCart className="w-3.5 h-3.5 text-emerald-400" />
-              Keranjang Kasir ({cart.length})
-            </p>
-
-            {cart.length === 0 ? (
-              <div className="text-center py-3 text-xs text-slate-500 font-mono">
-                [ Keranjang Kosong ]
-              </div>
-            ) : (
-              <div className="space-y-2">
-                <div className="max-h-[100px] overflow-y-auto space-y-1 pr-1">
-                  {cart.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between text-xs rounded-lg bg-slate-900 p-2 border border-slate-800">
-                      <span className="text-white font-bold max-w-[120px] truncate">{item.name}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1 bg-slate-950 p-0.5 rounded border border-slate-800">
-                          <button
-                            onClick={() => updateQty(item.id, -1)}
-                            className="p-0.5 hover:text-rose-400 cursor-pointer text-slate-400"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="text-[10px] font-mono text-white font-bold w-3 text-center">{item.qty}</span>
-                          <button
-                            onClick={() => updateQty(item.id, 1)}
-                            className="p-0.5 hover:text-emerald-400 cursor-pointer text-slate-400"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
-                        </div>
-                        <span className="font-mono text-emerald-300 text-xs font-extrabold min-w-[55px] text-right">
-                          Rp {(item.price * item.qty).toLocaleString("id-ID")}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between pt-1.5 border-t border-slate-800 text-xs font-extrabold">
-                  <span className="text-slate-400 font-mono">TOTAL</span>
-                  <span className="text-emerald-400 font-sans text-sm">Rp {total.toLocaleString("id-ID")}</span>
-                </div>
-
-                <button
-                  onClick={handleCheckout}
-                  className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-[10px] tracking-wider uppercase rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md"
-                >
-                  <CreditCard className="w-3.5 h-3.5" />
-                  <span>Cetak Struk</span>
-                </button>
-              </div>
-            )}
+      <div className="grid grid-cols-2 gap-3 mb-3">
+        <div>
+          <label className="text-[10px] font-mono text-neutral-400 uppercase block mb-1">Uang Diterima (Rp)</label>
+          <input
+            type="number"
+            value={cashGiven}
+            onChange={(e) => setCashGiven(e.target.value)}
+            className="w-full bg-neutral-900 border border-neutral-700 rounded px-2.5 py-1.5 text-xs text-white font-mono"
+          />
+        </div>
+        <div>
+          <label className="text-[10px] font-mono text-neutral-400 uppercase block mb-1">Kembalian (Rp)</label>
+          <div className="bg-neutral-900 border border-neutral-800 rounded px-2.5 py-1.5 text-xs font-mono font-bold text-emerald-400">
+            Rp {change.toLocaleString("id-ID")}
           </div>
         </div>
-      ) : (
-        /* Struk */
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="bg-slate-950 text-white p-4 rounded-xl font-mono text-xs shadow-2xl border border-emerald-500/40 relative max-w-sm mx-auto"
-        >
-          <div className="text-center py-2 border-b border-dashed border-slate-700">
-            <h5 className="font-extrabold tracking-wide text-xs text-emerald-400">KASIR AMMA' IKA POS</h5>
-            <p className="text-[9px] text-emerald-300 font-bold">Ritel Internal Keluarga</p>
-            <p className="text-[9px] text-slate-400 font-bold">{receiptNumber}</p>
-          </div>
+      </div>
 
-          <div className="py-2 space-y-1 border-b border-dashed border-slate-700">
-            {cart.map((item) => (
-              <div key={item.id} className="flex justify-between text-[10px]">
-                <div className="flex flex-col text-left">
-                  <span className="font-bold text-white">{item.name}</span>
-                  <span className="text-[9px] text-slate-400">
-                    {item.qty} x Rp {item.price.toLocaleString("id-ID")}
-                  </span>
-                </div>
-                <span className="mt-auto text-emerald-300 font-bold">
-                  Rp {(item.price * item.qty).toLocaleString("id-ID")}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 space-y-1 text-xs font-bold">
-            <div className="flex justify-between text-emerald-400 font-black">
-              <span>TOTAL</span>
-              <span>Rp {total.toLocaleString("id-ID")}</span>
-            </div>
-          </div>
-
-          <button
-            onClick={handleReset}
-            className="w-full mt-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-mono font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer shadow-md"
-          >
-            Selesai / Transaksi Baru
-          </button>
-        </motion.div>
-      )}
+      <button
+        onClick={() => setReceiptPrinted(true)}
+        className="w-full py-2 bg-white hover:bg-neutral-200 text-neutral-950 font-mono text-xs font-bold uppercase rounded cursor-pointer transition-colors"
+      >
+        {receiptPrinted ? "✓ Struk Belanja Berhasil Dicetak" : "Proses & Cetak Struk"}
+      </button>
     </div>
   );
 }
 
 // ==========================================
-// 4. NGAJIKU SIMULATOR
+// 4. NGAJIKU SIMULATOR (AL-QUR'AN READER)
 // ==========================================
 function NgajiKuSimulator() {
-  const [selectedSurah, setSelectedSurah] = useState(0);
-  const [viewMode, setViewMode] = useState<"web" | "apk">("web");
+  const [selectedSurah, setSelectedSurah] = useState("001");
+  const [playingAudio, setPlayingAudio] = useState(false);
 
-  const surahs = [
-    {
-      no: 1,
-      name: "Al-Fatihah",
-      arabic: "الفاتحة",
-      versesCount: 7,
-      sampleVerse: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-      translation: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
+  const surahData: { [key: string]: { name: string; meaning: string; verses: { num: number; arabic: string; transliteration: string; translation: string }[] } } = {
+    "001": {
+      name: "Al-Fatihah (Pembukaan)",
+      meaning: "7 Ayat • Mekah",
+      verses: [
+        { num: 1, arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", transliteration: "Bismillāhir-raḥmānir-raḥīm", translation: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang." },
+        { num: 2, arabic: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ", transliteration: "Al-ḥamdu lillāhi rabbil-'ālamīn", translation: "Segala puji bagi Allah, Tuhan seluruh alam." },
+      ],
     },
-    {
-      no: 112,
-      name: "Al-Ikhlas",
-      arabic: "الإخلاص",
-      versesCount: 4,
-      sampleVerse: "قُلْ هُوَ اللَّهُ أَحَدٌ",
-      translation: "Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa.'"
+    "112": {
+      name: "Al-Ikhlas (Keesaan)",
+      meaning: "4 Ayat • Mekah",
+      verses: [
+        { num: 1, arabic: "قُلْ هُوَ اللَّهُ أَحَدٌ", transliteration: "Qul huwallāhu aḥad", translation: "Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa.'" },
+      ],
     },
-    {
-      no: 113,
-      name: "Al-Falaq",
-      arabic: "الفلق",
-      versesCount: 5,
-      sampleVerse: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
-      translation: "Katakanlah, 'Aku berlindung kepada Tuhan yang menguasai subuh.'"
-    },
-  ];
+  };
 
-  const current = surahs[selectedSurah];
+  const current = surahData[selectedSurah] || surahData["001"];
 
   return (
-    <div className="w-full rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-teal-500/40 p-5 font-sans overflow-hidden shadow-2xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 via-emerald-500 to-sky-500" />
-      
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 pt-1">
+    <div className="w-full rounded-xl bg-neutral-950 border border-neutral-800 p-5 font-sans text-left">
+      <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
         <div className="flex items-center gap-2">
-          <BookOpen className="w-4 h-4 text-teal-400" />
-          <span className="text-[11px] font-mono font-bold tracking-wider text-white uppercase">
-            SIMULASI INTERAKTIF: NGAJIKU
+          <BookOpen className="w-4 h-4 text-emerald-400" />
+          <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
+            NGAJIKU: AL-QUR'AN READER ENGINE
           </span>
         </div>
-        <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-full border border-slate-800">
+        <div className="flex gap-1">
           <button
-            onClick={() => setViewMode("web")}
-            className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase transition-all ${
-              viewMode === "web" ? "bg-teal-600 text-white" : "text-slate-400"
-            }`}
+            onClick={() => setSelectedSurah("001")}
+            className={`px-2 py-0.5 rounded text-[10px] font-mono cursor-pointer ${selectedSurah === "001" ? "bg-neutral-800 text-white font-bold" : "text-neutral-500"}`}
           >
-            Web
+            Al-Fatihah
           </button>
           <button
-            onClick={() => setViewMode("apk")}
-            className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase transition-all ${
-              viewMode === "apk" ? "bg-emerald-600 text-white" : "text-slate-400"
-            }`}
+            onClick={() => setSelectedSurah("112")}
+            className={`px-2 py-0.5 rounded text-[10px] font-mono cursor-pointer ${selectedSurah === "112" ? "bg-neutral-800 text-white font-bold" : "text-neutral-500"}`}
           >
-            Capacitor
+            Al-Ikhlas
           </button>
         </div>
       </div>
 
-      {/* Surah selector tabs */}
-      <div className="flex gap-1 overflow-x-auto pb-1.5 mb-2.5">
-        {surahs.map((s, idx) => (
-          <button
-            key={s.no}
-            onClick={() => setSelectedSurah(idx)}
-            className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold whitespace-nowrap transition-all border ${
-              selectedSurah === idx
-                ? "bg-teal-950 text-teal-300 border-teal-500/40 font-extrabold"
-                : "bg-slate-950 text-slate-400 border-slate-800 hover:bg-slate-800"
-            }`}
-          >
-            {s.no}. {s.name}
-          </button>
+      <div className="bg-neutral-900 border border-neutral-800 rounded p-3 mb-3 flex items-center justify-between">
+        <div>
+          <h4 className="text-sm font-bold text-white">{current.name}</h4>
+          <span className="font-mono text-[10px] text-neutral-400">{current.meaning}</span>
+        </div>
+        <button
+          onClick={() => setPlayingAudio(!playingAudio)}
+          className="px-2.5 py-1 rounded bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-[11px] flex items-center gap-1.5 cursor-pointer"
+        >
+          <Play className={`w-3 h-3 ${playingAudio ? "text-emerald-400" : "text-white"}`} />
+          <span>{playingAudio ? "Murottal Play..." : "Audio Murottal"}</span>
+        </button>
+      </div>
+
+      <div className="space-y-3 max-h-48 overflow-y-auto custom-scrollbar">
+        {current.verses.map((v) => (
+          <div key={v.num} className="p-3 rounded bg-neutral-900/60 border border-neutral-800">
+            <div className="text-right text-lg font-serif text-white leading-loose mb-1">
+              {v.arabic}
+            </div>
+            <p className="text-xs text-emerald-400 font-mono italic">{v.transliteration}</p>
+            <p className="text-xs text-neutral-300 mt-1">{v.translation}</p>
+          </div>
         ))}
       </div>
-
-      {/* Viewport Frame */}
-      <div className={`p-3.5 rounded-xl border transition-all ${
-        viewMode === "apk"
-          ? "bg-slate-950 border-slate-800 text-white max-w-[260px] mx-auto shadow-2xl"
-          : "bg-teal-950/40 border-teal-500/30 text-white"
-      }`}>
-        <div className="flex items-center justify-between border-b border-teal-500/30 pb-2 mb-2.5">
-          <span className="text-[11px] font-bold font-mono text-teal-300 flex items-center gap-1">
-            {viewMode === "apk" ? <Smartphone className="w-3 h-3 text-emerald-400" /> : <Monitor className="w-3 h-3 text-teal-400" />}
-            {current.no}. {current.name}
-          </span>
-          <span className="text-base font-serif text-teal-300 font-bold">{current.arabic}</span>
-        </div>
-
-        <div className="py-3 text-center space-y-2">
-          <p className="text-xl font-serif leading-relaxed text-emerald-200 font-bold">
-            {current.sampleVerse}
-          </p>
-          <p className="text-[11px] text-slate-300 italic font-medium leading-normal bg-slate-950/80 p-2 rounded-lg border border-teal-500/30">
-            "{current.translation}"
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
 
 // ==========================================
-// 5. PORTFOLIO SHOWCASE SIMULATOR
-// ==========================================
-function PortfolioShowcaseSimulator() {
-  const [activeTab, setActiveTab] = useState<"stack" | "metrics">("metrics");
-
-  return (
-    <div className="w-full rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-indigo-500/40 p-5 font-sans overflow-hidden shadow-2xl relative text-left">
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
-      
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 pt-1">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-indigo-400" />
-          <span className="text-[11px] font-mono font-bold tracking-wider text-white uppercase">
-            AZBHY PORTFOLIO SHOWCASE
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-indigo-300 px-3 py-0.5 bg-indigo-950/80 rounded-full border border-indigo-500/30 font-bold">
-          Verified 2026
-        </span>
-      </div>
-
-      <div className="flex gap-2 mb-3 p-1 bg-slate-950 rounded-lg border border-slate-800">
-        <button
-          onClick={() => setActiveTab("metrics")}
-          className={`flex-1 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-            activeTab === "metrics" ? "bg-indigo-600 text-white font-extrabold shadow-md" : "text-slate-400"
-          }`}
-        >
-          Metrik Terverifikasi
-        </button>
-        <button
-          onClick={() => setActiveTab("stack")}
-          className={`flex-1 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase transition-all ${
-            activeTab === "stack" ? "bg-indigo-600 text-white font-extrabold shadow-md" : "text-slate-400"
-          }`}
-        >
-          Arsitektur Kode
-        </button>
-      </div>
-
-      {activeTab === "metrics" ? (
-        <div className="grid grid-cols-2 gap-2.5">
-          <div className="p-3 bg-indigo-950/60 rounded-xl border border-indigo-500/30">
-            <span className="block text-[9px] font-mono text-indigo-400 font-bold uppercase">TRANSAKSI DIGITAL</span>
-            <span className="text-lg font-black text-white mt-0.5 block">100+</span>
-            <span className="text-[10px] text-slate-400 block font-medium">Layanan & Ritel</span>
-          </div>
-          <div className="p-3 bg-purple-950/60 rounded-xl border border-purple-500/30">
-            <span className="block text-[9px] font-mono text-purple-400 font-bold uppercase">REPOSITORI GITHUB</span>
-            <span className="text-lg font-black text-white mt-0.5 block">5</span>
-            <span className="text-[10px] text-slate-400 block font-medium">Source Code Live</span>
-          </div>
-          <div className="p-3 bg-emerald-950/60 rounded-xl border border-emerald-500/30">
-            <span className="block text-[9px] font-mono text-emerald-400 font-bold uppercase">PROJECT DIGITAL LIVE</span>
-            <span className="text-lg font-black text-white mt-0.5 block">5</span>
-            <span className="text-[10px] text-slate-400 block font-medium">Aplikasi Web</span>
-          </div>
-          <div className="p-3 bg-amber-950/60 rounded-xl border border-amber-500/30">
-            <span className="block text-[9px] font-mono text-amber-400 font-bold uppercase">ALUMNI TERKOORDINASI</span>
-            <span className="text-lg font-black text-white mt-0.5 block">150+</span>
-            <span className="text-[10px] text-slate-400 block font-medium">Organisasi Alumni</span>
-          </div>
-        </div>
-      ) : (
-        <div className="p-3.5 bg-slate-950 text-slate-100 rounded-xl font-mono text-xs space-y-1.5 border border-slate-800">
-          <div className="flex items-center justify-between text-[10px] text-indigo-400 border-b border-slate-800 pb-1.5">
-            <span>AZBHY PORTFOLIO ARCHITECTURE</span>
-            <Check className="w-3.5 h-3.5 text-emerald-400" />
-          </div>
-          <p className="text-emerald-400 font-bold">✓ React 18 + Vite + TypeScript</p>
-          <p className="text-indigo-300 font-bold">✓ Tailwind CSS v4 + Motion</p>
-          <p className="text-purple-300 font-bold">✓ Firebase Integration Ready</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ==========================================
-// MAIN PROJECTS COMPONENT (SCAN -> SELECT -> DETAIL)
+// 5. MAIN PROJECTS SECTION (FEATURED + GRID)
 // ==========================================
 export default function Projects() {
   const { projects } = portfolioData;
   const [selectedProjectModal, setSelectedProjectModal] = useState<typeof projects[0] | null>(null);
 
+  // Featured Project is NgajiKu or DompetKu
+  const featuredProject = projects.find(p => p.id === "proj-4") || projects[0];
+  const secondaryProjects = projects.filter(p => p.id !== featuredProject.id);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedProjectModal(null);
-      }
+      if (e.key === "Escape") setSelectedProjectModal(null);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  const renderSimulator = (projectId: string) => {
+    switch (projectId) {
+      case "proj-1": return <DompetKuSimulator />;
+      case "proj-2": return <WarungAmmaIkaSimulator />;
+      case "proj-3": return <KasirAmmaIkaSimulator />;
+      case "proj-4": return <NgajiKuSimulator />;
+      default: return <DompetKuSimulator />;
+    }
+  };
+
   return (
-    <section id="projects" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <section id="projects" className="relative py-28 sm:py-36 border-t border-neutral-800/80 bg-[#08080a]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
-            PORTOFOLIO KARYA & SOLUSI
-          </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
-            Produk Digital & Sistem Operasional
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal">
-            Pilih project untuk melihat detail problem, solusi, hasil dampak, tech stack lengkap, serta simulator interaktif.
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-800 pb-8 mb-16">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-400">
+                04 / PORTOFOLIO & PRODUK DIGITAL
+              </span>
+              <span className="h-px w-8 bg-neutral-800" />
+            </div>
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.15]"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Produk Digital & Sistem Operasional
+            </h2>
+          </div>
+          <p className="text-neutral-400 text-sm max-w-md font-normal">
+            Aplikasi web fungsional yang dibangun untuk memecahkan problem nyata: dari manajemen finansial, etalase ritel, sistem kasir POS, hingga platform edukasi Islam.
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Project Overview Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project) => {
-            const isWarung = project.id === "proj-2";
-            const isKasir = project.id === "proj-3";
-            const isNgaji = project.id === "proj-4";
-            const isPorto = project.id === "proj-5";
+        {/* 1. FEATURED HERO SHOWCASE */}
+        <div className="mb-20">
+          <div className="border border-neutral-800 bg-neutral-900/40 rounded-2xl p-6 sm:p-10 relative overflow-hidden">
+            
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-4 mb-8">
+              <div className="flex items-center gap-2.5">
+                <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-bold">
+                  ★ FEATURED SHOWCASE
+                </span>
+                <span className="text-neutral-700">•</span>
+                <span className="font-mono text-xs text-neutral-400 uppercase">
+                  {featuredProject.category}
+                </span>
+              </div>
+              <div className="flex items-center gap-3 font-mono text-xs">
+                {featuredProject.githubUrl && (
+                  <a
+                    href={featuredProject.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-neutral-400 hover:text-white flex items-center gap-1 transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    <span>Source</span>
+                  </a>
+                )}
+                {featuredProject.demoUrl && (
+                  <a
+                    href={featuredProject.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-neutral-400 hover:text-white flex items-center gap-1 transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Live App</span>
+                  </a>
+                )}
+              </div>
+            </div>
 
-            const categoryColor = isWarung || isKasir
-              ? "bg-emerald-950/80 text-emerald-300 border-emerald-500/30"
-              : isNgaji
-              ? "bg-teal-950/80 text-teal-300 border-teal-500/30"
-              : isPorto
-              ? "bg-purple-950/80 text-purple-300 border-purple-500/30"
-              : "bg-indigo-950/80 text-indigo-300 border-indigo-500/30";
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Left Details */}
+              <div className="lg:col-span-6 text-left">
+                <h3 
+                  className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  {featuredProject.title}
+                </h3>
+                <p className="font-mono text-xs uppercase text-neutral-400 mt-1">
+                  {featuredProject.subtitle}
+                </p>
 
-            return (
-              <motion.div
+                <div className="my-6 space-y-3">
+                  <div className="border-l-2 border-neutral-700 pl-3">
+                    <span className="font-mono text-[10px] uppercase text-neutral-500 block">Problem</span>
+                    <p className="text-xs sm:text-sm text-neutral-300 mt-0.5 leading-relaxed">
+                      {featuredProject.problem}
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-emerald-500 pl-3">
+                    <span className="font-mono text-[10px] uppercase text-emerald-400 block">Solusi Digital</span>
+                    <p className="text-xs sm:text-sm text-neutral-200 mt-0.5 leading-relaxed">
+                      {featuredProject.solution}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-1.5 my-6">
+                  {featuredProject.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 bg-neutral-950 border border-neutral-800 rounded font-mono text-[10px] text-neutral-300 uppercase"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <button
+                    onClick={() => setSelectedProjectModal(featuredProject)}
+                    className="px-5 py-2.5 bg-white hover:bg-neutral-200 text-neutral-950 font-mono text-xs font-bold uppercase rounded flex items-center gap-2 cursor-pointer transition-colors"
+                  >
+                    <Play className="w-3.5 h-3.5" />
+                    <span>Buka Simulator Interaktif</span>
+                  </button>
+                  {featuredProject.demoUrl && (
+                    <a
+                      href={featuredProject.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-5 py-2.5 border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-white font-mono text-xs uppercase rounded flex items-center gap-2 transition-colors"
+                    >
+                      <span>Kunjungi Website</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Right: Embedded Interactive Engine Preview */}
+              <div className="lg:col-span-6">
+                <NgajiKuSimulator />
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        {/* 2. SECONDARY PROJECTS EDITORIAL GRID */}
+        <div>
+          <div className="flex items-center gap-2 mb-8">
+            <span className="font-mono text-xs uppercase tracking-widest text-neutral-400">
+              PROYEK & SISTEM DIGITAL LAINNYA
+            </span>
+            <span className="h-px flex-1 bg-neutral-800/80" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {secondaryProjects.map((project) => (
+              <div
                 key={project.id}
                 id={`project-card-${project.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 }}
-                className="group p-6 sm:p-7 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/50 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between text-left"
+                className="border border-neutral-800 bg-neutral-900/30 rounded-xl p-6 sm:p-7 flex flex-col justify-between text-left hover:border-neutral-700 transition-colors"
               >
                 <div>
-                  {/* Top Bar: Icon + Category Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xl shrink-0">
-                      {project.featuredSymbol || "💻"}
-                    </div>
-                    <span className={`text-[10px] font-mono font-extrabold tracking-wider border px-2.5 py-0.5 rounded-md uppercase ${categoryColor}`}>
+                  <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
+                    <span className="font-mono text-[10px] uppercase text-emerald-400 font-semibold tracking-wider">
                       {project.category}
                     </span>
+                    <span className="text-xl">{project.featuredSymbol || "💻"}</span>
                   </div>
 
-                  {/* Project Title & Subtitle */}
-                  <h3 className="text-xl font-extrabold text-white tracking-tight leading-snug group-hover:text-indigo-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white tracking-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono font-bold text-slate-400 mt-1 uppercase">
+                  <p className="font-mono text-xs text-neutral-400 uppercase mt-0.5">
                     {project.subtitle}
                   </p>
 
-                  {/* 1 Kalimat Value / Problem Statement */}
-                  <p className="text-xs text-slate-300 mt-3.5 leading-relaxed font-medium line-clamp-2 border-l-2 border-indigo-500 pl-2.5">
+                  <p className="text-xs text-neutral-300 mt-4 leading-relaxed font-normal">
                     {project.problem}
                   </p>
-                </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-800">
-                  {/* Top 3 Tech Stack Badges */}
-                  <div className="flex flex-wrap items-center gap-1.5 mb-4">
-                    {project.techStack.slice(0, 3).map((tech) => (
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-1.5 my-5">
+                    {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 bg-slate-950 border border-slate-800 rounded text-[10px] font-mono font-bold text-slate-300"
+                        className="px-2 py-0.5 bg-neutral-950 border border-neutral-800 rounded font-mono text-[9px] text-neutral-400 uppercase"
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.techStack.length > 3 && (
-                      <span className="text-[10px] font-mono font-bold text-slate-400">
-                        +{project.techStack.length - 3}
-                      </span>
+                  </div>
+                </div>
+
+                {/* Bottom Actions */}
+                <div className="pt-4 border-t border-neutral-800 flex items-center justify-between gap-3">
+                  <button
+                    onClick={() => setSelectedProjectModal(project)}
+                    className="px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs uppercase rounded flex items-center gap-1.5 cursor-pointer transition-colors"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Uji Simulator</span>
+                  </button>
+
+                  <div className="flex items-center gap-3 font-mono text-xs">
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white">
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
+                    {project.demoUrl && (
+                      <a href={project.demoUrl} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </a>
                     )}
                   </div>
-
-                  {/* CTA Button "Lihat Detail" */}
-                  <button
-                    id={`btn-open-project-${project.id}`}
-                    onClick={() => setSelectedProjectModal(project)}
-                    className="w-full py-2.5 bg-indigo-600/90 hover:bg-indigo-500 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]"
-                  >
-                    <Eye className="w-4 h-4 text-white" />
-                    <span>Lihat Detail & Simulator</span>
-                  </button>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
 
-      {/* PROJECT DETAIL MODAL / DRAWER */}
+      {/* PROJECT DETAIL MODAL */}
       <AnimatePresence>
         {selectedProjectModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-            {/* Backdrop */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProjectModal(null)}
-              className="fixed inset-0 bg-slate-950/80 backdrop-blur-md"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm"
             />
 
-            {/* Modal Box */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.25 }}
-              className="relative w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-5 sm:p-8 text-left z-10 my-auto max-h-[92vh] overflow-y-auto custom-scrollbar"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              className="relative w-full max-w-4xl bg-neutral-900 border border-neutral-800 rounded-2xl p-6 sm:p-8 text-left z-10 my-auto max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl"
             >
-              {/* Header */}
-              <div className="flex items-start justify-between gap-4 border-b border-slate-800 pb-5">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{selectedProjectModal.featuredSymbol || "💻"}</span>
-                  <div>
-                    <span className="inline-block text-[10px] font-mono font-extrabold uppercase tracking-wider bg-indigo-950/80 text-indigo-300 border border-indigo-500/30 px-2.5 py-0.5 rounded-md mb-1">
-                      {selectedProjectModal.category}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                      {selectedProjectModal.title}
-                    </h3>
-                    <p className="text-xs font-mono font-bold text-slate-400 uppercase">
-                      {selectedProjectModal.subtitle}
-                    </p>
-                  </div>
+              {/* Modal Header */}
+              <div className="flex items-start justify-between border-b border-neutral-800 pb-5 mb-6">
+                <div>
+                  <span className="font-mono text-[10px] uppercase text-emerald-400 font-bold block mb-1">
+                    {selectedProjectModal.category}
+                  </span>
+                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                    {selectedProjectModal.title}
+                  </h3>
+                  <p className="font-mono text-xs text-neutral-400 uppercase mt-0.5">
+                    {selectedProjectModal.subtitle}
+                  </p>
                 </div>
-
                 <button
                   onClick={() => setSelectedProjectModal(null)}
-                  className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors cursor-pointer shrink-0"
+                  className="p-1.5 text-neutral-400 hover:text-white rounded bg-neutral-800 cursor-pointer"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* Main Content Grid: Details on Left/Top, Simulator on Right/Bottom */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mt-6">
-                
-                {/* Details Column */}
-                <div className="lg:col-span-6 space-y-5">
-                  {/* Problem & Solution */}
-                  <div className="grid grid-cols-1 gap-3">
-                    <div className="p-4 rounded-xl border border-rose-500/30 bg-rose-950/40">
-                      <div className="flex items-center gap-1.5 text-rose-300 font-mono text-xs font-extrabold uppercase tracking-wider mb-1.5">
-                        <AlertCircle className="w-4 h-4 text-rose-400" />
-                        <span>Masalah Utama</span>
-                      </div>
-                      <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium">
-                        {selectedProjectModal.problem}
-                      </p>
-                    </div>
-
-                    <div className="p-4 rounded-xl border border-emerald-500/30 bg-emerald-950/40">
-                      <div className="flex items-center gap-1.5 text-emerald-300 font-mono text-xs font-extrabold uppercase tracking-wider mb-1.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                        <span>Solusi Digital</span>
-                      </div>
-                      <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium">
-                        {selectedProjectModal.solution}
-                      </p>
-                    </div>
+              {/* Modal Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="lg:col-span-6 space-y-4">
+                  <div className="p-4 rounded bg-neutral-950 border border-neutral-800">
+                    <span className="font-mono text-[10px] uppercase text-neutral-400 block mb-1">Masalah</span>
+                    <p className="text-xs text-neutral-300 leading-relaxed">{selectedProjectModal.problem}</p>
                   </div>
 
-                  {/* Impact Results */}
-                  <div className="p-4 rounded-xl border border-slate-800 bg-slate-950">
-                    <div className="flex items-center gap-1.5 text-indigo-300 font-mono text-xs font-extrabold uppercase tracking-wider mb-2">
-                      <TrendingUp className="w-4 h-4 text-indigo-400" />
-                      <span>Hasil & Dampak Kerja</span>
-                    </div>
-                    <ul className="space-y-1.5 text-xs text-slate-300 font-medium">
-                      {selectedProjectModal.results.map((res, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-emerald-400 font-bold shrink-0">•</span>
-                          <span>{res}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="p-4 rounded bg-neutral-950 border border-neutral-800">
+                    <span className="font-mono text-[10px] uppercase text-emerald-400 block mb-1">Solusi Digital</span>
+                    <p className="text-xs text-neutral-200 leading-relaxed">{selectedProjectModal.solution}</p>
                   </div>
 
-                  {/* Tech Stack Full */}
-                  <div className="p-3.5 rounded-xl border border-slate-800 bg-slate-950">
-                    <span className="block text-[10px] font-mono font-extrabold text-indigo-300 uppercase tracking-wider mb-2">
-                      Tech Stack Lengkap
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedProjectModal.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 bg-slate-900 border border-slate-800 rounded-md text-xs font-mono font-bold text-slate-200"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                  {selectedProjectModal.results && (
+                    <div className="p-4 rounded bg-neutral-950 border border-neutral-800">
+                      <span className="font-mono text-[10px] uppercase text-neutral-400 block mb-2">Hasil & Nilai Tambah</span>
+                      <ul className="space-y-2 text-xs text-neutral-300">
+                        {selectedProjectModal.results.map((res, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-emerald-400 mt-0.5">—</span>
+                            <span>{res}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-
-                  {/* Action Links */}
-                  <div className="flex flex-wrap items-center gap-3 pt-2">
-                    {selectedProjectModal.githubUrl && (
-                      <a
-                        href={selectedProjectModal.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>Repository GitHub</span>
-                      </a>
-                    )}
-                    {selectedProjectModal.demoUrl && (
-                      <a
-                        href={selectedProjectModal.demoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-indigo-600/20"
-                      >
-                        <span>Live Demo</span>
-                        <ExternalLink className="w-3.5 h-3.5 text-white" />
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
 
-                {/* Simulator Column */}
-                <div className="lg:col-span-6 flex items-center justify-center">
-                  <div className="w-full">
-                    {selectedProjectModal.id === "proj-1" && <DompetKuSimulator />}
-                    {selectedProjectModal.id === "proj-2" && <WarungStorefrontSimulator />}
-                    {selectedProjectModal.id === "proj-3" && <POSUMKMSimulator />}
-                    {selectedProjectModal.id === "proj-4" && <NgajiKuSimulator />}
-                    {selectedProjectModal.id === "proj-5" && <PortfolioShowcaseSimulator />}
+                <div className="lg:col-span-6">
+                  <div className="mb-3 font-mono text-[10px] uppercase text-neutral-400">
+                    LIVE SIMULATION TEST
                   </div>
+                  {renderSimulator(selectedProjectModal.id)}
                 </div>
-
               </div>
 
-              {/* Footer Close Button */}
-              <div className="mt-8 pt-4 border-t border-slate-800 flex justify-end">
+              {/* Modal Footer Links */}
+              <div className="mt-8 pt-4 border-t border-neutral-800 flex justify-between items-center text-xs font-mono">
+                <div className="flex gap-4">
+                  {selectedProjectModal.githubUrl && (
+                    <a href={selectedProjectModal.githubUrl} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white flex items-center gap-1.5">
+                      <Github className="w-3.5 h-3.5" />
+                      <span>Repository GitHub</span>
+                    </a>
+                  )}
+                  {selectedProjectModal.demoUrl && (
+                    <a href={selectedProjectModal.demoUrl} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white flex items-center gap-1.5">
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Buka Aplikasi Live</span>
+                    </a>
+                  )}
+                </div>
                 <button
                   onClick={() => setSelectedProjectModal(null)}
-                  className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors cursor-pointer"
+                  className="text-neutral-400 hover:text-white cursor-pointer"
                 >
-                  Tutup Detail
+                  Tutup
                 </button>
               </div>
-
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+
     </section>
   );
 }

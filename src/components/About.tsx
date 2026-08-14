@@ -1,199 +1,190 @@
 import { useState } from "react";
-import { GraduationCap, LayoutGrid, User, ChevronDown, ChevronUp } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { GraduationCap, Briefcase, FileCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 import almetImage from "../assets/images/almet_mahasiswa_1781399345497.jpg";
 import jasImage from "../assets/images/jas_formal_1781399324196.jpg";
 
 export default function About() {
   const { education } = portfolioData;
-  const [showPoacDetails, setShowPoacDetails] = useState(false);
 
   const poacModel = [
-    { phase: "P", title: "Planning", desc: "Memahami masalah dan menentukan tujuan proyek." },
-    { phase: "O", title: "Organizing", desc: "Menata orang, data, dan sumber daya operasional." },
-    { phase: "A", title: "Actuating", desc: "Menjalankan solusi dan memastikan pekerjaan bergerak." },
-    { phase: "C", title: "Controlling", desc: "Mengevaluasi hasil dan melakukan perbaikan berlanjut." }
+    { num: "01", phase: "Planning", title: "Perencanaan & Analisis", desc: "Membedah akar permasalahan operasional, menyusun alur kerja, dan menetapkan target luaran terukur." },
+    { num: "02", phase: "Organizing", title: "Struktur & Data Terpadu", desc: "Menata sistem pencatatan, klasifikasi data, dan distribusi peran agar alur kerja terstruktur rapi." },
+    { num: "03", phase: "Actuating", title: "Eksekusi & Solusi Digital", desc: "Mengembangkan aplikasi web dan alur kerja terotomatisasi untuk mempercepat tugas rutin harian." },
+    { num: "04", phase: "Controlling", title: "Evaluasi & Akurasi Sistem", desc: "Melakukan verifikasi data, peninjauan hasil pembukuan, dan penyempurnaan fitur secara berkelanjutan." }
   ];
 
   return (
-    <section id="about" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <section id="about" className="relative py-28 sm:py-36 border-t border-neutral-800/80 bg-[#08080a]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
-        {/* Header Pembuka */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
-            TENTANG TASBIH
+        {/* Section Index Marker */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="font-mono text-xs uppercase tracking-widest text-emerald-400">
+            01 / PROFIL & PENDEKATAN KERJA
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
-            Manajemen, Pengalaman Nyata, & Teknologi Berdaya Guna
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal max-w-2xl mx-auto">
-            Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare), fokus pada simplifikasi pekerjaan lewat sistem digital yang rapi dan efisien.
-          </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+          <span className="h-px w-12 bg-neutral-800" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        {/* Section Headline */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-start">
+          <div className="lg:col-span-8">
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.15]"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Manajemen Pendidikan, Administrasi Terstruktur, & Rekayasa Solusi Digital.
+            </h2>
+          </div>
+          <div className="lg:col-span-4 text-neutral-400 text-sm sm:text-base leading-relaxed font-normal">
+            Latar belakang S1 Manajemen Pendidikan Islam (IAIN Parepare) membentuk cara berpikir analitis: merancang alur kerja yang rapi, transparan, dan berdaya guna bagi pengguna nyata.
+          </div>
+        </div>
+
+        {/* Asymmetric 2-Column Editorial Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Side: Ringkasan Profil & Dua Sisi Profil */}
-          <div className="lg:col-span-6 flex flex-col gap-8 text-left">
+          {/* Left Column: Narrative & Dual Photos */}
+          <div className="lg:col-span-7 flex flex-col gap-10">
             
-            {/* Cerita Ringkas */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
-              <div className="flex items-center gap-2 mb-3">
-                <User className="w-4 h-4 text-indigo-400" />
-                <h3 className="text-xs font-mono font-bold text-indigo-300 tracking-wider uppercase">SEKILAS PROFIL</h3>
-              </div>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
-                Latar belakang Manajemen Pendidikan Islam membentuk dasar cara saya merencanakan, mengorganisasikan, dan mengevaluasi kerja. Ditunjang pengalaman di bidang administrasi, bisnis ritel, survei lapangan, dan web dev, saya membangun aplikasi dan otomatisasi yang mempermudah operasional harian.
+            {/* Lead Narrative */}
+            <div className="space-y-4 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal">
+              <p>
+                Saya memandang teknologi bukan sebagai tren sesaat, melainkan sebagai instrumen untuk menyelesaikan masalah administrasi dan operasional nyata. Keahlian saya berakar pada integrasi antara disiplin manajemen organisasi dan keterampilan teknis rekayasa web.
+              </p>
+              <p className="text-neutral-400 text-sm sm:text-base">
+                Dari memimpin organisasi alumni hingga mengelola pembukuan ritel harian, melakukan validasi kuesioner survei sosial-ekonomi di lapangan, hingga merancang aplikasi kasir dan Al-Qur'an digital (NgajiKu) — setiap proyek dibangun dengan fokus pada kejelasan data dan efisiensi pengguna.
               </p>
             </div>
 
-            {/* Dua Sisi Profil Photos */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
-              <h3 className="text-xs font-mono font-bold text-indigo-300 tracking-wider uppercase mb-4">DUA SISI PROFIL</h3>
+            {/* Dual Portrait Gallery: Academic & Professional */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
-                {/* Photo 1: Akademik & Manajemen */}
-                <div className="relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 flex flex-col justify-end h-56 sm:h-64 shadow-lg group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10" />
+              {/* Photo 1: Academic & Management */}
+              <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-3 group">
+                <div className="aspect-[4/5] rounded overflow-hidden bg-neutral-950 mb-3">
                   <img
                     src={almetImage}
-                    alt="Tasbih - Akademik & Manajemen"
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    alt="Tasbih - S1 Manajemen Pendidikan Islam"
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="relative z-20 p-3.5 mt-auto">
-                    <span className="inline-flex px-2 py-0.5 rounded bg-emerald-700/90 border border-emerald-500/40 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
-                      SISI AKADEMIK
-                    </span>
-                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
-                      AKADEMIK & MANAJEMEN
-                    </p>
-                    <p className="text-[11px] text-slate-300 mt-0.5 leading-snug">
-                      Manajemen Pendidikan Islam, organisasi alumni, & tata kelola data.
-                    </p>
-                  </div>
                 </div>
-
-                {/* Photo 2: Operasional & Digital */}
-                <div className="relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 flex flex-col justify-end h-56 sm:h-64 shadow-lg group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10" />
-                  <img
-                    src={jasImage}
-                    alt="Tasbih - Operasional & Digital"
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="relative z-20 p-3.5 mt-auto">
-                    <span className="inline-flex px-2 py-0.5 rounded bg-purple-700/90 border border-purple-500/40 text-white font-mono text-[9px] font-bold uppercase tracking-wider">
-                      SISI PROFESIONAL
-                    </span>
-                    <p className="text-xs text-white font-extrabold mt-1 leading-tight">
-                      OPERASIONAL & DIGITAL
-                    </p>
-                    <p className="text-[11px] text-slate-300 mt-0.5 leading-snug">
-                      Administrasi ritel, enumerasi data, web dev & integrasi AI.
-                    </p>
-                  </div>
+                <div className="px-1">
+                  <span className="font-mono text-[10px] uppercase text-emerald-400 font-bold block">
+                    AKADEMIK & TATA KELOLA
+                  </span>
+                  <p className="text-xs font-semibold text-white mt-0.5">
+                    S1 Manajemen Pendidikan Islam
+                  </p>
+                  <p className="text-[11px] text-neutral-400 mt-1 leading-snug">
+                    IAIN Parepare (2022–2026) • Presenter Konferensi Internasional ACIEM 2026.
+                  </p>
                 </div>
               </div>
+
+              {/* Photo 2: Operational & Digital */}
+              <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-3 group">
+                <div className="aspect-[4/5] rounded overflow-hidden bg-neutral-950 mb-3">
+                  <img
+                    src={jasImage}
+                    alt="Tasbih - Praktisi Operasional & Digital"
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="px-1">
+                  <span className="font-mono text-[10px] uppercase text-neutral-400 font-bold block">
+                    PRAKTISI LAPANGAN & DIGITAL
+                  </span>
+                  <p className="text-xs font-semibold text-white mt-0.5">
+                    Operasional & Web Solutions
+                  </p>
+                  <p className="text-[11px] text-neutral-400 mt-1 leading-snug">
+                    Pencatatan ritel, survei lapangan PT ESC, dan web builder (React & TypeScript).
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Academic Credentials List */}
+            <div className="p-6 bg-neutral-900/50 border border-neutral-800 rounded-lg">
+              <div className="flex items-center gap-2 mb-4">
+                <GraduationCap className="w-4 h-4 text-emerald-400" />
+                <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-300 font-bold">
+                  REKAM JEJAK AKADEMIS & INSTITUSI
+                </h3>
+              </div>
+              <ul className="space-y-3 font-mono text-xs text-neutral-300">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-400 font-bold mt-0.5">—</span>
+                  <span><strong>S1 Manajemen Pendidikan Islam:</strong> IAIN Parepare (Lulusan 2026).</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-400 font-bold mt-0.5">—</span>
+                  <span><strong>Sekretariat Jurnal EDIUM:</strong> Pengelolaan naskah dan administrasi jurnal ilmiah prodi MPI (2024).</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-emerald-400 font-bold mt-0.5">—</span>
+                  <span><strong>Presenter Konferensi ACIEM:</strong> Annual Conference on Islamic Education Management (2026).</span>
+                </li>
+              </ul>
             </div>
 
           </div>
 
-          {/* Right Side: Pendidikan & Compact POAC Framework */}
-          <div className="lg:col-span-6 flex flex-col gap-8 text-left">
-            
-            {/* Pendidikan Card */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(99,102,241,0.3)] shrink-0">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="block text-[10px] font-mono font-bold text-indigo-400 uppercase tracking-wider">RIWAYAT PENDIDIKAN</span>
-                  <h4 className="text-white font-extrabold text-base sm:text-lg leading-tight mt-0.5">{education.institution}</h4>
-                </div>
-              </div>
-
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-slate-300 border-t border-slate-800 pt-3.5">
-                <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                  <span className="text-indigo-400 font-bold uppercase block text-[9px]">PROGRAM STUDI</span>
-                  <span className="font-sans font-bold text-white">{education.degree}</span>
-                </div>
-                <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                  <span className="text-indigo-400 font-bold uppercase block text-[9px]">PERIODE</span>
-                  <span className="font-sans font-bold text-white">{education.period}</span>
-                </div>
-              </div>
-
-              <div className="mt-3 p-3 rounded-xl bg-slate-950 border border-slate-800">
-                <span className="block text-[9px] font-mono text-indigo-400 font-bold uppercase tracking-wider">FOKUS AKADEMIS</span>
-                <p className="text-xs text-slate-300 font-medium mt-0.5 leading-relaxed">
-                  {education.focus}
+          {/* Right Column: POAC Management Matrix */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-6 sm:p-8">
+              
+              <div className="border-b border-neutral-800 pb-4 mb-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 block mb-1">
+                  FRAMEWORK MANAJEMEN
+                </span>
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  Prinsip POAC dalam Eksekusi
+                </h3>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Bagaimana saya menerapkan teori manajemen ke dalam solusi nyata:
                 </p>
               </div>
-            </div>
 
-            {/* Cara Saya Bekerja (Compact POAC Framework) */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-indigo-500/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-300">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                <div className="flex items-center gap-2">
-                  <LayoutGrid className="w-4 h-4 text-indigo-400" />
-                  <h3 className="text-white text-sm font-extrabold tracking-tight">
-                    METODOLOGI KERJA (POAC)
-                  </h3>
-                </div>
-                
-                <button
-                  onClick={() => setShowPoacDetails(!showPoacDetails)}
-                  className="text-[11px] font-mono font-bold text-indigo-300 hover:text-white flex items-center gap-1 cursor-pointer bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800 hover:border-indigo-500/40"
-                >
-                  <span>{showPoacDetails ? "Ringkas" : "Rincian"}</span>
-                  {showPoacDetails ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                </button>
-              </div>
-
-              {/* Step Badges Row */}
-              <div className="grid grid-cols-4 gap-2 mb-2">
-                {poacModel.map((step) => (
-                  <div key={step.phase} className="p-2 bg-slate-950 rounded-xl border border-slate-800 text-center">
-                    <span className="w-6 h-6 rounded-lg bg-indigo-950 border border-indigo-500/30 text-indigo-300 font-bold text-xs font-mono inline-flex items-center justify-center mb-1">
-                      {step.phase}
+              {/* Numbered POAC Matrix */}
+              <div className="space-y-6">
+                {poacModel.map((item) => (
+                  <div key={item.num} className="flex gap-4 items-start group">
+                    <span className="font-mono text-xs font-bold text-emerald-400/80 bg-neutral-950 border border-neutral-800 px-2 py-1 rounded shrink-0">
+                      {item.num}
                     </span>
-                    <span className="block text-[10px] font-extrabold text-white leading-tight">
-                      {step.title}
-                    </span>
+                    <div className="text-left">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider">
+                          {item.phase}
+                        </span>
+                        <span className="text-neutral-700">•</span>
+                        <h4 className="text-sm font-semibold text-neutral-200">
+                          {item.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              {/* Optional Expanded Panel */}
-              <AnimatePresence>
-                {showPoacDetails && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="overflow-hidden mt-3 pt-3 border-t border-slate-800 space-y-2 text-xs"
-                  >
-                    {poacModel.map((step) => (
-                      <div key={step.phase} className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-start gap-2.5">
-                        <span className="font-mono font-black text-indigo-400 text-xs shrink-0">{step.phase}:</span>
-                        <p className="text-slate-300 leading-relaxed font-medium">{step.desc}</p>
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              {/* Bottom Statement */}
+              <div className="mt-8 pt-6 border-t border-neutral-800 text-xs font-mono text-neutral-400 leading-relaxed">
+                "Tata kelola yang baik meminimalkan kesalahan manual; sistem digital yang tepat menjadikannya bekerja secara otomatis."
+              </div>
 
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

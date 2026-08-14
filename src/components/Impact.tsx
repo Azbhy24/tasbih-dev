@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import { Users, Code, Award, FileText, TrendingUp } from "lucide-react";
-import { motion, useInView } from "motion/react";
+import { useInView } from "motion/react";
 import { portfolioData } from "../data/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | string; suffix?: string; prefix?: string }) {
   const isNumeric = typeof value === "number" || (!isNaN(Number(value)) && value !== "");
@@ -9,7 +9,7 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
 
   const [count, setCount] = useState<number | string>(isNumeric ? 0 : value);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   useEffect(() => {
     if (!isInView || !isNumeric) return;
@@ -18,7 +18,7 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
     const end = numericValue;
     if (end === 0) return;
 
-    const duration = 2000; // 2 seconds
+    const duration = 1500;
     let startTime: number | null = null;
 
     const animate = (timestamp: number) => {
@@ -26,9 +26,8 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
       const progress = timestamp - startTime;
       const progressPercentage = Math.min(progress / duration, 1);
       
-      // Easing function (outQuad)
+      // outQuad
       const easeProgress = progressPercentage * (2 - progressPercentage);
-      
       const currentCount = Math.floor(easeProgress * (end - start) + start);
       setCount(currentCount);
 
@@ -42,90 +41,138 @@ function AnimatedCount({ value, suffix = "", prefix = "" }: { value: number | st
     requestAnimationFrame(animate);
   }, [isInView, numericValue, isNumeric]);
 
-  const strValue = String(value);
-  const isLongText = strValue.length > 6;
-
   return (
-    <span
-      ref={ref}
-      className={`font-sans font-extrabold text-inherit tracking-tight block ${
-        isLongText ? "text-2xl sm:text-3xl lg:text-4xl" : "text-4xl sm:text-5xl lg:text-6xl"
-      }`}
-    >
+    <span ref={ref} className="font-mono text-inherit">
       {prefix}{count}{suffix}
     </span>
   );
 }
 
 export default function Impact() {
-  const { stats } = portfolioData;
-
-  const iconMapping: { [key: string]: any } = {
-    Users: Users,
-    Code: Code,
-    TrendingUp: TrendingUp,
-    FileText: FileText,
-  };
+  const metrics = [
+    {
+      index: "01",
+      numberDisplay: "500+",
+      isNumeric: true,
+      numVal: 500,
+      suffix: "+",
+      title: "SKU Ritel & Transaksi Terkelola",
+      context: "Warung Sembako Amma' Ika",
+      desc: "Menata sistem pencatatan stok, kasir harian, dan pembukuan piutang pelanggan dengan rekap digital.",
+    },
+    {
+      index: "02",
+      numberDisplay: "178",
+      isNumeric: true,
+      numVal: 178,
+      suffix: "",
+      title: "Alumni Terkoordinasi",
+      context: "Ketua IKA MA Biharul Ulum Ma'arif",
+      desc: "Memfasilitasi tata kelola komunikasi alumni, arsip keanggotaan, dan koordinasi program lintas wilayah.",
+    },
+    {
+      index: "03",
+      numberDisplay: "5",
+      isNumeric: true,
+      numVal: 5,
+      suffix: "",
+      title: "Produk Web & Sistem Digital Live",
+      context: "DompetKu, Kasir, NgajiKu, Warung, Portofolio",
+      desc: "Aplikasi web fungsional yang dibangun dengan React, TypeScript, Tailwind CSS, dan Firebase.",
+    },
+    {
+      index: "04",
+      numberDisplay: "Submitin",
+      isNumeric: false,
+      title: "Layanan Jasa Akademik Aktif",
+      context: "Platform Submitin.id",
+      desc: "Menyediakan layanan cek plagiasi Turnitin, cek AI, dan parafrase naskah untuk mahasiswa & akademisi.",
+    },
+  ];
 
   return (
-    <section id="impact" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950 overflow-hidden">
-      {/* Background glow accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-indigo-600/10 blur-[140px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
-            METRIK DAMPAK & HASIL
+    <section id="impact" className="relative py-28 sm:py-36 border-t border-neutral-800/80 bg-[#08080a]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex items-center justify-between border-b border-neutral-800 pb-6 mb-16">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs uppercase tracking-widest text-emerald-400">
+              02 / PENCAPAIAN & DATA RIIL
+            </span>
+            <span className="h-px w-8 bg-neutral-800" />
+            <span className="font-mono text-xs text-neutral-500 uppercase hidden sm:inline">
+              REKAM KERJA TERVERIFIKASI
+            </span>
+          </div>
+          <span className="font-mono text-[11px] text-neutral-500 uppercase">
+            UPDATE 2026
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
-            Pencapaian Riil dalam Data dan Angka
+        </div>
+
+        {/* Lead Statement */}
+        <div className="max-w-3xl mb-16">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.15]"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Angka Nyata dari Praktik Lapangan & Pengembangan Digital.
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal">
-            Aktivitas organisasi, implementasi produk digital, digitalisasi ritel, serta pengelolaan administrasi dihitung berdasarkan data kerja nyata.
+          <p className="mt-4 text-neutral-400 text-base leading-relaxed">
+            Kinerja diukur bukan dari klaim abstrak, melainkan dari rekam jejak pengelolaan organisasi, pembukuan bisnis ritel, survei lapangan, dan sistem web yang beroperasi.
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {stats.map((stat, sIdx) => {
-            const IconComponent = iconMapping[stat.icon] || Award;
-
-            return (
-              <motion.div
-                key={stat.id}
-                id={`stat-card-${stat.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: sIdx * 0.08 }}
-                className="group relative p-7 sm:p-8 rounded-2xl border border-slate-800/90 overflow-hidden flex flex-col justify-between h-full bg-slate-900/80 backdrop-blur-xl hover:border-indigo-500/50 hover:-translate-y-2 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] cursor-default"
-              >
-                {/* Subtle card top glow ribbon */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/0 via-indigo-500/50 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-indigo-400 group-hover:text-indigo-300 group-hover:border-indigo-500/40 transition-all duration-300">
-                    <IconComponent className="w-6 h-6" />
-                  </div>
+        {/* Large Typography Metrics Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {metrics.map((item) => (
+            <div
+              key={item.index}
+              id={`metric-item-${item.index}`}
+              className="flex flex-col justify-between pt-6 border-t border-neutral-800 group hover:border-neutral-600 transition-colors"
+            >
+              <div>
+                {/* Index marker */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-xs text-neutral-500 uppercase">
+                    METRIC // {item.index}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-neutral-700 group-hover:bg-emerald-400 transition-colors" />
                 </div>
 
-                <div className="text-left mt-auto">
-                  {/* FOCUSED STATS NUMBER GLOW */}
-                  <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 drop-shadow-[0_0_20px_rgba(99,102,241,0.5)]">
-                    <AnimatedCount value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
-                  </div>
-                  <h3 className="text-white text-base font-extrabold font-sans tracking-tight mt-3">
-                    {stat.label}
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-2 leading-relaxed font-medium">
-                    {stat.description}
-                  </p>
+                {/* Oversized Number Typography */}
+                <div className="text-5xl sm:text-6xl lg:text-5xl xl:text-6xl font-black text-white tracking-tighter leading-none my-3">
+                  {item.isNumeric ? (
+                    <AnimatedCount value={item.numVal} suffix={item.suffix} />
+                  ) : (
+                    <span className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl font-bold font-mono tracking-tight text-neutral-100">
+                      Submitin<span className="text-emerald-400">.id</span>
+                    </span>
+                  )}
                 </div>
-              </motion.div>
-            );
-          })}
+
+                {/* Title and Context */}
+                <h3 className="text-base font-bold text-neutral-200 mt-4 leading-snug">
+                  {item.title}
+                </h3>
+                <span className="font-mono text-[11px] text-emerald-400/90 block mt-1 uppercase tracking-wider">
+                  {item.context}
+                </span>
+
+                {/* Description */}
+                <p className="text-xs text-neutral-400 mt-2.5 leading-relaxed font-normal">
+                  {item.desc}
+                </p>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-neutral-900 flex items-center justify-between text-[11px] font-mono text-neutral-500">
+                <span>STATUS</span>
+                <span className="text-neutral-400">Aktif & Terverifikasi</span>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

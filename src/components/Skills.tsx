@@ -1,129 +1,131 @@
-import { useState } from "react";
-import { Laptop, Server, FileText, Sparkles, ChevronDown, ChevronUp, Layers } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 import { portfolioData } from "../data/portfolio";
 
 export default function Skills() {
-  const { skills } = portfolioData;
-
-  // Track expanded categories. Default: all collapsed for clean scan view.
-  const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
-
-  const toggleCategory = (category: string) => {
-    setExpandedCategories((prev) => ({
-      ...prev,
-      [category]: !prev[category],
-    }));
-  };
-
-  const iconMapping: { [key: string]: any } = {
-    "Frontend & Web Engineering": Laptop,
-    "Backend, Cloud & Mobile Packaging": Server,
-    "Digital Administrasi & Productivity": FileText,
-    "AI & Modern Development": Sparkles,
-  };
+  const competencyGroups = [
+    {
+      index: "01",
+      domain: "MANAJEMEN & TATA KELOLA",
+      title: "Administrasi & Manajemen Pendidikan",
+      summary: "Keahlian dalam tata kelola administrasi pendidikan, manajemen berkas ilmiah, pencatatan keuangan ritel, dan perumusan SOP operasional.",
+      competencies: [
+        "Manajemen Pendidikan Islam & Tata Kelola Institusi",
+        "Administrasi Penerbitan Jurnal Ilmiah (Jurnal EDIUM)",
+        "Pencatatan Keuangan & Arus Kas Ritel Terstruktur",
+        "Pengumpulan & Enumerasi Data Lapangan (PT ESC)",
+        "Penyusunan Laporan Pertanggungjawaban (LPJ)"
+      ]
+    },
+    {
+      index: "02",
+      domain: "DIGITAL & WEB ENGINEERING",
+      title: "Pengembangan Web & Sistem Informasi",
+      summary: "Pembangunan aplikasi web responsif dan modular berbasis stack modern dengan arsitektur data yang bersih dan efisien.",
+      competencies: [
+        "React.js & TypeScript Modern Web Architecture",
+        "Tailwind CSS Layouting & Design Systems",
+        "Firebase Firestore & Cloud Authentication",
+        "Mobile Packaging with Capacitor (Android APK)",
+        "RESTful API Integration & Client State Management"
+      ]
+    },
+    {
+      index: "03",
+      domain: "ORGANISASI & LEADERSHIP",
+      title: "Kepemimpinan & Koordinasi Tim",
+      summary: "Pengalaman nyata dalam memimpin struktur organisasi alumni, menjalin koordinasi lintas generasi, dan komunikasi efektif.",
+      competencies: [
+        "Kepemimpinan Ikatan Alumni (Ketua IKA)",
+        "Koordinasi Anggota & Komunikasi Komunitas (178+ Anggota)",
+        "Manajemen Program Kerja & Pengorganisasian Event",
+        "Public Speaking & Presentasi Ilmiah (ACIEM 2026)",
+        "Manajemen Konflik & Penyelesaian Masalah Tim"
+      ]
+    },
+    {
+      index: "04",
+      domain: "AI & WORKFLOW AUTOMATION",
+      title: "Automasi & Pemanfaatan AI Modern",
+      summary: "Pemanfaatan model kecerdasan buatan Google Gemini dan alur kerja automasi untuk memangkas inefisiensi administrasi.",
+      competencies: [
+        "Google Gemini API SDK Integration",
+        "Prompt Engineering untuk Pengolahan Teks & Data",
+        "AI-Assisted Development & Vibe Coding Workflow",
+        "Otomatisasi Rekapitulasi Data & Alur Kerja Sederhana",
+        "Optimalisasi Perangkat Kerja Digital (Google Workspace)"
+      ]
+    }
+  ];
 
   return (
-    <section id="skills" className="relative py-28 sm:py-32 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900/80 to-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+    <section id="skills" className="relative py-28 sm:py-36 border-t border-neutral-800/80 bg-[#08080a]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-bold tracking-wider text-indigo-300 uppercase bg-indigo-950/80 px-3.5 py-1.5 rounded-full border border-indigo-500/30">
-            STRUKTUR KOMPETENSI
-          </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug">
-            Kombinasi Keahlian & Spesialisasi Kerja
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-400 font-normal">
-            Pilih pilar kategori di bawah ini untuk melihat rincian keahlian dan kepasihan operasional.
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-800 pb-8 mb-16">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-mono text-xs uppercase tracking-widest text-emerald-400">
+                05 / KOMPETENSI & SPESIALISASI
+              </span>
+              <span className="h-px w-8 bg-neutral-800" />
+            </div>
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.15]"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Struktur Keahlian & Spesialisasi Kerja
+            </h2>
+          </div>
+          <p className="text-neutral-400 text-sm max-w-md font-normal">
+            Daftar kompetensi teruji yang menggabungkan kedisiplinan ilmu manajemen dengan eksekusi rekayasa perangkat lunak digital.
           </p>
-          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Compact Grid Accordion Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {skills.map((group, index) => {
-            const IconComponent = iconMapping[group.category] || Layers;
-            const isExpanded = !!expandedCategories[group.category];
+        {/* 4-Column Editorial Matrix */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {competencyGroups.map((group) => (
+            <div
+              key={group.index}
+              id={`skill-group-${group.index}`}
+              className="border-t border-neutral-800 pt-6 flex flex-col justify-between text-left group hover:border-neutral-600 transition-colors"
+            >
+              <div>
+                {/* Index header */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-mono text-xs font-bold text-emerald-400">
+                    // {group.index}
+                  </span>
+                  <span className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
+                    {group.domain}
+                  </span>
+                </div>
 
-            return (
-              <motion.div
-                key={group.category}
-                id={`skill-card-${index}`}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden text-left shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)] ${
-                  isExpanded
-                    ? "border-indigo-500/60 bg-slate-900"
-                    : "border-slate-800 bg-slate-900/80 backdrop-blur-xl hover:border-indigo-500/40 hover:-translate-y-1"
-                }`}
-              >
-                {/* Header Button */}
-                <button
-                  id={`skill-category-toggle-${index}`}
-                  onClick={() => toggleCategory(group.category)}
-                  className="w-full p-5 flex items-center justify-between text-left cursor-pointer gap-3 group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
-                      isExpanded
-                        ? "bg-indigo-600 text-white shadow-[0_0_15px_rgba(99,102,241,0.4)]"
-                        : "bg-slate-800 text-indigo-400 border border-slate-700"
-                    }`}>
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="block text-[10px] font-mono font-bold text-indigo-400 uppercase tracking-wider">
-                        {group.skills.length} MATERI SKILL
+                <h3 className="text-lg font-bold text-white tracking-tight leading-snug">
+                  {group.title}
+                </h3>
+
+                <p className="text-xs text-neutral-400 mt-2.5 leading-relaxed">
+                  {group.summary}
+                </p>
+
+                {/* Numbered / Dashed Competency List */}
+                <ul className="mt-6 space-y-2.5 border-t border-neutral-900 pt-4">
+                  {group.competencies.map((comp, cIdx) => (
+                    <li key={cIdx} className="flex items-start gap-2.5 text-xs text-neutral-300">
+                      <span className="text-neutral-600 font-mono text-[11px] mt-0.5 shrink-0">
+                        {String(cIdx + 1).padStart(2, "0")}.
                       </span>
-                      <h3 className="text-white text-base font-extrabold tracking-tight mt-0.5 group-hover:text-indigo-300 transition-colors">
-                        {group.category}
-                      </h3>
-                    </div>
-                  </div>
+                      <span className="leading-relaxed">{comp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors shrink-0 ${
-                    isExpanded ? "bg-indigo-950 text-indigo-300 border border-indigo-500/40" : "bg-slate-800 text-slate-400"
-                  }`}>
-                    {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                  </div>
-                </button>
-
-                {/* Expandable Skills Panel */}
-                <AnimatePresence initial={false}>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden border-t border-slate-800 bg-slate-950/80"
-                    >
-                      <div className="p-5 text-left">
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium mb-4 border-l-2 border-indigo-500 pl-3">
-                          {group.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-2">
-                          {group.skills.map((skill) => (
-                            <span
-                              key={skill}
-                              className="px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase border border-slate-800 bg-slate-900 text-slate-200 shadow-sm hover:border-indigo-500/50 hover:text-indigo-300 transition-colors"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
+              <div className="mt-8 pt-4 border-t border-neutral-900 text-[10px] font-mono text-neutral-600 uppercase">
+                KOMPETENSI TERVERIFIKASI
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

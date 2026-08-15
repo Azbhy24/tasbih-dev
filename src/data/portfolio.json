@@ -2,159 +2,313 @@
   "bio": {
     "fullName": "Tasbih",
     "aliases": ["AzBhy"],
-    "kicker": "Hi, I'm Tasbih 👋",
-    "headline": "Management Student Building Useful Digital Things.",
-    "subheadline": "Saya belajar manajemen, teknologi, dan problem solving melalui project nyata.",
-    "positioning": "Management Student → Digital Problem Solver",
-    "educationSummary": "S1 Manajemen Pendidikan Islam • IAIN Parepare",
-    "aboutBrief": "Saya memiliki latar belakang di Manajemen Pendidikan Islam dan sangat tertarik pada bagaimana sistem, administrasi, data, dan teknologi dapat digunakan untuk membuat pekerjaan menjadi lebih sederhana dan teratur.",
+    "roleTitle": "S1 Manajemen Pendidikan Islam",
+    "kicker": "Fresh Graduate • MPI IAIN Parepare",
+    "headline": "Menghubungkan Tata Kelola Pendidikan & Solusi Digital.",
+    "subheadline": "Lulusan S1 Manajemen Pendidikan Islam dengan pemahaman tata kelola madrasah, administrasi, dan keahlian praktis membangun web tools untuk mempermudah pekerjaan nyata.",
+    "positioning": "Education Management • Administration • Digital Problem Solving",
+    "educationSummary": "S1 Manajemen Pendidikan Islam — IAIN Parepare (2022–2026)",
+    "location": "Parepare / Pinrang, Sulawesi Selatan",
+    "aboutBrief": "Saya menempuh studi di bidang Manajemen Pendidikan Islam (MPI) di IAIN Parepare. Minat utama saya berada pada administrasi madrasah, pengelolaan dokumen, tata kelola sistem informasi, serta bagaimana teknologi dapat dirancang sederhana untuk memecahkan hambatan operasional harian.",
+    "aboutHighlights": [
+      {
+        "label": "Gelar & Jurusan",
+        "value": "S1 Manajemen Pendidikan Islam (S.Pd / MPI)"
+      },
+      {
+        "label": "Institusi",
+        "value": "IAIN Parepare (2022 — 2026)"
+      },
+      {
+        "label": "Arah Karir",
+        "value": "Administrasi Sekolah, Madrasah & Operasional Institusi"
+      },
+      {
+        "label": "Keahlian Pendukung",
+        "value": "Web Prototyping, Pengarsipan OJS, Sistem Kasir"
+      }
+    ],
     "aboutPillars": [
       {
-        "title": "MANAGEMENT",
-        "description": "Administrasi, organisasi, operasional, dan tata kelola."
+        "id": "pillar-admin",
+        "title": "Administrasi & Tata Kelola",
+        "subtitle": "Kerapian Arsip & Alur Kerja",
+        "description": "Berpengalaman mengelola alur berkas naskah di Sekretariat Jurnal EDIUM serta pembukuan harian ritel dengan akurasi dan ketertiban tinggi.",
+        "badge": "Core Strength"
       },
       {
-        "title": "DIGITAL",
-        "description": "Web development, digital systems, dan automation."
+        "id": "pillar-edu",
+        "title": "Manajemen Pendidikan",
+        "subtitle": "Konteks Sekolah & Madrasah",
+        "description": "Memahami kurikulum, kepemimpinan pendidikan Islam, dinamika organisasi madrasah, dan tata kelola kelembagaan.",
+        "badge": "Academic Background"
       },
       {
-        "title": "LEARNING",
-        "description": "Belajar melalui project nyata dan eksperimen."
+        "id": "pillar-digital",
+        "title": "Solusi Digital Praktis",
+        "subtitle": "Teknologi Sebagai Alat Bantu",
+        "description": "Membangun web app mandiri (NgajiKu, Kasir Amma Ika, DompetKu) untuk menyederhanakan proses belajar dan operasional harian.",
+        "badge": "Superpower"
       }
     ]
   },
   "education": {
-    "institution": "IAIN Parepare",
-    "degree": "S1 Manajemen Pendidikan Islam",
+    "institution": "Institut Agama Islam Negeri (IAIN) Parepare",
+    "degree": "S1 Manajemen Pendidikan Islam (MPI)",
+    "faculty": "Fakultas Tarbiyah",
     "period": "2022 — 2026",
+    "status": "Fresh Graduate",
+    "location": "Parepare, Sulawesi Selatan",
+    "gpaSummary": "Fokus pada Tata Kelola Madrasah & Sistem Informasi Manajemen",
+    "keyCourses": [
+      "Sistem Informasi Manajemen Pendidikan (SIM-Pendidikan)",
+      "Administrasi & Supervisi Pendidikan",
+      "Manajemen Kurikulum & Pembelajaran Madrasah",
+      "Kepemimpinan & Tata Kelola Lembaga Islam",
+      "Metodologi Penelitian & Publikasi Ilmiah"
+    ],
     "highlights": [
       {
         "title": "Sekretariat Jurnal EDIUM",
         "year": "2024",
-        "desc": "Mendukung administrasi penerbitan naskah ilmiah dan tata kelola artikel di Program Studi MPI."
+        "desc": "Mendukung alur administrasi naskah ilmiah, tata kelola berkas editorial, dan korespondensi pada Open Journal System (OJS) Program Studi MPI.",
+        "type": "Academic Service"
       },
       {
         "title": "Presenter ACIEM 2026",
         "year": "2026",
-        "desc": "Mempresentasikan artikel riset pada Annual Conference on Islamic Education Management."
+        "desc": "Mempresentasikan artikel penelitian dalam forum ilmiah Annual Conference on Islamic Education Management.",
+        "type": "Conference"
+      },
+      {
+        "title": "Penyusunan Skripsi & Riset MPI",
+        "year": "2025 — 2026",
+        "desc": "Melakukan kajian mendalam seputar manajemen tata kelola dan efektivitas kelembagaan madrasah.",
+        "type": "Research"
       }
     ]
   },
   "experience": [
     {
       "id": "exp-1",
+      "year": "2026",
       "role": "Pengelola Administrasi & Keuangan",
       "organization": "Warung Sembako Amma' Ika",
-      "period": "2026 — Present",
-      "description": "Mengelola pencatatan stok barang harian, pembukuan keuangan toko, dan operasional kasir untuk menjaga ketertiban arus kas usaha ritel keluarga."
+      "type": "Operational & Retail",
+      "period": "2026 — Sekarang",
+      "location": "Pinrang, Sulsel",
+      "description": "Bertanggung jawab atas pencatatan stok barang masuk, rekapitulasi arus kas harian, dan operasional kasir ritel sembako keluarga.",
+      "achievements": [
+        "Menerapkan sistem pencatatan kas harian yang tertib dan transparan",
+        "Mengembangkan aplikasi kasir POS internal (Kasir Amma Ika) untuk mempercepat perhitungan transaksi dan cetak struk",
+        "Mengelola inventaris ratusan produk kebutuhan pokok"
+      ],
+      "tags": ["Administrasi Kas", "Inventaris", "POS System", "Operasional"]
     },
     {
       "id": "exp-2",
-      "role": "Ketua IKA",
+      "year": "2026",
+      "role": "Ketua Ikatan Alumni (IKA)",
       "organization": "MA Biharul Ulum Ma'arif",
-      "period": "2026 — Present",
-      "description": "Mengoordinasikan komunikasi 170+ alumni, mengelola dokumentasi arsip kegiatan, dan memfasilitasi program temu alumni lintas angkatan."
+      "type": "Organizational Leadership",
+      "period": "2026 — Sekarang",
+      "location": "Sulawesi Selatan",
+      "description": "Mengoordinasikan jejaring komunikasi 170+ alumni madrasah, mengelola pengarsipan data alumni, serta memfasilitasi program silaturahmi berkala.",
+      "achievements": [
+        "Membangun database kontak dan pendataan alumni lintas angkatan",
+        "Memfasilitasi koordinasi program dukungan untuk almamater madrasah",
+        "Mengatur dokumentasi dan arsip keorganisasian alumni"
+      ],
+      "tags": ["Kepemimpinan", "Database Alumni", "Koordinasi", "Madrasah"]
     },
     {
       "id": "exp-3",
+      "year": "2025",
       "role": "Enumerator Lapangan",
       "organization": "PT ESC Indonesia",
+      "type": "Research & Field Survey",
       "period": "2025",
-      "description": "Mengumpulkan dan memverifikasi data sosial-ekonomi masyarakat melalui wawancara terstruktur dan validasi kuesioner riset lapangan."
+      "location": "Sulawesi Selatan",
+      "description": "Mengumpulkan, memverifikasi, dan menginput data kuesioner sosial-ekonomi masyarakat secara langsung di lapangan.",
+      "achievements": [
+        "Melakukan wawancara terstruktur kepada responden dengan kepatuhan metodologi riset",
+        "Memvalidasi integritas data kuesioner sebelum diserahkan ke tim pengolah data",
+        "Menyelesaikan target survei lapangan tepat waktu"
+      ],
+      "tags": ["Verifikasi Data", "Wawancara Lapangan", "Ketelitian", "Integritas Data"]
     },
     {
       "id": "exp-4",
+      "year": "2024",
       "role": "Sekretariat Jurnal EDIUM",
-      "organization": "Program Studi MPI",
+      "organization": "Program Studi Manajemen Pendidikan Islam, IAIN Parepare",
+      "type": "Academic Administration",
       "period": "2024",
-      "description": "Mengelola alur administrasi naskah ilmiah, korespondensi dengan penulis, serta pengarsipan berkas editorial jurnal berkala."
+      "location": "Parepare, Sulsel",
+      "description": "Mengelola administrasi penerbitan naskah ilmiah berkala, korespondensi dengan penulis, serta pengarsipan berkas editorial jurnal.",
+      "achievements": [
+        "Mengoperasikan sistem Open Journal Systems (OJS) untuk alur naskah masuk",
+        "Menjaga keteraturan arsip naskah, revisi reviewer, dan dokumen penerbitan",
+        "Berkoordinasi aktif dengan dewan redaksi dan reviewer akademisi"
+      ],
+      "tags": ["OJS", "Administrasi Jurnal", "Arsip Naskah", "Korespondensi"]
     }
   ],
   "projects": [
     {
       "id": "ngajiku",
       "name": "NgajiKu",
-      "tagline": "Aplikasi Al-Qur'an digital & media belajar Islam interaktif.",
-      "problem": "Membaca Al-Qur'an di browser ponsel sering kali terasa lambat atau penuh distraksi tampilan.",
-      "whatIBuilt": "Saya membuat web app pembaca Al-Qur'an yang ringan dengan terjemahan bahasa Indonesia, pemutar audio per ayat, pencarian surah cepat, dan konfigurasi Android packaging berbasis Capacitor.",
-      "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite", "Capacitor"],
+      "tagline": "Aplikasi Al-Qur'an digital ringan & media belajar Islam interaktif.",
+      "category": "Islamic Education & Web App",
+      "featured": true,
+      "problem": "Membaca Al-Qur'an di browser ponsel sering kali terasa lambat, berat, atau terganggu penempatan iklan yang berlebihan.",
+      "whatIBuilt": "Saya membuat web app Al-Qur'an mandiri yang bersih tanpa iklan dengan terjemahan resmi Kemenag RI, pemutar audio tilawah per ayat (Misyari Rasyid), pencarian surah instan, penanda bacaan terakhir, dan dukungan Android via Capacitor.",
+      "keyFeatures": [
+        "114 Surah lengkap dengan teks Arab, transliterasi Latin & Terjemahan",
+        "Pemutar audio ayat interaktif dengan auto-scroll dan kontrol kecepatan",
+        "Pencarian cepat surah, ayat, dan arti",
+        "Penyimpanan bookmark & ayat terakhir dibaca (Local Cache)",
+        "Mobile-first responsive design yang ringan dan bebas iklan"
+      ],
+      "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite", "Capacitor", "Web Audio"],
       "liveDemo": "https://ngajiku-iota.vercel.app/",
       "github": "https://github.com/Azbhy24/ngajiku",
-      "symbol": "📖"
-    },
-    {
-      "id": "warung-amma-ika",
-      "name": "Warung Amma Ika",
-      "tagline": "Website etalase digital katalog produk untuk pelanggan warung sembako.",
-      "problem": "Pelanggan warung kesulitan melihat ketersediaan stok barang dan mengecek harga terkini dari rumah.",
-      "whatIBuilt": "Saya membuat website etalase digital yang memudahkan pelanggan menjelajahi katalog produk, memeriksa harga, dan merencanakan estimasi belanja warung langsung dari HP.",
-      "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      "liveDemo": "https://warung-amma-ika.vercel.app/",
-      "github": "https://github.com/Azbhy24/Warung_Amma_Ika",
-      "symbol": "🏪"
+      "symbol": "📖",
+      "accentColor": "#059669"
     },
     {
       "id": "kasir-amma-ika",
       "name": "Kasir Amma Ika",
-      "tagline": "Aplikasi kasir POS internal untuk pencatatan transaksi dan cetak nota.",
-      "problem": "Perhitungan manual saat transaksi ramai berisiko salah hitung kembalian dan rekapitulasi harian membutuhkan waktu lama.",
-      "whatIBuilt": "Saya membangun aplikasi kasir POS internal dengan perhitungan total belanja otomatis, kalkulasi uang kembalian cepat, dan cetak konfirmasi struk nota belanja.",
+      "tagline": "Sistem kasir POS internal untuk pencatatan transaksi toko ritel sembako.",
+      "category": "Point of Sale (POS) & Retail Management",
+      "featured": false,
+      "problem": "Saat antrean pembeli ramai di warung keluarga, perhitungan manual berisiko salah hitung kembalian dan rekapitulasi harian memakan waktu lama.",
+      "whatIBuilt": "Saya membangun aplikasi kasir POS internal dengan pencarian produk cepat, perhitungan subtotal dan diskon otomatis, kalkulator uang kembalian instan, serta generator cetak struk nota belanja siap cetak.",
+      "keyFeatures": [
+        "Katalog produk kasir dengan tombol cepat (Quick Picks)",
+        "Perhitungan total belanja, nominal uang bayar, dan sisa kembalian presisi",
+        "Format cetak nota belanja thermal printer siap kirim",
+        "Rekapitulasi riwayat transaksi harian secara instan"
+      ],
       "techStack": ["React", "TypeScript", "Tailwind CSS", "Firebase", "LocalStorage"],
       "liveDemo": "https://kasir-amma-ika.vercel.app/",
       "github": "https://github.com/Azbhy24/Kasir-Amma-Ika",
-      "symbol": "🛒"
+      "symbol": "🛒",
+      "accentColor": "#2563eb"
+    },
+    {
+      "id": "warung-amma-ika",
+      "name": "Warung Amma Ika",
+      "tagline": "Etalase digital katalog sembako untuk pelanggan warung.",
+      "category": "Retail Digital Catalog",
+      "featured": false,
+      "problem": "Pelanggan sekitar sering kali harus datang ke toko hanya untuk menanyakan ketersediaan barang kebutuhan pokok dan harga terkini.",
+      "whatIBuilt": "Saya membuat etalase digital yang memudahkan pelanggan melihat daftar produk kebutuhan pokok (beras, minyak, telur, bumbu), mengecek harga resmi, dan menghitung estimasi belanja langsung dari smartphone.",
+      "keyFeatures": [
+        "Katalog produk terstruktur per kategori (Bahan Pokok, Minuman, Bumbu, dll)",
+        "Estimasi total keranjang belanja sebelum ke toko",
+        "Tautan pesan langsung ke WhatsApp warung",
+        "Antarmuka ramah pengguna bagi semua kalangan"
+      ],
+      "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      "liveDemo": "https://warung-amma-ika.vercel.app/",
+      "github": "https://github.com/Azbhy24/Warung_Amma_Ika",
+      "symbol": "🏪",
+      "accentColor": "#d97706"
     },
     {
       "id": "dompetku",
       "name": "DompetKu",
-      "tagline": "Aplikasi pencatatan keuangan pribadi dan arus kas harian.",
-      "problem": "Pencatatan pemasukan dan pengeluaran harian di buku manual sering tercecer dan sulit dipantau trennya.",
-      "whatIBuilt": "Saya membuat aplikasi pencatatan keuangan personal dengan input cepat, kategori pengeluaran terstruktur, visualisasi ringkasan grafik, dan rekap saldo instan.",
+      "tagline": "Aplikasi pencatatan keuangan pribadi dan visualisasi arus kas.",
+      "category": "Personal Finance Tracker",
+      "featured": false,
+      "problem": "Pencatatan pemasukan dan pengeluaran harian di buku sering tercecer, menyulitkan evaluasi pos pengeluaran bulanan.",
+      "whatIBuilt": "Saya mengembangkan web app manajemen keuangan personal yang memungkinkan pencatatan transaksi cepat dengan kategori pos jelas, ringkasan saldo dinamis, dan visualisasi grafik arus kas.",
+      "keyFeatures": [
+        "Pencatatan pemasukan dan pengeluaran dalam hitungan detik",
+        "Klasifikasi kategori kebutuhan pokok, transport, pendidikan, dan tabungan",
+        "Visualisasi ringkasan saldo dan diagram pos anggaran",
+        "Penyimpanan data lokal pribadi tanpa butuh login rumit"
+      ],
       "techStack": ["React", "TypeScript", "Tailwind CSS", "LocalStorage", "Motion"],
       "liveDemo": "https://dompetku-xi-ochre.vercel.app/",
       "github": "https://github.com/Azbhy24/dompetku",
-      "symbol": "💳"
+      "symbol": "💳",
+      "accentColor": "#7c3aed"
     }
   ],
   "skills": [
     {
-      "category": "Management",
-      "skills": ["Administration", "Organization", "Documentation", "Retail Operations"]
+      "category": "Administrasi & Tata Kelola",
+      "description": "Pengelolaan operasional, dokumen, dan alur administrasi.",
+      "skills": [
+        { "name": "Tata Kelola Administrasi Madrasah", "note": "Konteks Pendidikan Islam" },
+        { "name": "Pengarsipan & Korespondensi Naskah", "note": "Editorial & Organisasi" },
+        { "name": "Pengelolaan Arus Kas Ritel", "note": "Pembukuan Toko" },
+        { "name": "Pengorganisasian Database Alumni", "note": "170+ Alumni" }
+      ]
     },
     {
-      "category": "Development",
-      "skills": ["React", "TypeScript", "Tailwind CSS", "Firebase", "Git / GitHub"]
+      "category": "Produktivitas & Office Suite",
+      "description": "Perangkat kerja harian untuk penyusunan laporan dan data.",
+      "skills": [
+        { "name": "Microsoft Excel", "note": "Pengolahan Data, Formula, Rekapitulasi" },
+        { "name": "Microsoft Word & Google Docs", "note": "Penyusunan Surat & Laporan Resmi" },
+        { "name": "Google Workspace & Drive", "note": "Manajemen File Berbagi" },
+        { "name": "Open Journal Systems (OJS)", "note": "Manajemen Naskah Jurnal Ilmiah" }
+      ]
     },
     {
-      "category": "Productivity",
-      "skills": ["Google Workspace", "Microsoft Office", "Data handling", "Reporting"]
+      "category": "Web & Digital Tools",
+      "description": "Kemampuan praktis membangun web tools untuk kebutuhan nyata.",
+      "skills": [
+        { "name": "React & TypeScript", "note": "Membangun Antarmuka Modern" },
+        { "name": "Tailwind CSS", "note": "Desain UI Responsif & Rapi" },
+        { "name": "Vite & Capacitor", "note": "Build Tooling & Mobile Web" },
+        { "name": "Firebase & LocalStorage", "note": "Penyimpanan Data Ringan" }
+      ]
     },
     {
-      "category": "AI",
-      "skills": ["Gemini", "AI-assisted development", "API integration", "Prompting"]
+      "category": "AI-Assisted Workflow",
+      "description": "Memanfaatkan AI untuk efisiensi dan akselerasi solusi.",
+      "skills": [
+        { "name": "Gemini API Integration", "note": "Integrasi Kecerdasan Buatan" },
+        { "name": "AI-Assisted Development", "note": "Akselerasi Pembuatan Prototipe" },
+        { "name": "Prompt Engineering", "note": "Otomasi & Analisis Dokumen" },
+        { "name": "Data Cleansing & Validation", "note": "Verifikasi Kualitas Data" }
+      ]
     }
   ],
-  "currently": "Currently learning, building, and experimenting with digital tools that can solve practical problems.",
+  "currently": {
+    "status": "Fresh Graduate S1 Manajemen Pendidikan Islam (IAIN Parepare 2022–2026)",
+    "careerFocus": "Mencari peluang karir di bidang Administrasi Madrasah, Tata Kelola Pendidikan, Staf Kelembagaan, atau Operasional Institusi.",
+    "activeBuilding": "Menyempurnakan web tools (NgajiKu & Kasir Amma Ika) serta mendalami sistem informasi tata kelola sekolah modern.",
+    "location": "Parepare / Pinrang, Sulawesi Selatan (Siap On-site / Remote)"
+  },
   "socials": [
     {
-      "platform": "GitHub",
-      "url": "https://github.com/azbhy24",
-      "label": "azbhy24"
+      "platform": "WhatsApp",
+      "url": "https://wa.me/6281915115390",
+      "label": "+62 819-1511-5390",
+      "username": "Chat Langsung"
     },
     {
       "platform": "Email",
       "url": "mailto:advanicplus173@gmail.com",
-      "label": "advanicplus173@gmail.com"
+      "label": "advanicplus173@gmail.com",
+      "username": "advanicplus173"
     },
     {
-      "platform": "WhatsApp",
-      "url": "https://wa.me/6281915115390",
-      "label": "+62 819-1511-5390"
+      "platform": "GitHub",
+      "url": "https://github.com/Azbhy24",
+      "label": "github.com/Azbhy24",
+      "username": "Azbhy24"
     },
     {
       "platform": "Instagram",
       "url": "https://instagram.com/tasbii_az",
-      "label": "@tasbii_az"
+      "label": "@tasbii_az",
+      "username": "tasbii_az"
     }
   ]
 }

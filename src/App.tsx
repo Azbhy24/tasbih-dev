@@ -65,12 +65,12 @@ export default function App() {
   return (
     <div 
       id="app-root-layout" 
-      className="min-h-screen bg-[#fafafa] text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 antialiased"
+      className="min-h-screen bg-[#f7f6f2] bg-grid-dots text-stone-900 font-sans selection:bg-emerald-200 selection:text-emerald-950 antialiased"
     >
-      {/* Sticky Clean Navbar */}
+      {/* Sticky Floating Navbar */}
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 
-      {/* Main Content Sections */}
+      {/* Main Content Flow */}
       <main id="main-content-flow" className="w-full">
         {/* 1. Hero Section */}
         <Hero onNavigate={handleNavigate} />
@@ -97,25 +97,23 @@ export default function App() {
         <Contact />
       </main>
 
-      {/* Subtle Floating Back to Top Button */}
+      {/* Floating Back to Top Button */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
-            id="floating-scroll-top-btn"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            onClick={() => handleNavigate("hero")}
-            className="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm cursor-pointer flex items-center justify-center min-h-[44px] min-w-[44px]"
-            title="Kembali ke atas"
-            aria-label="Kembali ke atas"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-6 right-6 z-40 p-3 rounded-2xl bg-stone-900 text-white shadow-xl hover:bg-stone-800 transition-all cursor-pointer active:scale-95"
+            aria-label="Scroll to top"
           >
             <ArrowUp className="w-4 h-4" />
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Lightweight PWA shortcut modal */}
+      {/* PWA / Shortcut Install Banner */}
       <InstallPromptModal />
     </div>
   );

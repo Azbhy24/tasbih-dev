@@ -2,7 +2,9 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Instrument Serif", "Newsreader", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Syne", "Plus Jakarta Sans", sans-serif;
 }
 
 @layer base {
@@ -13,8 +15,8 @@
   }
   
   body {
-    background-color: #fafafa;
-    color: #0f172a;
+    background-color: #f7f6f2;
+    color: #171c26;
     position: relative;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
@@ -28,15 +30,28 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #f1efe9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #cbd0d8;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: #9ca3af;
   }
+}
+
+/* Subtle architectural dot grid */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(30, 41, 59, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-grid-lines {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -60,4 +75,3 @@
     min-width: 44px;
   }
 }
-

@@ -63,43 +63,34 @@ export default function Hero({ onNavigate }: HeroProps) {
             </h1>
 
             {/* Lead Subtitle */}
-            <p className="mt-4 sm:mt-6 text-lg sm:text-2xl md:text-3xl font-semibold text-neutral-200 tracking-tight leading-snug">
-              Praktisi Manajemen, Administrasi Terstruktur, & Solusi Digital.
+            <p className="mt-4 sm:mt-5 text-lg sm:text-2xl md:text-3xl font-semibold text-neutral-200 tracking-tight leading-snug">
+              Manajemen Pendidikan Islam <span className="text-emerald-400 font-mono text-base sm:text-xl font-normal">&times;</span> Rekayasa Solusi Digital
             </p>
 
-            {/* Editorial Bio Statement */}
+            {/* Editorial Compressed Bio Statement */}
             <p
               id="hero-bio-para"
-              className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-neutral-400 max-w-2xl leading-relaxed font-normal"
+              className="mt-3 text-sm sm:text-base md:text-lg text-neutral-400 max-w-2xl leading-relaxed font-normal"
             >
-              Lulusan S1 Manajemen Pendidikan Islam (IAIN Parepare) yang mengintegrasikan tata kelola organisasi, pembukuan ritel, validasi riset lapangan, serta rekayasa aplikasi web nyata.
+              Lulusan S1 MPI (IAIN Parepare) yang mengawinkan tata kelola organisasi, pembukuan ritel harian, dan pengembangan aplikasi web fungsional.
             </p>
 
-            {/* Micro Highlights / Quick Facts */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 my-6 sm:my-8 pt-4 sm:pt-6 border-t border-neutral-800/80">
-              <div className="bg-neutral-900/40 p-2.5 sm:p-3 rounded-lg border border-neutral-800">
-                <span className="block font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-neutral-500">
-                  AKADEMIK
-                </span>
-                <span className="font-mono text-[11px] sm:text-xs font-semibold text-neutral-200 mt-0.5 block leading-tight">
-                  S1 MPI IAIN
-                </span>
+            {/* Personal Metadata Strip - Level 2 Evidence */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 my-6 sm:my-8 pt-4 sm:pt-6 border-t border-neutral-800/80">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-neutral-900/60 border border-neutral-800 text-[11px] font-mono text-neutral-300">
+                <span className="text-neutral-500 font-bold">AKADEMIK</span>
+                <span className="text-emerald-400 font-bold">•</span>
+                <span>S1 MPI IAIN Parepare</span>
               </div>
-              <div className="bg-neutral-900/40 p-2.5 sm:p-3 rounded-lg border border-neutral-800">
-                <span className="block font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-neutral-500">
-                  LEADERSHIP
-                </span>
-                <span className="font-mono text-[11px] sm:text-xs font-semibold text-neutral-200 mt-0.5 block leading-tight">
-                  Ketua IKA
-                </span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-neutral-900/60 border border-neutral-800 text-[11px] font-mono text-neutral-300">
+                <span className="text-neutral-500 font-bold">LEADERSHIP</span>
+                <span className="text-emerald-400 font-bold">•</span>
+                <span>Ketua IKA (178 Alumni)</span>
               </div>
-              <div className="bg-neutral-900/40 p-2.5 sm:p-3 rounded-lg border border-neutral-800">
-                <span className="block font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-neutral-500">
-                  DEV STACK
-                </span>
-                <span className="font-mono text-[11px] sm:text-xs font-semibold text-neutral-200 mt-0.5 block leading-tight">
-                  React • TS
-                </span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-neutral-900/60 border border-neutral-800 text-[11px] font-mono text-neutral-300">
+                <span className="text-neutral-500 font-bold">STACK</span>
+                <span className="text-emerald-400 font-bold">•</span>
+                <span>React • TS • Firebase</span>
               </div>
             </div>
 

@@ -7,7 +7,11 @@ import {
   MapPin, 
   MessageSquare,
   Sparkles,
-  ArrowUpRight
+  ArrowUpRight,
+  Phone,
+  Github,
+  Instagram,
+  Linkedin
 } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 import { 
@@ -45,7 +49,7 @@ export default function Contact() {
       const q = query(
         collection(db, "guestbook"),
         orderBy("createdAt", "desc"),
-        limit(8)
+        limit(6)
       );
 
       const unsubscribe = onSnapshot(
@@ -58,19 +62,18 @@ export default function Contact() {
           setGuestList(entries);
         },
         (error) => {
-          console.warn("Firestore guestbook query note:", error.message);
-          // Fallback to local default comments if permission/rules initializing
+          console.warn("Firestore guestbook note:", error.message);
           setGuestList([
             {
-              id: "default-1",
+              id: "def-1",
               name: "Fahrul M.",
-              message: "Desain dan sistem digital yang sangat rapi! Sukses terus untuk portofolionya.",
+              message: "Integrasi manajemen dan teknologinya solid. Sukses terus untuk portofolionya!",
               createdAt: { seconds: Date.now() / 1000 }
             },
             {
-              id: "default-2",
+              id: "def-2",
               name: "Rahmat Hidayat",
-              message: "Kombinasi manajemen dan tech stack-nya solid. Semangat persiapan S2-nya!",
+              message: "Sistem digital yang sangat rapi. Semangat persiapan S2-nya!",
               createdAt: { seconds: (Date.now() - 3600000) / 1000 }
             }
           ]);
@@ -79,7 +82,7 @@ export default function Contact() {
 
       return () => unsubscribe();
     } catch (err) {
-      console.warn("Firestore init notice:", err);
+      console.warn("Firestore listener note:", err);
     }
   }, []);
 
@@ -107,8 +110,7 @@ export default function Contact() {
       setMessage("");
       setTimeout(() => setSentSuccess(false), 5000);
     } catch (err) {
-      console.warn("Inquiry note:", err);
-      // Fallback grace for user experience
+      console.warn("Inquiry error fallback:", err);
       setSentSuccess(true);
       setName("");
       setEmail("");
@@ -133,8 +135,7 @@ export default function Contact() {
       setGuestName("");
       setGuestMessage("");
     } catch (err) {
-      console.warn("Guestbook post note:", err);
-      // Local optimistic update if offline
+      console.warn("Guestbook error fallback:", err);
       setGuestList(prev => [
         {
           id: `local-${Date.now()}`,
@@ -154,278 +155,225 @@ export default function Contact() {
   return (
     <section 
       id="contact" 
-      className="relative py-20 sm:py-28 md:py-36 border-t border-neutral-800/80 bg-[#09090c] text-neutral-200"
+      className="relative py-20 sm:py-28 md:py-36 border-t border-neutral-800 bg-[#08080a] text-neutral-200 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
-        {/* Chapter 06 Marker: Clean Minimalist Closure */}
-        <div className="flex items-center justify-between border-b border-neutral-800 pb-3 sm:pb-4 mb-8 sm:mb-12">
+        {/* Chapter 07 Marker */}
+        <div className="flex items-center justify-between border-b border-neutral-800/80 pb-3 sm:pb-4 mb-10 sm:mb-16">
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-emerald-400 font-bold bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded">
-              CHAPTER 06
+            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-500/30 px-2 py-0.5 rounded">
+              CHAPTER 07
             </span>
             <span className="text-neutral-700 font-mono">/</span>
             <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-neutral-300 font-semibold">
-              CONTACT & COMMUNITY
+              CONTACT & COLLABORATION
             </span>
           </div>
           <span className="font-mono text-[10px] sm:text-[11px] text-neutral-500 uppercase tracking-wider hidden sm:inline">
-            KOLABORASI & KOMUNIKASI
+            SALURAN KOMUNIKASI RESMI
           </span>
         </div>
 
-        {/* Section Headline */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-neutral-800 pb-6 sm:pb-8 mb-10 sm:mb-16 text-left">
-          <div>
+        {/* Section Headline: Confident Closing Typography */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12 sm:mb-16 text-left items-start">
+          <div className="lg:col-span-8">
             <h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-snug"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Mulai Diskusi & Kolaborasi
+              Mari Memulai Kolaborasi & Diskusi Nyata.
             </h2>
           </div>
-          <p className="text-neutral-400 text-xs sm:text-sm max-w-md font-normal">
-            Terbuka untuk peluang kerjasama manajemen pendidikan, digitalisasi sistem UKM/organisasi, serta diskusi akademik riset.
-          </p>
+          <div className="lg:col-span-4 border-l border-neutral-800 pl-4 sm:pl-6 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
+            Terbuka untuk konsultasi tata kelola administrasi, pengembangan sistem web, riset lapangan, atau pertukaran wawasan profesional.
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 text-left">
-          
-          {/* Left Column: Direct Contacts & Channels */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-8">
-            
-            <div className="space-y-6">
-              
-              {/* Quick Email Copy Card */}
-              <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-5 sm:p-6 shadow-md">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 block mb-2">
-                  EMAIL UTAMA
-                </span>
-                <div className="flex items-center justify-between gap-2 bg-neutral-950 border border-neutral-800 rounded-lg p-2.5 sm:p-3">
-                  <div className="flex items-center gap-2 overflow-hidden">
-                    <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-mono text-xs sm:text-sm text-neutral-200 truncate select-all">
-                      {emailAddress}
-                    </span>
-                  </div>
-                  <button
-                    onClick={handleCopyEmail}
-                    className="min-h-[36px] px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-xs font-mono uppercase text-white flex items-center gap-1.5 transition-colors cursor-pointer select-none shrink-0"
-                    aria-label="Salin email"
-                  >
-                    {copiedEmail ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-emerald-400 font-bold">Disalin</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Salin</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Location & Status */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-4">
-                  <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase text-neutral-400 mb-1">
-                    <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Domisili</span>
-                  </div>
-                  <p className="text-xs sm:text-sm font-semibold text-white">
-                    Parepare / Pinrang
-                  </p>
-                  <span className="text-[10px] text-neutral-400 font-mono">Sulawesi Selatan</span>
-                </div>
-
-                <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-4">
-                  <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase text-emerald-400 mb-1">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Status</span>
-                  </div>
-                  <p className="text-xs sm:text-sm font-semibold text-white">
-                    Open for Projects
-                  </p>
-                  <span className="text-[10px] text-neutral-400 font-mono">Sistem & Tata Kelola</span>
-                </div>
-              </div>
-
-              {/* Social Channels Matrix */}
-              <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-5">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 block mb-3">
-                  SALURAN RESMI
-                </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {socials.map((s) => (
-                    <a
-                      key={s.platform}
-                      href={s.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="min-h-[44px] flex items-center justify-between p-2.5 rounded-lg bg-neutral-950 border border-neutral-800 hover:border-neutral-700 text-xs font-mono text-neutral-300 hover:text-white transition-colors group"
-                    >
-                      <span className="font-medium">{s.platform}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
+        {/* Visual Signature: Large Visual Email Anchor Block */}
+        <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-neutral-900/60 border border-neutral-800 mb-12 sm:mb-16 text-left flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 block mb-1">
+              EMAIL RESMI
+            </span>
+            <div className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white">
+              {emailAddress}
             </div>
-
-            {/* Bottom Credits */}
-            <div className="pt-6 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">
-              © {new Date().getFullYear()} Tasbih (AzBhy). Didesain secara editorial & berdaya guna.
+            <div className="flex items-center gap-2 mt-2 text-xs font-mono text-neutral-400">
+              <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Parepare / Pinrang, Sulawesi Selatan, Indonesia</span>
             </div>
-
           </div>
 
-          {/* Right Column: Direct Message Form & Guestbook Live */}
-          <div className="lg:col-span-7 space-y-8">
-            
-            {/* 1. Inquiry Form */}
-            <div className="border border-neutral-800 bg-neutral-900/40 rounded-2xl p-5 sm:p-7 shadow-lg">
-              <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-5">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-emerald-400" />
-                  <h3 className="font-mono text-xs uppercase tracking-wider font-bold text-white">
-                    Kirim Pesan Langsung
-                  </h3>
-                </div>
-                <span className="text-[10px] font-mono text-neutral-500">Tersimpan ke Cloud</span>
-              </div>
-
-              {sentSuccess ? (
-                <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Pesan Anda telah berhasil dikirim! Saya akan segera merespons.</span>
-                </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              id="copy-email-btn"
+              onClick={handleCopyEmail}
+              className="min-h-[44px] px-5 py-2.5 bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg flex items-center gap-2 transition-colors cursor-pointer select-none"
+            >
+              {copiedEmail ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-400" />
+                  <span>Email Disalin!</span>
+                </>
               ) : (
-                <form onSubmit={handleSendMessage} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
-                        Nama Lengkap
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="cth. Ahmad Fauzi"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[44px]"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
-                        Alamat Email
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="email@domain.com"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[44px]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
-                      Pesan / Topik Diskusi
-                    </label>
-                    <textarea
-                      required
-                      rows={4}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Jelaskan kebutuhan kolaborasi, digitalisasi sistem, atau undangan diskusi..."
-                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 resize-none font-sans"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSending}
-                    className="w-full min-h-[46px] py-3 bg-white hover:bg-neutral-200 active:bg-neutral-300 text-neutral-950 font-mono text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer select-none"
-                  >
-                    {isSending ? (
-                      <span>Mengirimkan Pesan...</span>
-                    ) : (
-                      <>
-                        <Send className="w-3.5 h-3.5" />
-                        <span>Kirim Pesan</span>
-                      </>
-                    )}
-                  </button>
-                </form>
+                <>
+                  <Copy className="w-4 h-4 text-emerald-400" />
+                  <span>Salin Alamat Email</span>
+                </>
               )}
-            </div>
+            </button>
 
-            {/* 2. Interactive Guestbook Wall */}
-            <div className="border border-neutral-800 bg-neutral-900/30 rounded-2xl p-5 sm:p-7 shadow-lg">
-              <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
-                <div className="flex items-center gap-2">
-                  <MessageSquare className="w-4 h-4 text-emerald-400" />
-                  <h3 className="font-mono text-xs uppercase tracking-wider font-bold text-white">
-                    Buku Tamu / Community Wall
-                  </h3>
-                </div>
-                <span className="text-[10px] font-mono text-emerald-400">Live Synchronized</span>
+            <a
+              href={`mailto:${emailAddress}`}
+              className="min-h-[44px] px-5 py-2.5 bg-white hover:bg-neutral-200 active:bg-neutral-300 text-neutral-950 font-mono text-xs font-bold uppercase tracking-wider rounded-lg flex items-center gap-2 transition-colors select-none"
+            >
+              <span>Kirim Email Langsung</span>
+              <ArrowUpRight className="w-4 h-4 text-neutral-950" />
+            </a>
+          </div>
+        </div>
+
+        {/* 2-Column Split: Direct Form & Live Guestbook */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 text-left">
+          
+          {/* Left Column: Direct Message Form */}
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Mail className="w-4 h-4 text-emerald-400" />
+                <h3 className="font-mono text-xs uppercase font-bold tracking-wider text-white">
+                  KIRIM PESAN LANGSUNG
+                </h3>
               </div>
 
-              {/* Guestbook Post Input */}
-              <form onSubmit={handlePostGuestbook} className="space-y-2.5 mb-5 bg-neutral-950/60 p-3 sm:p-4 rounded-xl border border-neutral-800">
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
+              <form onSubmit={handleSendMessage} className="space-y-3 sm:space-y-4">
+                <div>
                   <input
                     type="text"
+                    placeholder="Nama Lengkap"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
-                    placeholder="Nama Anda"
-                    value={guestName}
-                    onChange={(e) => setGuestName(e.target.value)}
-                    className="sm:col-span-4 bg-neutral-900 border border-neutral-800 rounded px-2.5 py-2 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[40px]"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500 font-sans min-h-[44px]"
                   />
-                  <input
-                    type="text"
-                    required
-                    placeholder="Tinggalkan pesan sapaan..."
-                    value={guestMessage}
-                    onChange={(e) => setGuestMessage(e.target.value)}
-                    className="sm:col-span-6 bg-neutral-900 border border-neutral-800 rounded px-2.5 py-2 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[40px]"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isPostingGuest}
-                    className="sm:col-span-2 min-h-[40px] px-3 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-neutral-950 font-mono text-xs font-bold uppercase rounded transition-colors cursor-pointer select-none"
-                  >
-                    Kirim
-                  </button>
                 </div>
-              </form>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Alamat Email Anda"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500 font-sans min-h-[44px]"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    rows={4}
+                    placeholder="Tuliskan pesan, penawaran proyek, atau topik diskusi..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500 font-sans"
+                  />
+                </div>
 
-              {/* Guestbook Stream */}
-              <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
-                {guestList.map((g) => (
-                  <div key={g.id} className="p-3 rounded-lg bg-neutral-950 border border-neutral-800/80 text-xs">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-bold text-neutral-200">{g.name}</span>
-                      <span className="font-mono text-[9px] text-neutral-500">
-                        {g.createdAt?.seconds 
-                          ? new Date(g.createdAt.seconds * 1000).toLocaleDateString("id-ID")
-                          : "Baru saja"}
-                      </span>
-                    </div>
-                    <p className="text-neutral-400 leading-relaxed font-normal">{g.message}</p>
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="w-full min-h-[44px] py-3 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-neutral-950 font-mono text-xs font-bold uppercase tracking-wider rounded-lg flex items-center justify-center gap-2 transition-colors cursor-pointer select-none"
+                >
+                  <Send className="w-4 h-4 text-neutral-950" />
+                  <span>{isSending ? "Mengirim Pesan..." : "Kirimkan Pesan"}</span>
+                </button>
+
+                {sentSuccess && (
+                  <div className="p-3 bg-emerald-950/60 border border-emerald-500/40 rounded-lg text-emerald-300 text-xs font-mono">
+                    ✓ Pesan berhasil dikirim. Terima kasih telah menghubungi!
                   </div>
-                ))}
-              </div>
-
+                )}
+              </form>
             </div>
 
+            {/* Social Channels Bar */}
+            <div className="pt-6 mt-6 border-t border-neutral-800 flex flex-wrap items-center gap-3 text-xs font-mono text-neutral-400">
+              <span className="text-neutral-500">SALURAN RESMI:</span>
+              {socials.map((s, idx) => (
+                <a 
+                  key={s.platform} 
+                  href={s.url} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-neutral-300 hover:text-emerald-400 transition-colors flex items-center gap-1"
+                >
+                  <span>{s.platform}</span>
+                  {idx < socials.length - 1 && <span className="text-neutral-600 ml-2">•</span>}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Community Guestbook Wall */}
+          <div className="lg:col-span-6 border-t lg:border-t-0 lg:border-l border-neutral-800 pt-6 lg:pt-0 lg:pl-8">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <h3 className="font-mono text-xs uppercase font-bold tracking-wider text-white">
+                  BUKU TAMU / GUESTBOOK
+                </h3>
+              </div>
+              <span className="font-mono text-[10px] text-emerald-400 bg-emerald-950/50 border border-emerald-500/30 px-2 py-0.5 rounded">
+                Live Cloud Sync
+              </span>
+            </div>
+
+            <form onSubmit={handlePostGuestbook} className="mb-5 space-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
+                <input
+                  type="text"
+                  placeholder="Nama / Inisial"
+                  value={guestName}
+                  onChange={(e) => setGuestName(e.target.value)}
+                  required
+                  className="sm:col-span-5 bg-neutral-900 border border-neutral-800 rounded px-3 py-2 text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500 min-h-[40px]"
+                />
+                <input
+                  type="text"
+                  placeholder="Tinggalkan jejak apresiasi..."
+                  value={guestMessage}
+                  onChange={(e) => setGuestMessage(e.target.value)}
+                  required
+                  className="sm:col-span-7 bg-neutral-900 border border-neutral-800 rounded px-3 py-2 text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500 min-h-[40px]"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isPostingGuest}
+                className="w-full min-h-[38px] py-1.5 bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-white font-mono text-xs uppercase tracking-wider rounded transition-colors cursor-pointer select-none"
+              >
+                {isPostingGuest ? "Menyimpan..." : "+ Kirim Jejak Buku Tamu"}
+              </button>
+            </form>
+
+            {/* Guest list entries */}
+            <div className="space-y-2.5 max-h-[320px] overflow-y-auto custom-scrollbar pr-1">
+              {guestList.map((entry) => (
+                <div key={entry.id} className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-800 text-left">
+                  <div className="flex items-center justify-between text-xs mb-1">
+                    <span className="font-bold text-neutral-200">{entry.name}</span>
+                    <span className="font-mono text-[10px] text-neutral-500">
+                      {entry.createdAt?.seconds 
+                        ? new Date(entry.createdAt.seconds * 1000).toLocaleDateString("id-ID")
+                        : "Baru saja"}
+                    </span>
+                  </div>
+                  <p className="text-xs text-neutral-300 font-normal leading-relaxed">
+                    "{entry.message}"
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

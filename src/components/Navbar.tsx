@@ -24,8 +24,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: "about", num: "02", label: "Manajemen" },
     { id: "projects", num: "03", label: "Produk" },
     { id: "experience", num: "04", label: "Pengalaman" },
-    { id: "vision", num: "05", label: "Visi" },
-    { id: "contact", num: "06", label: "Kontak" },
+    { id: "impact", num: "05", label: "Data" },
+    { id: "vision", num: "06", label: "Visi" },
+    { id: "contact", num: "07", label: "Kontak" },
   ];
 
   const handleNavClick = (sectionId: string) => {

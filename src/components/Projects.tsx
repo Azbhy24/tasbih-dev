@@ -18,9 +18,13 @@ import {
   ShoppingBag,
   Layers,
   ChevronRight,
-  Info
+  Info,
+  Terminal,
+  FileSpreadsheet
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import InteractiveSandbox from "./InteractiveSandbox";
+import AdminAssistantTool from "./AdminAssistantTool";
 
 interface ProjectItem {
   id: string;
@@ -558,6 +562,24 @@ export default function Projects() {
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* 5. LIVE INTERACTIVE APPS SANDBOX & SIMULATOR */}
+        {/* ========================================================================= */}
+        <div className="pt-6 space-y-6">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
+              Live Sandbox: Coba Langsung di Sini
+            </h3>
+          </div>
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-mono">
+            Anda dapat langsung mencoba mesin simulasi kasir POS toko dan generator dokumen administrasi madrasah di bawah ini:
+          </p>
+
+          <InteractiveSandbox />
+          <AdminAssistantTool />
         </div>
 
       </div>

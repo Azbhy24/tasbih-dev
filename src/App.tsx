@@ -12,6 +12,7 @@ import Skills from "./components/Skills";
 import Currently from "./components/Currently";
 import Contact from "./components/Contact";
 import InstallPromptModal from "./components/InstallPromptModal";
+import InteractiveToolbar from "./components/InteractiveToolbar";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -112,6 +113,9 @@ export default function App() {
           </motion.button>
         )}
       </AnimatePresence>
+
+      {/* Interactive Micro Dock & Command Palette */}
+      <InteractiveToolbar onNavigate={handleNavigate} activeSection={activeSection} />
 
       {/* PWA / Shortcut Install Banner */}
       <InstallPromptModal />

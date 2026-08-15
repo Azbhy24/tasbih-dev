@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { 
   FileSpreadsheet, 
   BookOpen, 
@@ -5,15 +6,21 @@ import {
   Code2, 
   Sparkles, 
   CheckCircle2, 
-  Layers 
+  Layers,
+  Search,
+  Check
 } from "lucide-react";
 
 export default function Skills() {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [skillSearch, setSkillSearch] = useState<string>("");
+
   const toolkits = [
     {
       category: "Administrasi & Tata Usaha",
       icon: FileSpreadsheet,
       badge: "Utama",
+      tag: "Admin",
       items: [
         "Microsoft Word (Surat & Dokumen Resmi)",
         "Microsoft Excel (Pencatatan & Rekap Data)",
@@ -26,6 +33,7 @@ export default function Skills() {
       category: "Pendidikan & Madrasah",
       icon: BookOpen,
       badge: "Studi S1",
+      tag: "Madrasah",
       items: [
         "Sistem Informasi Madrasah / Sekolah",
         "Manajemen Kurikulum & Jadwal Pembelajaran",
@@ -38,6 +46,7 @@ export default function Skills() {
       category: "Digital Tools & Riset",
       icon: Laptop,
       badge: "Praktis",
+      tag: "Digital",
       items: [
         "Open Journal Systems (OJS Workflow)",
         "Instrumen Kuesioner & Survei Lapangan",
@@ -50,6 +59,7 @@ export default function Skills() {
       category: "Teknologi Web Terapan",
       icon: Code2,
       badge: "Kekuatan Pendukung",
+      tag: "Web",
       items: [
         "React & TypeScript Dasar",
         "Tailwind CSS (Antarmuka Web Bersih)",
@@ -62,6 +72,7 @@ export default function Skills() {
       category: "AI-Assisted Workflow",
       icon: Sparkles,
       badge: "Produktivitas",
+      tag: "AI",
       items: [
         "Prompting untuk Rekapitulasi Dokumen",
         "Penyusunan Draf Surat & Administrasi Cepat",
@@ -71,13 +82,24 @@ export default function Skills() {
     }
   ];
 
+  const categories = ["All", "Admin", "Madrasah", "Digital", "Web", "AI"];
+
+  const filteredToolkits = toolkits.filter((tool) => {
+    const matchesCat = activeCategory === "All" || tool.tag === activeCategory;
+    const query = skillSearch.toLowerCase();
+    const matchesQuery = 
+      tool.category.toLowerCase().includes(query) ||
+      tool.items.some(item => item.toLowerCase().includes(query));
+    return matchesCat && matchesQuery;
+  });
+
   return (
     <section 
       id="skills" 
       className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-10 text-left">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-8 text-left">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-1">
             <span className="text-blue-600 font-bold">05 /</span>
@@ -92,43 +114,82 @@ export default function Skills() {
         </p>
       </div>
 
-      {/* Grid of Toolkits (Categorized lists, no percent bars) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-        {toolkits.map((tool, idx) => {
-          const Icon = tool.icon;
-          return (
-            <div 
-              key={idx}
-              className="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-2xs hover:border-stone-300 transition-colors flex flex-col justify-between"
+      {/* Interactive Category Filter & Search Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+        {/* Category Pills */}
+        <div className="flex flex-wrap gap-1.5">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                activeCategory === cat
+                  ? "bg-stone-900 text-white font-bold shadow-2xs"
+                  : "bg-white text-stone-600 border border-stone-200 hover:bg-stone-50"
+              }`}
             >
-              <div>
-                <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800">
-                      <Icon className="w-3.5 h-3.5 text-blue-600" />
-                    </div>
-                    <h3 className="text-xs font-bold text-stone-900 font-mono">
-                      {tool.category}
-                    </h3>
-                  </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-100 text-stone-600">
-                    {tool.badge}
-                  </span>
-                </div>
+              {cat === "All" ? "Semua Toolkit" : cat}
+            </button>
+          ))}
+        </div>
 
-                <ul className="space-y-2">
-                  {tool.items.map((item, i) => (
-                    <li key={i} className="text-xs text-stone-600 flex items-start gap-2 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+        {/* Live Search Input */}
+        <div className="relative w-full sm:w-64">
+          <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <input
+            type="text"
+            placeholder="Cari keahlian (Excel, OJS, React)..."
+            value={skillSearch}
+            onChange={(e) => setSkillSearch(e.target.value)}
+            className="w-full pl-8 pr-3 py-1.5 bg-white rounded-lg border border-stone-300 text-xs font-mono text-stone-900 placeholder:text-stone-400 focus:outline-blue-500 shadow-2xs"
+          />
+        </div>
+      </div>
+
+      {/* Grid of Toolkits */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+        {filteredToolkits.length > 0 ? (
+          filteredToolkits.map((tool, idx) => {
+            const Icon = tool.icon;
+            return (
+              <div 
+                key={idx}
+                className="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-2xs hover:border-stone-300 hover:shadow-xs transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800">
+                        <Icon className="w-3.5 h-3.5 text-blue-600" />
+                      </div>
+                      <h3 className="text-xs font-bold text-stone-900 font-mono">
+                        {tool.category}
+                      </h3>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-100 text-stone-600">
+                      {tool.badge}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {tool.items.map((item, i) => (
+                      <li key={i} className="text-xs text-stone-600 flex items-start gap-2 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div className="col-span-full py-12 text-center text-xs font-mono text-stone-400">
+            Tidak ditemukan keahlian yang sesuai dengan filter atau kata kunci "{skillSearch}".
+          </div>
+        )}
       </div>
     </section>
   );
 }
+

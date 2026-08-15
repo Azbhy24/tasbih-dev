@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Impact from "./components/Impact";
@@ -21,7 +20,7 @@ export default function App() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 350);
 
-      const sections = ["hero", "about", "skills", "projects", "experience", "impact", "vision", "contact"];
+      const sections = ["hero", "about", "projects", "experience", "impact", "vision", "contact"];
       const scrollPos = window.scrollY + window.innerHeight / 3;
 
       for (const sectionId of sections) {
@@ -68,26 +67,27 @@ export default function App() {
       {/* Main Chapter Navigation Header */}
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 
-      {/* 6 Narrative Story Chapters */}
+      {/* 7 Narrative Story Chapters */}
       <main id="main-content-flow" className="w-full">
         {/* Chapter 01: Identity */}
         <Hero onNavigate={handleNavigate} />
 
         {/* Chapter 02: Manajemen & Pendidikan */}
         <About />
-        <Skills />
 
-        {/* Chapter 03: Digital Products & Technology */}
+        {/* Chapter 03: Digital Products & Systems */}
         <Projects />
 
         {/* Chapter 04: Experience & Leadership */}
         <Experience />
+
+        {/* Chapter 05: Performance & Evidence */}
         <Impact />
 
-        {/* Chapter 05: Vision & Manifesto */}
+        {/* Chapter 06: Vision & Manifesto */}
         <Vision />
 
-        {/* Chapter 06: Contact & Community */}
+        {/* Chapter 07: Contact & Collaboration */}
         <Contact />
       </main>
 

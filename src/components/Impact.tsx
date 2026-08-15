@@ -1,20 +1,25 @@
+import React, { useState } from "react";
 import { portfolioData } from "../data/portfolio";
-import { TrendingUp, Users, Code, Award, BarChart3 } from "lucide-react";
+import { TrendingUp, Users, Code, Award, BarChart3, FileText, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function Impact() {
   const { stats } = portfolioData;
+  const [selectedStatId, setSelectedStatId] = useState<string>(stats[0]?.id || "");
 
   const iconMap: { [key: string]: any } = {
-    Package: TrendingUp,
+    FileText: FileText,
     Users: Users,
     Code: Code,
     Award: Award,
   };
 
+  const activeStat = stats.find(s => s.id === selectedStatId) || stats[0];
+
   return (
     <section 
       id="impact" 
-      className="relative py-20 sm:py-28 md:py-36 border-t border-[#1a283e] bg-[#050a12] text-[#e2e8f0] overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-28 border-t border-[#1a283e] bg-[#050a12] text-[#e2e8f0] overflow-hidden"
     >
       {/* Visual Signature: Clean High-Precision Technical Coordinates */}
       <div 
@@ -28,7 +33,7 @@ export default function Impact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Chapter 05 Marker */}
-        <div className="flex items-center justify-between border-b border-[#1a283e] pb-3 sm:pb-4 mb-8 sm:mb-12">
+        <div className="flex items-center justify-between border-b border-[#1a283e] pb-3 mb-6 sm:mb-8">
           <div className="flex items-center gap-2 sm:gap-3">
             <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-sky-400 font-bold bg-[#0c182a] border border-sky-500/30 px-2 py-0.5 rounded">
               CHAPTER 05
@@ -45,33 +50,39 @@ export default function Impact() {
         </div>
 
         {/* Section Headline & Compressed 1-liner */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12 sm:mb-16 text-left items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 mb-8 sm:mb-12 text-left items-start">
           <div className="lg:col-span-8">
             <h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               Statistik Kinerja & Verifikasi Angka.
             </h2>
           </div>
-          <div className="lg:col-span-4 border-l border-[#1a283e] pl-4 sm:pl-6 text-slate-400 text-xs sm:text-sm leading-relaxed font-normal">
+          <div className="lg:col-span-4 border-l border-[#1a283e] pl-4 text-slate-400 text-xs leading-relaxed font-normal">
             Metrik operasional riil dari pengelolaan barang ritel harian, keanggotaan alumni, serta deployment aplikasi web aktif.
           </div>
         </div>
 
-        {/* Visual Signature: 4-Column Typographic Data Blocks (Huge Numbers, High Contrast) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-left">
+        {/* Visual Signature: 4-Column Typographic Data Blocks (Click to inspect) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-left mb-6">
           {stats.map((item, idx) => {
             const Icon = iconMap[item.icon] || TrendingUp;
+            const isSelected = selectedStatId === item.id;
             return (
-              <div
+              <button
                 key={item.id}
                 id={`stat-block-${item.id}`}
-                className="border-t border-[#1a283e] pt-6 flex flex-col justify-between"
+                onClick={() => setSelectedStatId(item.id)}
+                className={`p-4 sm:p-5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between min-h-[160px] ${
+                  isSelected 
+                    ? "bg-[#0c1a2e] border-sky-400 shadow-md"
+                    : "bg-[#070e1a] border-[#1a283e] hover:border-slate-600"
+                }`}
               >
                 <div>
                   {/* Top Index & Icon */}
-                  <div className="flex items-center justify-between mb-3 font-mono text-xs">
+                  <div className="flex items-center justify-between mb-2 font-mono text-xs">
                     <span className="text-sky-400 font-bold">
                       DATA // 0{idx + 1}
                     </span>
@@ -80,28 +91,41 @@ export default function Impact() {
 
                   {/* Massive Typographic Metric */}
                   <div 
-                    className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none my-2"
+                    className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tighter leading-none my-2 truncate"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
                     {item.prefix}{item.value}{item.suffix}
                   </div>
 
                   {/* Label */}
-                  <span className="font-mono text-xs uppercase tracking-wider text-sky-400 font-bold block mt-3">
+                  <span className="font-mono text-xs uppercase tracking-wider text-sky-300 font-bold block mt-1">
                     {item.label}
                   </span>
                 </div>
-
-                {/* Compressed Description (1 sentence) */}
-                <div className="mt-4 pt-3 border-t border-[#1a283e]/80">
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
+              </button>
             );
           })}
         </div>
+
+        {/* Selected Stat Inspector Detail Banner */}
+        {activeStat && (
+          <div className="p-4 sm:p-5 rounded-xl bg-[#091424] border border-[#1a283e] text-left flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" />
+              <div>
+                <span className="font-mono text-[10px] uppercase tracking-wider text-sky-400 font-bold block">
+                  KONTEKS DATA TERVERIFIKASI:
+                </span>
+                <p className="text-xs sm:text-sm text-slate-200 font-normal mt-0.5">
+                  {activeStat.description}
+                </p>
+              </div>
+            </div>
+            <span className="font-mono text-[11px] text-slate-400 shrink-0 bg-[#060c17] px-3 py-1 rounded border border-[#1a283e]">
+              Status: Valid & Aktif
+            </span>
+          </div>
+        )}
 
       </div>
     </section>

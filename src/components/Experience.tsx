@@ -8,9 +8,13 @@ import {
   Users, 
   FileSpreadsheet, 
   BookOpenCheck,
-  ChevronRight
+  ChevronRight,
+  Compass,
+  GraduationCap
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import pdhPhoto from "../assets/images/himpunan_pdh_1786794143177.jpg";
+import kknPhoto from "../assets/images/kkn_lapangan_1786794161153.jpg";
 
 interface JourneyMilestone {
   year: string;
@@ -21,6 +25,9 @@ interface JourneyMilestone {
   summary: string;
   responsibilities: string[];
   keyHighlight: string;
+  image?: string;
+  fallbackImage?: string;
+  imageCaption?: string;
 }
 
 const JOURNEY_DATA: JourneyMilestone[] = [
@@ -53,11 +60,28 @@ const JOURNEY_DATA: JourneyMilestone[] = [
     keyHighlight: "Penyelesaian target survei 100% tepat waktu dengan tingkat akurasi data yang tinggi."
   },
   {
+    year: "2024–2025",
+    role: "Pengabdian KKN & Kemasyarakatan",
+    organization: "Posko KKN IAIN Parepare",
+    location: "Kelurahan / Desa Binaan, Sulsel",
+    type: "Pengabdian Masyarakat & Edukasi",
+    summary: "Melaksanakan program pengabdian Kuliah Kerja Nyata (KKN), membina kegiatan keagamaan anak, pendataan sosial kemasyarakatan, serta asistensi tata kelola administrasi lingkungan setempat.",
+    responsibilities: [
+      "Menyelenggarakan bimbingan tilawah & literasi Al-Qur'an bagi anak-anak dan remaja desa.",
+      "Membantu administrasi dan rekap data kegiatan di kantor kelurahan/desa setempat.",
+      "Mengkoordinir kolaborasi tim posko KKN dengan tokoh masyarakat dan pemuda setempat."
+    ],
+    keyHighlight: "Sukses menyelesaikan rangkaian program kerja pengabdian masyarakat terukur.",
+    image: "/foto-kkn.jpg",
+    fallbackImage: kknPhoto,
+    imageCaption: "Dokumentasi Lapangan · Rompi KKN Pengabdian IAIN Parepare"
+  },
+  {
     year: "2024",
     role: "Staf Sekretariat Jurnal EDIUM",
     organization: "Fakultas Tarbiyah IAIN Parepare",
     location: "Kampus IAIN Parepare",
-    type: "Administrasi & Pengelolaan Naskah Akademik",
+    type: "Administrasi & Naskah Akademik",
     summary: "Mendukung operasional tata kelola naskah jurnal ilmiah Open Journal Systems (OJS), pengarsipan artikel penelitian, korespondensi naskah, dan verifikasi format penulisan akademik.",
     responsibilities: [
       "Membantu proses registrasi dan pengecekan kelengkapan naskah ilmiah yang masuk ke portal OJS.",
@@ -65,6 +89,23 @@ const JOURNEY_DATA: JourneyMilestone[] = [
       "Mendukung korespondensi teknis antara pengelola jurnal, reviewer, dan penulis artikel."
     ],
     keyHighlight: "Mendukung kelancaran penerbitan edisi berkala Jurnal EDIUM Fakultas Tarbiyah."
+  },
+  {
+    year: "2023–2024",
+    role: "Pengurus Himpunan Mahasiswa (HMJ MPI)",
+    organization: "HMP/HMJ MPI Fakultas Tarbiyah",
+    location: "IAIN Parepare",
+    type: "Tata Kelola & Organisasi Mahasiswa",
+    summary: "Aktif dalam kepengurusan himpunan mahasiswa program studi Manajemen Pendidikan Islam, mengelola kepanitiaan acara akademik, seminar pendidikan, serta pengarsipan berkas organisasi.",
+    responsibilities: [
+      "Menyusun administrasi persuratan dan proposal kegiatan himpunan mahasiswa.",
+      "Mengkoordinir divisi logistik dan teknis pada seminar nasional manajemen pendidikan.",
+      "Menjaga keteraturan arsip dokumentasi rapat dan notulensi kepengurusan."
+    ],
+    keyHighlight: "Tata kelola persuratan dan sukses penyelenggaraan seminar akademik MPI.",
+    image: "/foto-pdh.jpg",
+    fallbackImage: pdhPhoto,
+    imageCaption: "PDH Resmi Kepengurusan Himpunan Mahasiswa MPI IAIN Parepare"
   },
   {
     year: "Ongoing",
@@ -102,7 +143,7 @@ export default function Experience() {
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-stone-500 font-mono mt-2 sm:mt-0 max-w-xs text-left sm:text-right">
-          Aktivitas riil di sekretariat jurnal kampus, riset lapangan, kepemimpinan alumni, dan operasional.
+          Aktivitas riil di pengabdian KKN, himpunan mahasiswa, riset lapangan, jurnal kampus, dan operasional.
         </p>
       </div>
 
@@ -112,28 +153,28 @@ export default function Experience() {
         {/* Left: Year Anchors (4 cols) */}
         <div className="lg:col-span-4 space-y-3">
           <p className="text-xs font-mono text-stone-400 uppercase font-semibold pb-1 tracking-wider text-left">
-            Pilih Milestone Tahun:
+            Pilih Milestone Rekam Jejak:
           </p>
 
-          <div className="flex flex-col gap-2.5">
-            {JOURNEY_DATA.map((item) => {
-              const isSelected = selectedMilestone.year === item.year;
+          <div className="flex flex-col gap-2">
+            {JOURNEY_DATA.map((item, idx) => {
+              const isSelected = selectedMilestone.role === item.role;
               return (
                 <button
-                  key={item.year}
+                  key={idx}
                   onClick={() => setSelectedMilestone(item)}
-                  className={`p-4 rounded-2xl text-left transition-all border cursor-pointer flex items-center justify-between ${
+                  className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all border cursor-pointer flex items-center justify-between ${
                     isSelected
                       ? "bg-stone-900 text-white border-stone-900 shadow-md translate-x-1"
                       : "bg-white text-stone-800 border-stone-200/80 hover:bg-stone-50 hover:border-stone-300"
                   }`}
                 >
-                  <div className="space-y-0.5">
+                  <div className="space-y-0.5 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className={`text-2xl font-serif font-bold ${isSelected ? "text-blue-400" : "text-stone-900"}`}>
+                      <span className={`text-xl font-serif font-bold ${isSelected ? "text-blue-400" : "text-stone-900"}`}>
                         {item.year}
                       </span>
-                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
+                      <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded truncate ${
                         isSelected ? "bg-stone-800 text-stone-300" : "bg-stone-100 text-stone-600"
                       }`}>
                         {item.type.split("&")[0]}
@@ -158,7 +199,7 @@ export default function Experience() {
         <div className="lg:col-span-8">
           <AnimatePresence mode="wait">
             <motion.div
-              key={selectedMilestone.year}
+              key={selectedMilestone.role}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -185,6 +226,29 @@ export default function Experience() {
                   {selectedMilestone.organization} · <span className="text-blue-600">{selectedMilestone.year}</span>
                 </p>
               </div>
+
+              {/* Photo Embed if available (e.g. KKN or Himpunan) */}
+              {selectedMilestone.image && (
+                <div className="relative rounded-2xl overflow-hidden border border-stone-200 bg-stone-900">
+                  <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
+                    <img 
+                      src={selectedMilestone.image} 
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (selectedMilestone.fallbackImage && target.src !== selectedMilestone.fallbackImage) {
+                          target.src = selectedMilestone.fallbackImage;
+                        }
+                      }}
+                      alt={selectedMilestone.role}
+                      className="w-full h-full object-cover object-top brightness-95"
+                    />
+                  </div>
+                  <div className="p-2.5 bg-stone-950 text-white flex items-center justify-between text-[11px] font-mono">
+                    <span className="text-stone-300 truncate">{selectedMilestone.imageCaption}</span>
+                    <span className="text-blue-400 font-semibold shrink-0 ml-2">Foto Otentik</span>
+                  </div>
+                </div>
+              )}
 
               {/* Summary */}
               <div className="space-y-2">

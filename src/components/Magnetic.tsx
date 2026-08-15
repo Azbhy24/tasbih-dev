@@ -1,5 +1,5 @@
-import { useRef, useState, MouseEvent, ReactNode } from "react";
-import { motion, useSpring } from "motion/react";
+import { useRef, MouseEvent, ReactNode } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 interface MagneticProps {
   children: ReactNode;
@@ -17,11 +17,13 @@ export default function Magnetic({
   id
 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
 
   const springConfig = { damping: 15, stiffness: 150, mass: 0.1 };
-  const springX = useSpring(position.x, springConfig);
-  const springY = useSpring(position.y, springConfig);
+  const springX = useSpring(rawX, springConfig);
+  const springY = useSpring(rawY, springConfig);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -29,15 +31,13 @@ export default function Magnetic({
     const { left, top, width, height } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * strength, y: middleY * strength });
-    springX.set(middleX * strength);
-    springY.set(middleY * strength);
+    rawX.set(middleX * strength);
+    rawY.set(middleY * strength);
   };
 
   const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 });
-    springX.set(0);
-    springY.set(0);
+    rawX.set(0);
+    rawY.set(0);
   };
 
   return (

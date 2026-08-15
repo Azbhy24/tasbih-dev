@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect, MouseEvent } from "react";
-import { motion, useSpring, AnimatePresence } from "motion/react";
-import { ArrowUpRight, ExternalLink, Github, Sparkles, Eye } from "lucide-react";
+import { useState, useRef, MouseEvent } from "react";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "motion/react";
+import { ArrowUpRight, Eye } from "lucide-react";
 import Magnetic from "./Magnetic";
 
 interface ProjectRowData {
@@ -80,17 +80,19 @@ export default function ProjectRowShowcase({ onSelectProject }: ProjectRowShowca
   const [activeProject, setActiveProject] = useState<ProjectRowData | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Mouse follower coordinates
-  const mouseX = useSpring(0, { damping: 20, stiffness: 200, mass: 0.1 });
-  const mouseY = useSpring(0, { damping: 20, stiffness: 200, mass: 0.1 });
+  // Mouse follower coordinates (zero-state lag-free motion values)
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const mouseX = useSpring(rawX, { damping: 25, stiffness: 220, mass: 0.08 });
+  const mouseY = useSpring(rawY, { damping: 25, stiffness: 220, mass: 0.08 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    mouseX.set(x);
-    mouseY.set(y);
+    rawX.set(x);
+    rawY.set(y);
   };
 
   return (
@@ -183,8 +185,10 @@ export default function ProjectRowShowcase({ onSelectProject }: ProjectRowShowca
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: "spring", damping: 25, stiffness: 250 }}
             style={{
-              left: mouseX,
-              top: mouseY,
+              x: mouseX,
+              y: mouseY,
+              top: 0,
+              left: 0,
               translateX: "-50%",
               translateY: "-50%"
             }}

@@ -10,6 +10,7 @@ import Experience from "./components/Experience";
 import Impact from "./components/Impact";
 import Vision from "./components/Vision";
 import Contact from "./components/Contact";
+import InstallPromptModal from "./components/InstallPromptModal";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -142,6 +143,8 @@ export default function App() {
           </motion.button>
         )}
       </AnimatePresence>
+      {/* PWA / Chrome Shortcut Add to Home Screen Prompt Modal */}
+      <InstallPromptModal />
     </div>
   );
 }

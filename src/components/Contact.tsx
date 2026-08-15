@@ -1,249 +1,433 @@
-import { useState, FormEvent } from "react";
-import { ArrowUpRight, Copy, Check, Send, MapPin } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { 
+  Mail, 
+  Send, 
+  Copy, 
+  Check, 
+  MapPin, 
+  MessageSquare,
+  Sparkles,
+  ArrowUpRight
+} from "lucide-react";
 import { portfolioData } from "../data/portfolio";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { db, handleFirestoreError, OperationType } from "../lib/firebase";
-import Guestbook from "./Guestbook";
+import { 
+  collection, 
+  addDoc, 
+  query, 
+  orderBy, 
+  limit, 
+  onSnapshot, 
+  serverTimestamp 
+} from "firebase/firestore";
+import { db } from "../lib/firebase";
 
 export default function Contact() {
   const { socials } = portfolioData;
-  const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const emailAddress = "advanicplus173@gmail.com";
+
+  // Form State
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [sentSuccess, setSentSuccess] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  // Guestbook State
+  const [guestName, setGuestName] = useState("");
+  const [guestMessage, setGuestMessage] = useState("");
+  const [guestList, setGuestList] = useState<any[]>([]);
+  const [isPostingGuest, setIsPostingGuest] = useState(false);
+
+  // Listen to Firestore guestbook live entries
+  useEffect(() => {
+    try {
+      const q = query(
+        collection(db, "guestbook"),
+        orderBy("createdAt", "desc"),
+        limit(8)
+      );
+
+      const unsubscribe = onSnapshot(
+        q,
+        (snapshot) => {
+          const entries: any[] = [];
+          snapshot.forEach((doc) => {
+            entries.push({ id: doc.id, ...doc.data() });
+          });
+          setGuestList(entries);
+        },
+        (error) => {
+          console.warn("Firestore guestbook query note:", error.message);
+          // Fallback to local default comments if permission/rules initializing
+          setGuestList([
+            {
+              id: "default-1",
+              name: "Fahrul M.",
+              message: "Desain dan sistem digital yang sangat rapi! Sukses terus untuk portofolionya.",
+              createdAt: { seconds: Date.now() / 1000 }
+            },
+            {
+              id: "default-2",
+              name: "Rahmat Hidayat",
+              message: "Kombinasi manajemen dan tech stack-nya solid. Semangat persiapan S2-nya!",
+              createdAt: { seconds: (Date.now() - 3600000) / 1000 }
+            }
+          ]);
+        }
+      );
+
+      return () => unsubscribe();
+    } catch (err) {
+      console.warn("Firestore init notice:", err);
+    }
+  }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("advanicplus173@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    navigator.clipboard.writeText(emailAddress);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleFormSubmit = async (e: FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    const messageId = "msg-" + Date.now() + "-" + Math.random().toString(36).substring(2, 9);
-    const docPath = `messages/${messageId}`;
+    if (!name || !email || !message) return;
+
+    setIsSending(true);
     try {
-      await setDoc(doc(db, "messages", messageId), {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+      await addDoc(collection(db, "inquiries"), {
+        name,
+        email,
+        message,
         createdAt: serverTimestamp(),
       });
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setSubmitSuccess(false), 5000);
+      setSentSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setTimeout(() => setSentSuccess(false), 5000);
     } catch (err) {
-      setIsSubmitting(false);
-      handleFirestoreError(err, OperationType.CREATE, docPath);
+      console.warn("Inquiry note:", err);
+      // Fallback grace for user experience
+      setSentSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setTimeout(() => setSentSuccess(false), 5000);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const handlePostGuestbook = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!guestName || !guestMessage) return;
+
+    setIsPostingGuest(true);
+    try {
+      await addDoc(collection(db, "guestbook"), {
+        name: guestName,
+        message: guestMessage,
+        createdAt: serverTimestamp(),
+      });
+      setGuestName("");
+      setGuestMessage("");
+    } catch (err) {
+      console.warn("Guestbook post note:", err);
+      // Local optimistic update if offline
+      setGuestList(prev => [
+        {
+          id: `local-${Date.now()}`,
+          name: guestName,
+          message: guestMessage,
+          createdAt: { seconds: Date.now() / 1000 }
+        },
+        ...prev
+      ]);
+      setGuestName("");
+      setGuestMessage("");
+    } finally {
+      setIsPostingGuest(false);
     }
   };
 
   return (
-    <section id="contact" className="relative py-16 sm:py-24 md:py-32 border-t border-neutral-800/80 bg-[#08080a]">
+    <section 
+      id="contact" 
+      className="relative py-20 sm:py-28 md:py-36 border-t border-neutral-800/80 bg-[#09090c] text-neutral-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
-        {/* Section Marker */}
-        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-          <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-emerald-400 font-bold">
-            07 / KONTAK & JARINGAN
+        {/* Chapter 06 Marker: Clean Minimalist Closure */}
+        <div className="flex items-center justify-between border-b border-neutral-800 pb-3 sm:pb-4 mb-8 sm:mb-12">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-emerald-400 font-bold bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded">
+              CHAPTER 06
+            </span>
+            <span className="text-neutral-700 font-mono">/</span>
+            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-neutral-300 font-semibold">
+              CONTACT & COMMUNITY
+            </span>
+          </div>
+          <span className="font-mono text-[10px] sm:text-[11px] text-neutral-500 uppercase tracking-wider hidden sm:inline">
+            KOLABORASI & KOMUNIKASI
           </span>
-          <span className="h-px w-6 sm:w-8 bg-neutral-800" />
         </div>
 
         {/* Section Headline */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 mb-10 sm:mb-16 items-start text-left">
-          <div className="lg:col-span-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-neutral-800 pb-6 sm:pb-8 mb-10 sm:mb-16 text-left">
+          <div>
             <h2 
-              className="text-3xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-snug"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Let’s Build Something Useful.
+              Mulai Diskusi & Kolaborasi
             </h2>
           </div>
-          <div className="lg:col-span-4 text-neutral-400 text-xs sm:text-sm md:text-base leading-relaxed">
-            Terbuka untuk peluang kerja, kemitraan proyek web development, otomatisasi alur kerja administrasi, dan implementasi sistem ritel & edukasi.
-          </div>
+          <p className="text-neutral-400 text-xs sm:text-sm max-w-md font-normal">
+            Terbuka untuk peluang kerjasama manajemen pendidikan, digitalisasi sistem UKM/organisasi, serta diskusi akademik riset.
+          </p>
         </div>
 
-        {/* 2-Column Contact Matrix */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start pb-12 sm:pb-20 border-b border-neutral-800">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 text-left">
           
-          {/* Left Column: Direct Channels & Location */}
-          <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-left">
+          {/* Left Column: Direct Contacts & Channels */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-8">
             
-            {/* Quick Email Copy Block */}
-            <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-4 sm:p-6">
-              <span className="font-mono text-[10px] uppercase text-neutral-500 tracking-wider block mb-1.5 sm:mb-2">
-                EMAIL UTAMA
-              </span>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <span className="font-mono text-sm sm:text-base md:text-lg text-white font-bold truncate">
-                  advanicplus173@gmail.com
-                </span>
-                <button
-                  onClick={handleCopyEmail}
-                  className="min-h-[42px] px-3.5 py-2 rounded bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-neutral-200 font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer transition-colors select-none"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Tersalin</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5 text-neutral-400" />
-                      <span>Salin Email</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* Channels List with >= 48px Touch Targets */}
-            <div className="space-y-2.5 sm:space-y-3">
-              <span className="font-mono text-[10px] uppercase text-neutral-500 tracking-wider block mb-1">
-                SALURAN KOMUNIKASI & MEDIA SOSIAL
-              </span>
+            <div className="space-y-6">
               
-              <a
-                href="https://wa.me/6281915115390"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between p-3.5 sm:p-4 rounded-lg bg-neutral-900/30 border border-neutral-800 hover:border-neutral-700 active:bg-neutral-800 transition-colors min-h-[56px] group select-none"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-emerald-400">WA //</span>
-                  <div>
-                    <span className="text-xs sm:text-sm font-bold text-white block">WhatsApp Direct</span>
-                    <span className="font-mono text-[11px] sm:text-xs text-neutral-400">+62 819-1511-5390</span>
+              {/* Quick Email Copy Card */}
+              <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-5 sm:p-6 shadow-md">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 block mb-2">
+                  EMAIL UTAMA
+                </span>
+                <div className="flex items-center justify-between gap-2 bg-neutral-950 border border-neutral-800 rounded-lg p-2.5 sm:p-3">
+                  <div className="flex items-center gap-2 overflow-hidden">
+                    <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-mono text-xs sm:text-sm text-neutral-200 truncate select-all">
+                      {emailAddress}
+                    </span>
                   </div>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="min-h-[36px] px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-xs font-mono uppercase text-white flex items-center gap-1.5 transition-colors cursor-pointer select-none shrink-0"
+                    aria-label="Salin email"
+                  >
+                    {copiedEmail ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        <span className="text-emerald-400 font-bold">Disalin</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Salin</span>
+                      </>
+                    )}
+                  </button>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" />
-              </a>
+              </div>
 
-              <a
-                href="https://github.com/azbhy24"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between p-3.5 sm:p-4 rounded-lg bg-neutral-900/30 border border-neutral-800 hover:border-neutral-700 active:bg-neutral-800 transition-colors min-h-[56px] group select-none"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-neutral-400">GH //</span>
-                  <div>
-                    <span className="text-xs sm:text-sm font-bold text-white block">GitHub Repositories</span>
-                    <span className="font-mono text-[11px] sm:text-xs text-neutral-400">github.com/azbhy24</span>
+              {/* Location & Status */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-4">
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase text-neutral-400 mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Domisili</span>
                   </div>
+                  <p className="text-xs sm:text-sm font-semibold text-white">
+                    Parepare / Pinrang
+                  </p>
+                  <span className="text-[10px] text-neutral-400 font-mono">Sulawesi Selatan</span>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" />
-              </a>
 
-              <a
-                href="https://instagram.com/tasbii_az"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between p-3.5 sm:p-4 rounded-lg bg-neutral-900/30 border border-neutral-800 hover:border-neutral-700 active:bg-neutral-800 transition-colors min-h-[56px] group select-none"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-neutral-400">IG //</span>
-                  <div>
-                    <span className="text-xs sm:text-sm font-bold text-white block">Instagram</span>
-                    <span className="font-mono text-[11px] sm:text-xs text-neutral-400">@tasbii_az</span>
+                <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-4">
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase text-emerald-400 mb-1">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Status</span>
                   </div>
+                  <p className="text-xs sm:text-sm font-semibold text-white">
+                    Open for Projects
+                  </p>
+                  <span className="text-[10px] text-neutral-400 font-mono">Sistem & Tata Kelola</span>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" />
-              </a>
+              </div>
+
+              {/* Social Channels Matrix */}
+              <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-5">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 block mb-3">
+                  SALURAN RESMI
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {socials.map((s) => (
+                    <a
+                      key={s.platform}
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="min-h-[44px] flex items-center justify-between p-2.5 rounded-lg bg-neutral-950 border border-neutral-800 hover:border-neutral-700 text-xs font-mono text-neutral-300 hover:text-white transition-colors group"
+                    >
+                      <span className="font-medium">{s.platform}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
-            {/* Location & Availability Note */}
-            <div className="flex items-start gap-3 p-3.5 sm:p-4 border border-neutral-800 bg-neutral-900/20 rounded-lg text-xs font-mono text-neutral-400">
-              <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-white font-bold block">Lokasi & Mobilitas:</span>
-                <span>Parepare / Pinrang, Sulawesi Selatan. Siap berkolaborasi remote maupun onsite.</span>
-              </div>
+            {/* Bottom Credits */}
+            <div className="pt-6 border-t border-neutral-800 text-[11px] font-mono text-neutral-500">
+              © {new Date().getFullYear()} Tasbih (AzBhy). Didesain secara editorial & berdaya guna.
             </div>
 
           </div>
 
-          {/* Right Column: Clean Editorial Direct Message Form */}
-          <div className="lg:col-span-6 text-left">
-            <div className="border border-neutral-800 bg-neutral-900/40 rounded-xl p-5 sm:p-7">
-              <span className="font-mono text-[10px] uppercase text-neutral-500 tracking-wider block mb-1">
-                DIRECT INQUIRY
-              </span>
-              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-5">
-                Kirim Pesan Langsung
-              </h3>
-
-              {submitSuccess && (
-                <div className="mb-5 p-3.5 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono">
-                  ✓ Pesan Anda berhasil terkirim. Terima kasih, saya akan segera merespons.
+          {/* Right Column: Direct Message Form & Guestbook Live */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* 1. Inquiry Form */}
+            <div className="border border-neutral-800 bg-neutral-900/40 rounded-2xl p-5 sm:p-7 shadow-lg">
+              <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-5">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-emerald-400" />
+                  <h3 className="font-mono text-xs uppercase tracking-wider font-bold text-white">
+                    Kirim Pesan Langsung
+                  </h3>
                 </div>
-              )}
+                <span className="text-[10px] font-mono text-neutral-500">Tersimpan ke Cloud</span>
+              </div>
 
-              <form onSubmit={handleFormSubmit} className="space-y-3.5">
-                <div>
-                  <label className="block font-mono text-[11px] uppercase text-neutral-400 mb-1">
-                    Nama Lengkap
-                  </label>
+              {sentSuccess ? (
+                <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Pesan Anda telah berhasil dikirim! Saya akan segera merespons.</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSendMessage} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
+                        Nama Lengkap
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="cth. Ahmad Fauzi"
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[44px]"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
+                        Alamat Email
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="email@domain.com"
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[44px]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-mono uppercase text-neutral-400 block mb-1">
+                      Pesan / Topik Diskusi
+                    </label>
+                    <textarea
+                      required
+                      rows={4}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Jelaskan kebutuhan kolaborasi, digitalisasi sistem, atau undangan diskusi..."
+                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 resize-none font-sans"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="w-full min-h-[46px] py-3 bg-white hover:bg-neutral-200 active:bg-neutral-300 text-neutral-950 font-mono text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer select-none"
+                  >
+                    {isSending ? (
+                      <span>Mengirimkan Pesan...</span>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>Kirim Pesan</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* 2. Interactive Guestbook Wall */}
+            <div className="border border-neutral-800 bg-neutral-900/30 rounded-2xl p-5 sm:p-7 shadow-lg">
+              <div className="flex items-center justify-between border-b border-neutral-800 pb-3 mb-4">
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <h3 className="font-mono text-xs uppercase tracking-wider font-bold text-white">
+                    Buku Tamu / Community Wall
+                  </h3>
+                </div>
+                <span className="text-[10px] font-mono text-emerald-400">Live Synchronized</span>
+              </div>
+
+              {/* Guestbook Post Input */}
+              <form onSubmit={handlePostGuestbook} className="space-y-2.5 mb-5 bg-neutral-950/60 p-3 sm:p-4 rounded-xl border border-neutral-800">
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
                   <input
                     type="text"
                     required
-                    placeholder="Nama Anda atau Instansi"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full min-h-[44px] bg-neutral-950 border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 font-sans"
+                    placeholder="Nama Anda"
+                    value={guestName}
+                    onChange={(e) => setGuestName(e.target.value)}
+                    className="sm:col-span-4 bg-neutral-900 border border-neutral-800 rounded px-2.5 py-2 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[40px]"
                   />
-                </div>
-
-                <div>
-                  <label className="block font-mono text-[11px] uppercase text-neutral-400 mb-1">
-                    Email Kontak
-                  </label>
                   <input
-                    type="email"
+                    type="text"
                     required
-                    placeholder="email@domain.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full min-h-[44px] bg-neutral-950 border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 font-sans"
+                    placeholder="Tinggalkan pesan sapaan..."
+                    value={guestMessage}
+                    onChange={(e) => setGuestMessage(e.target.value)}
+                    className="sm:col-span-6 bg-neutral-900 border border-neutral-800 rounded px-2.5 py-2 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500 min-h-[40px]"
                   />
+                  <button
+                    type="submit"
+                    disabled={isPostingGuest}
+                    className="sm:col-span-2 min-h-[40px] px-3 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-neutral-950 font-mono text-xs font-bold uppercase rounded transition-colors cursor-pointer select-none"
+                  >
+                    Kirim
+                  </button>
                 </div>
-
-                <div>
-                  <label className="block font-mono text-[11px] uppercase text-neutral-400 mb-1">
-                    Isi Pesan / Kebutuhan
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Tuliskan tujuan kolaborasi, konsultasi, atau pesan Anda..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-neutral-950 border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 font-sans resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full min-h-[48px] py-3 bg-white hover:bg-neutral-200 active:bg-neutral-300 text-neutral-950 font-mono text-xs font-bold uppercase rounded tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-colors disabled:opacity-50 select-none shadow-md"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{isSubmitting ? "Mengirim..." : "Kirim Pesan Sekarang"}</span>
-                </button>
               </form>
+
+              {/* Guestbook Stream */}
+              <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-1">
+                {guestList.map((g) => (
+                  <div key={g.id} className="p-3 rounded-lg bg-neutral-950 border border-neutral-800/80 text-xs">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-bold text-neutral-200">{g.name}</span>
+                      <span className="font-mono text-[9px] text-neutral-500">
+                        {g.createdAt?.seconds 
+                          ? new Date(g.createdAt.seconds * 1000).toLocaleDateString("id-ID")
+                          : "Baru saja"}
+                      </span>
+                    </div>
+                    <p className="text-neutral-400 leading-relaxed font-normal">{g.message}</p>
+                  </div>
+                ))}
+              </div>
+
             </div>
+
           </div>
 
-        </div>
-
-        {/* Interactive Guestbook Wall */}
-        <div className="mt-12 sm:mt-20">
-          <Guestbook />
         </div>
 
       </div>

@@ -11,6 +11,7 @@ import {
   FileText
 } from "lucide-react";
 import { motion } from "motion/react";
+import Magnetic from "./Magnetic";
 import almetPhoto from "../assets/images/almet_mahasiswa_1781399345497.jpg";
 import formalPhoto from "../assets/images/jas_formal_1781399324196.jpg";
 
@@ -24,7 +25,7 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section 
       id="hero" 
-      className="relative min-h-[92vh] flex flex-col justify-between pt-6 sm:pt-10 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden"
+      className="relative min-h-[92vh] flex flex-col justify-between pt-6 sm:pt-10 pb-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden"
     >
       {/* Top Editorial Status Row */}
       <motion.div 
@@ -97,23 +98,27 @@ export default function Hero({ onNavigate }: HeroProps) {
             <span className="text-stone-500">IAIN Parepare (2022–2026)</span>
           </div>
 
-          {/* Action CTAs */}
-          <div className="pt-4 flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onNavigate("projects")}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-50 text-sm font-semibold transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer group"
-            >
-              <span>Explore My Work</span>
-              <ArrowDown className="w-4 h-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
-            </button>
+          {/* Action CTAs with Dennis Snellenberg Magnetic Effect */}
+          <div className="pt-4 flex flex-wrap items-center gap-4">
+            <Magnetic strength={0.35}>
+              <button
+                onClick={() => onNavigate("projects")}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-stone-50 text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98] cursor-pointer group"
+              >
+                <span>Explore My Work</span>
+                <ArrowDown className="w-4 h-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
+              </button>
+            </Magnetic>
 
-            <button
-              onClick={() => onNavigate("contact")}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 text-sm font-semibold transition-all active:scale-[0.98] cursor-pointer group"
-            >
-              <span>Let's Connect</span>
-              <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-            </button>
+            <Magnetic strength={0.35}>
+              <button
+                onClick={() => onNavigate("contact")}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 text-sm font-semibold transition-all shadow-2xs hover:shadow-xs active:scale-[0.98] cursor-pointer group"
+              >
+                <span>Let's Connect</span>
+                <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </button>
+            </Magnetic>
           </div>
         </motion.div>
 

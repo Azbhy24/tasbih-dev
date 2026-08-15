@@ -20,11 +20,15 @@ import {
   ChevronRight,
   Info,
   Terminal,
-  FileSpreadsheet
+  FileSpreadsheet,
+  LayoutList,
+  LayoutGrid
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import InteractiveSandbox from "./InteractiveSandbox";
 import AdminAssistantTool from "./AdminAssistantTool";
+import ProjectRowShowcase from "./ProjectRowShowcase";
+import Magnetic from "./Magnetic";
 
 interface ProjectItem {
   id: string;
@@ -102,10 +106,18 @@ const PROJECTS_DATA: ProjectItem[] = [
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [viewMode, setViewMode] = useState<"editorial" | "cards">("editorial");
   
   // Interactive mini Quran reader state for NgajiKu featured showcase
   const [currentSurahIndex, setCurrentSurahIndex] = useState(0);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  const handleSelectRowProject = (projectId: string) => {
+    const found = PROJECTS_DATA.find(p => p.id === projectId);
+    if (found) {
+      setSelectedProject(found);
+    }
+  };
 
   const quranSurahs = [
     {
@@ -153,24 +165,72 @@ export default function Projects() {
       id="projects" 
       className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
-      {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-12 text-left">
+      {/* Section Header with Dennis Snellenberg View Mode Switcher */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-8 text-left">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-1">
             <span className="text-blue-600 font-bold">02 /</span>
             <span className="text-stone-900 font-semibold tracking-wider uppercase">KARYA & APLIKASI TERAPAN</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif text-stone-900 tracking-tight">
-            Things I've Built.
+          <h2 className="text-3xl sm:text-5xl font-serif text-stone-900 tracking-tight">
+            Selected Works.
           </h2>
         </div>
-        <p className="text-xs sm:text-sm text-stone-500 font-mono mt-2 sm:mt-0 max-w-xs text-left sm:text-right">
-          Aplikasi nyata yang dibangun untuk kebutuhan pendidikan, pencatatan toko, dan manajemen kas.
-        </p>
+        
+        {/* View Toggle */}
+        <div className="flex items-center gap-2 mt-4 sm:mt-0">
+          <div className="flex items-center p-1 rounded-xl bg-stone-200/80 border border-stone-300/80">
+            <button
+              onClick={() => setViewMode("editorial")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                viewMode === "editorial"
+                  ? "bg-stone-900 text-white font-bold shadow-xs"
+                  : "text-stone-600 hover:text-stone-900"
+              }`}
+            >
+              <LayoutList className="w-3.5 h-3.5" />
+              <span>Hover List (Snellenberg Style)</span>
+            </button>
+            <button
+              onClick={() => setViewMode("cards")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                viewMode === "cards"
+                  ? "bg-stone-900 text-white font-bold shadow-xs"
+                  : "text-stone-600 hover:text-stone-900"
+              }`}
+            >
+              <LayoutGrid className="w-3.5 h-3.5" />
+              <span>Cards & Simulator</span>
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* ASYMMETRIC PROJECT GALLERY */}
-      <div className="space-y-12">
+      {/* Conditional Rendering based on View Mode */}
+      {viewMode === "editorial" ? (
+        <div className="space-y-8">
+          <ProjectRowShowcase onSelectProject={handleSelectRowProject} />
+          
+          {/* Quick Sandbox Teaser */}
+          <div className="p-4 rounded-2xl bg-stone-100/90 border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <p className="text-xs font-mono text-stone-700">
+                Ingin mencoba langsung simulator mesin kasir & generator tata usaha?
+              </p>
+            </div>
+            <button
+              onClick={() => setViewMode("cards")}
+              className="text-xs font-mono font-bold text-blue-600 hover:underline flex items-center gap-1 cursor-pointer shrink-0"
+            >
+              <span>Buka Mode Simulator</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      ) : (
+        /* ASYMMETRIC PROJECT GALLERY & LIVE SANDBOX */
+        <div className="space-y-12">
         
         {/* ========================================================================= */}
         {/* 1. FEATURED PROJECT: NGAJIKU (Large Horizontal Showcase) */}
@@ -583,6 +643,7 @@ export default function Projects() {
         </div>
 
       </div>
+      )}
 
       {/* PROJECT DETAIL MODAL / CASE STUDY */}
       <AnimatePresence>

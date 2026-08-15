@@ -13,6 +13,7 @@ import Currently from "./components/Currently";
 import Contact from "./components/Contact";
 import InstallPromptModal from "./components/InstallPromptModal";
 import InteractiveToolbar from "./components/InteractiveToolbar";
+import MarqueeTicker from "./components/MarqueeTicker";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -76,6 +77,21 @@ export default function App() {
         {/* 1. Hero Section */}
         <Hero onNavigate={handleNavigate} />
 
+        {/* Dynamic Editorial Infinite Marquee Ribbon (Dennis Snellenberg Style) */}
+        <MarqueeTicker 
+          speed={30}
+          items={[
+            "TASBIH",
+            "S1 MANAJEMEN PENDIDIKAN ISLAM",
+            "IAIN PAREPARE",
+            "FRESH GRADUATE 2026",
+            "NGAJIKU APP",
+            "OPERASIONAL DIGITAL",
+            "ADMINISTRASI MADRASAH",
+            "KASIR AMMA IKA"
+          ]}
+        />
+
         {/* 2. About Section */}
         <About onNavigate={handleNavigate} />
 
@@ -90,6 +106,22 @@ export default function App() {
 
         {/* 6. Skills / Toolkit */}
         <Skills />
+
+        {/* Secondary Inverted Marquee Ribbon */}
+        <MarqueeTicker 
+          direction="right"
+          speed={35}
+          className="bg-blue-950 text-blue-100 border-blue-900"
+          items={[
+            "OPEN FOR WORK",
+            "STAFF ADMINISTRASI",
+            "OPERATOR MADRASAH",
+            "ENUMERATOR RISSET",
+            "WEB TERAPAN",
+            "SULAWESI SELATAN",
+            "PAREPARE & PINRANG"
+          ]}
+        />
 
         {/* 7. Currently Status */}
         <Currently />

@@ -1,190 +1,143 @@
+import { useState } from "react";
 import { 
-  BookOpen, 
-  Layers, 
-  Code2, 
-  Briefcase, 
-  CheckCircle, 
+  GraduationCap, 
+  MapPin, 
   Sparkles, 
-  GraduationCap,
-  ShieldCheck,
-  FileCheck2,
-  Users
+  BookOpen, 
+  FileCheck2, 
+  CheckCircle2, 
+  ArrowUpRight 
 } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
+import { motion } from "motion/react";
+import formalPhoto from "../assets/images/jas_formal_1781399324196.jpg";
 
-export default function About() {
-  const { bio, education } = portfolioData;
+interface AboutProps {
+  onNavigate: (sectionId: string) => void;
+}
 
+export default function About({ onNavigate }: AboutProps) {
   return (
     <section 
       id="about" 
-      className="py-16 sm:py-24 border-t border-stone-200/90 max-w-5xl mx-auto px-4 sm:px-6"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
-      <div className="space-y-10 text-left">
+      {/* Section Header Metadata */}
+      <div className="flex items-center justify-between border-b border-stone-200/80 pb-4 mb-10 text-xs font-mono text-stone-500">
+        <div className="flex items-center gap-2">
+          <span className="text-blue-600 font-bold">01 /</span>
+          <span className="text-stone-900 font-semibold tracking-wider uppercase">TENTANG SAYA & PROFIL</span>
+        </div>
+        <span className="text-stone-400 font-normal">IAIN PAREPARE · S1 MPI</span>
+      </div>
+
+      {/* Main Editorial Profile Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-mono font-semibold">
-              <BookOpen className="w-3.5 h-3.5 text-stone-500" />
-              <span>TENTANG SAYA</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Profil, Latar Belakang &amp; Nilai Kerja.
+        {/* Left Column: Large Editorial Statement & Typography (7 cols) */}
+        <div className="lg:col-span-7 space-y-8 text-left">
+          
+          <div className="space-y-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-stone-900 leading-[1.15] tracking-tight">
+              “Belajar mengelola pendidikan, organisasi, dan hal-hal nyata yang ada di dalamnya.”
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-normal leading-relaxed">
-              Kombinasi antara pemahaman tata kelola pendidikan Islam dan kemampuan praktis membangun alat bantu digital.
+            <p className="text-base sm:text-lg text-stone-600 leading-relaxed pt-2">
+              Halo, saya <strong className="text-stone-900 font-semibold">Tasbih</strong>. Saya baru menyelesaikan studi strata satu di program studi <strong className="text-stone-900 font-semibold">Manajemen Pendidikan Islam (MPI)</strong> di Institut Agama Islam Negeri (IAIN) Parepare.
             </p>
           </div>
 
-          <div className="hidden sm:block text-right font-mono text-xs text-stone-400">
-            [ S1 MPI • IAIN PAREPARE ]
+          {/* Narrative Paragraphs in Natural Indonesian */}
+          <div className="space-y-4 text-sm sm:text-base text-stone-600 leading-relaxed">
+            <p>
+              Fokus utama saya adalah tata kelola dan administrasi pendidikan—mulai dari manajemen surat-menyurat, pengorganisasian data madrasah/sekolah, hingga pengelolaan alur kerja operasional institusi agar lebih rapi dan transparan.
+            </p>
+            <p>
+              Di samping keilmuan manajemen pendidikan, saya memiliki ketertarikan kuat dalam memanfaatkan teknologi digital dan otomatisasi sederhana untuk mempermudah pekerjaan harian, seperti aplikasi pencatatan santri, sistem kasir toko, dan pengelolaan kas.
+            </p>
           </div>
+
+          {/* Core Values / Editorial List (Not Generic Cards) */}
+          <div className="pt-2 border-t border-stone-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-stone-900 uppercase">
+                <FileCheck2 className="w-4 h-4 text-blue-600" />
+                <span>Tata Kelola Rapi</span>
+              </div>
+              <p className="text-xs text-stone-500 leading-normal">
+                Dokumentasi terstruktur, pengarsipan berkas akurat, dan kepatuhan administrasi institusi.
+              </p>
+            </div>
+
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-stone-900 uppercase">
+                <BookOpen className="w-4 h-4 text-blue-600" />
+                <span>Teknologi Terapan</span>
+              </div>
+              <p className="text-xs text-stone-500 leading-normal">
+                Membangun alat bantu digital praktis untuk pencatatan dan efisiensi operasional.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        {/* Bento Grid: Visual Story Composition */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+        {/* Right Column: Metadata Showcase & Photo Frame (5 cols) */}
+        <div className="lg:col-span-5 space-y-6">
           
-          {/* Bento Card 1: Narrative & Core Philosophy (7 Cols) */}
-          <div className="md:col-span-7 p-6 sm:p-7 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-5 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 font-bold px-2.5 py-1 rounded bg-emerald-50 border border-emerald-200/70">
-                  Latar Belakang Akademik
-                </span>
-                <span className="text-xs font-mono text-stone-400">2022 — 2026</span>
-              </div>
-
-              <h3 className="text-lg sm:text-xl font-bold text-stone-900 leading-snug">
-                Fokus pada Administrasi yang Tertib dan Sistem Informasi yang Mudah Digunakan.
-              </h3>
-
-              <p className="text-sm text-stone-600 leading-relaxed font-normal">
-                {bio.aboutBrief}
-              </p>
-
-              <p className="text-sm text-stone-600 leading-relaxed font-normal">
-                Bagi saya, kerapian administrasi adalah pondasi keberhasilan organisasi—baik di lingkungan madrasah, lembaga pendidikan, maupun unit usaha. Ketika data tertata dan alur kerja jelas, pelayanan dan pengambilan keputusan menjadi jauh lebih cepat.
-              </p>
-            </div>
-
-            {/* Micro Badges inside Card */}
-            <div className="pt-4 border-t border-stone-100 grid grid-cols-2 gap-3 text-xs">
-              <div className="p-3 rounded-xl bg-stone-50 border border-stone-100 space-y-0.5">
-                <span className="font-mono text-[10px] text-stone-400 uppercase">Institusi</span>
-                <p className="font-semibold text-stone-800">IAIN Parepare</p>
-              </div>
-              <div className="p-3 rounded-xl bg-stone-50 border border-stone-100 space-y-0.5">
-                <span className="font-mono text-[10px] text-stone-400 uppercase">Status</span>
-                <p className="font-semibold text-stone-800">Fresh Graduate</p>
+          {/* Editorial Detail Photo Frame */}
+          <div className="relative bg-white p-3 rounded-2xl border border-stone-200 shadow-sm overflow-hidden">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 relative">
+              <img 
+                src={formalPhoto} 
+                alt="Tasbih - S1 Manajemen Pendidikan Islam"
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 text-white">
+                <p className="text-xs font-mono font-medium tracking-wide">IAIN PAREPARE CAMPUS</p>
+                <p className="text-sm font-bold">Fakultas Tarbiyah · 2022–2026</p>
               </div>
             </div>
           </div>
 
-          {/* Bento Card 2: 3 Pillars Summary (5 Cols) */}
-          <div className="md:col-span-5 p-6 sm:p-7 rounded-3xl bg-stone-900 text-stone-100 shadow-sm space-y-5 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">
-                  Karakter &amp; Keunggulan
-                </span>
-                <Sparkles className="w-4 h-4 text-emerald-400" />
-              </div>
-
-              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                Tiga Pilar Pendekatan Kerja
-              </h3>
-
-              <div className="space-y-3 pt-1">
-                {bio.aboutPillars.map((pillar) => (
-                  <div 
-                    key={pillar.id}
-                    className="p-3 rounded-xl bg-stone-800/80 border border-stone-700/80 space-y-1"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-stone-200">
-                        {pillar.title}
-                      </span>
-                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/50">
-                        {pillar.badge}
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-stone-400 leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          {/* Structured Editorial Metadata List (Typography-Driven) */}
+          <div className="bg-stone-100/80 rounded-2xl p-5 border border-stone-200/80 space-y-3.5 text-left text-xs font-mono">
+            <div className="flex justify-between items-center pb-2 border-b border-stone-200">
+              <span className="text-stone-500 uppercase">Status</span>
+              <span className="font-semibold text-stone-900">Fresh Graduate (2026)</span>
             </div>
 
-            <div className="pt-2 text-[11px] font-mono text-stone-400">
-              *Teknologi sebagai alat percepatan, bukan sekadar teori.
+            <div className="flex justify-between items-center pb-2 border-b border-stone-200">
+              <span className="text-stone-500 uppercase">Program Studi</span>
+              <span className="font-semibold text-stone-900">Manajemen Pendidikan Islam</span>
+            </div>
+
+            <div className="flex justify-between items-center pb-2 border-b border-stone-200">
+              <span className="text-stone-500 uppercase">Perguruan Tinggi</span>
+              <span className="font-semibold text-stone-900">IAIN Parepare</span>
+            </div>
+
+            <div className="flex justify-between items-center pb-2 border-b border-stone-200">
+              <span className="text-stone-500 uppercase">Fokus Minat</span>
+              <span className="font-semibold text-stone-900">Admin Madrasah / Tata Usaha</span>
+            </div>
+
+            <div className="flex justify-between items-center pt-1">
+              <span className="text-stone-500 uppercase">Domisili</span>
+              <span className="font-semibold text-stone-900 flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-blue-600" />
+                Parepare / Pinrang, Sulsel
+              </span>
             </div>
           </div>
 
-          {/* Bento Card 3: Educational Context & Understanding (6 Cols) */}
-          <div className="md:col-span-6 p-6 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
-                <GraduationCap className="w-5 h-5 text-emerald-700" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold text-stone-900">
-                  Pemahaman Konteks Madrasah &amp; Sekolah
-                </h4>
-                <p className="text-xs text-stone-500 font-mono">
-                  Kurikulum • Tata Kelola • Kelembagaan Islam
-                </p>
-              </div>
-            </div>
-
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-              Melalui perkuliahan Manajemen Pendidikan Islam di IAIN Parepare, saya mempelajari struktur kepemimpinan madrasah, administrasi kurikulum, tata kelola sarana prasarana, serta manajemen pendidik dan tenaga kependidikan.
-            </p>
-
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              {["SIM-Pendidikan", "Tata Kelola Madrasah", "Arsip OJS", "Korespondensi"].map((tag) => (
-                <span 
-                  key={tag}
-                  className="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Bento Card 4: Practical Real-World Problem Solving (6 Cols) */}
-          <div className="md:col-span-6 p-6 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                <Code2 className="w-5 h-5 text-blue-700" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold text-stone-900">
-                  Kekuatan Digital yang Mandiri
-                </h4>
-                <p className="text-xs text-stone-500 font-mono">
-                  Prototyping • Otomasi Kasir • Al-Qur'an Web
-                </p>
-              </div>
-            </div>
-
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-              Saya tidak hanya merancang konsep di atas kertas, tetapi juga mampu membuat prototipe aplikasi web mandiri untuk menyelesaikan masalah nyata (seperti kasir toko sembako dan aplikasi baca Al-Qur'an ramah ponsel).
-            </p>
-
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              {["React + Vite", "Tailwind CSS", "Firebase POS", "Capacitor Mobile"].map((tag) => (
-                <span 
-                  key={tag}
-                  className="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+          {/* Quick Action */}
+          <button
+            onClick={() => onNavigate("projects")}
+            className="w-full py-3 px-4 rounded-xl bg-white hover:bg-stone-50 text-stone-900 border border-stone-300 text-xs font-semibold font-mono flex items-center justify-center gap-2 transition-colors cursor-pointer group"
+          >
+            <span>Lihat Karya & Aplikasi Terapan</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
 
         </div>
 

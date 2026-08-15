@@ -1,206 +1,227 @@
 import { useState } from "react";
 import { 
-  Calendar, 
-  Briefcase, 
-  Users, 
-  Building, 
-  FileText, 
+  Building2, 
   MapPin, 
+  Calendar, 
   CheckCircle2, 
-  ArrowRight,
-  Sparkles,
-  TrendingUp,
-  FileCheck2,
-  Layers
+  ArrowUpRight, 
+  Users, 
+  FileSpreadsheet, 
+  BookOpenCheck,
+  ChevronRight
 } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
-import { ExperienceData } from "../types";
+import { motion, AnimatePresence } from "motion/react";
+
+interface JourneyMilestone {
+  year: string;
+  role: string;
+  organization: string;
+  location: string;
+  type: string;
+  summary: string;
+  responsibilities: string[];
+  keyHighlight: string;
+}
+
+const JOURNEY_DATA: JourneyMilestone[] = [
+  {
+    year: "2026",
+    role: "Ketua Ikatan Alumni (IKA)",
+    organization: "MA Biharul Ulum Ma'arif",
+    location: "Pinrang / Parepare, Sulsel",
+    type: "Kepemimpinan Organisasi & Alumni",
+    summary: "Memimpin koordinasi jejaring alumni madrasah aliyah, merancang temu alumni berkala, serta menyusun program pembimbingan studi lanjut bagi adik-adik santri/siswa madrasah.",
+    responsibilities: [
+      "Mengkoordinir database dan komunikasi jejaring lintas angkatan alumni madrasah.",
+      "Menyelenggarakan forum orientasi kampus dan pembagian informasi beasiswa perguruan tinggi.",
+      "Membangun sinergi antara alumni dan pihak pimpinan madrasah untuk kegiatan sosial."
+    ],
+    keyHighlight: "Peningkatan keterhubungan alumni dan penyelenggaraan agenda mentoring studi lanjut."
+  },
+  {
+    year: "2025",
+    role: "Enumerator Lapangan",
+    organization: "PT ESC Indonesia (Riset & Survei)",
+    location: "Wilayah Sulawesi Selatan",
+    type: "Riset Lapangan & Pengumpulan Data",
+    summary: "Bertugas sebagai enumerator lapangan dalam pengumpulan data primer, wawancara responden terstruktur, penginputan kuesioner digital, dan verifikasi validitas data lapangan.",
+    responsibilities: [
+      "Melakukan wawancara tatap muka langsung kepada responden sesuai instrumen penelitian resmi.",
+      "Memastikan data yang diinput bebas duplikasi dan memenuhi standar validitas metodologi riset.",
+      "Menyusun rekapitulasi progres harian kepada koordinator tim riset ESC Indonesia."
+    ],
+    keyHighlight: "Penyelesaian target survei 100% tepat waktu dengan tingkat akurasi data yang tinggi."
+  },
+  {
+    year: "2024",
+    role: "Staf Sekretariat Jurnal EDIUM",
+    organization: "Fakultas Tarbiyah IAIN Parepare",
+    location: "Kampus IAIN Parepare",
+    type: "Administrasi & Pengelolaan Naskah Akademik",
+    summary: "Mendukung operasional tata kelola naskah jurnal ilmiah Open Journal Systems (OJS), pengarsipan artikel penelitian, korespondensi naskah, dan verifikasi format penulisan akademik.",
+    responsibilities: [
+      "Membantu proses registrasi dan pengecekan kelengkapan naskah ilmiah yang masuk ke portal OJS.",
+      "Mengatur pengarsipan dokumen fisik dan digital berkas terbitan jurnal berkala.",
+      "Mendukung korespondensi teknis antara pengelola jurnal, reviewer, dan penulis artikel."
+    ],
+    keyHighlight: "Mendukung kelancaran penerbitan edisi berkala Jurnal EDIUM Fakultas Tarbiyah."
+  },
+  {
+    year: "Ongoing",
+    role: "Pengelola Administrasi & Kas",
+    organization: "Warung Amma Ika (Usaha Keluarga)",
+    location: "Pinrang, Sulsel",
+    type: "Operasional & Digitalisasi Toko",
+    summary: "Mengelola tata kelola stok, pencatatan transaksi kas harian, dan menginisiasi pembuatan aplikasi web kasir & katalog untuk mempermudah operasional toko kelontong keluarga.",
+    responsibilities: [
+      "Mencatat mutasi kas masuk dan keluar secara teratur.",
+      "Membangun katalog web sederhana dan sistem kasir digital untuk mempercepat pelayanan.",
+      "Mengecek rotasi stok barang sembako untuk mencegah barang kosong."
+    ],
+    keyHighlight: "Transformasi pencatatan kas toko dari buku tulis manual ke sistem digital praktis."
+  }
+];
 
 export default function Experience() {
-  const { experience } = portfolioData;
-  const [selectedYear, setSelectedYear] = useState<string>("ALL");
-  const [activeExpId, setActiveExpId] = useState<string>(experience[0].id);
-
-  const years = ["ALL", "2026", "2025", "2024"];
-
-  const filteredExperience = selectedYear === "ALL" 
-    ? experience 
-    : experience.filter((exp) => exp.year === selectedYear);
-
-  const roleIcons: { [key: string]: any } = {
-    "exp-1": Briefcase,
-    "exp-2": Users,
-    "exp-3": Building,
-    "exp-4": FileText,
-  };
-
-  const activeExp = experience.find((e) => e.id === activeExpId) || experience[0];
+  const [selectedMilestone, setSelectedMilestone] = useState<JourneyMilestone>(JOURNEY_DATA[0]);
 
   return (
     <section 
       id="experience" 
-      className="py-16 sm:py-24 border-t border-stone-200/90 max-w-5xl mx-auto px-4 sm:px-6"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
-      <div className="space-y-10 text-left">
-        
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-mono font-semibold">
-              <Briefcase className="w-3.5 h-3.5 text-stone-500" />
-              <span>REKAM JEJAK &amp; PENGALAMAN</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Perjalanan Nyata &amp; Aktivitas.
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-normal leading-relaxed">
-              Pengalaman nyata dalam pengelolaan administrasi naskah jurnal OJS, pembukuan ritel keluarga, kepemimpinan alumni madrasah, dan survei lapangan.
-            </p>
+      {/* Section Header */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-12 text-left">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-1">
+            <span className="text-blue-600 font-bold">03 /</span>
+            <span className="text-stone-900 font-semibold tracking-wider uppercase">PERJALANAN & PENGALAMAN NYATA</span>
           </div>
-
-          {/* Interactive Year Selector Filter */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-2xl border border-stone-200 shadow-2xs">
-            {years.map((yr) => (
-              <button
-                key={yr}
-                onClick={() => setSelectedYear(yr)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer ${
-                  selectedYear === yr
-                    ? "bg-stone-900 text-white shadow-2xs"
-                    : "text-stone-500 hover:text-stone-900 hover:bg-stone-100"
-                }`}
-              >
-                {yr === "ALL" ? "Semua Tahun" : yr}
-              </button>
-            ))}
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif text-stone-900 tracking-tight">
+            Journey & Real Roles.
+          </h2>
         </div>
+        <p className="text-xs sm:text-sm text-stone-500 font-mono mt-2 sm:mt-0 max-w-xs text-left sm:text-right">
+          Aktivitas riil di sekretariat jurnal kampus, riset lapangan, kepemimpinan alumni, dan operasional.
+        </p>
+      </div>
 
-        {/* Interactive Experience Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
-          {/* Left Column: Timeline Cards List (7 Cols) */}
-          <div className="lg:col-span-7 space-y-4">
-            {filteredExperience.map((item) => {
-              const Icon = roleIcons[item.id] || Briefcase;
-              const isSelected = activeExpId === item.id;
+      {/* EDITORIAL ASYMMETRIC TIMELINE */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        {/* Left: Year Anchors (4 cols) */}
+        <div className="lg:col-span-4 space-y-3">
+          <p className="text-xs font-mono text-stone-400 uppercase font-semibold pb-1 tracking-wider text-left">
+            Pilih Milestone Tahun:
+          </p>
 
+          <div className="flex flex-col gap-2.5">
+            {JOURNEY_DATA.map((item) => {
+              const isSelected = selectedMilestone.year === item.year;
               return (
-                <div
-                  key={item.id}
-                  onClick={() => setActiveExpId(item.id)}
-                  className={`p-5 sm:p-6 rounded-3xl border transition-all cursor-pointer text-left relative overflow-hidden ${
+                <button
+                  key={item.year}
+                  onClick={() => setSelectedMilestone(item)}
+                  className={`p-4 rounded-2xl text-left transition-all border cursor-pointer flex items-center justify-between ${
                     isSelected
-                      ? "bg-white border-stone-900 shadow-md ring-1 ring-stone-900/10"
-                      : "bg-white/80 border-stone-200 hover:border-stone-300 hover:bg-white shadow-2xs"
+                      ? "bg-stone-900 text-white border-stone-900 shadow-md translate-x-1"
+                      : "bg-white text-stone-800 border-stone-200/80 hover:bg-stone-50 hover:border-stone-300"
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-3.5">
-                      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 border ${
-                        isSelected 
-                          ? "bg-stone-900 text-white border-stone-900" 
-                          : "bg-stone-100 text-stone-700 border-stone-200"
-                      }`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-
-                      <div className="space-y-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-stone-100 text-stone-700 uppercase">
-                            {item.year}
-                          </span>
-                          <span className="text-xs text-stone-400 font-mono">
-                            {item.type}
-                          </span>
-                        </div>
-
-                        <h3 className="text-base font-bold text-stone-900 tracking-tight">
-                          {item.role}
-                        </h3>
-
-                        <p className="text-xs font-semibold text-emerald-800">
-                          {item.organization}
-                        </p>
-                      </div>
-                    </div>
-
-                    <span className="text-[11px] font-mono text-stone-500 whitespace-nowrap bg-stone-50 px-2.5 py-1 rounded-lg border border-stone-200/60 hidden sm:inline-block">
-                      {item.period}
-                    </span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-stone-600 pt-3 leading-relaxed font-normal">
-                    {item.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 pt-3">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded bg-stone-100 text-stone-600 text-[10px] font-mono"
-                      >
-                        #{tag}
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <span className={`text-2xl font-serif font-bold ${isSelected ? "text-blue-400" : "text-stone-900"}`}>
+                        {item.year}
                       </span>
-                    ))}
+                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
+                        isSelected ? "bg-stone-800 text-stone-300" : "bg-stone-100 text-stone-600"
+                      }`}>
+                        {item.type.split("&")[0]}
+                      </span>
+                    </div>
+                    <p className={`text-xs font-semibold truncate ${isSelected ? "text-stone-100" : "text-stone-700"}`}>
+                      {item.role}
+                    </p>
+                    <p className={`text-[11px] truncate ${isSelected ? "text-stone-400" : "text-stone-500"}`}>
+                      {item.organization}
+                    </p>
                   </div>
 
-                  {isSelected && (
-                    <div className="absolute top-0 right-0 w-2 h-full bg-emerald-600" />
-                  )}
-                </div>
+                  <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isSelected ? "text-blue-400 translate-x-0.5" : "text-stone-300"}`} />
+                </button>
               );
             })}
           </div>
+        </div>
 
-          {/* Right Column: Deep Dive Journey Spotlight Box (5 Cols) */}
-          <div className="lg:col-span-5">
-            <div className="sticky top-24 p-6 rounded-3xl bg-stone-900 text-stone-100 shadow-lg space-y-5 border border-stone-800">
-              
-              <div className="flex items-center justify-between pb-3 border-b border-stone-800">
-                <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
-                  DETAIL CAPAIAN
-                </span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-stone-800 text-stone-300">
-                  {activeExp.year}
-                </span>
+        {/* Right: Milestone Editorial Detail Canvas (8 cols) */}
+        <div className="lg:col-span-8">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedMilestone.year}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl sm:rounded-3xl border border-stone-300 shadow-sm p-6 sm:p-8 text-left space-y-6"
+            >
+              {/* Header Info */}
+              <div className="space-y-2 border-b border-stone-200 pb-5">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="px-3 py-1 rounded bg-blue-50 text-blue-700 text-xs font-mono font-bold uppercase border border-blue-200/60">
+                    {selectedMilestone.type}
+                  </span>
+                  <span className="text-xs font-mono text-stone-500 flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-stone-400" />
+                    {selectedMilestone.location}
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900">
+                  {selectedMilestone.role}
+                </h3>
+                
+                <p className="text-sm font-semibold text-stone-700 font-mono">
+                  {selectedMilestone.organization} · <span className="text-blue-600">{selectedMilestone.year}</span>
+                </p>
               </div>
 
+              {/* Summary */}
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-white tracking-tight leading-snug">
-                  {activeExp.role}
+                <h4 className="text-xs font-mono font-bold text-stone-900 uppercase tracking-wider">
+                  Ringkasan Peran & Tanggung Jawab
                 </h4>
-                <p className="text-xs text-stone-400 font-mono">
-                  {activeExp.organization} • {activeExp.location}
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  {selectedMilestone.summary}
                 </p>
               </div>
 
+              {/* Verified Checklist */}
               <div className="space-y-2.5 pt-2">
-                <span className="text-[11px] font-mono uppercase text-stone-400 font-bold block">
-                  Tanggung Jawab &amp; Hasil Nyata:
-                </span>
-                <ul className="space-y-2 text-xs text-stone-300">
-                  {activeExp.achievements.map((ach, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{ach}</span>
-                    </li>
+                <h4 className="text-xs font-mono font-bold text-stone-900 uppercase tracking-wider">
+                  Pekerjaan & Tanggung Jawab Nyata:
+                </h4>
+                <div className="space-y-2">
+                  {selectedMilestone.responsibilities.map((resp, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-stone-50 border border-stone-200/80 text-xs text-stone-700 leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                      <span>{resp}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-stone-800/90 border border-stone-700/80 space-y-1 text-xs">
-                <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-wider block font-bold">
-                  Relevansi dengan Dunia Kerja:
-                </span>
-                <p className="text-[11px] text-stone-300 leading-relaxed font-normal">
-                  Membuktikan kesiapan dalam mengelola alur kerja administratif, validitas data, dan koordinasi tim secara bertanggung jawab.
-                </p>
+              {/* Bottom Key Highlight */}
+              <div className="p-4 rounded-xl bg-stone-900 text-white flex items-center justify-between text-xs font-mono">
+                <div className="space-y-0.5">
+                  <span className="text-[10px] text-blue-400 uppercase font-semibold">Hasil Kunci:</span>
+                  <p className="text-stone-200 font-medium font-sans">{selectedMilestone.keyHighlight}</p>
+                </div>
+                <span className="text-emerald-400 font-bold hidden sm:inline">Verified</span>
               </div>
 
-            </div>
-          </div>
-
+            </motion.div>
+          </AnimatePresence>
         </div>
 
       </div>

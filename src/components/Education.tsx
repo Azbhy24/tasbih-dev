@@ -1,138 +1,133 @@
-import { GraduationCap, Award, BookOpen, CheckCircle, Sparkles, Building2, ScrollText } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
+import { 
+  GraduationCap, 
+  BookOpen, 
+  Award, 
+  FileText, 
+  Library, 
+  CheckCircle2, 
+  Building2, 
+  Calendar,
+  Sparkles
+} from "lucide-react";
+import { motion } from "motion/react";
 
 export default function Education() {
-  const { education } = portfolioData;
+  const academicHighlights = [
+    {
+      title: "Tata Kelola & Administrasi Madrasah",
+      desc: "Manajemen kelembagaan, pembagian struktur tata usaha, standarisasi dokumen operasional sekolah/madrasah."
+    },
+    {
+      title: "Sistem Informasi Manajemen Pendidikan (SIMP)",
+      desc: "Pengelolaan basis data santri/siswa, pelaporan EMIS/Dapodik, dan integrasi teknologi dalam birokrasi pendidikan."
+    },
+    {
+      title: "Manajemen Kurikulum & Supervisi Pendidikan",
+      desc: "Perencanaan agenda akademik, monitoring pelaksanaan kurikulum, dan evaluasi berkala mutu proses pembelajaran."
+    },
+    {
+      title: "Kepemimpinan & Komunikasi Organisasi",
+      desc: "Keterampilan koordinasi tim, surat-menyurat resmi, notulensi rapat, dan hubungan masyarakat kelembagaan."
+    }
+  ];
 
   return (
     <section 
       id="education" 
-      className="py-16 sm:py-24 border-t border-stone-200/90 max-w-5xl mx-auto px-4 sm:px-6"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
-      <div className="space-y-10 text-left">
+      {/* Section Header */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-12 text-left">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-1">
+            <span className="text-blue-600 font-bold">04 /</span>
+            <span className="text-stone-900 font-semibold tracking-wider uppercase">LATAR BELAKANG PENDIDIKAN</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif text-stone-900 tracking-tight">
+            Academic Foundation.
+          </h2>
+        </div>
+        <p className="text-xs sm:text-sm text-stone-500 font-mono mt-2 sm:mt-0 max-w-xs text-left sm:text-right">
+          Fondasi keilmuan formal dalam bidang manajemen dan administrasi institusi pendidikan Islam.
+        </p>
+      </div>
+
+      {/* Main Educational Composition */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-left">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-mono font-semibold">
-              <GraduationCap className="w-3.5 h-3.5 text-stone-500" />
-              <span>PENDIDIKAN TINGGI</span>
+        {/* Left: Monumental Degree Block (6 cols) */}
+        <div className="lg:col-span-6 bg-stone-900 text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
+          
+          {/* Subtle background ambient graphic */}
+          <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="space-y-6 relative z-10">
+            <div className="flex items-center justify-between">
+              <span className="px-3 py-1 rounded bg-blue-500/20 text-blue-300 text-xs font-mono font-bold uppercase border border-blue-400/30">
+                Strata Satu (S1) Resmi
+              </span>
+              <span className="text-xs font-mono text-stone-400">2022 — 2026</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Fondasi Akademik &amp; Keilmuan.
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-normal leading-relaxed">
-              Menempuh studi S1 Manajemen Pendidikan Islam untuk mendalami tata kelola institusi pendidikan, kepemimpinan madrasah, dan administrasi kelembagaan.
+
+            <div className="space-y-2">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+                S1 Manajemen Pendidikan Islam
+              </h3>
+              <p className="text-base text-blue-300 font-medium">
+                Fakultas Tarbiyah · IAIN Parepare
+              </p>
+            </div>
+
+            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-normal">
+              Mempelajari prinsip manajemen strategis madrasah, kepemimpinan pendidikan Islam, pengarsipan tata usaha, perencanaan anggaran sekolah, serta pengawasan mutu pendidikan berkelanjutan.
             </p>
           </div>
 
-          <div className="text-xs font-mono text-stone-400">
-            [ S1 MPI • 2022 — 2026 ]
+          <div className="pt-6 mt-6 border-t border-stone-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono relative z-10">
+            <div className="flex items-center gap-2 text-stone-300">
+              <Building2 className="w-4 h-4 text-blue-400" />
+              <span>Institut Agama Islam Negeri Parepare</span>
+            </div>
+            <span className="text-emerald-400 font-semibold bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-800/80">
+              Fresh Graduate · 2026
+            </span>
           </div>
+
         </div>
 
-        {/* Education Main Bento Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
-          {/* Main Institution Card (7 cols) */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-6 flex flex-col justify-between">
-            <div className="space-y-5">
-              
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-6 h-6 text-emerald-700" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-stone-900 leading-tight">
-                      {education.institution}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-stone-600 font-medium mt-0.5">
-                      {education.degree} • {education.faculty}
-                    </p>
-                  </div>
-                </div>
-
-                <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-mono font-bold">
-                  {education.period}
-                </span>
-              </div>
-
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                Program Studi Manajemen Pendidikan Islam membekali saya dengan pemahaman mendalam tentang tata kelola institusi pendidikan Islam, administrasi madrasah, pengarsipan dokumen resmi, serta integrasi teknologi dalam manajemen mutu sekolah.
-              </p>
-
-              {/* Key Courses Covered */}
-              <div className="space-y-2 pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 font-bold block">
-                  Kajian Keilmuan Utama:
-                </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {education.keyCourses.map((course) => (
-                    <span
-                      key={course}
-                      className="px-3 py-1.5 rounded-xl bg-stone-50 border border-stone-200/80 text-stone-700 text-xs font-medium"
-                    >
-                      {course}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-
-            <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-mono">
-              <span>📍 {education.location}</span>
-              <span className="text-emerald-700 font-semibold">Status: Lulusan 2026</span>
-            </div>
+        {/* Right: Academic Focus / Coursework Areas (6 cols) */}
+        <div className="lg:col-span-6 flex flex-col justify-between gap-3">
+          <div className="space-y-1">
+            <h4 className="text-xs font-mono font-bold text-stone-500 uppercase tracking-wider">
+              Bidang Kompetensi & Studi Utama:
+            </h4>
           </div>
 
-          {/* Academic Highlights & Conferences (5 cols) */}
-          <div className="lg:col-span-5 space-y-4">
-            
-            <div className="p-6 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-4">
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-emerald-600" />
-                <h4 className="text-sm font-bold text-stone-900 font-mono uppercase tracking-wider">
-                  Capaian &amp; Pengalaman Ilmiah
-                </h4>
-              </div>
-
-              <div className="space-y-3 pt-1">
-                {education.highlights.map((item) => (
-                  <div
-                    key={item.title}
-                    className="p-4 rounded-2xl bg-stone-50 border border-stone-100 space-y-1.5"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-bold text-stone-900 text-xs sm:text-sm">
-                        {item.title}
-                      </span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-stone-600 border border-stone-200">
-                        {item.year}
-                      </span>
-                    </div>
-                    <p className="text-xs text-stone-600 leading-relaxed font-normal">
-                      {item.desc}
-                    </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 h-full">
+            {academicHighlights.map((item, idx) => (
+              <div 
+                key={idx}
+                className="bg-white p-4 sm:p-5 rounded-2xl border border-stone-200/90 shadow-2xs hover:border-stone-300 transition-colors flex flex-col justify-between space-y-2"
+              >
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold text-blue-600">0{idx + 1}.</span>
+                    <h5 className="text-xs sm:text-sm font-bold text-stone-900 leading-tight">
+                      {item.title}
+                    </h5>
                   </div>
-                ))}
+                  <p className="text-xs text-stone-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-1 text-[11px] font-mono text-stone-400 pt-1">
+                  <CheckCircle2 className="w-3 h-3 text-blue-500" />
+                  <span>Kompetensi Terapan</span>
+                </div>
               </div>
-            </div>
-
-            {/* Note on Career Readiness in Education */}
-            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 text-emerald-900 text-xs space-y-1">
-              <p className="font-bold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                <span>Kesiapan Kerja di Lingkungan Pendidikan</span>
-              </p>
-              <p className="text-[11px] text-emerald-800 leading-relaxed">
-                Siap berkontribusi langsung pada posisi tata usaha madrasah/sekolah, pengelolaan naskah jurnal ilmiah, atau administrasi kantor kelembagaan.
-              </p>
-            </div>
-
+            ))}
           </div>
-
         </div>
 
       </div>

@@ -65,7 +65,7 @@ export default function App() {
   return (
     <div 
       id="app-root-layout" 
-      className="min-h-screen bg-[#f7f6f2] bg-grid-dots text-stone-900 font-sans selection:bg-emerald-200 selection:text-emerald-950 antialiased"
+      className="min-h-screen bg-[#f7f6f2] bg-grid-dots text-stone-900 font-sans selection:bg-blue-200 selection:text-blue-950 antialiased"
     >
       {/* Sticky Floating Navbar */}
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
@@ -76,18 +76,18 @@ export default function App() {
         <Hero onNavigate={handleNavigate} />
 
         {/* 2. About Section */}
-        <About />
+        <About onNavigate={handleNavigate} />
 
         {/* 3. Featured Projects Showcase */}
         <Projects />
 
-        {/* 4. Experience & Activities Timeline */}
+        {/* 4. Experience & Journey Timeline */}
         <Experience />
 
-        {/* 5. Education & Academic Highlights */}
+        {/* 5. Education & Academic Foundation */}
         <Education />
 
-        {/* 6. Skills / What I Work With */}
+        {/* 6. Skills / Toolkit */}
         <Skills />
 
         {/* 7. Currently Status */}
@@ -105,10 +105,10 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 right-6 z-40 p-3 rounded-2xl bg-stone-900 text-white shadow-xl hover:bg-stone-800 transition-all cursor-pointer active:scale-95"
+            className="fixed bottom-6 right-6 z-40 p-3 rounded-2xl bg-stone-900 text-white shadow-xl hover:bg-stone-800 transition-all cursor-pointer active:scale-95 border border-stone-800"
             aria-label="Scroll to top"
           >
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="w-4 h-4 text-blue-400" />
           </motion.button>
         )}
       </AnimatePresence>

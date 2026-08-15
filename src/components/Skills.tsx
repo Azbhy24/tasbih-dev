@@ -1,105 +1,133 @@
 import { 
   FileSpreadsheet, 
-  Layers, 
-  Terminal, 
-  Wrench, 
-  Cpu, 
-  CheckCircle,
-  Database,
-  Globe,
-  Sparkles,
-  FileCheck
+  BookOpen, 
+  Laptop, 
+  Code2, 
+  Sparkles, 
+  CheckCircle2, 
+  Layers 
 } from "lucide-react";
-import { portfolioData } from "../data/portfolio";
 
 export default function Skills() {
-  const { skills } = portfolioData;
-
-  const categoryIcons: { [key: string]: any } = {
-    "Administrasi & Tata Kelola": FileCheck,
-    "Produktivitas & Office Suite": FileSpreadsheet,
-    "Web & Digital Tools": Terminal,
-    "AI-Assisted Workflow": Cpu,
-  };
+  const toolkits = [
+    {
+      category: "Administrasi & Tata Usaha",
+      icon: FileSpreadsheet,
+      badge: "Utama",
+      items: [
+        "Microsoft Word (Surat & Dokumen Resmi)",
+        "Microsoft Excel (Pencatatan & Rekap Data)",
+        "Google Workspace (Docs, Sheets, Drive)",
+        "Pengarsipan Berkas Digital & Fisik",
+        "Penyusunan Notulensi & Laporan Kegiatan"
+      ]
+    },
+    {
+      category: "Pendidikan & Madrasah",
+      icon: BookOpen,
+      badge: "Studi S1",
+      items: [
+        "Sistem Informasi Madrasah / Sekolah",
+        "Manajemen Kurikulum & Jadwal Pembelajaran",
+        "Administrasi Santri / Siswa",
+        "Tata Kelola Lembaga TPA / Diniyah",
+        "Komunikasi Koordinasi Antar Guru & Pengurus"
+      ]
+    },
+    {
+      category: "Digital Tools & Riset",
+      icon: Laptop,
+      badge: "Praktis",
+      items: [
+        "Open Journal Systems (OJS Workflow)",
+        "Instrumen Kuesioner & Survei Lapangan",
+        "Canva (Desain Informasi & Pengumuman)",
+        "Digital POS (Aplikasi Kasir Toko)",
+        "WhatsApp Business & Integrasi Kontak"
+      ]
+    },
+    {
+      category: "Teknologi Web Terapan",
+      icon: Code2,
+      badge: "Kekuatan Pendukung",
+      items: [
+        "React & TypeScript Dasar",
+        "Tailwind CSS (Antarmuka Web Bersih)",
+        "Vite & Deploy Vercel",
+        "Git & GitHub (Version Control)",
+        "Integrasi REST API Sederhana"
+      ]
+    },
+    {
+      category: "AI-Assisted Workflow",
+      icon: Sparkles,
+      badge: "Produktivitas",
+      items: [
+        "Prompting untuk Rekapitulasi Dokumen",
+        "Penyusunan Draf Surat & Administrasi Cepat",
+        "Pencarian & Ringkasan Bahan Riset",
+        "Otomasi Alur Kerja Harian"
+      ]
+    }
+  ];
 
   return (
     <section 
       id="skills" 
-      className="py-16 sm:py-24 border-t border-stone-200/90 max-w-5xl mx-auto px-4 sm:px-6"
+      className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-stone-200/80"
     >
-      <div className="space-y-10 text-left">
-        
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-mono font-semibold">
-              <Wrench className="w-3.5 h-3.5 text-stone-500" />
-              <span>TOOLKIT &amp; KEMAMPUAN</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-              Perangkat &amp; Kemampuan Kerja.
-            </h2>
-            <p className="text-sm sm:text-base text-stone-600 font-normal leading-relaxed">
-              Daftar perangkat lunak, sistem administrasi, dan teknologi praktis yang saya gunakan dalam operasional sehari-hari dan penyusunan karya.
-            </p>
+      {/* Section Header */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-stone-200/80 pb-4 mb-10 text-left">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-mono text-stone-500 mb-1">
+            <span className="text-blue-600 font-bold">05 /</span>
+            <span className="text-stone-900 font-semibold tracking-wider uppercase">TOOLKIT & PERANGKAT KERJA</span>
           </div>
-
-          <div className="text-xs font-mono text-stone-400">
-            [ PRACTICAL TOOLSET ]
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-serif text-stone-900 tracking-tight">
+            Things I Use.
+          </h2>
         </div>
+        <p className="text-xs sm:text-sm text-stone-500 font-mono mt-2 sm:mt-0 max-w-xs text-left sm:text-right">
+          Kombinasi keahlian administrasi pendidikan, perangkat kantor, dan alat bantu digital terapan.
+        </p>
+      </div>
 
-        {/* 4 Skill Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {skills.map((group) => {
-            const Icon = categoryIcons[group.category] || Layers;
-
-            return (
-              <div
-                key={group.category}
-                className="p-6 sm:p-7 rounded-3xl bg-white border border-stone-200 shadow-2xs space-y-5 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-2xl bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-stone-800" />
+      {/* Grid of Toolkits (Categorized lists, no percent bars) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+        {toolkits.map((tool, idx) => {
+          const Icon = tool.icon;
+          return (
+            <div 
+              key={idx}
+              className="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-2xs hover:border-stone-300 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800">
+                      <Icon className="w-3.5 h-3.5 text-blue-600" />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-stone-900 text-base tracking-tight">
-                        {group.category}
-                      </h3>
-                      <p className="text-xs text-stone-500">
-                        {group.description}
-                      </p>
-                    </div>
+                    <h3 className="text-xs font-bold text-stone-900 font-mono">
+                      {tool.category}
+                    </h3>
                   </div>
-
-                  <div className="space-y-2.5 pt-3">
-                    {group.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="p-3 rounded-2xl bg-stone-50/80 border border-stone-100 flex items-center justify-between gap-3 text-xs"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                          <span className="font-semibold text-stone-900">
-                            {skill.name}
-                          </span>
-                        </div>
-                        {skill.note && (
-                          <span className="text-[11px] font-mono text-stone-500 bg-white px-2 py-0.5 rounded border border-stone-200 shrink-0">
-                            {skill.note}
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-100 text-stone-600">
+                    {tool.badge}
+                  </span>
                 </div>
-              </div>
-            );
-          })}
-        </div>
 
+                <ul className="space-y-2">
+                  {tool.items.map((item, i) => (
+                    <li key={i} className="text-xs text-stone-600 flex items-start gap-2 leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
